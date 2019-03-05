@@ -1,0 +1,236 @@
+@import "../../../../../../dist/cut/variables.scss";
+@import "../../../../../../dist/cut/cb-vdl.scss";
+
+@function brightness($color) {
+  @if type-of($color) == color {
+    @return (red($color) * 0.299 + green($color) * 0.587 + blue($color) * 0.114) / 255 * 100%;
+  }
+  @else {
+    @return unquote("brightness(#{$color})");
+  }
+}
+
+@function contrast-color($color, $dark, $light) {
+  @if $color == null {
+    @return null;
+  }
+  @else {
+    $color-brightness: brightness($color);
+    $dark-text-brightness: brightness($dark);
+    $light-text-brightness: brightness($light);
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+  }
+}
+
+@mixin paletteCell($background-color){
+  background: $background-color;
+  color: contrast-color($background-color, $gray-darkest, $WHITE);
+}
+.palette{
+  min-height:50px;
+  display: flex;
+  color: $WHITE;
+  font-weight: $font-weight-normal;
+  align-items: center;
+  justify-content: center;
+  background: $WHITE;
+  border: solid 1px $gray;
+}
+.dropdown-menu{
+  padding: $padding-base;
+}
+
+thead th{
+  text-align: center;
+}
+.has-bg-primary{
+  @include paletteCell($color-primary);
+}
+.has-bg-primary-light{
+  @include paletteCell($color-primary-light);
+}
+.has-bg-primary-dark{
+  @include paletteCell($color-primary-dark);
+}
+.has-bg-secondary{
+  @include paletteCell($color-secondary);
+}
+.has-bg-secondary-light{
+  @include paletteCell($color-secondary-light);
+}
+.has-bg-secondary-dark{
+  @include paletteCell($color-secondary-dark);
+}
+.has-bg-tertiary{
+  @include paletteCell($color-tertiary);
+}
+.has-bg-tertiary-light{
+  @include paletteCell($color-tertiary-light);
+}
+.has-bg-tertiary-dark {
+  @include paletteCell($color-tertiary-dark);
+}
+.has-bg-accent-alpha-lighter{
+  @include paletteCell($accent-alpha-lighter);
+}
+.has-bg-accent-alpha-light{
+  @include paletteCell($accent-alpha-light);
+}
+.has-bg-accent-alpha{
+  @include paletteCell($accent-alpha);
+}
+.has-bg-accent-alpha-dark{
+  @include paletteCell($accent-alpha-dark);
+}
+.has-bg-accent-alpha-darker{
+  @include paletteCell($accent-alpha-darker);
+}
+
+
+.has-bg-accent-beta-lighter{
+  @include paletteCell($accent-beta-lighter);
+}
+.has-bg-accent-beta-light{
+  @include paletteCell($accent-beta-light);
+}
+.has-bg-accent-beta{
+  @include paletteCell($accent-beta);
+}
+.has-bg-accent-beta-dark{
+  @include paletteCell($accent-beta-dark);
+}
+.has-bg-accent-beta-darker{
+  @include paletteCell($accent-beta-darker);
+}
+
+
+.has-bg-accent-gamma-lighter{
+  @include paletteCell($accent-gamma-lighter);
+}
+.has-bg-accent-gamma-lighter{
+  @include paletteCell($accent-gamma-lighter);
+}
+.has-bg-accent-gamma-light{
+  @include paletteCell($accent-gamma-light);
+}
+.has-bg-accent-gamma{
+  @include paletteCell($accent-gamma);
+}
+.has-bg-accent-gamma-dark{
+  @include paletteCell($accent-gamma-dark);
+}
+.has-bg-accent-gamma-darker{
+  @include paletteCell($accent-gamma-darker);
+}
+
+
+.has-bg-accent-delta-lighter{
+  @include paletteCell($accent-delta-lighter);
+}
+.has-bg-accent-delta-light{
+  @include paletteCell($accent-delta-light);
+}
+.has-bg-accent-delta{
+  @include paletteCell($accent-delta);
+}
+.has-bg-accent-delta-dark{
+  @include paletteCell($accent-delta-dark);
+}
+.has-bg-accent-delta-darker{
+  @include paletteCell($accent-delta-darker);
+}
+
+.has-bg-accent-epsilon-lighter{
+  @include paletteCell($accent-epsilon-lighter);
+}
+.has-bg-accent-epsilon-light{
+  @include paletteCell($accent-epsilon-light);
+}
+.has-bg-accent-epsilon{
+  @include paletteCell($accent-epsilon);
+}
+.has-bg-accent-epsilon-dark{
+  @include paletteCell($accent-epsilon-dark);
+}
+.has-bg-accent-epsilon-darker{
+  @include paletteCell($accent-epsilon-darker);
+}
+
+
+.has-bg-accent-zeta-lighter{
+  @include paletteCell($accent-zeta-lighter);
+}
+.has-bg-accent-zeta-light{
+  @include paletteCell($accent-zeta-light);
+}
+.has-bg-accent-zeta{
+  @include paletteCell($accent-zeta);
+}
+.has-bg-accent-zeta-dark{
+  @include paletteCell($accent-zeta-dark);
+}
+.has-bg-accent-zeta-darker{
+  @include paletteCell($accent-zeta-darker);
+}
+
+.has-bg-accent-zeta-lighter{
+  @include paletteCell($accent-zeta-lighter);
+}
+.has-bg-accent-zeta-light{
+  @include paletteCell($accent-zeta-light);
+}
+.has-bg-accent-zeta{
+  @include paletteCell($accent-zeta);
+}
+.has-bg-accent-zeta-dark{
+  @include paletteCell($accent-zeta-dark);
+}
+.has-bg-accent-zeta-darker{
+  @include paletteCell($accent-zeta-darker);
+}
+
+.has-bg-accent-eta-lighter{
+  @include paletteCell($accent-eta-lighter);
+}
+.has-bg-accent-eta-light{
+  @include paletteCell($accent-eta-light);
+}
+.has-bg-accent-eta{
+  @include paletteCell($accent-eta);
+}
+.has-bg-accent-eta-dark{
+  @include paletteCell($accent-eta-dark);
+}
+.has-bg-accent-eta-darker{
+  @include paletteCell($accent-eta-darker);
+}
+
+.has-bg-gray-lightest{
+  @include paletteCell($gray-lightest);
+}
+.has-bg-gray-lighter{
+  @include paletteCell($gray-lighter);
+}
+.has-bg-gray-light{
+  @include paletteCell($gray-light);
+}
+.has-bg-gray{
+  @include paletteCell($gray);
+}
+.has-bg-gray-dark{
+  @include paletteCell($gray-dark);
+}
+.has-bg-gray-darker{
+  @include paletteCell($gray-darker);
+}
+.has-bg-gray-darkest{
+  @include paletteCell($gray-darkest);
+}
+.has-bg-red{
+  @include paletteCell($RED);
+}
+.has-bg-purple{
+  @include paletteCell($PURPLE);
+}
+
+

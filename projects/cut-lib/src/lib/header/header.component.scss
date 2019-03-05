@@ -1,0 +1,86 @@
+@import "../../stylesheets/cut/variables";
+
+
+header {
+  line-height: 18px;
+}
+.logo-container {
+  text-align: left;
+}
+
+.header-greeting {
+  padding-top: 5px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-family: $cbes-font-bold;
+}
+
+.user-account-container {
+  text-align: right;
+}
+
+nav {
+  background-color: $color-primary;
+
+  font-size: 13px;
+  height: 51px;
+  padding-top: 5px;
+  color: $WHITE;
+}
+
+nav a {
+  color: $WHITE;
+}
+.nav-bar {
+  text-align: left;
+}
+
+.nav-bar-logout {
+  text-align: right;
+}
+
+.logout-li {
+  text-align: right;
+}
+
+.row.logo-user {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.container {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.dropdown {
+  margin-bottom: 10px;
+  border: $gray-darker solid 1px;
+  border-radius: 4.5px;
+  height: 31px;
+  background-color: $WHITE;
+  color: $color-primary;
+  font-family: $cbes-font-regular;
+  max-width: 350px;
+}
+
+nav .btn-sm a {
+  font-family: $cbes-font-semibold;
+  font-size: 13px;
+}
+
+.container.logo-user {
+  height: 95px;
+}
+
+div.nav-links {
+  padding: 0 0.9375rem;
+}
+
+.dash-link {
+  line-height: 1.5;
+padding: .25rem .75rem .25rem .75rem;
+  border: none;
+}
+.nav-item + .nav-item {
+  margin-left: 0.2rem;
+}

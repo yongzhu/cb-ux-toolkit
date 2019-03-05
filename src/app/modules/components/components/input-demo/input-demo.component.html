@@ -1,0 +1,253 @@
+<h2>Inputs</h2>
+    <div class="tab-content">
+      <div class="row">
+        <div class="col">
+          <form class="form-horizontal" role="form">
+
+            <div class="form-control">
+              <!-- Demo Text -->
+              <cb-card [title]="'Default'" [height]="'6x'">
+                <span>input value: {{inputValue}}</span>
+                <div class="row">
+                  <div class="col-md-12"><br>
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [input-type]="'text'" [hide-label]="'hide-label'"
+                                  [label-name]="'Demo Hide Label Name'"
+                                  [required]="'true'" [placeholder]="'placeholder hide text label'"
+                                  [(ngModelValue)]="inputValue"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput1" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <span>input value: {{inputValue}}</span>
+                        <cb-input [label-name]="'Demo Text Label Name'" [input-type]="'text'"
+                                  [required]="'true'" [placeholder]="'placeholder text'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput2" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Text Label Name'" [input-type]="'text'"
+                                  [required]="'true'" [placeholder]="'placeholder text'">
+                          <label-content>
+                            : My Customize Label. Extend more description.
+                          </label-content>
+                        </cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput3" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Text Label Name With Icon Left'" [input-type]="'text'"
+                                  [required]="'true'" [placeholder]="'placeholder text with icon'"
+                                  [icon]="'fa fa-check'" [iconPosition]="'left'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput4" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Text Label Name With Icon Right'" [input-type]="'text'"
+                                  [required]="'true'" [placeholder]="'placeholder text with icon'"
+                                  [icon]="'fa fa-check'" [iconPosition]="'right'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput5" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Success Text Label Name'" [input-type]="'text'"
+                                  [required]="'true'" [placeholder]="'placeholder text'"
+                                  [status]="'has-success'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput6" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Failed Text Label Name'" [input-type]="'text'"
+                                  [required]="'true'" [placeholder]="'placeholder text'"
+                                  [error-message]="'Customizable error message'"
+                                  [status]="'has-error'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput7" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [input-type]="'text'"
+                                  [label-name]="'Demo of type ahead'"
+                                  [required]="false"
+                                  [(ngModelValue)]="fruitName"
+                                  [typeahead]="true"
+                                  (keyup.enter)="fakeFruitSearch()"
+                                  [typeaheadFn]="fakeFruitService()"
+                                  [typeaheadOption]="'name'"
+                                  [typeaheadWaitTime]="200"
+                                  [typeaheadMinLength]="1"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput8" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+
+                <!-- Demo Number -->
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Number Label Name'" [input-type]="'number'"
+                                  [required]="'true'" [placeholder]="'3'" [hide-label]="'hide-label'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput9" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Number Label Name'" [input-type]="'number'"
+                                  [required]="'true'" [placeholder]="'3'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput10" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Number Label Name'" [input-type]="'number'"
+                                  [required]="'true'" [placeholder]="'3'">
+                          <label-content>
+                            : My Customize Label. Extend more description.
+                          </label-content>
+
+                        </cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput11" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Success Number Label Name'" [input-type]="'number'"
+                                  [required]="'required'" [placeholder]="'3'" [status]="'has-success'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput12" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Error Number Label Name'" [input-type]="'number'"
+                                  [required]="'required'" [placeholder]="'3'" [status]="'has-error'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput13" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Radio Label Name'" [input-type]="'radio'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput14" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+
+                  </div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-tab-group>
+                      <mat-tab label="Demo">
+                        <cb-input [label-name]="'Demo Checkbox Label Name'" [input-type]="'checkbox'"></cb-input>
+                      </mat-tab>
+                      <mat-tab label="HTML">
+                        <app-codeblock [codeString]="codeInput15" language="html"></app-codeblock>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div>
+              </cb-card>
+            </div>
+            <button type="submit">Example Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>

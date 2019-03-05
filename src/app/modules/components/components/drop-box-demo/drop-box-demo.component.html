@@ -1,0 +1,79 @@
+<h1>Dropbox</h1>
+<mat-tab-group>
+  <mat-tab label='Demo'>
+    <div class="tab-content">
+      <span>There is a way to open drop: Hover-enabled</span>
+
+      <cb-drop-box dropStyle="fluid-down" [hoverEnable]="true">
+        <cb-drop-box-anchor><i class="fa fa-star" aria-hidden="true"></i>: Hover</cb-drop-box-anchor>
+        <cb-drop-box-content>
+          <p>Feeding in List Item</p>
+          <cb-button [title]="'Default'" [button-style]="'default'"></cb-button>
+          <cb-button [title]="'Primary'" [button-style]="'primary'"></cb-button>
+          <cb-button [title]="'Secondary'" [button-style]="'secondary'"></cb-button>
+          <cb-button [title]="'Negative'" [button-style]="'negative'"></cb-button>
+        </cb-drop-box-content>
+      </cb-drop-box>
+      <hr/>
+
+      <span>There is a way to open drop: </span>
+
+      <cb-drop-box dropStyle="fluid-down">
+        <cb-drop-box-anchor><i class="fa fa-star" aria-hidden="true"></i></cb-drop-box-anchor>
+        <cb-drop-box-content>
+          <p>Feeding in List Item</p>
+          <cb-button [title]="'Default'" [button-style]="'default'"></cb-button>
+          <cb-button [title]="'Primary'" [button-style]="'primary'"></cb-button>
+          <cb-button [title]="'Secondary'" [button-style]="'secondary'"></cb-button>
+          <cb-button [title]="'Negative'" [button-style]="'negative'"></cb-button>
+        </cb-drop-box-content>
+      </cb-drop-box>
+<hr/>
+      <span>There is a way to open drop: </span>
+
+      <cb-drop-box dropStyle="fluid-down">
+        <cb-drop-box-anchor>Test</cb-drop-box-anchor>
+        <cb-drop-box-content>
+          <div class="row">
+            <div class="col">
+              <cb-card>
+                <ul>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 5</li>
+                </ul>
+              </cb-card>
+            </div>
+            <div class="col">
+              <cb-card>
+                <ul>
+                  <li>List ITem 2</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 1</li>
+                  <li>List ITem 5</li>
+                </ul>
+              </cb-card>
+            </div>
+          </div>
+        </cb-drop-box-content>
+      </cb-drop-box>
+    </div>
+    <hr/>
+  </mat-tab>
+  <mat-tab label='Documentation'>
+    <div class="tab-content">
+      <app-codeblock [codeString]="codeDropbox1" [language]="'html'"></app-codeblock>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+

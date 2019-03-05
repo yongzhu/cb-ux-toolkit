@@ -1,0 +1,23 @@
+<ul class="list-style-header-nav" *ngIf="headerObj.leftNav">
+  <ng-container *ngFor="let item of headerObj.leftNav">
+    <li  *ngIf="!item.dropDown && !item.hidden" class="header-nav-li-test">
+      <a *ngIf="item.internalPath" title="{{item.altTxt}}" [routerLink]=[item.internalPath] tabindex="0" [class.li-dropdown-active]="showAsActive(item)">{{item.title}}</a>
+      <a *ngIf="item.externalPath" title="{{item.altTxt}}" [href]="item.externalPath" [target]="getTargetAttribute(item.newWindow)"  tabindex="0">{{item.title}}</a>
+      <a *ngIf="item.action" title="{{item.altTxt}}" (click)="emitActionType(item.action)" tabindex="0">{{item.title}}</a>
+    </li>
+    <li *ngIf="item.dropDown && !item.hidden">
+      <cb-drop-box dropStyle="fixed-down-right" hoverEnable="true">
+        <cb-drop-box-anchor tabindex="0" [class.li-dropdown-active]="showAsActive(item)"><span>{{item.title}}</span><i class="fa fa-angle-down"></i></cb-drop-box-anchor>
+        <cb-drop-box-content>
+          <ul class="list-style-header-sub-nav">
+            <li *ngFor="let subItem of item.dropDown" class="headernav-drodown-item-test" [class.has-separator]="subItem.hasSeparator">
+              <a *ngIf="subItem.internalPath && !subItem.hidden" [routerLink]="[subItem.internalPath]" title="{{item.altTxt}}" tabindex="0" [class.active]="showAsActive(subItem)">{{subItem.title}}</a>
+              <a *ngIf="subItem.externalPath && !subItem.hidden" [href]="subItem.externalPath" [target]="getTargetAttribute(subItem.newWindow)" title="{{item.altTxt}}" tabindex="0">{{subItem.title}}</a>
+              <a *ngIf="subItem.action && !subItem.hidden" (click)="emitActionType(subItem.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{subItem.title}}</a>
+            </li>
+          </ul>
+        </cb-drop-box-content>
+      </cb-drop-box>
+    </li>
+  </ng-container>
+</ul>

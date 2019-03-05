@@ -1,0 +1,10 @@
+<li (click)="open = !open" class="dropdown-list-item" [ngClass]="{'open': open}">
+  <a>{{item.title}} <i class="fa fa-angle-down"></i></a>
+  <ul class="list-style-header-sub-nav">
+    <li *ngFor="let subItem of item.dropDown" class="dropdown-sublist-item">
+      <a *ngIf="subItem.internalPath" title="{{subItem.altTxt}}" [routerLink]=[subItem.internalPath]>{{subItem.title}}</a>
+      <a *ngIf="subItem.externalPath" title="{{subItem.altTxt}}" (click)="routeToExternalPath(subItem.externalPath)">{{subItem.title}}</a>
+      <a *ngIf="subItem.action" title="{{subItem.altTxt}}" (click)="emitActionType(subItem.action, item.title)">{{subItem.title}}</a>
+    </li>
+  </ul>
+</li>

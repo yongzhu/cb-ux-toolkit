@@ -1,0 +1,40 @@
+<cb-drop-box [dropStyle]="'fixed-down-left'" *ngFor="let item of headerObj.rightNav">
+  <cb-drop-box-anchor>
+    <span>{{item.title}}</span>
+    <i class="{{item.icon}}"></i>
+  </cb-drop-box-anchor>
+  <cb-drop-box-content>
+    <ul class="list-style-menu">
+      <li *ngFor="let subItem of item.dropDown">
+        <a *ngIf="subItem.internalPath" [routerLink]="[subItem.internalPath]" title="{{item.altTxt}}">{{subItem.title}}</a>
+        <a *ngIf="subItem.externalPath" (click)="routeToExternalPath(subItem.externalPath)" title="{{item.altTxt}}">{{subItem.title}}</a>
+        <a *ngIf="subItem.action" (click)="emitActionType(subItem.action, item.title)" title="{{item.altTxt}}">{{subItem.title}}</a>
+      </li>
+    </ul>
+  </cb-drop-box-content>
+</cb-drop-box>
+
+<ng-container *ngFor="let item of headerObj.leftNav">
+  <ng-container *ngIf="!item.dropDown">
+    <div class="item-link" *ngIf="item.internalPath"><a [routerLink]="[item.internalPath]" title="{{item.altTxt}}">{{item.title}}</a></div>
+    <div class="item-link" *ngIf="item.externalPath"><a (click)="routeToExternalPath(item.externalPath)" title="{{item.altTxt}}">{{item.title}}</a></div>
+    <div class="item-link" *ngIf="item.action"><a (click)="emitActionType(item.action, item.title)" title="{{item.altTxt}}">{{item.title}}</a></div>
+  </ng-container>
+  <ng-container *ngIf="item.dropDown">
+    <cb-drop-box [dropStyle]="'fixed-down-right'">
+      <cb-drop-box-anchor>
+        <span>{{item.title}}</span>
+        <i class="fa fa-angle-down"></i>
+      </cb-drop-box-anchor>
+      <cb-drop-box-content>
+        <ul class="list-style-menu">
+          <li *ngFor="let subItem of item.dropDown">
+            <a *ngIf="subItem.internalPath" [routerLink]="[subItem.internalPath]" title="{{item.altTxt}}">{{subItem.title}}</a>
+            <a *ngIf="subItem.externalPath" (click)="routeToExternalPath(subItem.externalPath)" title="{{item.altTxt}}">{{subItem.title}}</a>
+            <a *ngIf="subItem.action" (click)="emitActionType(subItem.action, item.title)" title="{{item.altTxt}}">{{subItem.title}}</a>
+          </li>
+        </ul>
+      </cb-drop-box-content>
+    </cb-drop-box>
+  </ng-container>
+</ng-container>

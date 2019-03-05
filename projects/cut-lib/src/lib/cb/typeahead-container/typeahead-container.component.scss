@@ -1,0 +1,23 @@
+@import "../../../stylesheets/cb-vdl/cb-vdl-standards";
+
+.dropdown-menu{
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-base;
+  padding: 0px;
+}
+
+.dropdown-item{
+  padding: $padding-base/2 $padding-base;
+  &:hover, &:focus{
+    color: $WHITE;
+    background: $accent-beta;
+  }
+  &.active{
+    color: $WHITE;
+    background: $accent-beta;
+  }
+  &:active{
+    color: $WHITE;
+    background: $color-tertiary-dark;
+  }
+}

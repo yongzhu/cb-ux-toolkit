@@ -1,0 +1,6 @@
+@import "./variables";
+
+:host /deep/ app-dynamic-body {
+  flex: 1;
+  margin-bottom: $padding-base * 4;
+}

@@ -1,0 +1,85 @@
+<footer *ngIf="((!!footerObj && !footerObj.useApi) || (footerObj == undefined))">
+  <section class="footer-main-wrapper container-fluid">
+    <div class="row justify-content-between">
+      <div class="col-lg-8">
+        <ul class="list-style-footer">
+          <li>
+            <a target="_blank" href="http://hiring.careerbuilder.com/company/overview" title="About Us">About Us</a>
+          </li>
+          <li>
+            <a target="_blank" href="http://hiring.careerbuilder.com/company/security-and-privacy" title="Privacy & Fraud">Privacy & Fraud
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="http://employer.careerbuilder.com/jobseeker/info/hhterms.aspx" title="Terms & Conditions">Terms & Conditions
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://hiring.careerbuilder.com" title="Buy Products">Buy Products</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <ul class="list-style-footer list-aligned-right">
+          <li>Sales:&nbsp;
+            <a title="Sales Phone" href="tel:877-345-5256">(877) 345-5256</a>
+          </li>
+          <li class="v-rule">|</li>
+          <li>Support:&nbsp;
+            <a title="Support Phone" href="tel:800-891-8880"> (800) 891-8880</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr/>
+  <section class="footer-sub-wrapper container-fluid">
+    <div class="row">
+      <div class="col">
+        <span class="copy-light">&copy; {{year}} CareerBuilder, LLC. All rights reserved.</span>
+      </div>
+    </div>
+  </section>
+</footer>
+<footer *ngIf="!!footerObj && footerObj.useApi">
+  <section class="footer-main-wrapper container-fluid" *ngIf="validHeaderObj$ | async">
+    <div class="row justify-content-between">
+      <div class="col-lg-6">
+        <ul class="list-style-footer" *ngIf="!!headerObj && !!headerObj.footer && !!headerObj.footer.FooterNav">
+          <ng-container *ngFor="let item of headerObj.footer.FooterNav">
+            <li>
+              <a *ngIf="item.ExternalPath" [title]="item.AltTxt" [href]="item.ExternalPath" [target]="getTargetAttribute(item.NewWindow)"
+                tabindex="0">{{item.Title}}</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <ul class="list-style-footer list-aligned-right" *ngIf="!!headerObj && !!headerObj.footer && !!headerObj.footer.SalesContactInfo">
+          <li>{{headerObj.footer.SalesContactInfo.Name}}&nbsp;
+            <ng-container *ngFor="let item of headerObj.footer.SalesContactInfo.Links">
+              <a [href]="item.Link">{{item.Name}}</a>
+            </ng-container>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr/>
+  <section class="footer-sub-wrapper container-fluid" *ngIf="validHeaderObj$ | async">
+    <div class="row justify-content-between">
+      <div class="col-lg-6" *ngIf="!!headerObj && !!headerObj.footer && !!headerObj.footer.CopyRights">
+        <span *ngIf="headerObj.footer.CopyRights" class="copy-light">{{headerObj.footer.CopyRights}}</span>
+      </div>
+      <div class="col-lg-6" *ngIf="!!headerObj && !!headerObj.footer && !!headerObj.footer.SupportContactInfo">
+        <ul class="list-style-footer list-aligned-right" *ngIf="headerObj.footer.SupportContactInfo">
+          <li>{{headerObj.footer.SupportContactInfo.Name}}&nbsp;
+            <ng-container *ngFor="let item of headerObj.footer.SupportContactInfo.Links">
+              <a [href]="item.Link">{{item.Name}}</a>
+            </ng-container>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</footer>

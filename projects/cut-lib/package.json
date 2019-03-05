@@ -1,0 +1,17 @@
+{
+  "name": "cut",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/animations": "~7.2.7",
+    "@angular/cdk": "~7.3.3",
+    "@angular/common": "~7.2.7",
+    "@angular/core": "~7.2.7",
+    "@angular/material": "~7.3.3",
+    "@types/clipboard": "^2.0.1",
+    "clipboard": "~2.0.0",
+    "font-awesome": "~4.7.0",
+    "jquery": "~3.3.0",
+    "popper.js": "~1.14.0"
+  },
+  "schematics": "./schematics/collection.json"
+}

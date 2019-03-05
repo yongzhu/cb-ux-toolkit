@@ -1,0 +1,31 @@
+<div class="wrapper-user-profile" *ngIf="headerObj.userProfile">
+  <cb-drop-box class="user-profile" [dropStyle]="'fixed-down-left'">
+    <cb-drop-box-anchor aria-label="User Profile and settings" tabindex="0">
+      Welcome, {{headerObj.userProfile.user.first_name}}&nbsp;<i class="fa fa-angle-down"></i>
+    </cb-drop-box-anchor>
+    <cb-drop-box-content>
+      <ul class="list-style-header-sub-nav">
+        <li>
+          <h4>{{headerObj.userProfile.user.first_name}} {{headerObj.userProfile.user.last_name}}</h4>
+          <span class="ellipsis-truncate">{{headerObj.userProfile.user.email}}</span>
+          <span class="ellipsis-truncate">{{headerObj.userProfile.user.accountName}}</span>
+        </li>
+        <li
+            [class.has-separator]="item.hasSeparator"
+            *ngFor="let item of headerObj.userProfile.options">
+          <a *ngIf="item.internalPath && !item.hidden" [class.SignOut]="item.title === 'Sign Out'" [routerLink]="[item.internalPath]" [class.active]="showAsActive(item)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
+          <a *ngIf="item.externalPath && !item.hidden" [class.SignOut]="item.title === 'Sign Out'" [href]="item.externalPath" [target]="getTargetAttribute(item.newWindow)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
+          <a *ngIf="item.action && !item.hidden && item.title !== 'Background'" [class.SignOut]="item.title === 'Sign Out'" (click)="emitActionType(item.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
+          <div class="themeSelector" *ngIf="item.title === 'Background'">
+            <h5 class="titleText">Background Color</h5>
+            <h5>Choose your background color from the options below.</h5>
+            <div class="box box0" [class.activeBorder]="themeChosen === 0" (click)="selectTheme(0)"></div>
+            <div class="box box1" [class.activeBorder]="themeChosen === 1" (click)="selectTheme(1)"></div>
+            <div class="box box2" [class.activeBorder]="themeChosen === 2" (click)="selectTheme(2)"></div>
+            <h5 class="text-centered">{{defaultColorMsg}}</h5>
+          </div>
+        </li>
+      </ul>
+    </cb-drop-box-content>
+  </cb-drop-box>
+</div>

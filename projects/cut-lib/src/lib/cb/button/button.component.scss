@@ -1,0 +1,190 @@
+// @import '../../../../../../node_modules/bootstrap/scss/mixins';
+@import '../../../stylesheets/cb-vdl/variables';
+
+@mixin cb-button-variant($color, $background, $hover, $active) {
+
+  color: $color;
+  cursor: pointer;
+  background-color: $background;
+  border-color: $background;
+  $hover-background: $hover;
+  $hover-border: $hover;
+  $active-background: $active;
+  $active-border: $active;
+  // @include hover {
+  //   color: $color;
+  //   background-color: $hover-background;
+  //   border-color: $hover-border;
+  // }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none;
+    color: $color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    outline: 0;
+    box-shadow: none;
+    color: $color;
+    background-color: $active-background;
+    border-color: $active-border;
+    background-image: none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      outline: 0;
+      color: $color;
+      background-color: $active-background;
+      border-color: $active-border;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $WHITE;
+    background-color: $gray-dark;
+    border-color: $gray-dark;
+    cursor: not-allowed;
+    &:focus,
+    &.focus {
+      background-color: $gray-dark;
+      border-color: $gray-dark;
+    }
+    // @include hover {
+    //   background-color: $gray-dark;
+    //   border-color: $gray-dark;
+    // }
+  }
+}
+
+@mixin cb-button-hollow($color, $background, $hover, $active) {
+
+  color: $color;
+  cursor: pointer;
+  background-color: $WHITE;
+  border-color: $background;
+  $hover-color: $WHITE;
+  $hover-background: $hover;
+  $hover-border: $hover;
+  $active-color: $WHITE;
+  $active-background: $active;
+  $active-border: $active;
+
+  // @include hover {
+  //   color: $hover-color;
+  //   background-color: $hover-background;
+  //   border-color: $hover-border;
+  // }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none;
+    color: $hover-color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    outline: 0;
+    box-shadow: none;
+    color: $active-color;
+    background-color: $active-background;
+    border-color: $active-border;
+    background-image: none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      outline: 0;
+      color: $hover-color;
+      background-color: $active-background;
+      border-color: $active-border;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $WHITE;
+    background-color: $gray-dark;
+    border-color: $gray-dark;
+    cursor: not-allowed;
+    &:focus,
+    &.focus {
+      background-color: $gray-dark;
+      border-color: $gray-dark;
+    }
+    // @include hover {
+    //   background-color: $gray-dark;
+    //   border-color: $gray-dark;
+    // }
+  }
+}
+
+.btn-default {
+  @include cb-button-hollow($color-tertiary, $color-tertiary, $accent-beta, $color-tertiary-dark);
+}
+
+.btn-primary {
+  @include cb-button-variant($WHITE, $accent-delta-dark, $accent-delta, $accent-delta-darker);
+}
+
+.btn-secondary {
+  @include cb-button-variant($WHITE, $color-tertiary, $accent-beta, $color-tertiary-dark);
+}
+
+.btn-negative {
+  @include cb-button-hollow($gray-dark, $gray-dark, $gray-darker, $gray-darkest);
+}
+
+.btn-block-xs {
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.btn-block-sm {
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.btn-block-md {
+  @media (max-width: map-get($grid-breakpoints, lg)) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.btn-block-lg {
+  @media (max-width: map-get($grid-breakpoints, xl)) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.btn-block-xl {
+  width: 100%;
+  display: block;
+}
+
+.icon-left {
+  margin-right: 5px;
+  margin-left: -5px;
+}
+
+.icon-right {
+  margin-right: -5px;
+  margin-left: 5px;
+}

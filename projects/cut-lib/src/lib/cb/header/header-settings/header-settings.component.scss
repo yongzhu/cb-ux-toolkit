@@ -1,0 +1,53 @@
+@import '../../../../stylesheets/cb-vdl/variables';
+@import '../../../../stylesheets/cb-vdl/cb-utilities';
+
+cb-drop-box /deep/ {
+  .drop-panel {
+    padding: 0px !important;
+  }
+}
+
+cb-drop-box /deep/ {
+  @media(max-width: map-get($grid-breakpoints, lg)) {
+    .drop-panel-wrapper {
+      width: auto !important;
+      position: initial !important;
+    }
+    .arrow {
+      &:before, &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media(min-width: map-get($grid-breakpoints, lg)) {
+  .label-mobile {
+    display: none;
+  }
+}
+
+@media(max-width: map-get($grid-breakpoints, lg)) {
+  cb-drop-box-anchor {
+    padding: $padding-base;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px $gray-light;
+  }
+
+  .item-link {
+    padding: 15px;
+    border-bottom: solid 1px $gray-light;
+    outline: none;
+    a {
+      color: $gray-darkest;
+      &:hover {
+        text-decoration: none;
+      }
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+}

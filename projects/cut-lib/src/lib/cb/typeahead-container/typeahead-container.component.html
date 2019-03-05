@@ -1,0 +1,26 @@
+<div class="dropdown-menu"
+     style="display: block"
+     [ngStyle]="{top: top, left: left, display: display}"
+     (mouseleave)="focusLost()">
+  <div *ngIf="!itemTemplate">
+    <a href="#"
+       *ngFor="let match of matches"
+       class="dropdown-item"
+       (click)="selectMatch(match, $event)"
+       (mouseenter)="selectActive(match)"
+       [class.active]="isActive(match)"
+       [innerHtml]="hightlight(match, query)"></a>
+  </div>
+  <div *ngIf="itemTemplate">
+    <a href="#"
+       *ngFor="let match of matches; let i = index"
+       class="dropdown-item"
+       (click)="selectMatch(match, $event)"
+       (mouseenter)="selectActive(match)"
+       [class.active]="isActive(match)">
+      <template [ngTemplateOutlet]="itemTemplate"
+                [ngTemplateOutletContext]="{item: match, index: i}">
+      </template>
+    </a>
+  </div>
+</div>

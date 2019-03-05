@@ -1,0 +1,33 @@
+@import "../cb-vdl/cb-variables";
+
+/*
+  FIXES FOR BOOTSTRAP VARIABLES
+*/
+
+$primary:             $color-primary;
+$success:             $color-success;
+$info:                $color-info;
+$warning:             $color-warning;
+$danger:              $color-error;
+$inverse:             $gray-light;
+
+// Buttons
+$h1-font-size: $font-size-h1;
+$h2-font-size: $font-size-h2;
+$h3-font-size: $font-size-h3;
+$h4-font-size: $font-size-h4;
+$h5-font-size: $font-size-h5;
+$h6-font-size: $font-size-h6;
+
+// Forms
+$input-disabled-bg: $gray-lighter;
+
+$input-focus-border-color: $color-tertiary;
+
+
+/*
+
+*/
+$cbes-font-bold: Lato-Bold, $font-family-base;
+$cbes-font-semibold: Lato-Semibold, $font-family-base;
+$cbes-font-regular: Lato-Regular, $font-family-base;

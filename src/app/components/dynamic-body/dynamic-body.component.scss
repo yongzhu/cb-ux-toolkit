@@ -1,0 +1,88 @@
+@import "../../../../dist/cut/variables.scss";
+@import "../../../../dist/cut/cb-vdl.scss";
+
+.top-margin {
+  margin-top: $padding-base;
+}
+
+.list-style-left-nav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    border-bottom: solid 1px $gray-lightest;
+    a {
+      display: block;
+      padding: $padding-base/2;
+      color: $color-link;
+      text-decoration: none;
+      &:hover {
+        color: $color-link-hover;
+        background: $gray-lighter;
+      }
+      &:active {
+        background: $color-tertiary-dark;
+        color: $WHITE;
+      }
+    }
+    &.active {
+      a {
+        color: $WHITE;
+        background: $color-tertiary-dark;
+      }
+      &:hover {
+        background: $color-tertiary-dark;
+      }
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+  /deep/ {
+    .panel-title {
+      margin: 0 !important;
+      padding: $padding-base/2;
+    }
+    .toggle {
+      margin-top: -4px;
+    }
+  }
+
+}
+
+.list-style-left-sub-nav {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  li {
+    border-bottom: solid 1px $gray-lightest;
+    a {
+      display: block;
+      padding: $padding-base/2;
+      color: $color-link;
+      text-decoration: none;
+      &:hover {
+        color: $WHITE;
+        background: $accent-beta;
+      }
+      &:active {
+        background: $color-tertiary-dark;
+        color: $WHITE;
+      }
+    }
+    &.active {
+      a {
+        color: $WHITE;
+        background: $color-tertiary-dark;
+      }
+      &:hover {
+        background: $color-tertiary-dark;
+      }
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "CBUXToolkitInstall",
+  "title": "CUT Install Options Schema",
+  "type": "object",
+  "properties": {
+    "skipPackageJson": {
+      "type": "boolean",
+      "default": false,
+      "description": "Do not add CUT dependencies to package.json (e.g., --skipPackageJson)"
+    }
+  },
+  "required": []
+}

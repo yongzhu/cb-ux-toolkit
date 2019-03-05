@@ -1,0 +1,150 @@
+<div class="row">
+  <div class="col">
+    <cb-card [title]="'Buttons'">
+      <p></p>
+      <mat-tab-group>
+        <mat-tab label="Demo">
+
+          <div class="row">
+            <div class="col">
+              <cb-button [title]="'Default'" [button-style]="'default'"></cb-button>
+              <cb-button [title]="'Primary'" [button-style]="'primary'"></cb-button>
+              <cb-button [title]="'Secondary'" [button-style]="'secondary'"></cb-button>
+              <cb-button [title]="'Negative'" [button-style]="'negative'"></cb-button>
+            </div>
+          </div>
+          <hr/>
+          <div class="row">
+            <div class="col">
+              <cb-button [title]="'Default'" [button-style]="'default'" [disabled]="true"></cb-button>
+              <cb-button [title]="'Primary'" [button-style]="'primary'" [disabled]="true"></cb-button>
+              <cb-button [title]="'Secondary'" [button-style]="'secondary'" [disabled]="true"></cb-button>
+              <cb-button [title]="'Negative'" [button-style]="'negative'" [disabled]="true"></cb-button>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="HTML">
+          <app-codeblock [codeString]="buttonExample1A" language="html"></app-codeblock>
+          <app-codeblock [codeString]="buttonExample1B" language="html"></app-codeblock>
+          <app-codeblock [codeString]="buttonExample1C" language="html"></app-codeblock>
+          <app-codeblock [codeString]="buttonExample1D" language="html"></app-codeblock>
+        </mat-tab>
+      </mat-tab-group>
+      <p></p>
+    </cb-card>
+    <cb-card [title]="'Anchor Buttons'">
+      <p></p>
+      <mat-tab-group>
+        <mat-tab label="Demo">
+          <div class="col">
+            <cb-button [title]="'Anchor 1'" [button-style]="'default'" [href]="'http://google.com'"></cb-button>
+            <cb-button [title]="'Anchor 2'" [button-style]="'primary'" [href]="'http://google.com'"></cb-button>
+            <cb-button [title]="'Anchor 3'" [button-style]="'secondary'" [href]="'http://google.com'"></cb-button>
+            <cb-button [title]="'Anchor 4'" [button-style]="'negative'" [href]="'http://google.com'"></cb-button>
+          </div>
+        </mat-tab>
+        <mat-tab label="HTML">
+          <app-codeblock [codeString]="anchor1" language="html"></app-codeblock>
+          <app-codeblock [codeString]="anchor2" language="html"></app-codeblock>
+          <app-codeblock [codeString]="anchor3" language="html"></app-codeblock>
+          <app-codeblock [codeString]="anchor4" language="html"></app-codeblock>
+        </mat-tab>
+      </mat-tab-group>
+    </cb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <cb-card [title]="'Block Level Buttons'">
+      <p></p>
+      <mat-tab-group>
+        <mat-tab label="Demo">
+          <cb-button [title]="'Block Button at xs'" [button-style]="'default'" [block]="'xs'"></cb-button>
+          <br/><br/>
+          <cb-button [title]="'Block Button at sm and below'" [button-style]="'primary'" [block]="'sm'"></cb-button>
+          <br/><br/>
+          <cb-button [title]="'Block Button at md and below'" [button-style]="'secondary'"
+                     [block]="'md'"></cb-button>
+          <br/><br/>
+          <cb-button [title]="'Block Button at lg and below'" [button-style]="'negative'"
+                     [block]="'lg'"></cb-button>
+          <br/><br/>
+          <cb-button [title]="'Block Button XL'" [button-style]="'negative'" [block]="'xl'"></cb-button>
+          <br/><br/>
+        </mat-tab>
+        <mat-tab label="HTML">
+          <app-codeblock [codeString]="blockXS" language="html"></app-codeblock>
+          <app-codeblock [codeString]="blockSM" language="html"></app-codeblock>
+          <app-codeblock [codeString]="blockMD" language="html"></app-codeblock>
+          <app-codeblock [codeString]="blockLG" language="html"></app-codeblock>
+          <app-codeblock [codeString]="blockXL" language="html"></app-codeblock>
+        </mat-tab>
+      </mat-tab-group>
+    </cb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <cb-card [title]="'Not Approved: Button Possible Combinations'">
+      <br/><br/>
+      <cb-button [icon]="'fa fa-search'"></cb-button>
+      <cb-button [title]="'Custom'" [icon]="'fa fa-search'"></cb-button>
+      <cb-button [title]="'Default'"></cb-button>
+      <cb-button [title]="'Success'" [button-style]="'success'"></cb-button>
+      <cb-button [title]="'Info'" [button-style]="'info'"></cb-button>
+      <cb-button [title]="'Warning'" [button-style]="'warning'"></cb-button>
+      <cb-button [title]="'Error'" [button-style]="'error'"></cb-button>
+      <cb-button [title]="'Secondary'" [button-style]="'secondary'"></cb-button>
+      <cb-button [title]="'Link'" [button-style]="'link'"></cb-button>
+      <hr/>
+      <cb-button [title]="'small'" [button-style]="'primary'" [size]="'small'" [id]="'test-id'"></cb-button>
+      <cb-button [title]="'default'" [button-style]="'primary'" [size]="'default'"></cb-button>
+      <cb-button [title]="'large'" [button-style]="'primary'" [size]="'large'"></cb-button>
+      <cb-button [title]="'disabled'" [button-style]="'error'" [size]="'default'" [disabled]="true"></cb-button>
+    </cb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <cb-card [title]="'Not Approved: Anchor Possible Combinations'">
+      <br/><br/>
+      <cb-button [title]="'Link'" [button-style]="'link'" [href]="'http://google.com'"></cb-button>
+      <cb-button [title]="'Link'" [button-style]="'primary'" [icon]="'fa fa-search'" [iconPosition]="'left'"
+                 [href]="'http://google.com'"></cb-button>
+      <cb-button [title]="'Link'" [button-style]="'primary'" [icon]="'fa fa-search'" [iconPosition]="'right'"
+                 [href]="'http://google.com'"></cb-button>
+      <cb-button [icon]="'fa fa-search'"></cb-button>
+      <cb-button [title]="'left'" [icon]="'fa fa-search'" [iconPosition]="'left'"></cb-button>
+      <cb-button [title]="'right'" [icon]="'fa fa-search'" [iconPosition]="'right'"></cb-button>
+    </cb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <cb-card [title]="'Guidelines and Usage Specifics'">
+      <div class="row">
+        <div class="col-md-12">
+          <br/>
+          <br/>
+
+          <h5>Button Usage Guidelines</h5>
+          <p>VDL includes 4 predefined button styles, each serving its own semantic purpose.</p>
+
+          <h5>Button tags</h5>
+          <p>The .btn classes are designed to be used with the &lt;button&gt; element. However, you can also use
+            these classes on 'a' or 'input' elements (though some browsers may apply a slightly different
+            rendering).</p>
+
+          <p>When using button classes on 'a' elements that are used to trigger in-page functionality (like
+            collapsing content), rather than linking to new pages or sections within the current page, these links
+            should be given a role="button" to appropriately convey their purpose to assistive technologies such as
+            screen readers.</p>
+        </div>
+      </div>
+    </cb-card>
+  </div>
+</div>

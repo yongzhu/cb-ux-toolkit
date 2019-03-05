@@ -1,0 +1,96 @@
+<div class="wrapper-notifications" *ngIf="headerObj.notifications">
+  <cb-drop-box [dropStyle]="'fixed-down-left'">
+    <!-- TODO: bell changes based on length of notifications -->
+    <!-- TODO: notifications-new class needs to be removed when the user clicks and closes the panel the first time itself -->
+    <!-- TODO: notifications-new class needs to be added back in when new notifications is available -->
+    <cb-drop-box-anchor tabindex="0" aria-label="Notifications"><i class="fa fa-bell fa-lg notifications-new"></i></cb-drop-box-anchor>
+    <cb-drop-box-content>
+      <div class="notifications-header">
+        <div class="row">
+          <div class="col"><h5>Notifications</h5></div>
+          <div class="col d-flex justify-content-end"><a title="Settings" href="#" (click)="emitActionType('SETTINGS_ACTION')">Settings</a></div>
+        </div>
+      </div>
+      <ul class="list-style-notifications">
+
+        <!-- TODO: class unread should be applied to unread notifications only. -->
+        <li class="unread" *ngFor="let notification of headerObj.notifications; let i = index" tabindex="0">
+          <div class="row no-gutters">
+            <div class="col-1">
+              <!-- TODO: refactor with ngClass -->
+              <i *ngIf="notification.type === 'note'" class="fa fa-sticky-note is-info" aria-hidden="true"></i>
+              <i *ngIf="notification.type === 'mail'" class="fa fa-envelope is-info" aria-hidden="true"></i>
+              <i *ngIf="notification.type === 'info'" class="fa fa-info-circle is-info" aria-hidden="true"></i>
+              <i *ngIf="notification.type === 'warning'" class="fa fa-exclamation-circle is-warning" aria-hidden="true"></i>
+              <i *ngIf="notification.type === 'error'" class="fa fa-wrench is-error" aria-hidden="true"></i>
+              <!-- TODO: what triggers <i class="fa fa-exclamation-triangle is-warning" aria-hidden="true"></i> -->
+            </div>
+            <div class="col-10">
+              <a (click)="emitActionType(notification.titleAction, 'flag', i)"><strong>{{notification.title}}</strong> {{notification.subText}}</a>
+              <!-- TODO: date pipe for date formats listed -->
+              <aside><span>{{notification.time | date }}</span> | <span>{{notification.platForm}}</span></aside>
+            </div>
+            <div *ngIf="notification.flag === false" (click)="emitActionType(notification.flagAction, 'flag', i)" class="col-1 follow-up"><i class="fa fa-flag"></i></div>
+            <div *ngIf="notification.flag === true" (click)="emitActionType(notification.flagAction, 'flag', i)" class="col-1 follow-up active"><i class="fa fa-flag"></i></div>
+          </div>
+        </li>
+        <!--<li class="unread">-->
+          <!--<div class="row no-gutters">-->
+            <!--<div class="col-1"><i class="fa fa-envelope is-info"></i></div>-->
+            <!--<div class="col-10">-->
+              <!--<a><strong>Jamie Pines has responded to your email.</strong> Good Morning Joseph, I am interested in this-->
+                <!--position</a>-->
+              <!--<aside><span>5 Hours Ago</span> | <span>Applicant Tracking</span></aside>-->
+            <!--</div>-->
+            <!--<div class="col-1 follow-up"><i class="fa fa-flag"></i></div>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li class="unread">-->
+          <!--<div class="row no-gutters">-->
+            <!--<div class="col-1"><i class="fa fa-info-circle is-info" aria-hidden="true"></i></div>-->
+            <!--<div class="col-10">-->
+              <!--<a><strong>Your coworker (Chandra McClain) has added a note. Candidate hasn't been responding</strong></a>-->
+              <!--<aside><span>Yesterday at 12:31pm</span> | <span>Sourcing Platform: Search</span></aside>-->
+            <!--</div>-->
+            <!--<div class="follow-up active col-1"><i class="fa fa-flag "></i></div>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li class="unread">-->
+          <!--<div class="row no-gutters">-->
+            <!--<div class="col-1"><i class="fa fa-exclamation-circle is-warning" aria-hidden="true"></i></div>-->
+            <!--<div class="col-10">-->
+              <!--<a><strong>Your coworker (Chandra McClain) has added a note. Candidate hasn't been responding</strong></a>-->
+              <!--<aside><span>Yesterday at 12:31pm</span> | <span>Sourcing Platform: Search</span></aside>-->
+            <!--</div>-->
+            <!--<div class="col-1 follow-up"><i class="fa fa-flag"></i></div>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<div class="row no-gutters">-->
+            <!--<div class="col-1"><i class="fa fa-wrench is-error" aria-hidden="true"></i></div>-->
+            <!--<div class="col-10">-->
+              <!--<a><strong>Your coworker (Chandra McClain) has added a note. Candidate hasn't been responding</strong></a>-->
+              <!--<aside><span>Yesterday at 12:31pm</span> | <span>Sourcing Platform: Search</span></aside>-->
+            <!--</div>-->
+            <!--<div class="col-1 follow-up"><i class="fa fa-flag"></i></div>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<div class="row no-gutters">-->
+            <!--<div class="col-1"><i class="fa fa-exclamation-triangle is-warning" aria-hidden="true"></i></div>-->
+            <!--<div class="col-10">-->
+              <!--<a><strong>Your coworker (Chandra McClain) has added a note. Candidate hasn't been responding</strong></a>-->
+              <!--<aside><span>Yesterday at 12:31pm</span> | <span>Sourcing Platform: Search</span></aside>-->
+            <!--</div>-->
+            <!--<div class="col-1 follow-up"><i class="fa fa-flag"></i></div>-->
+          <!--</div>-->
+        <!--</li>-->
+      </ul>
+      <div class="notifications-footer">
+        <div class="row">
+          <div class="col d-flex justify-content-center cursor"><a  href="#" (click)="emitActionType('SHOW_ALL_NOTIFICATIONS_ACTION')" title="See All Notifications">See All Notifications</a></div>
+        </div>
+      </div>
+    </cb-drop-box-content>
+  </cb-drop-box>
+</div>

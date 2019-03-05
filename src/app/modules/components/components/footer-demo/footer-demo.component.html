@@ -1,0 +1,35 @@
+<h1>Footer</h1>
+<cb-card>
+  <mat-tab-group>
+    <mat-tab label='Demo'>
+      <div class="tab-content">
+        <section class="demo-controls">
+          <cb-button [title]="'Toggle Footer'" [button-style]="'default'" (click)="updateFooter()"></cb-button>
+          <cb-button [title]="'Toggle Inverted Footer'" [button-style]="'default'"
+                     (click)="updateInvertedFooter()"></cb-button>
+        </section>
+        <cb-footer *ngIf="isFooterToggled==true || isInvertedFooterToggled==true" [inverted]="isInvertedFooterToggled">
+          <footer-items>
+            <nav>
+              <ul class="list-footer">
+                <li><a href="#" title="Terms & Conditions">Terms & Conditions</a></li>
+                <li><a class="active" href="#" title="Security & Privacy">Security & Privacy</a></li>
+                <li><a href="#" title="Advertise With Us">Advertise With Us</a></li>
+                <li><a href="#" title="Partners & Affiliates">Partners & Affiliates</a></li>
+              </ul>
+            </nav>
+          </footer-items>
+        </cb-footer>
+      </div>
+    </mat-tab>
+    <mat-tab label='Documentation'>
+      <div class="tab-content">
+        <app-codeblock [codeString]="codeFooter1" language="html"></app-codeblock>
+        <app-codeblock [codeString]="codeFooter2" language="html"></app-codeblock>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</cb-card>
+
+
+

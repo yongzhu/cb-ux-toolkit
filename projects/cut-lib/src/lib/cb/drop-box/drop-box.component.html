@@ -1,0 +1,12 @@
+<div class="drop-box-wrapper {{dropStyle}}"
+     [class.open-on-hover]="hoverEnable"
+     [class.open]="open.isOpen">
+  <span class="arrow">
+    <ng-content select="cb-drop-box-anchor"></ng-content>
+  </span>
+  <div class="drop-panel-wrapper">
+    <div class="drop-panel">
+      <ng-content select="cb-drop-box-content"></ng-content>
+    </div>
+  </div>
+</div>

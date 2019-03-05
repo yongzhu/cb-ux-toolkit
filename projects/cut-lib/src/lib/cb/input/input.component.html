@@ -1,0 +1,64 @@
+<span class="vdl-input">
+    <div class="form-group">
+
+        <div class="{{status}}">
+
+            <!--Text Component-->
+            <label class="control-label"
+                   *ngIf="hidelabel != 'hide-label' && (inputType =='text' || inputType=='number') " for="textInput">
+                {{labelName}}
+                <ng-content select="label-content"></ng-content>
+            </label>
+
+                <input *ngIf="inputType == 'text' && !typeahead" type="{{inputType}}" placeholder="{{placeholderText}}"
+                       [class.input-with-icon-left]="iconPosition=='left'"
+                       [class.input-with-icon-right]="iconPosition=='right'"
+                       [ngClass]="classList"
+                       [required]="required"
+                       [ngModel]="ngModelValue"
+                       (ngModelChange)="ngModelChange($event)"
+                       id="textInput" #inputText>
+
+                <input *ngIf="inputType == 'text' && typeahead" type="{{inputType}}" placeholder="{{placeholderText}}"
+                       [class.input-with-icon-left]="iconPosition=='left'"
+                       [class.input-with-icon-right]="iconPosition=='right'"
+                       [ngClass]="classList"
+                       [required]="required" autocomplete='off'
+                       [ngModelOptions]="{standalone: true}"
+                       [ngModel]="ngModelValue"
+                       (ngModelChange)="ngModelChange($event)"
+                       [typeahead]="typeaheadFn"
+                       [typeaheadOptionField]="typeaheadOption"
+                       [typeaheadWaitMs]="typeaheadWaitTime"
+                       [typeaheadMinLength]="typeaheadMinLength"
+                       id="textInput" #inputText>
+                <span>
+                  <i *ngIf="inputType == 'text' && icon"
+                     [class.icon-left]='iconPosition=="left"'
+                     [class.icon-right]='iconPosition=="right"'
+                     [ngClass]="icon"
+                     aria-hidden="true" id="inputText.style.width"></i>
+                </span>
+
+            <input *ngIf="inputType == 'number'" type="{{inputType}}" [ngClass]="classList"
+                   placeholder="{{placeholderText}}"
+                   id="numberInput">
+            <label *ngIf="status == 'has-error'" class="error-message">{{errormessage}}</label>
+
+        </div>
+
+        <label *ngIf="inputType == 'radio'" [ngClass]="classList">
+            <input *ngIf="inputType == 'radio'" type="{{inputType}}"
+                   placeholder="{{placeholderText}}"
+                   id="{{inputId}}" value="{{inputValue}}"> {{labelName}}
+        </label>
+
+        <label *ngIf="inputType == 'checkbox'" [ngClass]="classList">
+            <input *ngIf="inputType == 'checkbox'" type="{{inputType}}"
+                   placeholder="{{placeholderText}}"
+                   id="{{inputId}}" value="{{inputValue}}"> {{labelName}}
+        </label>
+    </div>
+</span>
+
+

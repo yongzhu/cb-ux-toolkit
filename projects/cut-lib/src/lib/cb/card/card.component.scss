@@ -1,0 +1,177 @@
+@import "../../../stylesheets/cb-vdl/cb-variables";
+@import "../../../stylesheets/cb-vdl/cb-bootstrap-variables";
+@import "../../../stylesheets/cb-vdl/cb-utilities";
+
+//--TO Do : Start-----The code within this block gets deprecated once the new card stardards are implemented----
+$cardMarginBottom: $margin-base * 2;
+
+@mixin card-height($unit) {
+  &.card-height-#{$unit}x {
+    height: $cardHeightUnit*$unit + (($unit - 1)  * $cardMarginBottom);
+  }
+}
+
+@mixin cardHeight($unit) {
+  .cb-card {
+    &.card-height-#{$unit}x {
+      @if $unit % 2 == 0 or $unit == 1 {
+        height: $cardHeightUnit*$unit + (($unit - 1)  * $cardMarginBottom);
+
+      } @else {
+        height: $cardHeightUnit*$unit + (($unit - 1)  * $cardMarginBottom);
+
+      }
+    }
+  }
+}
+
+@for $i from 1 through 8 {
+  @include cardHeight($i)
+}
+
+//---End-----------------------------------------------------------------------------------------------------
+//--TO Do : Start-----The mixin below needs to be a single function that takes in parameters-----------------
+
+@mixin cardHeightSm($unit) {
+  .card-height-sm-#{$unit}x {
+    height: $card-height-sm*$unit + (($unit - 1)  * $card-margin-bottom);
+  }
+}
+
+@mixin cardHeightMd($unit) {
+  .card-height-md-#{$unit}x {
+    height: $card-height-md*$unit + (($unit - 1)  * $card-margin-bottom);
+  }
+}
+
+@mixin cardHeightLg($unit) {
+  .card-height-lg-#{$unit}x {
+    height: $card-height-lg*$unit + (($unit - 1)  * $card-margin-bottom);
+  }
+}
+
+@mixin cardHeightXl($unit) {
+  .card-height-xl-#{$unit}x {
+    height: $card-height-xl*$unit + (($unit - 1)  * $card-margin-bottom);
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, sm)) {
+  @for $i from 1 through 12 {
+    @include cardHeightSm($i)
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, md)) {
+  @for $i from 1 through 12 {
+    @include cardHeightMd($i)
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+  @for $i from 1 through 12 {
+    @include cardHeightLg($i)
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, xl)) {
+  @for $i from 1 through 12 {
+    @include cardHeightXl($i)
+  }
+}
+
+//---End-----------------------------------------------------------------------------------------------------
+
+.cb-card {
+  padding: $padding-alt;
+  position: relative;
+  background-color: $WHITE;
+  box-shadow: $box-shadow-base;
+  border: solid 1px $color-border;
+  border-radius: $border-radius-base;
+  margin-bottom: $card-margin-bottom;
+  .cb-card-header {
+    &:after {
+      clear: both;
+    }
+    border-bottom: solid 1px $color-border;
+  }
+  .cb-card-footer {
+    border-top: solid 1px $color-border;
+    position: absolute;
+    left: $padding-alt;
+    right: $padding-alt;
+    bottom: $padding-alt;
+  }
+
+  //TODO white-space: nowrap is a temporary solution for proper Download png image and this effect has to be fixed in task with "domtoimage" removal.
+  .cb-card-title {
+    font-size: $font-size-h3;
+    color: $color-heading;
+    margin: 0 0 $padding-alt/2 0;
+    text-transform: capitalize;
+    display: inline-flex;
+    font-weight: bold;
+    align-items: start;
+    white-space: nowrap;
+  }
+  .card-error {
+    height: calc(100% - 30px);
+    background-color: $gray-lighter;
+    .error-cover {
+      width: 100%;
+      height: calc(100% - 35px);
+      img {
+        width: 100%;
+      }
+    }
+    .error-message {
+      padding: $padding-base;
+      font-size: $font-size-base;
+      color: $gray-dark;
+    }
+  }
+  .dropdown-toggle {
+    &:after {
+      display: none;
+    }
+  }
+  .dropdown {
+    float: right;
+  }
+  .fa-cloud-download {
+    float: right;
+    margin: 0 $margin-base/2;
+    font-size: 1.5em;
+  }
+  .cb-card-header-link {
+    float: right;
+    cursor: pointer;
+    padding-left: $padding-base;
+  }
+  .cb-card-header-label {
+    float: right;
+    font-size: $font-size-base;
+    @extend %hyperlink;
+  }
+  .dropdown-menu {
+    left: initial;
+    right: 0px;
+  }
+
+  .cb-card-header-divider {
+    color: $color-body;
+    padding: 0  $padding-alt/2;
+  }
+}
+
+:host /deep/ .tooltip-inner {
+  max-width: 400px;
+}
+
+.clickable {
+  cursor: pointer;
+  &:hover {
+    box-shadow: 3px 3px 3px #888888;
+  }
+}
