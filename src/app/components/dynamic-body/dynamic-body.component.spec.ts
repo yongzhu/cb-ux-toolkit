@@ -10,7 +10,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { DynamicBodyComponent } from "./dynamic-body.component";
 
 @Component({
-  selector: "cb-accordion", // tslint:disable-line:component-selector
+  selector: "cut-accordion", // tslint:disable-line:component-selector
   template: `<ng-content></ng-content>`
 })
 export class MockCbAccordionComponent {
@@ -28,7 +28,7 @@ export class MockCbAccordionComponent {
 }
 
 @Component({
-  selector: "cb-accordion-item", // tslint:disable-line:component-selector
+  selector: "cut-accordion-item", // tslint:disable-line:component-selector
   template: `<div class="panel" [ngClass]="panelClass"><ng-content></ng-content></div>`
 })
 export class MockCbAccordionItemComponent {
@@ -64,33 +64,33 @@ export class MockCbAccordionItemComponent {
   public onShow: EventEmitter<void> = new EventEmitter<void>(); // tslint:disable-line:no-output-on-prefix
 }
 
-@Component({
-  selector: "cb-card", // tslint:disable-line:component-selector
-  template: `
-<div class="cb-card {{classList}}" (click)="clicked()" [ngClass]="{'has-title':title !=='', 'has-chart':chart,'custom-title':customTitle}">
-</div>`
-})
-export class MockCbCardComponent {
-  @Input() title = "";
-  @Input() height: any;
-  @Input() chart = false;
-  @Input() customTitle = false;
-  @Input() loading = false;
-  @Input() errorState = false;
-  @Input() errorStateMessage = "Sorry, data not available.";
-  @Input() footerMessage = "";
-  @Input() menuItems: any[];
-  @Input() errorImage: string;
-  @Input() saveImage = false;
-  @Input() dropdownBoxId?: string;
-  @Input() isHeader: boolean;
-  @Input() titleTooltip: string;
-  @Input() useTooltipIcon: boolean;
-  @Input() isClickable = false;
-  @Input() useTooltipIconOptions: any = {};
-  @Output() menuAction = new EventEmitter();
-  @Output() clickedAction = new EventEmitter();
-}
+// @Component({
+//   selector: "cb-card", // tslint:disable-line:component-selector
+//   template: `
+// <div class="cb-card {{classList}}" (click)="clicked()" [ngClass]="{'has-title':title !=='', 'has-chart':chart,'custom-title':customTitle}">
+// </div>`
+// })
+// export class MockCbCardComponent {
+//   @Input() title = "";
+//   @Input() height: any;
+//   @Input() chart = false;
+//   @Input() customTitle = false;
+//   @Input() loading = false;
+//   @Input() errorState = false;
+//   @Input() errorStateMessage = "Sorry, data not available.";
+//   @Input() footerMessage = "";
+//   @Input() menuItems: any[];
+//   @Input() errorImage: string;
+//   @Input() saveImage = false;
+//   @Input() dropdownBoxId?: string;
+//   @Input() isHeader: boolean;
+//   @Input() titleTooltip: string;
+//   @Input() useTooltipIcon: boolean;
+//   @Input() isClickable = false;
+//   @Input() useTooltipIconOptions: any = {};
+//   @Output() menuAction = new EventEmitter();
+//   @Output() clickedAction = new EventEmitter();
+// }
 
 describe("DynamicBodyComponent", () => {
   beforeEach(async(async () => {
@@ -101,8 +101,7 @@ describe("DynamicBodyComponent", () => {
       declarations: [
         DynamicBodyComponent,
         MockCbAccordionComponent,
-        MockCbAccordionItemComponent,
-        MockCbCardComponent
+        MockCbAccordionItemComponent
       ]
     }).compileComponents();
   }));

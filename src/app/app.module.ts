@@ -15,10 +15,8 @@ import { AppRoutes } from "./app.routes";
 // Components
 import { AppComponent } from "./app.component";
 
-import { ComponentsModule as AppComponentsModule } from "./components/components.module";
-
 import { ColorPaletteDemoModule } from "./modules/color-palette-demo/color-palette-demo.module";
-import { ComponentsModule } from "./modules/components/components.module";
+import { ComponentsModule } from "./components/components.module";
 import { PlatformsModule } from "./modules/platforms/platforms.module";
 import { WelcomeModule } from "./modules/welcome/welcome.module";
 
@@ -32,7 +30,6 @@ import { TitleService } from "./services/title.service";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppComponentsModule,
     AccordionModule,
     AccordionItemModule,
     CBFrameworkModule,

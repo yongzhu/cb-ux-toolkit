@@ -3,7 +3,7 @@ import { Directive } from "@angular/core";
 import { AccordionItemComponent } from "../accordion-item/accordion-item.component";
 
 @Component({
-  selector: "cb-accordion",
+  selector: "cut-accordion",
   templateUrl: "./accordion.component.html",
   styleUrls: ["./accordion.component.scss"]
 })

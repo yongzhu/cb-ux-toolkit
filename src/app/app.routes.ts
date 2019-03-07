@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 export const DEFAULT_ROUTES: Routes = [
   { path: "color", loadChildren: "./modules/color-palette-demo/color-palette-demo.module#ColorPaletteDemoModule" },
-  { path: "components", loadChildren: "./modules/components/components.module#ComponentsModule" },
+  { path: "components", loadChildren: "./components/components.module#ComponentsModule" },
   { path: "platforms", loadChildren: "./modules/platforms/platforms.module#PlatformsModule" },
   { path: "welcome", loadChildren: "./modules/welcome/welcome.module#WelcomeModule" },
   { path: "**", redirectTo: "welcome" }

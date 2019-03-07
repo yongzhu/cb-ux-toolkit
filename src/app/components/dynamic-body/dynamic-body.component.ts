@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { routes } from "../../modules/components/components.routes";
+import { routes } from "../components.routes";
 
 @Component({
   selector: "app-dynamic-body",

@@ -13,7 +13,7 @@ import {
 import { AccordionComponent } from "../accordion/accordion.component";
 
 @Component({
-  selector: "cb-accordion-item",
+  selector: "cut-accordion-item",
   templateUrl: "./accordion-item.component.html",
   styleUrls: ["./accordion-item.component.scss"]
 })

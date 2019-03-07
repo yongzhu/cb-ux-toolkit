@@ -2,7 +2,7 @@ import { APP_BASE_HREF } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { ColorPaletteDemoComponent } from "./components/color-palette-demo/color-palette-demo.component";
+import { ColorPaletteDemoComponent } from "./color-palette-demo.component";
 
 export const routes: Routes = [
   { path: "color", component: ColorPaletteDemoComponent }

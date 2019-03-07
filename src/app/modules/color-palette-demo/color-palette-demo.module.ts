@@ -5,7 +5,7 @@ import {
   ClipboardModule
 } from "cut";
 
-import { ColorPaletteDemoComponent } from "./components/color-palette-demo/color-palette-demo.component";
+import { ColorPaletteDemoComponent } from "./color-palette-demo.component";
 
 import { ColorPaletteDemoRoutes } from "./color-palette-demo.routes";
 
