@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "cb-footer-standard",
+  selector: "cut-footer-standard",
   templateUrl: "./footer-standard.component.html",
   styleUrls: [ "./footer-standard.component.scss" ]
 })

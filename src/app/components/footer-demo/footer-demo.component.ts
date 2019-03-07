@@ -11,7 +11,7 @@ export class FooterDemoComponent {
   isInvertedFooterToggled = false;
 
   codeFooter1 = `
-     <cb-footer *ngIf="isFooterToggled==true" [inverted]="false">
+     <cut-footer *ngIf="isFooterToggled==true" [inverted]="false">
         <footer-items>
           <nav>
             <ul class="list-footer">
@@ -22,10 +22,10 @@ export class FooterDemoComponent {
             </ul>
           </nav>
         </footer-items>
-      </cb-footer>
+      </cut-footer>
   `;
   codeFooter2 = `
-     <cb-footer *ngIf="isInvertedFooterToggled==true" [inverted]="true">
+     <cut-footer *ngIf="isInvertedFooterToggled==true" [inverted]="true">
         <footer-items>
           <nav>
             <ul class="list-footer">
@@ -36,7 +36,7 @@ export class FooterDemoComponent {
             </ul>
           </nav>
         </footer-items>
-      </cb-footer>
+      </cut-footer>
   `;
 
   updateFooter() {

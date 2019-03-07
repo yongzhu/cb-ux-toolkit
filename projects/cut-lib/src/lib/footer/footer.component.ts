@@ -8,7 +8,7 @@ import { FooterConfig } from "./footer.model";
 import { FooterService } from "./footer.service";
 
 @Component({
-  selector: "cb-footer",
+  selector: "cut-footer",
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.scss"]
 })
