@@ -1,8 +1,8 @@
-# Angular Schematics - CBES VDL
+# Angular Schematics - CUT
 
 Angular 6 introduced schematics, *"a workflow tool for the modern web"*. Schematics can apply transforms to projects such as creating new components, updating dependencies, or configuration options.
 
-For the CBES VDL there is one primary schematic that has been created, an **install**.
+For CUT there is one primary schematic that has been created, an **install**.
 
 ## Overview
 

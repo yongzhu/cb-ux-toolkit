@@ -7,7 +7,7 @@ import { getValueFromObject, latinize } from "../type-ahead/typeahead-utils";
 import { TypeaheadDirective } from "../type-ahead/typeahead.directive";
 
 @Component({
-  selector: "wfa-typeahead-container",
+  selector: "cut-typeahead-container",
   templateUrl: "./typeahead-container.component.html",
   styleUrls: ["./typeahead-container.component.scss"],
   encapsulation: ViewEncapsulation.None

@@ -142,8 +142,6 @@ function addStyleImportsToStyles(options: ISchema) {
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 */
 
-@import "../node_modules/cut/cb-vdl.css";
-
 /* CUT (CB-UX-Toolkit) */
 @import "../node_modules/cut/cut.css";
 

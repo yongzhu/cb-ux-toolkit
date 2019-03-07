@@ -166,7 +166,7 @@
       "root": "projects/cut-lib",
       "sourceRoot": "projects/cut-lib/src",
       "projectType": "library",
-      "prefix": "cbes",
+      "prefix": "cut",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"

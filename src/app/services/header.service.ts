@@ -6,14 +6,14 @@ import { HeaderData } from "cut/lib/framework/header.models";
 
 const HEADER_DATA: HeaderData = {
   "logoPath": {
-    // "externalPath": "https://www.careerbuilder.com"
+    "externalPath": "https://www.careerbuilder.com",
     "internalPath": "/platforms"
   },
   "hasGlobalAdmin": false,
   "product": {
-    "title": "Career Builder Employment Screening",
-    "altTxt": "CBES",
-    // "externalPath": "https://www.careerbuilder.com"
+    "title": "Career Builder",
+    "altTxt": "CUT",
+    "externalPath": "https://www.careerbuilder.com",
     "internalPath": "/platforms"
   },
   "newFeatures": { "hidden": false },

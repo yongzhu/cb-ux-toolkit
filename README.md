@@ -1,12 +1,12 @@
-# CareerBuilder Employee Screening Visual Design Library - CBES VDL
+# CareerBuilder UX Toolkit - (CUT)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5. Please refer to the post [The Angular Library Series - Creating a Library in Angular 6](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5) to better understand this project's structure.
 
 ## Overview
 
-The CBES VDL is an extension of [CB's VDL](https://github.com/cbdr/cb-vdl) and [oneCB initiative](https://company-40162.frontify.com/d/6xYC97AVwz1E/style-guide). The goal of this project is to build off of the the design library presented in the CBL while satisfying the needs of CBES's unique functionality all the while staying true to the oneCB initiative.
+CUT is a rebuild and restructure of [CB's VDL](https://github.com/cbdr/cb-vdl) and [oneCB initiative](https://company-40162.frontify.com/d/6xYC97AVwz1E/style-guide). The goal of this project is to build off of the the design library presented in the CBVDL but update UX standards and improve the library as much as possible.
 
-*Note: At the creation of this project the cb-vdl project was no longer maintained. The project does not contain a direct dependency on the cb-vdl library but opts to use its code as a base.*
+*Note: At the creation of this project the cb-vdl project was no longer maintained. The project does not contain a direct dependency on the cb-vdl library but opts to use its code as a starting point.*
 
 ## Using the Library
 
@@ -27,11 +27,11 @@ npm run ng -- add cut
 
 ## Project Structure
 
-This Angular 6 library project is built using the new library functionality presented in the Angular-CLI in version 6. It is constructed in a way where the library is contained within an Angular "workspace". At the root of this workspace is a standard Angular application. This application serves as the main demo for the CBES VDL.
+This Angular 6 library project is built using the new library functionality presented in the Angular-CLI in version 6. It is constructed in a way where the library is contained within an Angular "workspace". At the root of this workspace is a standard Angular application. This application serves as the main demo for the CUT.
 
 Also within this workspace is a `projects/` directory. The `cut-lib` project represents the `cut` library.
 
-*Note: To differentiate between the demo app and the library, the application is named `cut-app` and the project name for the library is `cbes-cdl-lib`. External to this workspace the VDL is known as its NPM package name, `cut`.*
+*Note: To differentiate between the demo app and the library, the application is named `cut-app` and the project name for the library is `cut-lib`. External to this workspace the VDL is known as its NPM package name, `cut`.*
 
 For a more in-depth information regarding the library look in the [project folder](/projects/cut-lib).
 
@@ -53,13 +53,13 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 
 Code scaffolding must be targeted to a specific project within the workspace! 
 
-**Example:** Run `npm run ng -- generate component component-name --project=cbes-vld-lib` to generate a new component in the library. You can also use `npm run ng -- ng generate directive|pipe|service|class|guard|interface|enum|module`. To scaffold components in the web application use *cut-app* instead.
+**Example:** Run `npm run ng -- generate component component-name --project=cut-lib` to generate a new component in the library. You can also use `npm run ng -- ng generate directive|pipe|service|class|guard|interface|enum|module`. To scaffold components in the web application use *cut-app* instead.
 
 *Note: The above example shows how to run the `ng` cli command without needing to install the Angular CLI globally.*
 
 ### Naming Conventions
 
-The prefix `cbes` will be appended to components added to the library automatically. When creating a new component it is unnecessary to add this prefix. All developers should follow the [Naming](https://angular.io/guide/styleguide#naming) conventions spelled out in the Angular Style Guidelines. Specifically, please follow the style guidelines for [component selectors](https://angular.io/guide/styleguide#component-selectors) when creating new components.
+The prefix `cut` will be appended to components added to the library automatically. When creating a new component it is unnecessary to add this prefix. All developers should follow the [Naming](https://angular.io/guide/styleguide#naming) conventions spelled out in the Angular Style Guidelines. Specifically, please follow the style guidelines for [component selectors](https://angular.io/guide/styleguide#component-selectors) when creating new components.
 
 ## Build
 

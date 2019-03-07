@@ -1,6 +1,6 @@
-# CBES VDL
+# CareerBuilder UX Toolkit (CUT)
 
-This project folder contains the source for the **cut** Angular 6 library. This library represents the implementation of the oneCB visual design into a reusable client-side visual design library.
+This project folder contains the source for the **CUT** Angular 6 library. This library represents the implementation of the oneCB visual design into a reusable client-side visual design library.
 
 ## Structure
 

@@ -4,7 +4,7 @@ import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 
 import { filter, map, switchMap } from "rxjs/operators";
 
-const DEFAULT_TITLE = "CBES";
+const DEFAULT_TITLE = "CUT";
 const SEPARATOR = " > ";
 
 @Injectable()
