@@ -1,11 +1,11 @@
 <a href="#mainContent" class="sr-only sr-only-focusable" title="Skip to main content">Skip to main content</a>
 <mat-sidenav-container class="wrapper-framework">
   <mat-sidenav mode="push" [opened]="showSidePanel && (validHeaderObj$ | async)" (openedChange)="closeSidenavOnOutsideClick($event)" class="wrapper-sidenav">
-    <cb-header-slide-panel></cb-header-slide-panel>
+    <cut-header-slide-panel></cut-header-slide-panel>
   </mat-sidenav>
   <div class="d-flex flex-column">
     <section class="central-container">
-      <cb-header (sidenavButtonClick)="toggleSidenav()"></cb-header>
+      <cut-header (sidenavButtonClick)="toggleSidenav()"></cut-header>
       <div class="central-content">
         <ng-content tabindex="-1" id="mainContent" class="container-dynamic-body"></ng-content>
       </div>

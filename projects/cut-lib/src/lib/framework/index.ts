@@ -2,5 +2,5 @@ export {
   LogoPath, Product, HeaderNavItem, AppSwitcherItem, Option, UserProfile,
   HeaderData
 } from "./header.models";
-export { CBFrameworkComponent } from "./cb-framework.component";
-export { CBFrameworkModule } from "./cb-framework.module";
+export { FrameworkComponent } from "./framework.component";
+export { FrameworkModule } from "./framework.module";

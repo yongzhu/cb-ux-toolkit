@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header-app-switcher",
+  selector: "cut-header-app-switcher",
   templateUrl: "./header-app-switcher.component.html",
   styleUrls: ["./header-app-switcher.component.scss"]
 })

@@ -1,4 +1,4 @@
-<div id="cb-select">
+<div id="cut-select">
   <label class="control-label">{{label}}</label>
   <select [ngModel]="ngModelValue" (ngModelChange)="ngModelChange($event)" class="form-control" [disabled]="disabled">
     <option *ngFor="let option of options" [value]="option.value">

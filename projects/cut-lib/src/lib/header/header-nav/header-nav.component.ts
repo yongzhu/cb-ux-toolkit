@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header-nav",
+  selector: "cut-header-nav",
   templateUrl: "./header-nav.component.html",
   styleUrls: ["./header-nav.component.scss"]
 })

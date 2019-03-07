@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
 
-  selector: "cb-loading-indicator",
+  selector: "cut-loading-indicator",
   templateUrl: "./loading-indicator.component.html",
   styleUrls: [ "./loading-indicator.component.scss" ]
 })

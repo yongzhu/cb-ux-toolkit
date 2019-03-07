@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header",
+  selector: "cut-header",
   templateUrl: "./header.component.html",
   styleUrls: [ "./header.component.scss" ]
 })

@@ -11,7 +11,7 @@ export class SelectDemoComponent {
   greeting: any;
 
   codeSelect1 = `
-    <cb-select [label]="'Select a greeting'" [options]="options" [(ngModelValue)]="greeting"></cb-select>
+    <cut-select [label]="'Select a greeting'" [options]="options" [(ngModelValue)]="greeting"></cut-select>
   `;
 
   codeSelect2 = `

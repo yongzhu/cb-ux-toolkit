@@ -12,55 +12,55 @@ export class InputDemoComponent {
 
   codeInput1 = `
     <span>input value: {{inputValue}}</span>
-    <cb-input [input-type]=""text"" [hide-label]=""hide-label""
+    <cut-input [input-type]=""text"" [hide-label]=""hide-label""
               [label-name]=""Demo Hide Label Name""
               [required]=""true"" [placeholder]=""placeholder hide text label""
-              [(ngModelValue)]="inputValue"></cb-input>
+              [(ngModelValue)]="inputValue"></cut-input>
 
   `;
 
   codeInput2 = `
-    <cb-input [label-name]=""Demo Text Label Name"" [input-type]=""text""
-              [required]=""true"" [placeholder]=""placeholder text""></cb-input>
+    <cut-input [label-name]=""Demo Text Label Name"" [input-type]=""text""
+              [required]=""true"" [placeholder]=""placeholder text""></cut-input>
   `;
 
   codeInput3 = `
-    <cb-input [label-name]=""Demo Text Label Name"" [input-type]=""text""
+    <cut-input [label-name]=""Demo Text Label Name"" [input-type]=""text""
               [required]=""true"" [placeholder]=""placeholder text"">
       <label-content>
         : My Customize Label. Extend more description.
       </label-content>
-    </cb-input>
+    </cut-input>
 
   `;
 
   codeInput4 = `
-    <cb-input [label-name]=""Demo Text Label Name With Icon Left"" [input-type]=""text""
+    <cut-input [label-name]=""Demo Text Label Name With Icon Left"" [input-type]=""text""
       [required]=""true"" [placeholder]=""placeholder text with icon""
-      [icon]=""fa fa-check"" [iconPosition]=""left""></cb-input>
+      [icon]=""fa fa-check"" [iconPosition]=""left""></cut-input>
 `;
 
   codeInput5 = `
-    <cb-input [label-name]=""Demo Text Label Name With Icon Right"" [input-type]=""text""
+    <cut-input [label-name]=""Demo Text Label Name With Icon Right"" [input-type]=""text""
               [required]=""true"" [placeholder]=""placeholder text with icon""
-              [icon]=""fa fa-check"" [iconPosition]=""right""></cb-input>
+              [icon]=""fa fa-check"" [iconPosition]=""right""></cut-input>
   `;
 
   codeInput6 = `
-    <cb-input [label-name]=""Demo Success Text Label Name"" [input-type]=""text""
+    <cut-input [label-name]=""Demo Success Text Label Name"" [input-type]=""text""
               [required]=""true"" [placeholder]=""placeholder text""
-              [status]=""has-success""></cb-input>
+              [status]=""has-success""></cut-input>
   `;
 
   codeInput7 = `
-    <cb-input [label-name]=""Demo Failed Text Label Name"" [input-type]=""text""
+    <cut-input [label-name]=""Demo Failed Text Label Name"" [input-type]=""text""
               [required]=""true"" [placeholder]=""placeholder text""
               [error-message]=""Customizable error message""
-              [status]=""has-error""></cb-input>
+              [status]=""has-error""></cut-input>
   `;
 
   codeInput8 = `
-    <cb-input [input-type]=""text""
+    <cut-input [input-type]=""text""
               [label-name]=""Demo of type ahead""
               [required]="false"
               [(ngModelValue)]="fruitName"
@@ -69,47 +69,47 @@ export class InputDemoComponent {
               [typeaheadFn]="fakeFruitService()"
               [typeaheadOption]=""name""
               [typeaheadWaitTime]="200"
-              [typeaheadMinLength]="1"></cb-input>
+              [typeaheadMinLength]="1"></cut-input>
   `;
 
   codeInput9 = `
-    <cb-input [label-name]=""Demo Number Label Name"" [input-type]=""number""
-          [required]=""true"" [placeholder]=""3"" [hide-label]=""hide-label""></cb-input>
+    <cut-input [label-name]=""Demo Number Label Name"" [input-type]=""number""
+          [required]=""true"" [placeholder]=""3"" [hide-label]=""hide-label""></cut-input>
   `;
 
   codeInput10 = `
-    <cb-input [label-name]=""Demo Number Label Name"" [input-type]=""number""
-          [required]=""true"" [placeholder]=""3""></cb-input>
+    <cut-input [label-name]=""Demo Number Label Name"" [input-type]=""number""
+          [required]=""true"" [placeholder]=""3""></cut-input>
   `;
 
   codeInput11 = `
-    <cb-input [label-name]=""Demo Number Label Name"" [input-type]=""number""
+    <cut-input [label-name]=""Demo Number Label Name"" [input-type]=""number""
             [required]=""true"" [placeholder]=""3"">
       <label-content>
         : My Customize Label. Extend more description.
       </label-content>
 
-    </cb-input>
+    </cut-input>
   `;
 
   codeInput12 = `
-    <cb-input [label-name]=""Demo Success Number Label Name"" [input-type]=""number""
-            [required]=""required"" [placeholder]=""3"" [status]=""has-success""></cb-input>
+    <cut-input [label-name]=""Demo Success Number Label Name"" [input-type]=""number""
+            [required]=""required"" [placeholder]=""3"" [status]=""has-success""></cut-input>
   `;
 
   codeInput13 = `
-    <cb-input [label-name]=""Demo Error Number Label Name"" [input-type]=""number""
-          [required]=""required"" [placeholder]=""3"" [status]=""has-error""></cb-input>
+    <cut-input [label-name]=""Demo Error Number Label Name"" [input-type]=""number""
+          [required]=""required"" [placeholder]=""3"" [status]=""has-error""></cut-input>
   `;
 
   codeInput14 = `
-    <cb-input [label-name]=""Demo Radio Label Name"" [input-type]=""radio""
-            [input-id]="demoRadioId" [input-value]="demoRadioValue"></cb-input>
+    <cut-input [label-name]=""Demo Radio Label Name"" [input-type]=""radio""
+            [input-id]="demoRadioId" [input-value]="demoRadioValue"></cut-input>
   `;
 
   codeInput15 = `
-  <cb-input [label-name]=""Demo Checkbox Label Name"" [input-type]=""checkbox""
-        [input-id]="demoCheckboxId" [input-value]="demoCheckboxValue"></cb-input>
+  <cut-input [label-name]=""Demo Checkbox Label Name"" [input-type]=""checkbox""
+        [input-id]="demoCheckboxId" [input-value]="demoCheckboxValue"></cut-input>
   `;
 
   fakeFruitService() {

@@ -9,7 +9,7 @@ export class LoadingIndicatorDemoComponent {
   isLoading = false;
 
   codeLoadingIndicator1 = `
-    <cb-loading-indicator [loading]="isLoading"></cb-loading-indicator>
+    <cut-loading-indicator [loading]="isLoading"></cut-loading-indicator>
   `;
 
   codeLoadingIndicator2 = `

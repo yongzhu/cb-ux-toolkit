@@ -12,7 +12,7 @@ export class HeaderDemoComponent {
   isSdToggled = false;
 
   codeHeader1 = `
-    <cb-header>
+    <cut-header>
       <nav-brand>
         <a class="navbar-brand" href="'http://www.careerbuilder.com'">
           <img [attr.src]="'images/CB-logo.png'">
@@ -23,11 +23,11 @@ export class HeaderDemoComponent {
           navigation item
         </span>
       </nav-items>
-    </cb-header>
+    </cut-header>
   `;
 
   codeHeader2 = `
-    <cb-header>
+    <cut-header>
       <nav-brand>
         <a class="navbar-brand" href="'https://supplydemand.careerbuilder.com'">
           <img [attr.src]="'images/Supply_Demand_Beta-Logo.png'">
@@ -38,11 +38,11 @@ export class HeaderDemoComponent {
           navigation item
         </span>
       </nav-items>
-    </cb-header>
+    </cut-header>
   `;
 
   codeHeader3 = `
-    <cb-header>
+    <cut-header>
       <nav-brand>
         <a class="navbar-brand" href="'https://supplydemand.careerbuilder.com'">
           <img [attr.src]="'images/Supply_Demand-Logo.png'">
@@ -53,7 +53,7 @@ export class HeaderDemoComponent {
           navigation item
         </span>
       </nav-items>
-    </cb-header>
+    </cut-header>
   `;
 
   updateHeader(toggleType: string) {

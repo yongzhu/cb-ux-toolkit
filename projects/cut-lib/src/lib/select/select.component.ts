@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
-  selector: "cb-select",
+  selector: "cut-select",
   templateUrl: "./select.component.html",
   styleUrls: ["./select.component.css"]
 })

@@ -105,7 +105,7 @@ function addDefaultModulesToRootConfig(options: ISchema) {
       "AccordionItemModule",
       "ButtonModule",
       "CardModule",
-      "CBFrameworkModule",
+      "FrameworkModule",
       "SelectModule",
       "CutLibModule"
     ].forEach((cutModule) => {

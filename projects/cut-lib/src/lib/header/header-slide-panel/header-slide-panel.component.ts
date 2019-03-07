@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header-slide-panel",
+  selector: "cut-header-slide-panel",
   templateUrl: "./header-slide-panel.component.html",
   styleUrls: ["./header-slide-panel.scss"]
 })

@@ -4,7 +4,7 @@ import { BackgroundTheme, BgThemeEnum } from "../../theme/theme.class";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header-user-profile",
+  selector: "cut-header-user-profile",
   templateUrl: "./header-user-profile.component.html",
   styleUrls: ["./header-user-profile.component.scss"]
 })

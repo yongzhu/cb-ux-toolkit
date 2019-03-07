@@ -4,13 +4,13 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 
 import { FooterModule } from "../footer/footer.module";
 import { HeaderModule } from "../header/header.module";
-import { CBFrameworkComponent } from "./cb-framework.component";
+import { FrameworkComponent } from "./framework.component";
 
 @NgModule({
   imports: [CommonModule, MatSidenavModule, FooterModule, HeaderModule],
-  exports: [CBFrameworkComponent],
-  declarations: [CBFrameworkComponent]
+  exports: [FrameworkComponent],
+  declarations: [FrameworkComponent]
 })
 
-export class CBFrameworkModule {
+export class FrameworkModule {
 }

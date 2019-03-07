@@ -2,17 +2,17 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from "@a
 
 import { Observable } from "rxjs";
 
-import { FooterConfig } from "./../footer/footer.model";
-import { FooterService } from "./../footer/footer.service";
-import { HeaderDataInterface } from "./../header/header.model";
-import { HeaderService } from "./../header/header.service";
+import { FooterConfig } from "../footer/footer.model";
+import { FooterService } from "../footer/footer.service";
+import { HeaderDataInterface } from "../header/header.model";
+import { HeaderService } from "../header/header.service";
 
 @Component({
-  selector: "cb-framework",
-  templateUrl: "./cb-framework.component.html",
-  styleUrls: ["./cb-framework.component.scss"]
+  selector: "cut-framework",
+  templateUrl: "./framework.component.html",
+  styleUrls: ["./framework.component.scss"]
 })
-export class CBFrameworkComponent implements OnInit {
+export class FrameworkComponent implements OnInit {
   showSidePanel = false;
   screenTrigger = 991;
   validHeaderObj$: Observable<boolean>;

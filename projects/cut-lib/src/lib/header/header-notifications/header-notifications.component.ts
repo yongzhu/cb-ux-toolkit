@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header-notifications",
+  selector: "cut-header-notifications",
   templateUrl: "./header-notifications.component.html",
   styleUrls: ["./header-notifications.component.scss"]
 })

@@ -1,3 +1,4 @@
+//NOTE: I don't believe we need this component
 import { Component, EventEmitter, Input, OnInit } from "@angular/core";
 import { Directive, Output } from "@angular/core";
 
@@ -23,7 +24,7 @@ export class InputTypeClass {
 }
 
 @Component({
-  selector: "cb-input",
+  selector: "cut-input",
   templateUrl: "./input.component.html",
   styleUrls: ["./input.component.scss"]
 })

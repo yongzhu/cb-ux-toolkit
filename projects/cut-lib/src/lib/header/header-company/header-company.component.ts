@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HeaderService } from "../header.service";
 
 @Component({
-  selector: "cb-header-company",
+  selector: "cut-header-company",
   templateUrl: "./header-company.component.html",
   styleUrls: [ "./header-company.component.scss" ]
 })
