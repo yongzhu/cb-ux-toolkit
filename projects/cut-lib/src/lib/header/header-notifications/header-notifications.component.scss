@@ -1,0 +1,116 @@
+@import "../../../stylesheets/cut-core";
+
+.wrapper-notifications /deep/ {
+  .drop-panel-wrapper {
+    top: $padding-base * 2 !important;
+    width: 270px !important;
+    right: -$padding-base/2 !important;
+    // @media(min-width: map_get($grid-breakpoints, sm)) {
+    //   width: 400px !important;
+    // }
+    border-top: solid 4px $color-border;
+  }
+  .drop-panel{
+    border-radius:  0 0 $border-radius-base $border-radius-base !important;
+  }
+  cb-drop-box-anchor {
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.notifications-header {
+  padding: $padding-base;
+  border-bottom: solid 1px $color-border;
+  h5 {
+    margin-bottom: 0;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.notifications-footer {
+  padding: $padding-base;
+  border-top: solid 1px $color-border;
+}
+
+.notifications-new {
+  position: relative;
+  &:after {
+    background: $accent-delta;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -5px;
+    right: -1px;
+    border: solid 1px $WHITE;
+  }
+}
+
+.list-style-notifications {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  background: $WHITE;
+  border-radius: $border-radius-base;
+  height: 350px;
+  overflow-y: auto;
+  li {
+    padding: $padding-base;
+    border-bottom: solid 1px $gray-lighter;
+    &.unread {
+      background: rgba($accent-beta-lighter, .25);
+    }
+    &:hover {
+      background: $gray-lightest;
+    }
+    &:active {
+      background: $gray-lighter;
+
+    }
+    &:last-child {
+      border: none;
+    }
+    a {
+      color: $gray-dark;
+      display: block;
+      cursor: pointer;
+      display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      height: $font-size-base * 1.5 * 2; /* Fallback for non-webkit */
+      margin: 0 auto;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover {
+        color: $gray-darker;
+        text-decoration: underline;
+      }
+    }
+    aside {
+      color: $gray;
+      font-size: 12px;
+    }
+
+  }
+}
+
+.follow-up {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  color: $gray;
+  &.active {
+    color: $accent-eta;
+  }
+  &:hover {
+    color: $accent-eta-light;
+  }
+  &:active {
+    color: $accent-zeta-darker;
+  }
+}

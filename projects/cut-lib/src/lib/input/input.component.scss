@@ -1,0 +1,56 @@
+@import "../../stylesheets/variables/cut-theme-variables";
+
+.vdl-input {
+  label {
+    color: black;
+
+  }
+
+  input {
+    color: black;
+  }
+
+  .has-error {
+    input {
+      // TODO: Shouldnt this be from colors?
+      border-color: #DD4D39;
+    }
+
+    .error-message {
+      // TODO: Shouldnt this be from colors?
+      color: #DD4D39;
+    }
+  }
+
+  .radio {
+    input {
+      // TODO: Shouldnt this be from colors?
+      background-color: limegreen;
+    }
+  }
+
+  i {
+    margin-top: -25px;
+    color: black;
+  }
+
+  .input-with-icon-left {
+    padding-left: 33px;
+  }
+
+  .input-with-icon-right {
+    padding-right: 33px;
+  }
+
+  .icon-left {
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+
+  }
+  .icon-right {
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../stylesheets/variables/cut-theme-variables";
+
+footer {
+  background: $gray-lightest;
+  border-top: solid 1px $color-border;
+  font-size: $font-size-small;
+  height: 100%;
+}
+
+.footer-main-wrapper {
+  padding-top: $padding-base;
+}
+
+.footer-sub-wrapper {
+  padding-top: $padding-base/2;
+  padding-bottom: $padding-base/2;
+  // @media (max-width: map-get($grid-breakpoints, md)) {
+  //   text-align: center;
+  // }
+}
+
+hr {
+  margin: 0;
+}
+
+.list-style-footer {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    text-align: center;
+    padding: 0 $padding-base;
+    margin-bottom: $margin-base;
+
+    // @media (min-width: map-get($grid-breakpoints, md)) {
+    //   display: inline-flex;
+    //   text-align: left;
+    //   &:first-child {
+    //     padding-left: 0;
+    //   }
+    //   &:last-child {
+    //     padding-right: 0;
+    //   }
+    // }
+
+    &.v-rule {
+      padding: 0;
+      // @media (max-width: map-get($grid-breakpoints, md)) {
+      //   display: none;
+      // }
+    }
+
+    a {
+      color: $color-body;
+      margin-left: $margin-base;
+    }
+  }
+}
+
+.list-aligned-right {
+  // @media (min-width: map-get($grid-breakpoints, lg)) {
+  //   text-align: right;
+  // }
+}
+
+.copy-light {
+  color: $gray-darker;
+}

@@ -1,5 +1,4 @@
-@import "../../../../../../dist/cut/variables.scss";
-@import "../../../../../../dist/cut/cb-vdl.scss";
+@import "../../../../../../dist/cut/cut.scss";
 
 @function brightness($color) {
   @if type-of($color) == color {

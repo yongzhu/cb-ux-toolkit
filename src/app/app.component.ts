@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { FooterConfig } from "cut/lib/cb/footer/footer.model";
-import { HeaderData } from "cut/lib/cb/framework/header.models";
+import { FooterConfig } from "cut/lib/footer/footer.model";
+import { HeaderData } from "cut/lib/framework/header.models";
 
 import { FooterService } from "./services/footer.service";
 import { HeaderService } from "./services/header.service";

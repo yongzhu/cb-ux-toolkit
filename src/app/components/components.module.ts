@@ -7,8 +7,6 @@ import { PrismModule } from "@ngx-prism/core";
 import {
   AccordionItemModule,
   AccordionModule,
-  ButtonModule,
-  CardModule,
   ClipboardModule,
   DropBoxModule,
   FooterModule,
@@ -18,7 +16,7 @@ import {
 
 import { CodeblockComponent } from "./codeblock/codeblock.component";
 import { DynamicBodyComponent } from "./dynamic-body/dynamic-body.component";
-
+import { MatSidenavModule, MatExpansionModule } from "@angular/material";
 @NgModule({
   imports: [
     CommonModule,
@@ -26,13 +24,13 @@ import { DynamicBodyComponent } from "./dynamic-body/dynamic-body.component";
     PrismModule,
     AccordionItemModule,
     AccordionModule,
-    ButtonModule,
-    CardModule,
     ClipboardModule,
     DropBoxModule,
     FooterModule,
     HeaderModule,
-    SelectModule
+		SelectModule,
+		MatSidenavModule,
+		MatExpansionModule
   ],
   declarations: [
     CodeblockComponent,

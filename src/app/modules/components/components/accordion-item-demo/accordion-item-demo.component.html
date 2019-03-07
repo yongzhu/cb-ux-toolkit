@@ -4,7 +4,7 @@
     <div class="tab-content">
         <div class="row">
           <div class="col-md-4">
-            <cb-card>
+            <!-- <cb-card> -->
               <h2>Single Open</h2>
               <cb-accordion [closeOthers]="true" [startOpen]="true">
                 <cb-accordion-item [heading]="'Title as attribute'">
@@ -17,10 +17,10 @@
                   Accordion group 2 contents.
                 </cb-accordion-item>
               </cb-accordion>
-            </cb-card>
+            <!-- </cb-card> -->
           </div>
           <div class="col-md-4">
-            <cb-card>
+            <!-- <cb-card> -->
               <h2>Multi Open</h2>
               <cb-accordion [closeOthers]="false" [startOpen]="true">
                 <cb-accordion-item [heading]="'Title as attribute'">
@@ -33,14 +33,14 @@
                   Accordion group 2 contents.
                 </cb-accordion-item>
               </cb-accordion>
-            </cb-card>
+            <!-- </cb-card> -->
           </div>
         </div>
 
       <hr/>
         <div class="row">
           <div class="col-md-4">
-            <cb-card>
+            <!-- <cb-card> -->
               <h2>Start All Open</h2>
               <cb-accordion [closeOthers]="false" [startOpen]="true">
                 <cb-accordion-item [heading]="'Title as attribute'" [isOpen]="true">
@@ -53,10 +53,10 @@
                   Accordion group 2 contents.
                 </cb-accordion-item>
               </cb-accordion>
-            </cb-card>
+            <!-- </cb-card> -->
           </div>
           <div class="col-md-4">
-            <cb-card>
+            <!-- <cb-card> -->
               <h2>Start All Closed</h2>
               <cb-accordion [closeOthers]="false" [startOpen]="false">
                 <cb-accordion-item [heading]="'Title as attribute'">
@@ -69,14 +69,14 @@
                   Accordion group 2 contents.
                 </cb-accordion-item>
               </cb-accordion>
-            </cb-card>
+            <!-- </cb-card> -->
           </div>
         </div>
     </div>
   </mat-tab>
   <mat-tab label='Documentation'>
     <div class="tab-content">
-      <cb-card>
+      <!-- <cb-card> -->
         <h3>Single Open</h3>
         <app-codeblock [codeString]="accordionCode1" language="html"></app-codeblock><br>
         <h3>Multi Open</h3>
@@ -85,7 +85,7 @@
         <app-codeblock [codeString]="accordionCode3" language="html"></app-codeblock><br>
         <h3>Start All Closed</h3>
         <app-codeblock [codeString]="accordionCode4" language="html"></app-codeblock>
-      </cb-card>
+      <!-- </cb-card> -->
     </div>
   </mat-tab>
 </mat-tab-group>

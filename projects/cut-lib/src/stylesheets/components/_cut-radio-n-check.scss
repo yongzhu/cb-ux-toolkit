@@ -1,0 +1,229 @@
+@import "../variables/cut-theme-variables";
+
+/*~~Start~~~~~~~~~~~~~~  TODO  ~~~~~~~~~~~~~~~~~~~
+
+This is a third party plugin, standardize and use
+variables for all the hard coded values here
+
+~~~~End~~~~~~~~~~~~~~~~  TODO  ~~~~~~~~~~~~~~~~~~~*/
+
+@mixin checkbox-variant($parent, $color) {
+    #{$parent} input[type="checkbox"]:checked + label,
+    #{$parent} input[type="radio"]:checked + label {
+        &::before {
+            background-color: $color;
+            border-color: $color;
+        }
+
+        &::after {
+            color: #fff;
+        }
+    }
+}
+
+$icon_f00c: "\f00c";
+
+.checkbox {
+    padding-left: 20px;
+
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            border: 2px solid #3AB3E2;
+            border-radius: 3px;
+            background-color: #fff;
+            //TODO: Include global hover transition
+            //@include transition(border 0.15s ease-in-out, color 0.15s ease-in-out);
+        }
+
+        &::after {
+            display: inline-block;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 0;
+            top: 0;
+            padding-left: 4px;
+            padding-top: 1px;
+            font-size: 12px;
+            color: $input-color;
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        opacity: 0;
+        z-index: 1;
+        display: none;
+
+        &:focus + label::before {
+            //@include tab-focus();
+        }
+        &:checked + label::after {
+            font-family: 'FontAwesome';
+            content: $icon_f00c;
+        }
+
+        &:disabled + label {
+            opacity: 0.65;
+
+            &::before {
+                background-color: $input-bg-disabled;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &.checkbox-circle label::before {
+        border-radius: 50%;
+    }
+
+    &.checkbox-inline {
+        margin-top: 0;
+    }
+}
+
+@include checkbox-variant('.checkbox-primary', #39b3e1);
+@include checkbox-variant('.checkbox-danger', $brand-danger);
+@include checkbox-variant('.checkbox-info', $brand-info);
+@include checkbox-variant('.checkbox-warning', $brand-warning);
+@include checkbox-variant('.checkbox-success', $brand-success);
+
+//
+// Radios
+// --------------------------------------------------
+
+@mixin radio-variant($parent, $color) {
+    #{$parent} input[type="radio"] {
+        & + label {
+            &::after {
+                background-color: $color;
+            }
+        }
+
+        &:checked + label {
+            &::before {
+                border-color: $color;
+            }
+
+            &::after {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+.radio {
+    padding-left: 20px;
+
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        padding-left: 5px;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            margin-left: -20px;
+            border: 2px solid $accent-beta-light;
+            border-radius: 20px;
+            background-color: $accent-beta-light;
+            //@include transition(border 0.15s ease-in-out);
+        }
+
+        &::after {
+            display: inline-block;
+            position: absolute;
+            content: " ";
+            width: 7px;
+            height: 7px;
+            left: 5px;
+            top: 5px;
+            margin-left: -20px;
+            border-radius: 20px;
+            background-color: $WHITE;
+            //@include scale(1, 1);
+
+            //@include transition-transform(.1s cubic-bezier(.8,-0.33,.2,1.33));
+            //curve - http://cubic-bezier.com/#.8,-0.33,.2,1.33
+        }
+    }
+
+    input[type="radio"] {
+        opacity: 0;
+        z-index: 1;
+
+        &:focus + label::before {
+            //@include tab-focus();
+        }
+
+        &:checked + label::after {
+           // @include scale(1, 1);
+        }
+
+        &:disabled + label {
+            opacity: 0.65;
+
+            &::before {
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &.radio-inline {
+        margin-top: 0;
+    }
+}
+
+@include radio-variant('.radio-primary', $brand-primary);
+@include radio-variant('.radio-danger', $brand-danger);
+@include radio-variant('.radio-info', $brand-info);
+@include radio-variant('.radio-warning', $brand-warning);
+@include radio-variant('.radio-success', $brand-success);
+
+input[type="checkbox"],
+input[type="radio"] {
+    &.styled:checked + label:after {
+        font-family: 'FontAwesome';
+        content: $icon_f00c;
+    }
+
+    & .styled:checked + label {
+        &::before {
+            color: #fff;
+        }
+
+        &::after {
+            color: #fff;
+        }
+    }
+}
+
+.radio label.disable::before {
+    color: $gray;
+    border: 2px solid $gray;
+    background-color: $WHITE;
+}
+
+.radio.past-applicants.animate-modify {
+    border-top: 1px solid $gray-lighter;
+    padding-top: 15px;
+
+    &:first-child {
+        border-top: none;
+        padding-top: 0px;
+    }
+}

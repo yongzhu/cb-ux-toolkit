@@ -1,0 +1,39 @@
+@import "../../stylesheets/variables/cut-theme-variables";
+
+.footer-content {
+  #footerLogo {
+    background-image: url('../images/logo-cb-white.png');
+    -webkit-background-size: contain;
+    background-size: contain;
+    display: block;
+    background-repeat: no-repeat;
+    height: 30px;
+    margin-left: -5px;
+  }
+  // @media (max-width: map-get($grid-breakpoints, md)) {
+  //   text-align: center;
+  // }
+  padding-top: 35px;
+  padding-bottom: 35px;
+  h4 {
+    color: $gray-lighter;
+    margin-bottom: 12px;
+  }
+  .logo-cb-footer {
+    width: auto;
+    max-width: 100%;
+  }
+  .logo-app-store {
+    width: auto;
+    max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 0 15px 0;
+    padding: 0;
+  }
+  p {
+    color: $gray-light;
+  }
+}

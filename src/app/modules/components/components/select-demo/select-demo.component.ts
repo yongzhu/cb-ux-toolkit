@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Option } from "cut/lib/cb/select/select.component.d";
+import { Option } from "cut/lib/select/select.component.d";
 
 @Component({
   selector: "app-select-demo",

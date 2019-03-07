@@ -1,0 +1,43 @@
+@import "./variables/cut-theme-variables";
+@import "./variables/cut-core-variables";
+@import "./utilities/cut-utilities";
+
+// :host /deep/ app-dynamic-body {
+//   flex: 1;
+//   margin-bottom: $padding-base * 4;
+// }
+h1, .h1 {
+  margin-bottom: $gutter;
+}
+
+h6, .h6 {
+  margin-bottom: $gutter/3;
+}
+
+p {
+  margin-bottom: $gutter/3;
+}
+
+.container-fluid {
+  max-width: 1800px;
+}
+
+a, a *, .btn {
+  @extend %has-hover-animation;
+}
+
+hr {
+  border-color: $color-border;
+}
+
+// .my-tooltip-div {
+//   position: absolute;
+//   background: #fff;
+//   font: 12px sans-serif;
+//   border: 1px solid;
+//   padding: 5px;
+//   border-radius: 4px;
+//   pointer-events: none;
+//   white-space: nowrap;
+//   z-index: 100;
+// }

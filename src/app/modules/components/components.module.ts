@@ -6,8 +6,6 @@ import { MatTabsModule } from "@angular/material/tabs";
 import {
   AccordionItemModule,
   AccordionModule,
-  ButtonModule,
-  CardModule,
   DropBoxModule,
   FooterModule,
   HeaderModule,
@@ -38,8 +36,6 @@ import { ComponentsModule as AppComponentsModule } from "../../components/compon
     AppComponentsModule,
     AccordionItemModule,
     AccordionModule,
-    ButtonModule,
-    CardModule,
     DropBoxModule,
     FooterModule,
     HeaderModule,

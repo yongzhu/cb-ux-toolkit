@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { IMenuItem } from "cut/lib/cb/card/menu-item";
 
 @Component({
   selector: "app-card-demo",
@@ -21,41 +20,41 @@ export class CardDemoComponent implements OnInit {
     tooltipPosition: "right"
   };
 
-  menuOptions1: IMenuItem[] = [
-    {
-      "label": "Edit Card",
-      "title": "Edit Title",
-      "action": "Action 1b",
-      "icon": "fa-pencil"
-    },
-    {
-      "label": "Settings",
-      "title": "Settings Title",
-      "action": "Action 1c",
-      "icon": "fa-cog"
-    }
-  ];
+  // menuOptions1: IMenuItem[] = [
+  //   {
+  //     "label": "Edit Card",
+  //     "title": "Edit Title",
+  //     "action": "Action 1b",
+  //     "icon": "fa-pencil"
+  //   },
+  //   {
+  //     "label": "Settings",
+  //     "title": "Settings Title",
+  //     "action": "Action 1c",
+  //     "icon": "fa-cog"
+  //   }
+  // ];
 
-  menuOptions2: IMenuItem[] = [
-    {
-      "label": "Profile",
-      "title": "Manage Alerts Title",
-      "action": "Action 2a",
-      "icon": "fa-bell-o"
-    },
-    {
-      "label": "Account",
-      "title": "Edit Title",
-      "action": "Action 2b",
-      "icon": "fa-pencil"
-    },
-    {
-      "label": "No Icon Item",
-      "title": "Label Title",
-      "action": "Action 2c",
-      "icon": "fa-cog"
-    }
-  ];
+  // menuOptions2: IMenuItem[] = [
+  //   {
+  //     "label": "Profile",
+  //     "title": "Manage Alerts Title",
+  //     "action": "Action 2a",
+  //     "icon": "fa-bell-o"
+  //   },
+  //   {
+  //     "label": "Account",
+  //     "title": "Edit Title",
+  //     "action": "Action 2b",
+  //     "icon": "fa-pencil"
+  //   },
+  //   {
+  //     "label": "No Icon Item",
+  //     "title": "Label Title",
+  //     "action": "Action 2c",
+  //     "icon": "fa-cog"
+  //   }
+  // ];
 
   codeCard1 = `
     <cb-card [height]="{md:'2x', lg:'2x'}" [title]="'Card Title1'" [loading]="loading"

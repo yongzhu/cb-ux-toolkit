@@ -1,41 +1,40 @@
-<div class="container-fluid top-margin">
-  <div class="row">
-    <section class="col-md-3 col-xl-2">
-      <cb-card>
-        <nav>
-          <ul class="list-style-left-nav">
-            <li routerLinkActive="active"><a [routerLink]="['/welcome']">Getting Started</a></li>
-            <li routerLinkActive="active"><a [routerLink]="['/platforms']">Platforms</a></li>
-            <li routerLinkActive="active"><a [routerLink]="['/color']">Color</a></li>
-            <li>
-              <cb-accordion [closeOthers]="false" [startOpen]="true">
-                <cb-accordion-item [panelClass]="'hasClick'" [heading]="'Components'">
-                  <ul class="list-style-left-sub-nav">
-                    <li routerLinkActive="active" *ngFor="let item of components"><a
-                      [routerLink]="[item.routerLink]">{{item.text}}</a></li>
-                  </ul>
-                </cb-accordion-item>
-              </cb-accordion>
-            </li>
-            <li>
-              <cb-accordion [closeOthers]="false" [startOpen]="false">
-                <cb-accordion-item [heading]="'Guidelines'">
-                  <ul class="list-style-left-sub-nav">
-                    <li routerLinkActive="active" *ngFor="let item of guidelines"><a
-                      [routerLink]="[item.routerLink]">{{item.text}}</a></li>
-                  </ul>
-                </cb-accordion-item>
-              </cb-accordion>
-            </li>
-            <li routerLinkActive="active"><a [routerLink]="['/icons']">Icons</a></li>
-            <li routerLinkActive="active"><a [routerLink]="['/downloads']">Downloads</a></li>
-            <li routerLinkActive="active"><a [routerLink]="['/feedback']">Feedback</a></li>
-          </ul>
-        </nav>
-      </cb-card>
-    </section>
-    <section class="col-md-9 col-xl-10">
-      <router-outlet></router-outlet>
-    </section>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="side" opened>
+    <nav>
+      <mat-accordion class="list-style-left-nav">
+        <!-- <ul class="list-style-left-nav"> -->
+        <!-- <li routerLinkActive="active"> -->
+        <div class="left-nav-link" routerLinkActive="active"><a [routerLink]="['/welcome']">Getting Started</a></div>
+        <div class="left-nav-link" routerLinkActive="active"><a [routerLink]="['/platforms']">Platforms</a></div>
+        <div class="left-nav-link" routerLinkActive="active" class="left-nav-link">
+          <a [routerLink]="['/color']">Color</a>
+        </div>
+        <!-- </li> -->
+        <!-- </ul> -->
+        <mat-expansion-panel class="mat-elevation-z0 left-nav-item">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Components
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="left-nav-link" routerLinkActive="active" *ngFor="let item of components"><a [routerLink]="[item.routerLink]">{{item.text}}</a></div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="mat-elevation-z0 left-nav-item">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Guidelines
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="left-nav-link" routerLinkActive="active" *ngFor="let item of guidelines"><a [routerLink]="[item.routerLink]">{{item.text}}</a></div>
+        </mat-expansion-panel>
+        <div class="left-nav-link" routerLinkActive="active"><a [routerLink]="['/icons']">Icons</a></div>
+        <div class="left-nav-link" routerLinkActive="active"><a [routerLink]="['/downloads']">Downloads</a></div>
+        <div class="left-nav-link" routerLinkActive="active"><a [routerLink]="['/feedback']">Feedback</a></div>
+      </mat-accordion>
+    </nav>
+  </mat-sidenav>
+  <div class="center-content">
+    <router-outlet></router-outlet>
+    <ng-content tabindex="-1" id="mainContent" class="container-dynamic-body"></ng-content>
   </div>
-</div>
+</mat-sidenav-container>

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 import { BehaviorSubject, Observable } from "rxjs";
 
-import { HeaderData } from "cut/lib/cb/framework/header.models";
+import { HeaderData } from "cut/lib/framework/header.models";
 
 const HEADER_DATA: HeaderData = {
   "logoPath": {

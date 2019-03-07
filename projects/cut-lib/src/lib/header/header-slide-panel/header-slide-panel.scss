@@ -1,0 +1,30 @@
+@import "../../../stylesheets/cut-core";
+
+:host /deep/ {
+  cb-drop-box {
+    // @media(max-width: map-get($grid-breakpoints, lg)) {
+    //   .arrow {
+    //     &:before, &:after {
+    //       display: none;
+    //     }
+    //   }
+
+    //   .drop-panel-wrapper {
+    //     width: auto !important;
+    //     position: initial !important;
+    //   }
+    //   .drop-panel{
+    //     padding: 0px !important;
+    //   }
+
+    //   cb-drop-box-anchor {
+    //     padding: $padding-base;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     border-bottom: solid 1px $color-border;
+    //     align-items: center;
+    //     cursor: pointer;
+    //   }
+    // }
+  }
+}

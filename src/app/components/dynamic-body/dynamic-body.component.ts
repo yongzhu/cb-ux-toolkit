@@ -8,10 +8,10 @@ import { routes } from "../../modules/components/components.routes";
   styleUrls: ["./dynamic-body.component.scss"]
 })
 export class DynamicBodyComponent implements OnInit {
-  title = "VDL Application";
+  title = "Careerbuild UX Toolkit Application";
   components: Array<{ text: string, routerLink: string }> = [];
   guidelines: Array<{ text: string, routerLink: string }> = [];
-
+	showSidePanel:boolean = true;
   constructor() {
     this.components = routes.map(route => route.children)[0]
       .map((route) => {
@@ -26,7 +26,7 @@ export class DynamicBodyComponent implements OnInit {
       { text: "Messaging", routerLink: "/messaging" },
       { text: "Typography", routerLink: "/typography" },
       { text: "Voice & Tone", routerLink: "/voice" }
-    ];
+		];
   }
 
   ngOnInit() {

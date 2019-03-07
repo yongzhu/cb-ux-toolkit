@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 import { BehaviorSubject, Observable } from "rxjs";
 
-import { FooterConfig } from "cut/lib/cb/footer/footer.model";
+import { FooterConfig } from "cut/lib/footer/footer.model";
 
 @Injectable({
   providedIn: "root"

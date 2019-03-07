@@ -5,9 +5,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   AccordionItemModule,
   AccordionModule,
-  ButtonModule,
-  CardModule,
-  CbesVdlLibModule,
   CBFrameworkModule,
   ClipboardModule,
   SelectModule
@@ -38,12 +35,9 @@ import { TitleService } from "./services/title.service";
     AppComponentsModule,
     AccordionModule,
     AccordionItemModule,
-    ButtonModule,
-    CardModule,
     CBFrameworkModule,
     ClipboardModule,
     SelectModule,
-    CbesVdlLibModule,
     ColorPaletteDemoModule,
     ComponentsModule,
     PlatformsModule,
