@@ -3,18 +3,18 @@ import { Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output }
 import * as Clipboard from "clipboard";
 
 @Directive({
-  selector: "[cb-clipboard]"
+  selector: "[cutClipboard]"
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
   clipboard: Clipboard;
 
-  @Input("cb-clipboard") targetElm: ElementRef; // tslint:disable-line:no-input-rename
+  @Input("cutClipboard") targetElm: ElementRef; // tslint:disable-line:no-input-rename
 
   @Input() cbContent: string;
 
-  @Output("cbOnSuccess") onSuccess: EventEmitter<boolean> = new EventEmitter<boolean>(); // tslint:disable-line:no-output-on-prefix
+  @Output("cutOnSuccess") onSuccess: EventEmitter<boolean> = new EventEmitter<boolean>(); // tslint:disable-line:no-output-on-prefix
 
-  @Output("cbOnError") onError: EventEmitter<boolean> = new EventEmitter<boolean>(); // tslint:disable-line:no-output-on-prefix
+  @Output("cutOnError") onError: EventEmitter<boolean> = new EventEmitter<boolean>(); // tslint:disable-line:no-output-on-prefix
 
   constructor(private elmRef: ElementRef) { }
 

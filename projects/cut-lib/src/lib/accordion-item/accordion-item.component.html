@@ -8,7 +8,7 @@
     <span *ngIf="heading" [ngClass]="{'text-muted': isDisabled}">{{heading}}</span>
     <ng-content select="accordion-heading"></ng-content>
   </h4>
-  <div class="panel-collapse collapse" [collapse]="!isOpen">
+  <div class="panel-collapse collapse" [cutCollapse]="!isOpen">
     <div class="panel-body">
       <ng-content></ng-content>
     </div>

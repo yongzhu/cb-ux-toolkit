@@ -1,10 +1,10 @@
 <div class="wrapper-notifications" *ngIf="headerObj.notifications">
-  <cb-drop-box [dropStyle]="'fixed-down-left'">
+  <cut-drop-box [dropStyle]="'fixed-down-left'">
     <!-- TODO: bell changes based on length of notifications -->
     <!-- TODO: notifications-new class needs to be removed when the user clicks and closes the panel the first time itself -->
     <!-- TODO: notifications-new class needs to be added back in when new notifications is available -->
-    <cb-drop-box-anchor tabindex="0" aria-label="Notifications"><i class="fa fa-bell fa-lg notifications-new"></i></cb-drop-box-anchor>
-    <cb-drop-box-content>
+    <cut-drop-box-anchor tabindex="0" aria-label="Notifications"><i class="fa fa-bell fa-lg notifications-new"></i></cut-drop-box-anchor>
+    <cut-drop-box-content>
       <div class="notifications-header">
         <div class="row">
           <div class="col"><h5>Notifications</h5></div>
@@ -91,6 +91,6 @@
           <div class="col d-flex justify-content-center cursor"><a  href="#" (click)="emitActionType('SHOW_ALL_NOTIFICATIONS_ACTION')" title="See All Notifications">See All Notifications</a></div>
         </div>
       </div>
-    </cb-drop-box-content>
-  </cb-drop-box>
+    </cut-drop-box-content>
+  </cut-drop-box>
 </div>

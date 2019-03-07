@@ -1,7 +1,7 @@
 @import "../../../stylesheets/cut-core";
 
 :host /deep/ {
-  cb-drop-box {
+  cut-drop-box {
     // @media(max-width: map-get($grid-breakpoints, lg)) {
     //   .arrow {
     //     &:before, &:after {
@@ -17,7 +17,7 @@
     //     padding: 0px !important;
     //   }
 
-    //   cb-drop-box-anchor {
+    //   cut-drop-box-anchor {
     //     padding: $padding-base;
     //     display: flex;
     //     justify-content: space-between;

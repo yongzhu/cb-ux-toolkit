@@ -4,7 +4,7 @@
   text-align: right;
 }
 
-cb-drop-box /deep/ {
+cut-drop-box /deep/ {
   .arrow:after, .arrow:before {
     display: none;
   }
@@ -23,7 +23,7 @@ cb-drop-box /deep/ {
     }
   }
 
-  cb-drop-box-anchor {
+  cut-drop-box-anchor {
     padding: $padding-base;
     color: $color-primary;
     cursor: pointer;

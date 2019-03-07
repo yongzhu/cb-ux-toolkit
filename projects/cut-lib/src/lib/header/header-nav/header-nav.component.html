@@ -6,9 +6,9 @@
       <a *ngIf="item.action" title="{{item.altTxt}}" (click)="emitActionType(item.action)" tabindex="0">{{item.title}}</a>
     </li>
     <li *ngIf="item.dropDown && !item.hidden">
-      <cb-drop-box dropStyle="fixed-down-right" hoverEnable="true">
-        <cb-drop-box-anchor tabindex="0" [class.li-dropdown-active]="showAsActive(item)"><span>{{item.title}}</span><i class="fa fa-angle-down"></i></cb-drop-box-anchor>
-        <cb-drop-box-content>
+      <cut-drop-box dropStyle="fixed-down-right" hoverEnable="true">
+        <cut-drop-box-anchor tabindex="0" [class.li-dropdown-active]="showAsActive(item)"><span>{{item.title}}</span><i class="fa fa-angle-down"></i></cut-drop-box-anchor>
+        <cut-drop-box-content>
           <ul class="list-style-header-sub-nav">
             <li *ngFor="let subItem of item.dropDown" class="headernav-drodown-item-test" [class.has-separator]="subItem.hasSeparator">
               <a *ngIf="subItem.internalPath && !subItem.hidden" [routerLink]="[subItem.internalPath]" title="{{item.altTxt}}" tabindex="0" [class.active]="showAsActive(subItem)">{{subItem.title}}</a>
@@ -16,8 +16,8 @@
               <a *ngIf="subItem.action && !subItem.hidden" (click)="emitActionType(subItem.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{subItem.title}}</a>
             </li>
           </ul>
-        </cb-drop-box-content>
-      </cb-drop-box>
+        </cut-drop-box-content>
+      </cut-drop-box>
     </li>
   </ng-container>
 </ul>

@@ -12,7 +12,7 @@ export class DropBoxDemoComponent {
     <span class="somespan" (click)="open = !open">
       Click me to open drop
     </span>
-    <cb-drop-box [(open)]="open">
+    <cut-drop-box [(open)]="open">
       <div class="app-item row">
         <div class="col-md-12">
           Item
@@ -33,6 +33,6 @@ export class DropBoxDemoComponent {
           Item
         </div>
       </div>
-    </cb-drop-box>
+    </cut-drop-box>
   `;
 }

@@ -5,7 +5,6 @@ import {
 } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { BehaviorSubject, Subject } from "rxjs";
-import { ButtonModule } from "../../button/button.module";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { IHeaderNav } from "../../framework/header.models";
 import { HeaderService } from "../header.service";
@@ -64,7 +63,7 @@ describe("Header. Component. HeaderNavComponent", () => {
   let service: HSMock;
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, ButtonModule, DropBoxModule,
+      imports: [CommonModule, DropBoxModule,
         RouterTestingModule.withRoutes([
         ])],
       declarations: [HeaderNavComponent, NavDropdownComponent],
@@ -114,7 +113,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     component.ngOnInit();
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelectorAll("cb-drop-box").length)
+    expect(fixture.nativeElement.querySelectorAll("cut-drop-box").length)
       .toEqual(0);
 
     nav.leftNav.push({
@@ -136,7 +135,7 @@ describe("Header. Component. HeaderNavComponent", () => {
 
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelectorAll("cb-drop-box").length)
+    expect(fixture.nativeElement.querySelectorAll("cut-drop-box").length)
       .toEqual(1);
   })));
 

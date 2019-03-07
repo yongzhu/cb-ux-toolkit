@@ -1,7 +1,7 @@
 @import "../../../stylesheets/cut-core";
 
 :host {
-  cb-drop-box /deep/ {
+  cut-drop-box /deep/ {
     .arrow:after, .arrow:before {
       display: none;
     }
@@ -22,7 +22,7 @@
       // }
     }
 
-    cb-drop-box-anchor {
+    cut-drop-box-anchor {
       padding: $padding-base;
       cursor: pointer;
       color: $color-primary;

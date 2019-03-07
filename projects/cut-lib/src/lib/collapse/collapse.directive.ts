@@ -3,7 +3,7 @@
 import { Directive, HostBinding, Input } from "@angular/core";
 
 @Directive({
-  selector: "[collapse]"
+  selector: "[cutCollapse]"
 })
 export class CollapseDirective {
   // style
@@ -24,7 +24,7 @@ export class CollapseDirective {
   isCollapsing = false;
 
   @Input()
-  set collapse(value: boolean) {
+  set cutCollapse(value: boolean) {
     this.isExpanded = value;
     this.toggle();
   }

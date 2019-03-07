@@ -41,10 +41,10 @@ class MockButtonComponent {
 }
 
 @Directive({
-  selector: "[cb-clipboard]"
+  selector: "[cutClipboard]"
 })
 class MockClipboardDirective {
-  @Input("cb-clipboard") targetElm: ElementRef; // tslint:disable-line:no-input-rename
+  @Input("cutClipboard") targetElm: ElementRef; // tslint:disable-line:no-input-rename
 
   @Input() cbContent: string;
 

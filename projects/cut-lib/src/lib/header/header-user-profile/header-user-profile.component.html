@@ -1,9 +1,9 @@
 <div class="wrapper-user-profile" *ngIf="headerObj.userProfile">
-  <cb-drop-box class="user-profile" [dropStyle]="'fixed-down-left'">
-    <cb-drop-box-anchor aria-label="User Profile and settings" tabindex="0">
+  <cut-drop-box class="user-profile" [dropStyle]="'fixed-down-left'">
+    <cut-drop-box-anchor aria-label="User Profile and settings" tabindex="0">
       Welcome, {{headerObj.userProfile.user.first_name}}&nbsp;<i class="fa fa-angle-down"></i>
-    </cb-drop-box-anchor>
-    <cb-drop-box-content>
+    </cut-drop-box-anchor>
+    <cut-drop-box-content>
       <ul class="list-style-header-sub-nav">
         <li>
           <h4>{{headerObj.userProfile.user.first_name}} {{headerObj.userProfile.user.last_name}}</h4>
@@ -26,6 +26,6 @@
           </div>
         </li>
       </ul>
-    </cb-drop-box-content>
-  </cb-drop-box>
+    </cut-drop-box-content>
+  </cut-drop-box>
 </div>

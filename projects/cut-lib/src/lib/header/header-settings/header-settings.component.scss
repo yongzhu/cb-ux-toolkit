@@ -1,12 +1,12 @@
 @import "../../../stylesheets/cut-core";
 
-cb-drop-box /deep/ {
+cut-drop-box /deep/ {
   .drop-panel {
     padding: 0px !important;
   }
 }
 
-// cb-drop-box /deep/ {
+// cut-drop-box /deep/ {
   // @media(max-width: map-get($grid-breakpoints, lg)) {
   //   .drop-panel-wrapper {
   //     width: auto !important;
@@ -27,7 +27,7 @@ cb-drop-box /deep/ {
 // }
 
 // @media(max-width: map-get($grid-breakpoints, lg)) {
-//   cb-drop-box-anchor {
+//   cut-drop-box-anchor {
 //     padding: $padding-base;
 //     display: flex;
 //     justify-content: space-between;

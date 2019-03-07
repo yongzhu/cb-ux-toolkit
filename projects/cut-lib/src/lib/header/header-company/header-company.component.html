@@ -1,11 +1,11 @@
 <ul class="list-style-header-nav" *ngIf="headerObj.rightNav">
   <li *ngFor="let item of headerObj.rightNav">
-    <cb-drop-box [dropStyle]="'fixed-down-left'" *ngIf="!item.hidden">
+    <cut-drop-box [dropStyle]="'fixed-down-left'" *ngIf="!item.hidden">
       <!--TODO: Dynamically add active class to anchor tag below as user clicks on it and while the drop down is still open-->
-      <cb-drop-box-anchor tabindex="0">
+      <cut-drop-box-anchor tabindex="0">
         <span>{{item.title}}</span><i class="fa fa-angle-down"></i>
-      </cb-drop-box-anchor>
-      <cb-drop-box-content>
+      </cut-drop-box-anchor>
+      <cut-drop-box-content>
         <ul class="list-style-header-sub-nav">
           <li *ngFor="let subItem of item.dropDown">
             <a *ngIf="subItem.internalPath && !subItem.hidden" [routerLink]="[subItem.internalPath]" title="{{item.altTxt}}" tabindex="0">{{subItem.title}}</a>
@@ -13,7 +13,7 @@
             <a *ngIf="subItem.action && !subItem.hidden" (click)="emitActionType(subItem.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{subItem.title}}</a>
           </li>
         </ul>
-      </cb-drop-box-content>
-    </cb-drop-box>
+      </cut-drop-box-content>
+    </cut-drop-box>
   </li>
 </ul>

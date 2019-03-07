@@ -6,10 +6,10 @@ import { ColorPaletteDemoComponent } from "./color-palette-demo.component";
 
 // tslint:disable:directive-selector
 @Directive({
-  selector: "[cb-clipboard]"
+  selector: "[cutClipboard]"
 })
 class MockCbClipboardDirective {
-  @Input("cb-clipboard") targetElm: ElementRef; // tslint:disable-line:no-input-rename
+  @Input("cutClipboard") targetElm: ElementRef; // tslint:disable-line:no-input-rename
 
   @Input() cbContent: string;
 }

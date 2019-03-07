@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Component({
-  selector: "cb-drop-box",
+  selector: "cut-drop-box",
   templateUrl: "./drop-box.component.html",
   styleUrls: ["./drop-box.component.scss"]
 })
@@ -17,7 +17,7 @@ export class DropBoxComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     this.selfElement = this.el.nativeElement;
-    this.anchorElement = this.selfElement.querySelector("cb-drop-box-anchor");
+    this.anchorElement = this.selfElement.querySelector("cut-drop-box-anchor");
   }
 
   @HostListener("document:click", ["$event"])
@@ -32,7 +32,7 @@ export class DropBoxComponent implements AfterContentInit {
   }
 }
 
-@Directive({selector: "cb-drop-box-anchor, cb-drop-box-content"}) // tslint:disable-line:directive-selector
+@Directive({selector: "cut-drop-box-anchor, cut-drop-box-content"}) // tslint:disable-line:directive-selector
 export class DropBoxTagsDirective {}
 
 export const DROPBOX_TAGS = [DropBoxComponent, DropBoxTagsDirective];
