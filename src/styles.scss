@@ -10,7 +10,14 @@
 // @import "../dist/cut/cb-vdl.css";
 
 // /* cut */
-@import "../dist/cut/cut.css";
+@import "../dist/cut/cut.scss";
+
+@import './app-theme';
+@import './styles/api';
+@import './styles/markdown';
+@import './styles/tables';
+@import './styles/general';
+@include material-docs-app-theme($theme);
 
 // /* DEMO APPLICATION STYLES */
 // $fa-font-path: "../node_modules/font-awesome/fonts";

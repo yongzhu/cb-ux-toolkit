@@ -2,8 +2,6 @@
 /*
  * Public API Surface of CUT (CB UX Toolkit)
  */
-export * from "./lib/accordion/accordion.module";
-export * from "./lib/accordion-item/accordion-item.module";
 export * from "./lib/clipboard/clipboard.module";
 export * from "./lib/click-outside/click-outside.module";
 export * from "./lib/collapse/collapse.module";
