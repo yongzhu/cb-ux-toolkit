@@ -38,8 +38,8 @@
   }
 
   .docs-footer {
-    background: mat-color($primary);
-    color: mat-color($primary, default-contrast);
+    background: mat-color($primary, light);
+    color: mat-color($primary, light-contrast);
   }
 
   .is-next-version {

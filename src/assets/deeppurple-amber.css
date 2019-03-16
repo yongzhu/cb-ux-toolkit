@@ -1386,10 +1386,6 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   .docs-primary-header h1 {
     color: white; }
 
-.docs-footer {
-  background: #673ab7;
-  color: white; }
-
 .is-next-version {
   background: #b71c1c !important; }
 
@@ -1454,7 +1450,8 @@ app-component-viewer {
   background: rgba(0, 0, 0, 0.01);
   border: 0.5px solid rgba(0, 0, 0, 0.03); }
   .docs-markdown pre code {
-    background: transparent; }
+    background: transparent;
+    color: rgba(0, 0, 0, 0.87); }
 
 .docs-markdown h3 .material-icons,
 .docs-markdown h4 .material-icons {
@@ -1602,11 +1599,6 @@ app-homepage .docs-header-start {
 
 app-homepage .docs-homepage-row {
   color: rgba(0, 0, 0, 0.54); }
-
-app-navbar {
-  color: white; }
-  app-navbar .docs-navbar, app-navbar .docs-navbar-header {
-    background: #673ab7; }
 
 .docs-toc-container {
   border-left: solid 4px #673ab7; }

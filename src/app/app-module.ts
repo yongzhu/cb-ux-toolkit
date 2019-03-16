@@ -34,6 +34,14 @@ import {
 import {HttpClientModule} from '@angular/common/http';
 import {GaService} from './shared/ga/ga';
 
+import {
+  FrameworkModule,
+  ClipboardModule,
+	SelectModule,
+	LoadingIndicatorModule
+} from "cut";
+import { DynamicModule } from 'ng-dynamic-component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -56,9 +64,13 @@ import {GaService} from './shared/ga/ga';
     NavBarModule,
     StackblitzButtonModule,
     SvgViewerModule,
-    ThemePickerModule,
+		ThemePickerModule,
+		LoadingIndicatorModule,
+		DynamicModule.withComponents([])
   ],
-  declarations: [MaterialDocsApp],
+  declarations: [
+		MaterialDocsApp
+	],
   providers: [
     ComponentPageTitle,
     DocumentationItems,

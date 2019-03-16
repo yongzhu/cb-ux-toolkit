@@ -1,9 +1,10 @@
 <span class="cdk-visually-hidden" tabindex="-1" #initialFocusTarget>
   Overview for {{componentViewer.componentDocItem.id}}
 </span>
-<doc-viewer
+<doc-viewer *ngIf="!componentViewer.componentDocItem.isCut"
     documentUrl="/docs-content/overviews/{{componentViewer.componentDocItem.packageName}}/{{componentViewer.componentDocItem.id}}.html"
     class="docs-component-view-text-content docs-component-overview"
     (contentRendered)="scrollToSelectedContentSection()">
 </doc-viewer>
+<ndc-dynamic *ngIf="componentViewer.componentDocItem.isCut" [ndcDynamicComponent]="resolveComponent()"></ndc-dynamic>
 <table-of-contents #toc container=".mat-drawer-content" *ngIf="showToc | async"></table-of-contents>

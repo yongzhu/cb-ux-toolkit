@@ -5,7 +5,8 @@ export interface DocItem {
   name: string;
   summary?: string;
   packageName?: string;
-  examples?: string[];
+	examples?: string[];
+	isCut?: boolean;
 }
 
 export interface DocCategory {
@@ -41,6 +42,22 @@ export const SECTIONS: {[key: string]: DocSection} = {
 
 const DOCS: {[key: string]: DocCategory[]} = {
   [COMPONENTS]: [
+		{
+      id: 'cut',
+      name: 'CUT Components',
+			summary: 'Custom component addtions.',
+      items: [
+				{
+          id: 'LoadingIndicatorComponent',
+          name: 'Loading Indicator',
+					summary: 'Circular loading animation',
+					isCut: true,
+          examples: [
+            'loading-example',
+          ]
+        }
+			]
+    },
     {
       id: 'forms',
       name: 'Form Controls',
@@ -403,13 +420,7 @@ const DOCS: {[key: string]: DocCategory[]} = {
             'table-sticky-header',
         ]},
       ]
-		},
-		{
-      id: 'cut',
-      name: 'CUT Components',
-      summary: 'Custom component addtions.',
-      items: []
-    }
+		}
   ],
   [CDK] : [
     {

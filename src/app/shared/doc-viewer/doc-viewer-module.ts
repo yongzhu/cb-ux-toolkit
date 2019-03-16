@@ -25,7 +25,7 @@ import {CopierService} from '../copier/copier.service';
     MatTabsModule,
     CommonModule,
     PortalModule,
-    StackblitzButtonModule
+		StackblitzButtonModule
   ],
   providers: [CopierService],
   declarations: [DocViewer, ExampleViewer, HeaderLink],

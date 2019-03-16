@@ -6,10 +6,10 @@
   $foreground: map-get($theme, foreground);
 
   app-navbar {
-    color: mat-color($primary, default-contrast);
-
+    color: mat-color($primary, dark-contrast);
+		
     .docs-navbar, .docs-navbar-header {
-      background: mat-color($primary);
+      background: mat-color($primary, light);
     }
   }
 }

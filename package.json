@@ -8,8 +8,8 @@
     "build-app": "ng build --prod cut-app",
     "build-lib": "ng build --prod cut-lib",
     "build-lib-watch": "ng build --prod cut-lib --watch",
-		"build-schematics": "tsc -p projects/cut-lib/schematics/tsconfig.json",
-		"build-themes": "bash ./tools/build-themes.sh",
+    "build-schematics": "tsc -p projects/cut-lib/schematics/tsconfig.json",
+    "build-themes": "bash ./tools/build-themes.sh",
     "bundle-lib-scss": "npm-run-all --parallel bundle-lib-cut-scss bundle-lib-vars-scss",
     "bundle-lib-cut-scss": "scss-bundle -e projects/cut-lib/src/_cut.scss -d dist/cut/cut.scss",
     "bundle-lib-vars-scss": "scss-bundle -e projects/cut-lib/src/stylesheets/_cut-core.scss -d dist/cut/stylesheets/cut-core.scss",
@@ -63,6 +63,7 @@
     "font-awesome": "~4.7.0",
     "jquery": "~3.3.0",
     "moment": "^2.24.0",
+    "ng-dynamic-component": "^4.0.3",
     "popper.js": "~1.14.0",
     "rxjs": "^6.4.0",
     "zone.js": "~0.8.29"

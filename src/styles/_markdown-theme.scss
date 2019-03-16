@@ -20,7 +20,8 @@
       border: .5px solid rgba(mat-color($foreground, secondary-text), .03);
 
       code {
-        background: transparent;
+				background: transparent;
+				color: $dark-primary-text;
       }
     }
 
