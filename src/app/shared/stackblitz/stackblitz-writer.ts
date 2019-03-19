@@ -17,9 +17,9 @@ const COPYRIGHT =
  * structure is defined in the Material repository, but we include the docs-content as assets in
  * in the CLI configuration.
  */
-const DOCS_CONTENT_PATH = '/docs-content/examples-source/';
+const DOCS_CONTENT_PATH = 'docs-content/examples-source/';
 
-const TEMPLATE_PATH = '/assets/stackblitz/';
+const TEMPLATE_PATH = 'assets/stackblitz/';
 const TEMPLATE_FILES = [
   'index.html',
   'styles.css',

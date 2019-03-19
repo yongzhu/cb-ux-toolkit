@@ -56,7 +56,7 @@ export class ComponentViewer implements OnDestroy {
 		});
 	}
 	getTemplate(type:string) {
-		let retArgs = `/docs-content/${type}/${this.componentDocItem.packageName}/${this.componentDocItem.id}.html`
+		let retArgs = `docs-content/api-docs/${this.componentDocItem.packageName}-${this.componentDocItem.id}.html`
 		if(this.componentDocItem.isCut) {
 			retArgs = `example-templates/${type}/${this.componentDocItem.id}-example.html`;
 		}
