@@ -64,7 +64,7 @@ export class ExampleViewer {
   }
 
   private resolveHighlightedExampleFile(fileName: string) {
-    return !this.isCut ? `/docs-content/examples-highlighted/${fileName}` : `../../example-templates/examples/${fileName}`;
+    return !this.isCut ? `/docs-content/examples-highlighted/${fileName}` : `example-templates/examples/${fileName}`;
   }
 
   private _generateExampleTabs() {
