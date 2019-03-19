@@ -75,8 +75,8 @@ export class DocViewer implements OnDestroy {
       return `href="${this._domSanitizer.sanitize(SecurityContext.URL, absoluteUrl)}"`;
     });
 
-    this._elementRef.nativeElement.innerHTML = rawDocument;
-    this.textContent = this._elementRef.nativeElement.textContent;
+		this._elementRef.nativeElement.innerHTML = rawDocument;
+		this.textContent = this._elementRef.nativeElement.textContent;
 
     this._loadComponents('material-docs-example', ExampleViewer);
     this._loadComponents('header-link', HeaderLink);
@@ -97,16 +97,19 @@ export class DocViewer implements OnDestroy {
   }
 
   /** Instantiate a ExampleViewer for each example. */
-  private _loadComponents(componentName: string, componentClass: any) {
+  private _loadComponents(componentName: string, componentClass: any, isCut?:boolean) {
     let exampleElements =
         this._elementRef.nativeElement.querySelectorAll(`[${componentName}]`);
 
     Array.prototype.slice.call(exampleElements).forEach((element: Element) => {
-      let example = element.getAttribute(componentName);
+			let example = element.getAttribute(componentName);
+			const isCut: boolean = (element.getAttribute("is-cut") === 'true') || false;
       let portalHost = new DomPortalHost(
           element, this._componentFactoryResolver, this._appRef, this._injector);
       let examplePortal = new ComponentPortal(componentClass, this._viewContainerRef);
-      let exampleViewer = portalHost.attach(examplePortal);
+			let exampleViewer = portalHost.attach(examplePortal);
+			// Set the Cut flag if passed in	
+			(exampleViewer.instance as ExampleViewer).isCut = isCut;
       (exampleViewer.instance as ExampleViewer).example = example;
 
       this._portalHosts.push(portalHost);

@@ -18,9 +18,7 @@ import { DocItem, DocumentationItems } from '../../shared/documentation-items/do
 import { TableOfContents } from '../../shared/table-of-contents/table-of-contents';
 import { TableOfContentsModule } from '../../shared/table-of-contents/table-of-contents.module';
 import { ComponentPageTitle } from '../page-title/page-title';
-import { DynamicModule } from 'ng-dynamic-component';
 import { ExamplesModule } from 'src/app/examples/examples.module';
-import { LoadingIndicatorComponent } from '../../examples/components';
 import * as manifest from '../../examples/examples.manifest';
 
 @Component({
@@ -57,7 +55,13 @@ export class ComponentViewer implements OnDestroy {
 			}
 		});
 	}
-
+	getTemplate(type:string) {
+		let retArgs = `/docs-content/${type}/${this.componentDocItem.packageName}/${this.componentDocItem.id}.html`
+		if(this.componentDocItem.isCut) {
+			retArgs = `../../example-templates/${type}/${this.componentDocItem.id}-example.html`;
+		}
+		return retArgs;
+	}
 	ngOnDestroy(): void {
 		this._destroyed.next();
 	}
@@ -116,11 +120,9 @@ export class ComponentExamples extends ComponentOverview { }
 		DocViewerModule,
 		CommonModule,
 		TableOfContentsModule,
-		ExamplesModule,
-		DynamicModule.withComponents([])
+		ExamplesModule
 	],
 	exports: [ComponentViewer],
-	entryComponents: [LoadingIndicatorComponent],
 	declarations: [ComponentViewer, ComponentOverview, ComponentApi, ComponentExamples],
 	providers: [DocumentationItems, ComponentPageTitle],
 })

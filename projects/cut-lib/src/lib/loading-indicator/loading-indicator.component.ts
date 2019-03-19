@@ -6,6 +6,6 @@ import { Component, Input, OnInit } from "@angular/core";
   templateUrl: "./loading-indicator.component.html",
   styleUrls: [ "./loading-indicator.component.scss" ]
 })
-export class LoadingIndicatorComponent {
+export class CutLoadingIndicatorComponent {
   @Input() loading = false;
 }

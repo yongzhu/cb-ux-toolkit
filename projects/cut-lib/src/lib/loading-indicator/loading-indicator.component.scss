@@ -5,19 +5,19 @@ $colors:  lighten($accent-eta, 10%),   $accent-eta,   darken($accent-eta, 10%),
           lighten($accent-beta, 10%),  $accent-beta,  darken($accent-beta, 10%),
           $color-secondary, $color-secondary-dark, $color-primary;
 
-//$colors:
-//        $color-primary,               //----------(0)-------------
-//        $accent-gamma-darker,         //-------------(0)----------
-//        $color-secondary-dark,        //---------------(0)--------
-//        $color-secondary,             //-----------------(0)------
-//        $accent-gamma-dark,           //----------------(0)-------
-//        $accent-zeta-light,           //--------------(0)---------
-//        $accent-zeta,                 //-----------(0)------------
-//        $accent-epsilon,              //--------(0)---------------
-//        $accent-beta-dark,            //------(0)-----------------
-//        $color-tertiary,              //----(0)------------------
-//        $color-tertiary-dark,         //------(0)----------------
-//        $accent-beta-darker;          //--------(0)--------------
+$colors:
+       $color-primary,               //----------(0)-------------
+       $accent-gamma-darker,         //-------------(0)----------
+       $color-secondary-dark,        //---------------(0)--------
+       $color-secondary,             //-----------------(0)------
+       $accent-gamma-dark,           //----------------(0)-------
+       $accent-zeta-light,           //--------------(0)---------
+       $accent-zeta,                 //-----------(0)------------
+       $accent-epsilon,              //--------(0)---------------
+       $accent-beta-dark,            //------(0)-----------------
+       $color-tertiary,              //----(0)------------------
+       $color-tertiary-dark,         //------(0)----------------
+       $accent-beta-darker;          //--------(0)--------------
 
 
 .aligner {

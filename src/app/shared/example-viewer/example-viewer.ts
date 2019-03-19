@@ -3,6 +3,8 @@ import {MatSnackBar} from '@angular/material';
 import {ComponentPortal} from '@angular/cdk/portal';
 
 import {EXAMPLE_COMPONENTS, LiveExample} from '@angular/material-examples';
+import { examplesManifest } from '../../examples/examples.manifest'
+
 import {CopierService} from '../copier/copier.service';
 
 /** Regular expression that matches a file name and its extension */
@@ -14,6 +16,8 @@ const fileExtensionRegex = /(.*)\.(\w+)/;
   styleUrls: ['./example-viewer.scss']
 })
 export class ExampleViewer {
+	@Input() isCut:boolean = false;
+
   /** Component portal for the currently displayed example. */
   selectedPortal: ComponentPortal<any>;
 
@@ -30,13 +34,13 @@ export class ExampleViewer {
   @Input()
   get example() { return this._example; }
   set example(exampleName: string) {
-    if (exampleName && EXAMPLE_COMPONENTS[exampleName]) {
+		if (exampleName && EXAMPLE_COMPONENTS[exampleName] || exampleName && examplesManifest.components[exampleName]) {
       this._example = exampleName;
-      this.exampleData = EXAMPLE_COMPONENTS[exampleName];
-      this.selectedPortal = new ComponentPortal(this.exampleData.component);
+			this.exampleData = this.isCut ? examplesManifest.components[exampleName] : EXAMPLE_COMPONENTS[exampleName];
+		  this.selectedPortal = new ComponentPortal(this.exampleData.component);
       this._generateExampleTabs();
     } else {
-      console.error(`Could not find example: ${exampleName}`);
+				console.error(`Could not find example: ${exampleName}`);
     }
   }
   private _example: string;
@@ -60,7 +64,7 @@ export class ExampleViewer {
   }
 
   private resolveHighlightedExampleFile(fileName: string) {
-    return `/docs-content/examples-highlighted/${fileName}`;
+    return !this.isCut ? `/docs-content/examples-highlighted/${fileName}` : `../../example-templates/examples/${fileName}`;
   }
 
   private _generateExampleTabs() {
