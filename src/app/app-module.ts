@@ -40,7 +40,6 @@ import {
 	SelectModule,
 	CutLoadingIndicatorModule
 } from "cut";
-import { DynamicModule } from 'ng-dynamic-component';
 
 @NgModule({
   imports: [
@@ -65,8 +64,7 @@ import { DynamicModule } from 'ng-dynamic-component';
     StackblitzButtonModule,
     SvgViewerModule,
 		ThemePickerModule,
-		CutLoadingIndicatorModule,
-		DynamicModule.withComponents([])
+		CutLoadingIndicatorModule
   ],
   declarations: [
 		MaterialDocsApp

@@ -18,7 +18,8 @@
     "copy-lib-assets": "copyfiles -u 4 \"projects/cut-lib/src/assets/**/*\" dist/cut/assets",
     "copy-lib-scss": "copyfiles -f projects/cut-lib/src/stylesheets/utilities/cut-utilities.scss dist/cut/stylesheets/utilities",
     "copy-schematics-files": "copyfiles -u 4 \"projects/cut-lib/schematics/src/**/*.json\" dist/cut/schematics",
-    "test": "ng test",
+		"deploy-docs": "ng build --prod cut-app --base-href https://cbdr.github.io/cb-ux-toolkit/ --output-path docs",
+		"test": "ng test",
     "test-ci": "npm-run-all test-lib-ci test-app-ci",
     "test-lib": "ng test cut-lib --browsers Chrome --source-map",
     "test-lib-ci": "ng test cut-lib --watch=false --code-coverage",
@@ -63,7 +64,6 @@
     "font-awesome": "~4.7.0",
     "jquery": "~3.3.0",
     "moment": "^2.24.0",
-    "ng-dynamic-component": "^4.0.3",
     "popper.js": "~1.14.0",
     "rxjs": "^6.4.0",
     "zone.js": "~0.8.29"
