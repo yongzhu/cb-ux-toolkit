@@ -1,10 +1,9 @@
-import { LoadingIndicatorComponent } from './components';
+import { LoadingIndicatorComponentExample } from './components';
 
 export const examplesManifest: any = {
-	name: 'ExampleOne',
 	components: {
-		LoadingIndicatorComponent: {
-			component: LoadingIndicatorComponent
-		},
+		"loading-indicator": {
+			component: LoadingIndicatorComponentExample
+		}
 	}
 };

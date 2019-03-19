@@ -48,12 +48,12 @@ const DOCS: {[key: string]: DocCategory[]} = {
 			summary: 'Custom component addtions.',
       items: [
 				{
-          id: 'LoadingIndicatorComponent',
+          id: 'loading-indicator',
           name: 'Loading Indicator',
 					summary: 'Circular loading animation',
 					isCut: true,
           examples: [
-            'loading-example',
+            'loading-indicator',
           ]
         }
 			]

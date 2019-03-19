@@ -38,7 +38,7 @@ import {
   FrameworkModule,
   ClipboardModule,
 	SelectModule,
-	LoadingIndicatorModule
+	CutLoadingIndicatorModule
 } from "cut";
 import { DynamicModule } from 'ng-dynamic-component';
 
@@ -65,7 +65,7 @@ import { DynamicModule } from 'ng-dynamic-component';
     StackblitzButtonModule,
     SvgViewerModule,
 		ThemePickerModule,
-		LoadingIndicatorModule,
+		CutLoadingIndicatorModule,
 		DynamicModule.withComponents([])
   ],
   declarations: [

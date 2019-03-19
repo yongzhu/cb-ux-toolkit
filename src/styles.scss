@@ -17,6 +17,9 @@
 @import './styles/markdown';
 @import './styles/tables';
 @import './styles/general';
+
+@import './highlightjs/material-light.scss';
+
 @include material-docs-app-theme($theme);
 
 // /* DEMO APPLICATION STYLES */

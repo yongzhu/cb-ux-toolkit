@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DynamicModule } from 'ng-dynamic-component';
+import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
 
-import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
+import { LoadingIndicatorComponentExample } from './loading-indicator/loading-indicator.component';
 
 import {
   FrameworkModule,
   ClipboardModule,
 	SelectModule,
-	LoadingIndicatorModule
+	CutLoadingIndicatorModule
 } from "cut";
 
 export const components = [
-	LoadingIndicatorComponent
+	LoadingIndicatorComponentExample
 ];
 
 @NgModule({
@@ -21,8 +21,8 @@ export const components = [
 	],
 	imports: [
 		CommonModule,
-		LoadingIndicatorModule,
-		DynamicModule.withComponents([...components])
+		CutLoadingIndicatorModule,
+		DocViewerModule
 	],
 	entryComponents: [
 		...components
