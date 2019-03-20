@@ -24,7 +24,6 @@ const TEMPLATE_FILES = [
   'index.html',
   'styles.css',
 	'polyfills.ts',
-	'deeppurple-amber.css',
 	// '.angular-cli.json',
 	'angular-cli.txt',
   'main.ts',
