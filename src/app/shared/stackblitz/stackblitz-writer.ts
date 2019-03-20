@@ -160,6 +160,7 @@ export class StackblitzWriter {
                  filename: string,
                  path: string,
                  prependApp = true) {
+		console.log('STACKBLITZ -- ', path, TEMPLATE_PATH, filename);
     if (path == TEMPLATE_PATH) {
       content = this._replaceExamplePlaceholderNames(data, filename, content);
     } else if (prependApp) {

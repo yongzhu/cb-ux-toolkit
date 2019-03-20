@@ -25,7 +25,8 @@
             "assets": [
 							"src/favicon.ico",
 							"src/404.html",
-              "src/assets",
+							"src/assets",
+							"src/assets/stackblitz/.angular-cli.json",
               {
                 "glob": "**/*",
                 "input": "./dist/cut/assets",
@@ -45,7 +46,7 @@
                 "glob": "./web.config",
                 "input": "./src",
                 "output": "/"
-              }
+							}
             ],
             "styles": [
               "src/styles.scss",
