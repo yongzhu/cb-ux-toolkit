@@ -7,7 +7,7 @@
 
   app-navbar {
     color: mat-color($primary, dark-contrast);
-		
+		background-color: mat-color($background, background);
     .docs-navbar, .docs-navbar-header {
       background: mat-color($primary, light);
     }
