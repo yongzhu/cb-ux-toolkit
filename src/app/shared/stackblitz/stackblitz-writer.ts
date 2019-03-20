@@ -23,8 +23,10 @@ const TEMPLATE_PATH = 'assets/stackblitz/';
 const TEMPLATE_FILES = [
   'index.html',
   'styles.css',
-  'polyfills.ts',
-  '.angular-cli.json',
+	'polyfills.ts',
+	'deeppurple-amber.css',
+	// '.angular-cli.json',
+	'angular-cli.txt',
   'main.ts',
   'material-module.ts',
 ];
@@ -160,13 +162,18 @@ export class StackblitzWriter {
                  filename: string,
                  path: string,
                  prependApp = true) {
-		console.log('STACKBLITZ -- ', path, TEMPLATE_PATH, filename);
+		// console.log('STACKBLITZ -- ', path, TEMPLATE_PATH, filename);
     if (path == TEMPLATE_PATH) {
       content = this._replaceExamplePlaceholderNames(data, filename, content);
     } else if (prependApp) {
       filename = 'app/' + filename;
-    }
-    this._appendFormInput(form, `files[${filename}]`, this._appendCopyright(filename, content));
+		}
+		if(filename === 'angular-cli.txt') {
+			this._appendFormInput(form, `files[.angular-cli.json]`, this._appendCopyright(".angular-cli.json", content));
+		}
+		else {
+			this._appendFormInput(form, `files[${filename}]`, this._appendCopyright(filename, content));
+		}
   }
 
   /**
