@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>CB UX Toolkit</title>
@@ -14,19 +15,39 @@
   <link rel="icon" type="image/png" href="assets/img/favicons/favicon-194x194.png" sizes="194x194">
   <link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png"
-      sizes="192x192">
+  <link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png" sizes="192x192">
   <link rel="manifest" href="assets/img/favicons/manifest.json">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="docs-app-background">
+  <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+  <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+
+  </script>
+  <!-- /Github Pages hack. -->
+
   <material-docs-app></material-docs-app>
   <script>
     // This hides the address bar on mobile browsers
     // https://developers.google.com/web/fundamentals/native-hardware/fullscreen/
-    window.addEventListener('load', function() { window.scrollTo(0, 1); });
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 1);
+    });
+
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
 </body>
+
 </html>

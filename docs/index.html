@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>CB UX Toolkit</title>
-  <base href="https://cbdr.github.io/cb-ux-toolkit/">  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="https://cbdr.github.io/cb-ux-toolkit/">  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
 
@@ -18,25 +17,26 @@
   <link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png" sizes="192x192">
   <link rel="manifest" href="assets/img/favicons/manifest.json">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="styles.0e19ef743c3c8c385609.css">
-</head>
+<link rel="stylesheet" href="styles.0e19ef743c3c8c385609.css"></head>
 
 <body class="docs-app-background">
-	<!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+  <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
   <script>
-			(function () {
-				// Retrieve the URL the user was trying to access when receiving the 404.
-				var redirect = sessionStorage.redirect;
-				// Remove the URL from sessionStorage.
-				delete sessionStorage.redirect;
-				// Check if we actually need to redirect.
-				if (redirect && redirect != location.href) {
-					// We need to redirect to the URL the user was trying to access.
-					history.replaceState(null, null, redirect);
-				}
-			})();
-		</script>
-	<!-- /Github Pages hack. -->
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+
+  </script>
+  <!-- /Github Pages hack. -->
+
   <material-docs-app></material-docs-app>
   <script>
     // This hides the address bar on mobile browsers
@@ -47,9 +47,6 @@
 
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
-  <script type="text/javascript" src="runtime.a5dd35324ddfd942bef1.js"></script>
-  <script type="text/javascript" src="polyfills.59422534744a186087f4.js"></script>
-  <script type="text/javascript" src="main.b1db041a8150fe912f27.js"></script>
-</body>
+<script type="text/javascript" src="runtime.a5dd35324ddfd942bef1.js"></script><script type="text/javascript" src="polyfills.59422534744a186087f4.js"></script><script type="text/javascript" src="main.b1db041a8150fe912f27.js"></script></body>
 
 </html>
