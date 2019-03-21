@@ -208,7 +208,7 @@ Build tag:        ${cmBuildTag}
                     "CM_SEM_VER=${cmSemVer}"
                 ]) {
                   sh '''#!/bin/bash -l
-                    cd dist/cb-ux-toolkit
+                    cd dist/cut
                     npm version $REL_VERSION
                     npm publish --registry https://cbdatascience.jfrog.io/cbdatascience/api/npm/cb-node-local/
                     '''
@@ -224,9 +224,9 @@ Build tag:        ${cmBuildTag}
 				body: 'See ${BUILD_URL} or the attached logs for more details.',
 				compressLog: true,
 				recipientProviders: [[$class: 'CulpritsRecipientProvider']],
-				replyTo: 'no-reply@careerbuilderscreening.com',
+				replyTo: 'no-reply@careerbuilder.com',
 				subject: 'Jenkins: ${JOB_NAME} ${BUILD_DISPLAY_NAME} failed!',
-				to: 'cc:Michael.Gardner@careerbuilderscreening.com'
+				to: 'cc:Mason.Beard@careerbuilder.com'
 			)
 		}
 	}
