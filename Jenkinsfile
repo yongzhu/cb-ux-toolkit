@@ -89,8 +89,8 @@ Build tag:        ${cmBuildTag}
             }
         }
 
-        stage('Build and Test') {
-            parallel {
+        // stage('Build and Test') {
+            // parallel {
                 /*
                  * The build stage will do the following:
                  * 1. Restore Project Dependencies
@@ -173,8 +173,8 @@ Build tag:        ${cmBuildTag}
                         ]
                     }
                 }
-            }
-        }
+            // }
+        // }
 
         // stage('Publish - Pre-Release') {
         //     agent {
