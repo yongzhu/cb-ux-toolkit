@@ -32,6 +32,10 @@ pipeline {
               checkout scm
 
                 script {
+                  sh '''#!/bin/bash -l
+                  nvm install 10.13.0
+                  '''
+
                     packageVersion = sh(script: """cat ./package.json \
 | grep version \
 | head -1 \
@@ -106,10 +110,6 @@ Build tag:        ${cmBuildTag}
                         checkout scm
 
                         script {
-                            sh '''#!/bin/bash -l
-                            nvm install 10.13.0
-                            '''
-
                             cmSemVer = "${relVersion}-${buildType}.${BUILD_NUMBER}"
 
                             withEnv(stepEnvironment + [
