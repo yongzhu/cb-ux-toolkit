@@ -116,6 +116,7 @@ Build tag:        ${cmBuildTag}
                                 "CM_SEM_VER=${cmSemVer}"
                             ]) {
                               sh '''#!/bin/bash -l
+                                  nvm use 10.13.0
                                   make dist
                                   '''
                             }
@@ -145,6 +146,7 @@ Build tag:        ${cmBuildTag}
                                 "CM_SEM_VER=${cmSemVer}"
                             ]) {
                               sh '''#!/bin/bash -l
+                                  nvm use 10.13.0
                                   make test
                                   '''
                             }
