@@ -21,6 +21,8 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr:'10'))
 		skipDefaultCheckout()
 		timestamps()
+    deleteDir()
+    AbortOldBuilds()
 	}
 
     stages {
@@ -32,10 +34,7 @@ pipeline {
               checkout scm
 
                 script {
-                  deleteDir()
-                  pipeline.AbortOldBuilds()
                   sh '''#!/bin/bash -l
-                  nvm uninstall 10.13.0
                   nvm install 10.13.0
                   '''
 
