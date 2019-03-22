@@ -19,7 +19,7 @@ clean: npm-clean
 
 build: restore-dependencies npm-build
 
-test: npm-test
+test: npm-lib
 
 dist: build
 
