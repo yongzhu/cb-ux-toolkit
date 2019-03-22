@@ -19,7 +19,7 @@ clean: npm-clean
 
 build: restore-dependencies npm-build
 
-test: npm-lib
+test: npm-test
 
 dist: build
 
@@ -33,5 +33,5 @@ npm-build: restore-dependencies
 	@npm run build
 
 npm-test: npm-build
-	@npm run test-ci
+	@npm run test-lib
 
