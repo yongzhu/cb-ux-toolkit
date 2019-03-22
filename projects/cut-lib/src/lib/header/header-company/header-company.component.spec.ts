@@ -2,7 +2,6 @@ import { CommonModule } from "@angular/common";
 import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angular/core/testing";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
-import { ButtonModule } from "../../button/button.module";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { HeaderService } from "../header.service";
 import { HeaderCompanyComponent } from "./header-company.component";
@@ -13,7 +12,7 @@ describe("HeaderCompanyComponent", () => {
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, ButtonModule, DropBoxModule, RouterTestingModule
+      imports: [CommonModule, DropBoxModule, RouterTestingModule
       ],
       declarations: [HeaderCompanyComponent],
       providers: [HeaderService]

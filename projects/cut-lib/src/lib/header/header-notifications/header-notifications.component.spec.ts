@@ -5,7 +5,6 @@ import {
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
-import { ButtonModule } from "../../button/button.module";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { HeaderService } from "../header.service";
 import { HeaderNotificationsComponent } from "./header-notifications.component";
@@ -16,7 +15,7 @@ describe("HeaderNotificationsComponent", () => {
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, ButtonModule, DropBoxModule, RouterTestingModule],
+      imports: [CommonModule, DropBoxModule, RouterTestingModule],
       declarations: [HeaderNotificationsComponent],
       providers: [HeaderService]
     })

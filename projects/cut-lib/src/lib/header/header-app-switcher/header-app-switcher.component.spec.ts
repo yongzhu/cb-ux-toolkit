@@ -2,7 +2,6 @@ import { CommonModule } from "@angular/common";
 import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angular/core/testing";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
-import { ButtonModule } from "../../button/button.module";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { HeaderService } from "../header.service";
 import { HeaderAppSwitcherComponent } from "./header-app-switcher.component";
@@ -13,7 +12,7 @@ describe("HeaderAppSwitcherComponent", () => {
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [ CommonModule, ButtonModule, DropBoxModule, RouterModule, RouterTestingModule ],
+      imports: [ CommonModule, DropBoxModule, RouterModule, RouterTestingModule ],
       declarations: [ HeaderAppSwitcherComponent ],
       providers: [ HeaderService ]
     })

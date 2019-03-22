@@ -1,7 +1,6 @@
 import {
   async, ComponentFixture, fakeAsync, inject, TestBed, tick
 } from "@angular/core/testing";
-import { ButtonModule } from "../../button/button.module";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { HeaderService } from "../header.service";
 
@@ -16,7 +15,7 @@ describe("HeaderUserProfileComponent", () => {
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonModule, DropBoxModule, RouterTestingModule],
+      imports: [DropBoxModule, RouterTestingModule],
       declarations: [HeaderUserProfileComponent],
       providers: [{
         provide: HeaderService,
