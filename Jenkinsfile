@@ -33,6 +33,7 @@ pipeline {
 
                 script {
                   sh '''#!/bin/bash -l
+                  nvm uninstall 10.13.0
                   nvm install 10.13.0
                   '''
 
