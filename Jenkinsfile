@@ -29,6 +29,8 @@ pipeline {
                 label 'PlatformSoftware'
             }
             steps {
+              deleteDir()
+              pipeline.AbortOldBuilds()
               checkout scm
 
                 script {
