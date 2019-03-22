@@ -29,11 +29,11 @@ pipeline {
                 label 'PlatformSoftware'
             }
             steps {
-              deleteDir()
-              pipeline.AbortOldBuilds()
               checkout scm
 
                 script {
+                  deleteDir()
+                  pipeline.AbortOldBuilds()
                   sh '''#!/bin/bash -l
                   nvm uninstall 10.13.0
                   nvm install 10.13.0
