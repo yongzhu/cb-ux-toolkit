@@ -106,13 +106,16 @@ Build tag:        ${cmBuildTag}
                         checkout scm
 
                         script {
+                            sh '''#!/bin/bash -l
+                            nvm install 10.13.0
+                            '''
+
                             cmSemVer = "${relVersion}-${buildType}.${BUILD_NUMBER}"
 
                             withEnv(stepEnvironment + [
                                 "CM_SEM_VER=${cmSemVer}"
                             ]) {
                               sh '''#!/bin/bash -l
-                                  nvm install 10.13.0
                                   make dist
                                   '''
                             }
@@ -142,7 +145,6 @@ Build tag:        ${cmBuildTag}
                                 "CM_SEM_VER=${cmSemVer}"
                             ]) {
                               sh '''#!/bin/bash -l
-                                  nvm install 10.13.0
                                   make test
                                   '''
                             }
