@@ -21,8 +21,6 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr:'10'))
 		skipDefaultCheckout()
 		timestamps()
-    deleteDir()
-    AbortOldBuilds()
 	}
 
     stages {
