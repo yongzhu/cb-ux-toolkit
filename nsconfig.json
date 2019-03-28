@@ -1,0 +1,8 @@
+
+{
+  "appResourcesPath": "App_Resources",
+  "appPath": "projects/cut-lib",
+  "nsext": ".tns",
+  "webext": "",
+  "shared": true
+}

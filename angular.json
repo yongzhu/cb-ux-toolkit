@@ -2,6 +2,9 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  },
   "projects": {
     "cut-app": {
       "root": "",
@@ -23,21 +26,21 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-							"src/favicon.ico",
-							"src/404.html",
-							"src/assets",
-							"src/assets/stackblitz/.angular-cli.json",
+              "src/favicon.ico",
+              "src/404.html",
+              "src/assets",
+              "src/assets/stackblitz/.angular-cli.json",
               {
                 "glob": "**/*",
                 "input": "./dist/cut/assets",
                 "output": "/assets/"
-							},
-							{
+              },
+              {
                 "glob": "**/*",
                 "input": "./node_modules/@angular/material-examples/docs-content",
                 "output": "/docs-content"
-							},
-							{
+              },
+              {
                 "glob": "**/*",
                 "input": "./src/example-templates",
                 "output": "/example-templates"
@@ -46,7 +49,7 @@
                 "glob": "./web.config",
                 "input": "./src",
                 "output": "/"
-							}
+              }
             ],
             "styles": [
               "src/styles.scss",
@@ -56,12 +59,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -77,8 +78,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-						"browserTarget": "cut-app:build",
-						"port": 4300
+            "browserTarget": "cut-app:build",
+            "port": 4300
           },
           "configurations": {
             "production": {
@@ -99,8 +100,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              {
+            "styles": [{
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
               "dist/cut/styles.scss",
@@ -227,7 +227,47 @@
           }
         }
       }
+    },
+    "ns-cut": {
+      "root": "projects/cut-lib",
+      "sourceRoot": "projects/cut-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cut-lib/tsconfig.lib.json",
+            "project": "projects/cut-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/cut-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cut-lib/src/test.ts",
+            "tsConfig": "projects/cut-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/cut-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cut-lib/tsconfig.lib.json",
+              "projects/cut-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "cut-app"
+  "defaultProject": "cut-lib"
 }

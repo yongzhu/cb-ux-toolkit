@@ -23,6 +23,12 @@
       ],
       "cut/*": [
         "dist/cut/*"
+			],
+			"ns-cut": [
+        "dist/ns-cut"
+      ],
+      "ns-cut/*": [
+        "dist/ns-cut/*"
       ]
     }
   }
