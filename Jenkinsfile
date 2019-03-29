@@ -87,6 +87,10 @@ Release version:  ${relVersion}
 Build version:    ${cmBuildNumber}
 Semantic Version: ${cmSemVer}
 Build tag:        ${cmBuildTag}
+Branch: 					${isMaster}
+PreRelease: 			${preReleaseBuild}
+PublishPackage: 	${publishPackage}
+RunningPublish:   ${(isMaster || preReleaseBuild) && publishPackage }
 ----------------------------------
 """
                 }
