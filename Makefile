@@ -33,5 +33,5 @@ npm-build: restore-dependencies
 	@npm run build
 
 npm-test: npm-build
-	@npm run test-lib
+	@npm run test-ci
 
