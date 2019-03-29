@@ -4,7 +4,8 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+		frameworks: ['jasmine', '@angular-devkit/build-angular'],
+		exclude: ["**/node_modules/**"],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
@@ -25,7 +26,7 @@ module.exports = function (config) {
         base: 'Chrome',
         flags: [
           '--headless',
-          '--disable-gpu',
+          // '--disable-gpu',
           '--no-sandbox',
           '--remote-debugging-port=9222',
         ],
@@ -35,7 +36,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_DEBUG,
-    autoWatch: false,
+    autoWatch: true,
     browsers: ['HeadlessChrome'],
     singleRun: false
   });

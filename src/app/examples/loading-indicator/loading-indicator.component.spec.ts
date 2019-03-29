@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+	CutLoadingIndicatorModule
+} from "cut";
 
 import { LoadingIndicatorComponentExample } from './loading-indicator.component';
 
@@ -8,6 +11,7 @@ describe('LoadingIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+			imports: [CutLoadingIndicatorModule],
       declarations: [ LoadingIndicatorComponentExample ]
     })
     .compileComponents();
