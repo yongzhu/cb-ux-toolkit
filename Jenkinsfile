@@ -10,7 +10,7 @@ ciBuild = env.BRANCH_NAME != "master"
 preReleaseBuild = env.BRANCH_NAME == "develop"
 // Publish package can be defaulted to true if we're on master;
 // an additional check will happen for preReleaseBuilds
-publishPackage = false
+publishPackage = true
 
 stashName = env.BUILD_TAG.replace('%2F', '_')
 
