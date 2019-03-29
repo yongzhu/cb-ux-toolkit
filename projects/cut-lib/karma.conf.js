@@ -21,8 +21,8 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     customLaunchers: {
-      ChromeHeadless: {
-        base: 'ChromeHeadless',
+      HeadlessChrome: {
+        base: 'Chrome',
         flags: [
           '--headless',
           '--disable-gpu',
@@ -36,7 +36,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_DEBUG,
     autoWatch: false,
-    browsers: ['ChromeHeadless'],
+    browsers: ['HeadlessChrome'],
     singleRun: false
   });
 };
