@@ -80,7 +80,7 @@ pipeline {
                     ]
 
                                     echo """
-Build Information
+Build Information -- New
 ----------------------------------
 Build type:       ${buildType}
 Release version:  ${relVersion}
