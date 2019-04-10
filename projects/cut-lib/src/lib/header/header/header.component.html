@@ -19,7 +19,7 @@
         <a *ngIf="headerObj.product.externalPath" class="name-product" title="Product" [href]="headerObj.product.externalPath">{{headerObj.product.title | uppercase }}</a>
       </div>
       <div class="header-main">
-        <span class="header-item hidden-md-down" *ngIf="!headerObj.newFeatures.hidden" (click)="emitActionType('NEW_FEATURES_ACTION', 'newFeatures')" tabindex="0">New Features</span>
+        <!-- <span class="header-item hidden-md-down" *ngIf="!headerObj.newFeatures.hidden" (click)="emitActionType('NEW_FEATURES_ACTION', 'newFeatures')" tabindex="0">New Features</span> -->
         <span class="header-item hidden-md-down">
           <cut-header-app-switcher></cut-header-app-switcher>
         </span>

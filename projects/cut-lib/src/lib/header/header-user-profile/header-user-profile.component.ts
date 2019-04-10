@@ -66,7 +66,8 @@ export class HeaderUserProfileComponent implements OnInit {
   }
 
   selectTheme(theme: number) {
-    this.document.body.style.background = this.selectedTheme[theme].bg;
+    // This was some weird solution for selecting background color - i don't think it's even working on tdp atm.  killing it for now - JP
+    // this.document.body.style.background = this.selectedTheme[theme].bg;
     this.defaultColorMsg = this.selectedTheme[theme].msg;
     this.themeChosen = theme;
     this.emitActionType("BACKGROUND_COLOR_ACTION", "userProfile", this.selectedTheme[theme].rgb);
