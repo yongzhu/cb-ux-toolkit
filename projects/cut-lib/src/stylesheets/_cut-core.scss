@@ -1,5 +1,6 @@
 @import "./variables/cut-theme-variables";
 @import "./variables/cut-core-variables";
+@import './utilities/material-overrides';
 @import "./utilities/cut-utilities";
 
 // :host /deep/ app-dynamic-body {
@@ -29,26 +30,3 @@ a, a *, .btn {
 hr {
   border-color: $color-border;
 }
-// Material overrides - May move to different file later
-.mat-elevation-z15 {
-	box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.16),
-	0px 5px 20px 2px rgba(0, 0, 0, 0.0),
-	0px 5px 20px 5px rgba(0, 0, 0, 0.0) !important;
-}
-
- .mat-elevation-z6 {
-	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16), 
-	0px 6px 10px 0px rgba(0, 0, 0, 0.0), 
-	0px 1px 18px 0px rgba(0, 0, 0, 0.0) !important;
-}
-// .my-tooltip-div {
-//   position: absolute;
-//   background: #fff;
-//   font: 12px sans-serif;
-//   border: 1px solid;
-//   padding: 5px;
-//   border-radius: 4px;
-//   pointer-events: none;
-//   white-space: nowrap;
-//   z-index: 100;
-// }

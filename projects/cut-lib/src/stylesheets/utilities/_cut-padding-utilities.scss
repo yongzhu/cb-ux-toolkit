@@ -1,0 +1,55 @@
+$total: 7;
+
+@mixin element-spacing($width) {
+	.p-r-#{$width} {
+		padding-right: #{$width}px;
+	}
+	.p-l-#{$width} {
+		padding-left: #{$width}px;
+	}
+	.p-t-#{$width} {
+		padding-top: #{$width}px;
+	}
+	.p-b-#{$width} {
+		padding-bottom: #{$width}px;
+	}
+	.p-x-#{$width} {
+		padding-left: #{$width}px;
+		padding-right: #{$width}px;
+	}
+	.p-y-#{$width} {
+		padding-top: #{$width}px;
+		padding-bottom: #{$width}px;
+	}
+	.m-r-#{$width} {
+		padding-right: #{$width}px;
+	}
+	.m-l-#{$width} {
+		padding-left: #{$width}px;
+	}
+	.m-t-#{$width} {
+		padding-top: #{$width}px;
+	}
+	.m-b-#{$width} {
+		padding-bottom: #{$width}px;
+	}
+	.m-x-#{$width} {
+		padding-left: #{$width}px;
+		padding-right: #{$width}px;
+	}
+	.m-y-#{$width} {
+		padding-top: #{$width}px;
+		padding-bottom: #{$width}px;
+	}
+	.p-#{$width} {
+		padding: #{$width}px;
+	}
+	.m-#{$width} {
+		margin: #{$width}px;
+	}
+}
+
+// Setup some padding utilities
+@for $i from 1 through $total {
+	@include element-spacing($i * 5);
+}
