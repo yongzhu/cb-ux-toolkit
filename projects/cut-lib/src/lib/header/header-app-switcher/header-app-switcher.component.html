@@ -1,7 +1,7 @@
 <div class="wrapper-app-switcher" *ngIf="showAppSwitcher()">
   <cut-drop-box dropStyle="fixed-down-left" [open]="open">
     <cut-drop-box-anchor tabindex="0">
-      <span class="hidden-lg-up">{{headerObj.product.title}}</span>
+      <!-- <span class="hidden-lg-up">{{headerObj.product.title}}</span> -->
       <img id="appSwitcher-bento" [attr.src]="headerObj.appSwitcherIcon ? headerObj.appSwitcherIcon.src : 'assets/images/icon-nine-dots.svg'" alt="Icon product switcher">
     </cut-drop-box-anchor>
     <cut-drop-box-content *ngIf="headerObj.appSwitcher">

@@ -2,42 +2,50 @@
 
 :host {
   cut-drop-box /deep/ {
-    .arrow:after, .arrow:before {
+
+    .arrow:after,
+    .arrow:before {
       display: none;
     }
+
     .drop-panel {
       padding: 0 !important;
       border-radius: 0 0 $border-radius $border-radius !important;
     }
 
     .drop-box-wrapper.fixed-down-right {
-      display:block !important;
+      display: block !important;
     }
 
     .drop-box-wrapper.fixed-down-right .drop-panel-wrapper {
       top: 100%;
       left: 0;
       // @media(min-width: map-get($grid-breakpoints, lg)) {
-      //   border-top: solid 4px $color-border;
+      border-top: solid 4px $color-border;
       // }
     }
 
     cut-drop-box-anchor {
-      padding: $padding-base;
+      padding: ($padding-base / 2) $padding-base;
       cursor: pointer;
       color: $color-primary;
       display: flex;
       align-items: center;
+
       &:hover {
         background: $gray-lighter;
       }
+
       &:focus {
         outline: 0;
         background: $gray-lighter;
       }
-      &:active, &.active {
+
+      &:active,
+      &.active {
         background: $gray-light;
       }
+
       // @media(min-width: map-get($grid-breakpoints, lg)) {
       //   padding: $padding-base/2 $padding-base;
       //   .fa {
@@ -55,34 +63,42 @@
   padding: 0px;
   list-style-type: none;
   vertical-align: top;
-  > li {
+
+  >li {
     float: left;
     border-bottom: solid 1px $color-border;
+
     a {
       align-items: center;
-      padding: $padding-base;
+      padding: $padding-base / 2 $padding-base;
       text-decoration: none;
       display: flex;
       cursor: pointer;
       color: $color-primary;
+
       &:hover {
         background: $gray-lighter;
       }
+
       &:focus {
         outline: 0;
         background: $gray-lighter;
       }
-      &:active{
+
+      &:active {
         background: $gray-light;
       }
+
       .fa {
         margin-left: auto;
       }
     }
-    &.active{
+
+    &.active {
       background: $gray-light;
     }
   }
+
   // @media(min-width: map-get($grid-breakpoints, lg)) {
   //   margin-left: -$padding-base;
   //   display: inline-flex;
@@ -105,7 +121,8 @@
   margin: 0px;
   padding: 0px;
   list-style-type: none;
-  > li {
+
+  >li {
     a {
       color: $color-link;
       padding: $padding-base;
@@ -116,23 +133,30 @@
         background: $accent-beta-light;
         color: $WHITE;
       }
-      &:active, &.active {
+
+      &:active,
+      &.active {
         background: $accent-beta-darker;
         color: $WHITE;
       }
     }
+
     &:last-child {
       border-radius: 0 0 $border-radius-base $border-radius-base;
+
       a {
         border-radius: 0 0 $border-radius-base $border-radius-base;
       }
     }
-    &.active{
+
+    &.active {
       background: $accent-beta-darker;
-      a{
+
+      a {
         color: $WHITE;
       }
     }
+
     &.has-separator {
       border-bottom: solid 1px $color-border;
     }
@@ -142,4 +166,3 @@
 .li-dropdown-active {
   background: $gray-light;
 }
-

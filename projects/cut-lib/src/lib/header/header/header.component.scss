@@ -66,16 +66,16 @@ hr {
       height: 22px;
       &.screen-portrait {
         width: 23px;
-        // @media(min-width: map-get($grid-breakpoints, lg)) {
-        //   display: none;
-        // }
+        @media(min-width: map-get($grid-breakpoints, lg)) {
+          display: none;
+        }
       }
       &.screen-landscape {
         display: none;
-        // @media(min-width: map-get($grid-breakpoints, lg)) {
-        //   display: block;
-        //   width: 209px;
-        // }
+        @media(min-width: map-get($grid-breakpoints, lg)) {
+          display: block;
+          width: 209px;
+        }
       }
     }
   }
@@ -99,6 +99,8 @@ hr {
 
 /******************/
 .header-main-wrapper /deep/ {
+  padding-left: 15px;
+  padding-right: 15px;
 
   cut-drop-box {
     .arrow:after, .arrow:before {
@@ -112,16 +114,16 @@ hr {
     }
     .drop-panel-wrapper {
       top: $padding-base * 2 !important;
-      // @media(min-width: map-get($grid-breakpoints, lg)) {
-      //   border-top: solid 4px $color-border;
-      // }
+      @media(min-width: map-get($grid-breakpoints, lg)) {
+        border-top: solid 4px $color-border;
+      }
     }
-    // @media(max-width: map-get($grid-breakpoints, lg)) {
-    //   .arrow {
-    //     &:before, &:after {
-    //       display: none;
-    //     }
-    //   }
-    // }
+    @media(max-width: map-get($grid-breakpoints, lg)) {
+      .arrow {
+        &:before, &:after {
+          display: none;
+        }
+      }
+    }
   }
 }

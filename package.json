@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build-themes && ng serve",
-		"build": "npm-run-all build-lib build-app",
-		"build-watch": "ng build --prod cut-lib --watch",
+    "build": "npm-run-all build-lib build-app",
+    "build-watch": "ng build --prod cut-lib --watch",
     "build-app": "ng build --prod cut-app",
     "build-lib": "ng build --prod cut-lib",
     "build-droid": "tns run android --bundle ns-cut-lib",

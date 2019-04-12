@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { Observable } from "rxjs";
 
 import { HeaderService } from "../header.service";
@@ -6,7 +6,7 @@ import { HeaderService } from "../header.service";
 @Component({
   selector: "cut-header",
   templateUrl: "./header.component.html",
-  styleUrls: [ "./header.component.scss" ]
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
   @Output() sidenavButtonClick = new EventEmitter<null>();
@@ -14,11 +14,11 @@ export class HeaderComponent implements OnInit {
   headerObj: any;
   validHeaderObj$: Observable<boolean>;
 
-  constructor(private headerService: HeaderService) {}
+  constructor(private headerService: HeaderService) { }
 
   ngOnInit(): void {
     this.validHeaderObj$ = this.headerService.validHeaderSourceObservable;
-    this.headerService.headerObservable.subscribe(headerObj => this.headerObj = headerObj);
+    this.headerService.headerSource.subscribe(headerObj => this.headerObj = { ...headerObj });
   }
 
   trigger() {

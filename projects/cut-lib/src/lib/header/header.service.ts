@@ -7,10 +7,12 @@ import { map } from "rxjs/operators";
 import { HeaderDataInterface } from "./header.model";
 import { HEADER_DATA } from "./header.model.mock";
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class HeaderService {
 
-  private headerSource = new BehaviorSubject<HeaderDataInterface>(HEADER_DATA);
+  headerSource = new BehaviorSubject<HeaderDataInterface>(HEADER_DATA);
   headerObservable: Observable<HeaderDataInterface> = this.headerSource.asObservable();
   headerObj: HeaderDataInterface;
 

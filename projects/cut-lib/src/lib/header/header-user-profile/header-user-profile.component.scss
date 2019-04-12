@@ -1,4 +1,5 @@
 @import "../../../stylesheets/cut-core";
+@import "../../../cb-utilities";
 
 .wrapper-user-profile {
   text-align: right;
@@ -17,14 +18,14 @@ cut-drop-box /deep/ {
     .drop-panel-wrapper {
       top: 11px !important;
       right: 0 !important;
-      // @media(min-width: map-get($grid-breakpoints, lg)) {
-      //   border-top: solid 4px $color-border;
-      // }
+      @media(min-width: map-get($grid-breakpoints, lg)) {
+        border-top: solid 4px $color-border;
+      }
     }
   }
 
   cut-drop-box-anchor {
-    padding: $padding-base;
+    padding: 0 $padding-base;
     color: $color-primary;
     cursor: pointer;
     display: flex;
@@ -39,22 +40,22 @@ cut-drop-box /deep/ {
     &:active, &.active {
       background: $gray-light;
     }
-    // @media(min-width: map-get($grid-breakpoints, lg)) {
-    //   padding: 0 $padding-base/2;
-    //   &:hover {
-    //     background: none;
-    //     color: $color-tertiary;
-    //   }
-    //   &:focus {
-    //     outline: none;
-    //     background: none;
-    //     color: $color-tertiary;
-    //   }
-    //   &:active {
-    //     background: none;
-    //     color: $color-tertiary-dark;
-    //   }
-    // }
+    @media(min-width: map-get($grid-breakpoints, lg)) {
+      padding: 0 $padding-base/2;
+      &:hover {
+        background: none;
+        color: $color-tertiary;
+      }
+      &:focus {
+        outline: none;
+        background: none;
+        color: $color-tertiary;
+      }
+      &:active {
+        background: none;
+        color: $color-tertiary-dark;
+      }
+    }
   }
 }
 

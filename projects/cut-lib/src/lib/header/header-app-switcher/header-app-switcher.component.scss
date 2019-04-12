@@ -1,18 +1,19 @@
 @import "../../../stylesheets/cut-core";
+@import "../../../cb-utilities";
 
 cut-drop-box-anchor {
-  // @media(max-width: map-get($grid-breakpoints, lg)) {
-  //   &:hover {
-  //     background: $gray-lighter;
-  //   }
-  //   &:focus {
-  //     outline: 0;
-  //     background: $gray-lighter;
-  //   }
-  //   &:active, &.active {
-  //     background: $gray-light;
-  //   }
-  // }
+  @media(max-width: map-get($grid-breakpoints, lg)) {
+    &:hover {
+      background: $gray-lighter;
+    }
+    &:focus {
+      outline: 0;
+      background: $gray-lighter;
+    }
+    &:active, &.active {
+      background: $gray-light;
+    }
+  }
   &:focus{
     outline: 0;
   }
