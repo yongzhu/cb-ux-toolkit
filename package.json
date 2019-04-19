@@ -40,7 +40,7 @@
     "type": "git",
     "url": "git+https://github.com/cbdr/cut.git"
   },
-  "author": "Michael Gardner <Michael.Gardner@careerbuilderscreening.com>",
+  "author": "Mason Beard <Mason.Beard@careerbuilder.com>",
   "license": "ISC",
   "homepage": "https://github.com/cbdr/cut#readme",
   "private": true,
@@ -53,7 +53,7 @@
     "@angular/forms": "~7.2.7",
     "@angular/http": "~7.2.7",
     "@angular/material": "~7.3.3",
-    "@angular/material-examples": "https://github.com/angular/material2-docs-content.git",
+    "@angular/material-examples": "git+https://github.com/angular/material2-docs-content.git#7.3.x",
     "@angular/material-moment-adapter": "^7.2.1",
     "@angular/platform-browser": "~7.2.7",
     "@angular/platform-browser-dynamic": "~7.2.7",
