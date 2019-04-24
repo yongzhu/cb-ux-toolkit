@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { NavDropdownComponent } from "./nav-dropdown.component";
+import { CutNavDropdownComponent } from "./nav-dropdown.component";
 
 describe("NavDropdownComponent", () => {
-  let component: NavDropdownComponent;
-  let fixture: ComponentFixture<NavDropdownComponent>;
+  let component: CutNavDropdownComponent;
+  let fixture: ComponentFixture<CutNavDropdownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NavDropdownComponent],
+      declarations: [CutNavDropdownComponent],
       imports: [RouterTestingModule]
     });
 
-    fixture = TestBed.createComponent(NavDropdownComponent);
+    fixture = TestBed.createComponent(CutNavDropdownComponent);
     component = fixture.componentInstance;
   }));
 
