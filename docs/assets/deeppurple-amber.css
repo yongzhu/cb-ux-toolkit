@@ -856,7 +856,9 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 .mat-list-option:hover, .mat-list-option:focus,
 .mat-nav-list .mat-list-item:hover,
-.mat-nav-list .mat-list-item:focus {
+.mat-nav-list .mat-list-item:focus,
+.mat-action-list .mat-list-item:hover,
+.mat-action-list .mat-list-item:focus {
   background: rgba(0, 0, 0, 0.04); }
 
 .mat-menu-panel {
@@ -1599,6 +1601,9 @@ app-homepage .docs-header-start {
 
 app-homepage .docs-homepage-row {
   color: rgba(0, 0, 0, 0.54); }
+
+app-navbar {
+  background-color: #fafafa; }
 
 .docs-toc-container {
   border-left: solid 4px #673ab7; }
