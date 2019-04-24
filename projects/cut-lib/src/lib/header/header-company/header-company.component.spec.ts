@@ -3,25 +3,25 @@ import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angu
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
-import { HeaderService } from "../header.service";
-import { HeaderCompanyComponent } from "./header-company.component";
+import { CutHeaderService } from "../header.service";
+import { CutHeaderCompanyComponent } from "./header-company.component";
 
 describe("HeaderCompanyComponent", () => {
-  let component: HeaderCompanyComponent;
-  let fixture: ComponentFixture<HeaderCompanyComponent>;
+  let component: CutHeaderCompanyComponent;
+  let fixture: ComponentFixture<CutHeaderCompanyComponent>;
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       imports: [CommonModule, DropBoxModule, RouterTestingModule
       ],
-      declarations: [HeaderCompanyComponent],
-      providers: [HeaderService]
+      declarations: [CutHeaderCompanyComponent],
+      providers: [CutHeaderService]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderCompanyComponent);
+    fixture = TestBed.createComponent(CutHeaderCompanyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -30,14 +30,14 @@ describe("HeaderCompanyComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should call routeToExternalPath", fakeAsync(inject([HeaderService], (serv: HeaderService) => { {
+  it("should call routeToExternalPath", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => { {
     spyOn(serv, "routeToExternalPath");
     component.routeToExternalPath("");
     tick(350);
     expect(serv.routeToExternalPath).toHaveBeenCalled();
   }})));
 
-  it("should call emitActionType", fakeAsync(inject([HeaderService], (serv: HeaderService) => { {
+  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => { {
     spyOn(serv, "emitActionType");
     component.emitActionType("");
     tick(350);

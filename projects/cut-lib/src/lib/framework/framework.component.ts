@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { FooterConfig } from "../footer/footer.model";
 import { FooterService } from "../footer/footer.service";
 import { HeaderDataInterface } from "../header/header.model";
-import { HeaderService } from "../header/header.service";
+import { CutHeaderService } from "../header/header.service";
 
 @Component({
   selector: "cut-framework",
@@ -24,7 +24,7 @@ export class FrameworkComponent implements OnInit {
   @Output() ngValueChange = new EventEmitter();
 
   constructor(
-    private headerService: HeaderService,
+    private headerService: CutHeaderService,
     private footerService: FooterService
   ) {}
 

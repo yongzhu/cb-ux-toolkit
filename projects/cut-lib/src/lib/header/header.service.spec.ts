@@ -1,17 +1,17 @@
 import { inject, TestBed } from "@angular/core/testing";
 
 import { RouterTestingModule } from "@angular/router/testing";
-import { HeaderService } from "./header.service";
+import { CutHeaderService } from "./header.service";
 
-describe("HeaderService", () => {
+describe("CutHeaderService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HeaderService],
+      providers: [CutHeaderService],
       imports: [RouterTestingModule]
     });
   });
 
-  it("should ...", inject([HeaderService], (service: HeaderService) => {
+  it("should ...", inject([CutHeaderService], (service: CutHeaderService) => {
     expect(service).toBeTruthy();
   }));
 });

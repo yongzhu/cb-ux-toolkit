@@ -3,24 +3,24 @@ import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angu
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
-import { HeaderService } from "../header.service";
-import { HeaderAppSwitcherComponent } from "./header-app-switcher.component";
+import { CutHeaderService } from "../header.service";
+import { CutHeaderAppSwitcherComponent } from "./header-app-switcher.component";
 
 describe("HeaderAppSwitcherComponent", () => {
-  let component: HeaderAppSwitcherComponent;
-  let fixture: ComponentFixture<HeaderAppSwitcherComponent>;
+  let component: CutHeaderAppSwitcherComponent;
+  let fixture: ComponentFixture<CutHeaderAppSwitcherComponent>;
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       imports: [ CommonModule, DropBoxModule, RouterModule, RouterTestingModule ],
-      declarations: [ HeaderAppSwitcherComponent ],
-      providers: [ HeaderService ]
+      declarations: [ CutHeaderAppSwitcherComponent ],
+      providers: [ CutHeaderService ]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderAppSwitcherComponent);
+    fixture = TestBed.createComponent(CutHeaderAppSwitcherComponent);
     component = fixture.componentInstance;
     component.ngOnInit();
     fixture.detectChanges();
@@ -93,14 +93,14 @@ describe("HeaderAppSwitcherComponent", () => {
     expect(bentoImg).toBeTruthy();
   });
 
-  it("should call emitActionType", fakeAsync(inject([HeaderService], (serv: HeaderService) => { {
+  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => { {
     spyOn(serv, "emitActionType");
     component.emitActionType("");
     tick(350);
     expect(serv.emitActionType).toHaveBeenCalled();
   }})));
 
-  it("should call routeToExternalPath", fakeAsync(inject([HeaderService], (serv: HeaderService) => { {
+  it("should call routeToExternalPath", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => { {
     spyOn(serv, "routeToExternalPath");
     component.routeToExternalPath("");
     tick(350);

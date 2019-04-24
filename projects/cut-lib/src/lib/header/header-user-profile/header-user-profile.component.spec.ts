@@ -3,23 +3,23 @@ import {
 } from "@angular/core/testing";
 import { MatButtonModule, MatMenuModule, MatIconModule } from "@angular/material";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
-import { HeaderService } from "../header.service";
+import { CutHeaderService } from "../header.service";
 
 import { RouterTestingModule } from "@angular/router/testing";
 import { HSMock } from "../header-nav/header-nav.component.spec";
-import { HeaderUserProfileComponent } from "./header-user-profile.component";
+import { CutHeaderUserProfileComponent } from "./header-user-profile.component";
 
 describe("HeaderUserProfileComponent", () => {
-  let component: HeaderUserProfileComponent;
-  let fixture: ComponentFixture<HeaderUserProfileComponent>;
+  let component: CutHeaderUserProfileComponent;
+  let fixture: ComponentFixture<CutHeaderUserProfileComponent>;
   let service: HSMock;
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       imports: [DropBoxModule, RouterTestingModule, MatButtonModule, MatMenuModule, MatIconModule],
-      declarations: [HeaderUserProfileComponent],
+      declarations: [CutHeaderUserProfileComponent],
       providers: [{
-        provide: HeaderService,
+        provide: CutHeaderService,
         useClass: HSMock
       }]
     })
@@ -27,9 +27,9 @@ describe("HeaderUserProfileComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderUserProfileComponent);
+    fixture = TestBed.createComponent(CutHeaderUserProfileComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(HeaderService);
+    service = TestBed.get(CutHeaderService);
     service.headerObservable.next({
       userProfile: {
         user: {}
@@ -112,7 +112,7 @@ describe("HeaderUserProfileComponent", () => {
     expect(options.length).toEqual(0);
   });
 
-  it("should call emitActionType", fakeAsync(inject([HeaderService], (serv: HeaderService) => {
+  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     {
       spyOn(serv, "emitActionType");
       component.emitActionType("");

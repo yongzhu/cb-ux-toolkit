@@ -8,7 +8,7 @@ import {
   FrameworkModule,
   ClipboardModule,
 	SelectModule,
-	HeaderModule,
+	CutHeaderModule,
 	CutLoadingIndicatorModule
 } from "cut";
 
@@ -24,7 +24,7 @@ export const components = [
 	imports: [
 		CommonModule,
 		CutLoadingIndicatorModule,
-		HeaderModule,
+		CutHeaderModule,
 		DocViewerModule
 	],
 	entryComponents: [

@@ -5,16 +5,16 @@ import { MatMenuModule, MatButtonModule, MatIconModule, MatToolbarModule } from 
 
 import { DropBoxModule } from "../drop-box/drop-box.module";
 
-import { HeaderAppSwitcherComponent } from "./header-app-switcher/header-app-switcher.component";
-import { HeaderCompanyComponent } from "./header-company/header-company.component";
-import { HeaderNavComponent } from "./header-nav/header-nav.component";
-import { NavDropdownComponent } from "./header-nav/nav-dropdown/nav-dropdown.component";
-import { HeaderNotificationsComponent } from "./header-notifications/header-notifications.component";
-import { HeaderSettingsComponent } from "./header-settings/header-settings.component";
-import { HeaderSlidePanelComponent } from "./header-slide-panel/header-slide-panel.component";
-import { HeaderUserProfileComponent } from "./header-user-profile/header-user-profile.component";
-import { HeaderService } from "./header.service";
-import { HeaderComponent } from "./header/header.component";
+import { CutHeaderAppSwitcherComponent } from "./header-app-switcher/header-app-switcher.component";
+import { CutHeaderCompanyComponent } from "./header-company/header-company.component";
+import { CutHeaderNavComponent } from "./header-nav/header-nav.component";
+import { CutNavDropdownComponent } from "./header-nav/nav-dropdown/nav-dropdown.component";
+import { CutHeaderNotificationsComponent } from "./header-notifications/header-notifications.component";
+import { CutHeaderSettingsComponent } from "./header-settings/header-settings.component";
+import { CutHeaderSlidePanelComponent } from "./header-slide-panel/header-slide-panel.component";
+import { CutHeaderUserProfileComponent } from "./header-user-profile/header-user-profile.component";
+import { CutHeaderService } from "./header.service";
+import { CutHeaderComponent } from "./header/header.component";
 
 @NgModule({
 	imports: [
@@ -27,18 +27,18 @@ import { HeaderComponent } from "./header/header.component";
 		MatToolbarModule
 	],
   declarations: [
-    HeaderComponent,
-    HeaderAppSwitcherComponent,
-    HeaderNavComponent,
-    HeaderNotificationsComponent,
-    HeaderSettingsComponent,
-    HeaderSlidePanelComponent,
-    HeaderUserProfileComponent,
-    HeaderCompanyComponent,
-    NavDropdownComponent
+    CutHeaderComponent,
+    CutHeaderAppSwitcherComponent,
+    CutHeaderNavComponent,
+    CutHeaderNotificationsComponent,
+    CutHeaderSettingsComponent,
+    CutHeaderSlidePanelComponent,
+    CutHeaderUserProfileComponent,
+    CutHeaderCompanyComponent,
+    CutNavDropdownComponent
   ],
-  providers: [HeaderService],
-  exports: [HeaderComponent, HeaderSlidePanelComponent]
+  providers: [CutHeaderService],
+  exports: [CutHeaderComponent, CutHeaderSlidePanelComponent]
 })
-export class HeaderModule {
+export class CutHeaderModule {
 }

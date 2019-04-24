@@ -3,7 +3,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 
 import { DropBoxModule } from "./../drop-box/drop-box.module";
 import { HEADER_DATA } from "./../header/header.model.mock";
-import { HeaderService } from "./../header/header.service";
+import { CutHeaderService } from "./../header/header.service";
 import { FooterComponent } from "./footer.component";
 import { FOOTER_DATA } from "./footer.model.mock";
 import { FooterService } from "./footer.service";
@@ -11,7 +11,7 @@ import { FooterService } from "./footer.service";
 describe("Component: Footer", () => {
   let fixture: ComponentFixture<FooterComponent>;
   let component: FooterComponent;
-  let serv: HeaderService;
+  let serv: CutHeaderService;
   let footerService: FooterService;
 
   beforeEach(async(async () => {
@@ -20,12 +20,12 @@ describe("Component: Footer", () => {
       declarations: [
         FooterComponent
       ],
-      providers: [HeaderService, FooterService]
+      providers: [CutHeaderService, FooterService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
-    serv = TestBed.get(HeaderService);
+    serv = TestBed.get(CutHeaderService);
     footerService = TestBed.get(FooterService);
   }));
 

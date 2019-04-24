@@ -10,7 +10,7 @@ import { HEADER_DATA } from "./header.model.mock";
 @Injectable({
 	providedIn: 'root'
 })
-export class HeaderService {
+export class CutHeaderService {
 
   headerSource = new BehaviorSubject<HeaderDataInterface>(HEADER_DATA);
   headerObservable: Observable<HeaderDataInterface> = this.headerSource.asObservable();

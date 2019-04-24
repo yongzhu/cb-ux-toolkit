@@ -7,9 +7,9 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { BehaviorSubject, Subject } from "rxjs";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { IHeaderNav } from "../../framework/header.models";
-import { HeaderService } from "../header.service";
-import { HeaderNavComponent } from "./header-nav.component";
-import { NavDropdownComponent } from "./nav-dropdown/nav-dropdown.component";
+import { CutHeaderService } from "../header.service";
+import { CutHeaderNavComponent } from "./header-nav.component";
+import { CutNavDropdownComponent } from "./nav-dropdown/nav-dropdown.component";
 
 @Injectable()
 export class HSMock {
@@ -58,18 +58,18 @@ export class HSMock {
 }
 
 describe("Header. Component. HeaderNavComponent", () => {
-  let component: HeaderNavComponent;
-  let fixture: ComponentFixture<HeaderNavComponent>;
+  let component: CutHeaderNavComponent;
+  let fixture: ComponentFixture<CutHeaderNavComponent>;
   let service: HSMock;
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       imports: [CommonModule, DropBoxModule,
         RouterTestingModule.withRoutes([
         ])],
-      declarations: [HeaderNavComponent, NavDropdownComponent],
+      declarations: [CutHeaderNavComponent, CutNavDropdownComponent],
       providers: [
         {
-          provide: HeaderService,
+          provide: CutHeaderService,
           useClass: HSMock
         }
       ]
@@ -77,9 +77,9 @@ describe("Header. Component. HeaderNavComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderNavComponent);
+    fixture = TestBed.createComponent(CutHeaderNavComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(HeaderService);
+    service = TestBed.get(CutHeaderService);
     service.release({obserevableName: "header", data: {leftNav: []}});
     fixture.detectChanges();
   });
@@ -88,7 +88,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should add nav items", fakeAsync(inject([HeaderService], (serv: HeaderService) => {
+  it("should add nav items", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     expect(fixture.nativeElement.querySelectorAll("ul li.main-li").length)
       .toEqual(0);
 
@@ -175,7 +175,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     expect(dropdownItems.length).toEqual(2);
   });
 
-  it("should show items without dropdowns", fakeAsync(inject([HeaderService], (serv: HeaderService) => {
+  it("should show items without dropdowns", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     const nav: IHeaderNav = {
       leftNav: [
         {
@@ -198,7 +198,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     expect(itemNoDropDown.length).toEqual(2);
   })));
 
-  it("should hide some items without dropdowns", fakeAsync(inject([HeaderService], (serv: HeaderService) => {
+  it("should hide some items without dropdowns", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     const nav: IHeaderNav = {
       leftNav: [
         {
@@ -228,7 +228,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     expect(itemNoDropDown.length).toEqual(2);
   })));
 
-  it("should call emitActionType", fakeAsync(inject([HeaderService], (serv: HeaderService) => {
+  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     {
       spyOn(serv, "emitActionType");
       component.emitActionType("");

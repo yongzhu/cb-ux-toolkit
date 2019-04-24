@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
-import { HeaderService } from "../header.service";
+import { CutHeaderService } from "../header.service";
 
 @Component({
   selector: "cut-header-company",
   templateUrl: "./header-company.component.html",
   styleUrls: [ "./header-company.component.scss" ]
 })
-export class HeaderCompanyComponent implements OnInit {
+export class CutHeaderCompanyComponent implements OnInit {
 
   headerObj: any;
 
-  constructor(private headerService: HeaderService) {
+  constructor(private headerService: CutHeaderService) {
   }
 
   ngOnInit() {

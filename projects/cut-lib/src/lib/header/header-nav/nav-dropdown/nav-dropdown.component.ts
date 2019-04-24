@@ -5,7 +5,7 @@ import { Component, ElementRef, HostListener, Input } from "@angular/core";
   templateUrl: "./nav-dropdown.component.html",
   styleUrls: [ "./nav-dropdown.component.scss" ]
 })
-export class NavDropdownComponent {
+export class CutNavDropdownComponent {
   open = false;
 
   @Input()

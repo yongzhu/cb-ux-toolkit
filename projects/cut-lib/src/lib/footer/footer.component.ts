@@ -3,7 +3,7 @@ import { Observable, Subscription } from "rxjs";
 import { filter } from "rxjs/operators";
 
 import { HeaderDataInterface } from "./../header/header.model";
-import { HeaderService } from "./../header/header.service";
+import { CutHeaderService } from "./../header/header.service";
 import { FooterConfig } from "./footer.model";
 import { FooterService } from "./footer.service";
 
@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   validFooterObj$: Observable<boolean>;
 
   constructor(
-    private headerService: HeaderService,
+    private headerService: CutHeaderService,
     private footerService: FooterService
   ) {
   }

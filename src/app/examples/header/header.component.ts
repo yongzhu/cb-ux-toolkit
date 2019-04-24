@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from 'cut';
+import { CutHeaderService } from 'cut';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { HeaderService } from 'cut';
 })
 
 export class HeaderComponentExample implements OnInit {
-	constructor(private cbHeader: HeaderService) {
+	constructor(private cbHeader: CutHeaderService) {
 		const data = {
 			"leftNav": [
 				{
