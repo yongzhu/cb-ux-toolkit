@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
 import {
 	CutLoadingIndicatorModule
 } from "cut";
@@ -11,7 +13,7 @@ describe('LoadingIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-			imports: [CutLoadingIndicatorModule],
+			imports: [CutLoadingIndicatorModule, RouterTestingModule],
       declarations: [ LoadingIndicatorComponentExample ]
     })
     .compileComponents();
@@ -23,7 +25,7 @@ describe('LoadingIndicatorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create new ', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,2 +1,2 @@
-export { LoadingIndicatorComponent } from "./loading-indicator.component";
-export { LoadingIndicatorModule } from "./loading-indicator.module";
+export { CutLoadingIndicatorComponent } from "./loading-indicator.component";
+export { CutLoadingIndicatorModule } from "./loading-indicator.module";

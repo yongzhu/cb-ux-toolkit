@@ -1,5 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angular/core/testing";
+import { MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule } from "@angular/material";
 import { RouterTestingModule } from "@angular/router/testing";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
 import { HeaderAppSwitcherComponent } from "../header-app-switcher/header-app-switcher.component";
@@ -17,14 +18,14 @@ describe("Component: Header", () => {
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [DropBoxModule, RouterTestingModule],
+      imports: [DropBoxModule, RouterTestingModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule],
       declarations: [
         HeaderComponent,
         HeaderAppSwitcherComponent,
         HeaderNavComponent,
         HeaderNotificationsComponent,
         HeaderUserProfileComponent,
-        HeaderCompanyComponent
+				HeaderCompanyComponent
       ],
       providers: [HeaderService]
     }).compileComponents();
