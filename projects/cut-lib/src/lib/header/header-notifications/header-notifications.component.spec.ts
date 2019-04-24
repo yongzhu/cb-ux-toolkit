@@ -6,24 +6,24 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
-import { HeaderService } from "../header.service";
-import { HeaderNotificationsComponent } from "./header-notifications.component";
+import { CutHeaderService } from "../header.service";
+import { CutHeaderNotificationsComponent } from "./header-notifications.component";
 
 describe("HeaderNotificationsComponent", () => {
-  let component: HeaderNotificationsComponent;
-  let fixture: ComponentFixture<HeaderNotificationsComponent>;
+  let component: CutHeaderNotificationsComponent;
+  let fixture: ComponentFixture<CutHeaderNotificationsComponent>;
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       imports: [CommonModule, DropBoxModule, RouterTestingModule],
-      declarations: [HeaderNotificationsComponent],
-      providers: [HeaderService]
+      declarations: [CutHeaderNotificationsComponent],
+      providers: [CutHeaderService]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderNotificationsComponent);
+    fixture = TestBed.createComponent(CutHeaderNotificationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -32,7 +32,7 @@ describe("HeaderNotificationsComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should call emitActionType", fakeAsync(inject([HeaderService], (serv: HeaderService) => {
+  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     {
       spyOn(serv, "emitActionType");
       component.emitActionType("");

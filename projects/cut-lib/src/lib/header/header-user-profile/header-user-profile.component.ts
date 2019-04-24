@@ -1,21 +1,21 @@
 import { DOCUMENT } from "@angular/common";
 import { Component, ElementRef, Inject, OnInit, Renderer } from "@angular/core";
 import { BackgroundTheme, BgThemeEnum } from "../../theme/theme.class";
-import { HeaderService } from "../header.service";
+import { CutHeaderService } from "../header.service";
 
 @Component({
   selector: "cut-header-user-profile",
   templateUrl: "./header-user-profile.component.html",
   styleUrls: ["./header-user-profile.component.scss"]
 })
-export class HeaderUserProfileComponent implements OnInit {
+export class CutHeaderUserProfileComponent implements OnInit {
 
   headerObj: any;
   selectedTheme: any = BackgroundTheme;
   defaultColorMsg: string;
   themeChosen: number;
 
-  constructor(private headerService: HeaderService,
+  constructor(private headerService: CutHeaderService,
     @Inject(DOCUMENT) private document: any) {
   }
 

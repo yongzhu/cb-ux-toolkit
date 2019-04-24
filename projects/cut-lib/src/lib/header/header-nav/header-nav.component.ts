@@ -1,17 +1,17 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { HeaderService } from "../header.service";
+import { CutHeaderService } from "../header.service";
 import { MatMenuTrigger } from "@angular/material";
 @Component({
   selector: "cut-header-nav",
   templateUrl: "./header-nav.component.html",
   styleUrls: ["./header-nav.component.scss"]
 })
-export class HeaderNavComponent implements OnInit {
+export class CutHeaderNavComponent implements OnInit {
 
   headerObj: any;
 
-  constructor(private headerService: HeaderService, public router: Router) {
+  constructor(private headerService: CutHeaderService, public router: Router) {
   }
 
   ngOnInit() {

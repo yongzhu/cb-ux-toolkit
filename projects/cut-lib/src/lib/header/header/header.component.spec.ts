@@ -3,38 +3,38 @@ import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angu
 import { MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule } from "@angular/material";
 import { RouterTestingModule } from "@angular/router/testing";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
-import { HeaderAppSwitcherComponent } from "../header-app-switcher/header-app-switcher.component";
-import { HeaderCompanyComponent } from "../header-company/header-company.component";
-import { HeaderNavComponent } from "../header-nav/header-nav.component";
-import { HeaderNotificationsComponent } from "../header-notifications/header-notifications.component";
-import { HeaderUserProfileComponent } from "../header-user-profile/header-user-profile.component";
-import { HeaderService } from "../header.service";
-import {HeaderComponent } from "./header.component";
+import { CutHeaderAppSwitcherComponent } from "../header-app-switcher/header-app-switcher.component";
+import { CutHeaderCompanyComponent } from "../header-company/header-company.component";
+import { CutHeaderNavComponent } from "../header-nav/header-nav.component";
+import { CutHeaderNotificationsComponent } from "../header-notifications/header-notifications.component";
+import { CutHeaderUserProfileComponent } from "../header-user-profile/header-user-profile.component";
+import { CutHeaderService } from "../header.service";
+import { CutHeaderComponent } from "./header.component";
 
 describe("Component: Header", () => {
-  let fixture: ComponentFixture<HeaderComponent>;
-  let component: HeaderComponent;
-  let serv: HeaderService;
+  let fixture: ComponentFixture<CutHeaderComponent>;
+  let component: CutHeaderComponent;
+  let serv: CutHeaderService;
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       imports: [DropBoxModule, RouterTestingModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule],
       declarations: [
-        HeaderComponent,
-        HeaderAppSwitcherComponent,
-        HeaderNavComponent,
-        HeaderNotificationsComponent,
-        HeaderUserProfileComponent,
-				HeaderCompanyComponent
+        CutHeaderComponent,
+        CutHeaderAppSwitcherComponent,
+        CutHeaderNavComponent,
+        CutHeaderNotificationsComponent,
+        CutHeaderUserProfileComponent,
+				CutHeaderCompanyComponent
       ],
-      providers: [HeaderService]
+      providers: [CutHeaderService]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(CutHeaderComponent);
     component = fixture.componentInstance;
-    serv = TestBed.get(HeaderService);
+    serv = TestBed.get(CutHeaderService);
   });
 
   it("should create", () => {

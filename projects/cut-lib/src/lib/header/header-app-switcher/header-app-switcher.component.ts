@@ -1,17 +1,17 @@
 import { Component, OnInit } from "@angular/core";
-import { HeaderService } from "../header.service";
+import { CutHeaderService } from "../header.service";
 
 @Component({
   selector: "cut-header-app-switcher",
   templateUrl: "./header-app-switcher.component.html",
   styleUrls: ["./header-app-switcher.component.scss"]
 })
-export class HeaderAppSwitcherComponent implements OnInit {
+export class CutHeaderAppSwitcherComponent implements OnInit {
 
   headerObj: any;
   open = {isOpen: false};
 
-  constructor(private headerService: HeaderService) {
+  constructor(private headerService: CutHeaderService) {
   }
 
   ngOnInit() {

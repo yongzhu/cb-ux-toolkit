@@ -1,16 +1,16 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
-import { HeaderService } from "../header.service";
+import { CutHeaderService } from "../header.service";
 
 @Component({
   selector: "cut-header-slide-panel",
   templateUrl: "./header-slide-panel.component.html",
   styleUrls: ["./header-slide-panel.scss"]
 })
-export class HeaderSlidePanelComponent implements OnInit {
+export class CutHeaderSlidePanelComponent implements OnInit {
 
   headerObj: any;
 
-  constructor(private headerService: HeaderService) {
+  constructor(private headerService: CutHeaderService) {
   }
 
   ngOnInit() {

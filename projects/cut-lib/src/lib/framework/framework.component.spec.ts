@@ -2,7 +2,7 @@ import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { HeaderService } from "../header/header.service";
+import { CutHeaderService } from "../header/header.service";
 import { FooterService } from "../footer/footer.service";
 import { FrameworkComponent } from "./framework.component";
 
@@ -13,7 +13,7 @@ describe("FrameworkComponent", () => {
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FrameworkComponent ],
-      providers: [FooterService, HeaderService],
+      providers: [FooterService, CutHeaderService],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [RouterTestingModule]
     })

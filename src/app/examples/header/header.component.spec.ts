@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
-	HeaderModule
+	CutHeaderModule
 } from "cut";
 
 import { HeaderComponentExample } from './header.component';
@@ -12,7 +12,7 @@ describe('HeaderComponentExample', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-			imports: [HeaderModule, RouterTestingModule],
+			imports: [CutHeaderModule, RouterTestingModule],
       declarations: [ HeaderComponentExample ]
     })
     .compileComponents();
