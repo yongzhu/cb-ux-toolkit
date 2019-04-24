@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
 import { Observable } from "rxjs";
 
 import { HeaderService } from "../header.service";
@@ -11,6 +11,8 @@ import { HeaderService } from "../header.service";
 export class HeaderComponent implements OnInit {
   @Output() sidenavButtonClick = new EventEmitter<null>();
 
+	@Input() isFixed = false;
+	
   headerObj: any;
   validHeaderObj$: Observable<boolean>;
 

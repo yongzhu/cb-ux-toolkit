@@ -48,6 +48,15 @@ const DOCS: {[key: string]: DocCategory[]} = {
 			summary: 'Custom component addtions.',
       items: [
 				{
+          id: 'header',
+          name: 'Header',
+					summary: 'Header with shared navigation items',
+					isCut: true,
+          examples: [
+            'header',
+          ]
+        },
+				{
           id: 'loading-indicator',
           name: 'Loading Indicator',
 					summary: 'Circular loading animation',

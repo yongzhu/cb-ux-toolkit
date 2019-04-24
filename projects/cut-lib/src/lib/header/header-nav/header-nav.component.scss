@@ -66,8 +66,6 @@
 
   >li {
     float: left;
-    border-bottom: solid 1px $color-border;
-
     a {
       align-items: center;
       padding: $padding-base / 2 $padding-base;
@@ -130,14 +128,14 @@
       display: block;
 
       &:hover {
-        background: $accent-beta-light;
-        color: $WHITE;
+        background: $gray-lightest;
+        color: $dark-primary-text;
       }
 
       &:active,
       &.active {
-        background: $accent-beta-darker;
-        color: $WHITE;
+        background: $gray-lighter;
+        color: $dark-primary-text;
       }
     }
 

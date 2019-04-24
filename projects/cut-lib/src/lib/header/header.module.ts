@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { MatMenuModule, MatButtonModule, MatIconModule, MatToolbarModule } from "@angular/material";
 
 import { DropBoxModule } from "../drop-box/drop-box.module";
 
@@ -16,7 +17,15 @@ import { HeaderService } from "./header.service";
 import { HeaderComponent } from "./header/header.component";
 
 @NgModule({
-  imports: [CommonModule, DropBoxModule, RouterModule],
+	imports: [
+		CommonModule, 
+		DropBoxModule, 
+		RouterModule,
+		MatMenuModule,
+		MatButtonModule,
+		MatIconModule,
+		MatToolbarModule
+	],
   declarations: [
     HeaderComponent,
     HeaderAppSwitcherComponent,

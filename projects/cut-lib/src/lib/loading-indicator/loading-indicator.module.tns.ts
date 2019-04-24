@@ -7,4 +7,4 @@ import { CutLoadingIndicatorComponent } from "./loading-indicator.component";
   declarations: [ CutLoadingIndicatorComponent ],
   exports: [ CutLoadingIndicatorComponent ]
 })
-export class CutLoadingIndicatorModule {}
+export class NSCutLoadingIndicatorModule {}

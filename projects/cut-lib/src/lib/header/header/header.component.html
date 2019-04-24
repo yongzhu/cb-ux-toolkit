@@ -1,37 +1,39 @@
-<header>
-  <section>
-    <div class="header-main-wrapper container-fluid ">
-      <span class="trigger-menu fa fa-bars hidden-lg-up"
-            *ngIf="validHeaderObj$ | async"
-            tabindex="0"
-            aria-label="  click to open navigation panel"
-            (click)="trigger()"></span>
-      <div class="header-logo" *ngIf="headerObj.logoPath">
-        <a *ngIf="headerObj.logoPath.internalPath" class="name-brand" title="Careerbuilder" [routerLink]="headerObj.logoPath.internalPath">
-          <img class="screen-portrait" [attr.src]="headerObj.logo ? headerObj.logo.mobileSrc : 'assets/images/logo-cb-mobile.svg'" alt="Logo Careerbuilder">
-          <img class="screen-landscape" [attr.src]="headerObj.logo ? headerObj.logo.src : 'assets/images/logo-cb.svg'" alt="Logo Careerbuilder">
-        </a>
-        <a *ngIf="headerObj.logoPath.externalPath" class="name-brand" title="Careerbuilder" [href]="headerObj.logoPath.externalPath">
-          <img class="screen-portrait" [attr.src]="headerObj.logo ? headerObj.logo.mobileSrc : 'assets/images/logo-cb-mobile.svg'" alt="Logo Careerbuilder">
-          <img class="screen-landscape" [attr.src]="headerObj.logo ? headerObj.logo.src : 'assets/images/logo-cb.svg'" alt="Logo Careerbuilder">
-        </a>
-        <a *ngIf="headerObj.product.internalPath" class="name-product" title="Product" [routerLink]="headerObj.product.internalPath">{{headerObj.product.title | uppercase }}</a>
-        <a *ngIf="headerObj.product.externalPath" class="name-product" title="Product" [href]="headerObj.product.externalPath">{{headerObj.product.title | uppercase }}</a>
-      </div>
-      <div class="header-main">
-        <!-- <span class="header-item hidden-md-down" *ngIf="!headerObj.newFeatures.hidden" (click)="emitActionType('NEW_FEATURES_ACTION', 'newFeatures')" tabindex="0">New Features</span> -->
-        <span class="header-item hidden-md-down">
-          <cut-header-app-switcher></cut-header-app-switcher>
-        </span>
-        <span class="header-item" *ngIf="headerObj.notifications">
-          <cut-header-notifications></cut-header-notifications>
-        </span>
-        <span class="header-item hidden-md-down">
-          <cut-header-user-profile></cut-header-user-profile>
-        </span>
-      </div>
+<mat-toolbar class="cut-header mat-elevation-z6" [class.cut-header-fixed]="isFixed">
+  <!-- <section> -->
+  <div class="cut-header-wrapper">
+    <span class="trigger-menu fa fa-bars hidden-lg-up" *ngIf="validHeaderObj$ | async" tabindex="0"
+      aria-label="  click to open navigation panel" (click)="trigger()"></span>
+    <div class="header-logo" *ngIf="headerObj.logoPath">
+      <a *ngIf="headerObj.logoPath.internalPath" class="name-brand" title="Careerbuilder"
+        [routerLink]="headerObj.logoPath.internalPath">
+        <img class="screen-portrait"
+          [attr.src]="headerObj.logo ? headerObj.logo.mobileSrc : 'assets/images/logo-cb-mobile.svg'"
+          alt="Logo Careerbuilder">
+        <img class="screen-landscape" [attr.src]="headerObj.logo ? headerObj.logo.src : 'assets/images/logo-cb.svg'"
+          alt="Logo Careerbuilder">
+      </a>
+      <a *ngIf="headerObj.logoPath.externalPath" class="name-brand" title="Careerbuilder"
+        [href]="headerObj.logoPath.externalPath">
+        <img class="screen-portrait"
+          [attr.src]="headerObj.logo ? headerObj.logo.mobileSrc : 'assets/images/logo-cb-mobile.svg'"
+          alt="Logo Careerbuilder">
+        <img class="screen-landscape" [attr.src]="headerObj.logo ? headerObj.logo.src : 'assets/images/logo-cb.svg'"
+          alt="Logo Careerbuilder">
+      </a>
     </div>
-    <hr/>
+    <div class="cut-header-main">
+      <!-- <span class="header-item hidden-md-down" *ngIf="!headerObj.newFeatures.hidden" (click)="emitActionType('NEW_FEATURES_ACTION', 'newFeatures')" tabindex="0">New Features</span> -->
+      <!-- <span class="header-item hidden-md-down">
+          <cut-header-app-switcher></cut-header-app-switcher>
+				</span> -->
+      <cut-header-nav></cut-header-nav>
+      <cut-header-notifications *ngIf="headerObj.notifications"></cut-header-notifications>
+    </div>
+    <div class="cut-profile-main">
+      <cut-header-user-profile></cut-header-user-profile>
+    </div>
+  </div>
+  <!-- <hr/>
     <div class="header-sub-wrapper container-fluid hidden-md-down">
       <nav class="nav-desktop mr-auto">
         <cut-header-nav></cut-header-nav>
@@ -39,7 +41,6 @@
       <span class="header-item" *ngIf="headerObj.rightNav">
         <cut-header-company></cut-header-company>
       </span>
-    </div>
-  </section>
-</header>
-
+    </div> -->
+  <!-- </section> -->
+</mat-toolbar>
