@@ -1,0 +1,42 @@
+@import "../../stylesheets/cut-core";
+@import "../../stylesheets/mixins/cut-rem-calc";
+
+.cut-kpi-tile {
+	text-align: left;
+  .cut-kpi-title {
+    color: $dark-secondary-text;
+    font-size: rem-calc(10);
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: rem-calc(12);
+    text-transform: uppercase;
+    padding-bottom: rem-calc(6);
+  }
+
+  .cut-kpi-body {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .cut-kpi-main-count {
+      color: $dark-primary-text;
+      // font-family: Lato;
+      font-size: rem-calc(30);
+      font-weight: bold;
+      line-height: rem-calc(30);
+      padding-right: rem-calc(5);
+    }
+  }
+
+  .cut-kpi-secondary-count {
+    color: $dark-secondary-text;
+    // font-family: Lato;
+    font-size: rem-calc(10);
+    font-weight: bold;
+  }
+
+  .cut-kpi-progressbar {
+    width: rem-calc(100);
+    margin: rem-calc(3) 0;
+  }
+}

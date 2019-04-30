@@ -16,6 +16,7 @@ export * from "./lib/loading-indicator/loading-indicator.module";
 export * from "./lib/select/select.module";
 export * from "./lib/type-ahead/typeahead.module";
 export * from "./lib/header/header.model";
+export * from "./lib/kpi-tile/kpi-tile.module";
 export {
   LogoPath,
   Product,

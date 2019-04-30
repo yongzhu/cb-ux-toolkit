@@ -1,0 +1,17 @@
+<div class="cut-kpi-tile" >
+  <div class="cut-kpi-title" *ngIf="title">
+      {{ title }}
+  </div>
+  <div class="cut-kpi-body">
+    <div class="cut-kpi-main-count">
+        {{ mainCount }}
+    </div>
+    <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
+        {{ secondaryCount }}
+    </div>
+  </div>
+  <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" mode="{{ progressBarMode }}" value="{{ progressBarValue }}"></mat-progress-bar>
+  <div *ngIf="infoText" class="cut-kpi-secondary-count">
+    {{ infoText }}
+  </div>
+</div>
