@@ -1,6 +1,6 @@
 {
   "name": "cut",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "scripts": {
     "ng": "ng",
     "start": "npm run build-themes && ng serve",
@@ -18,7 +18,7 @@
     "compile-lib-css": "npm-run-all --parallel compile-lib-cut-css",
     "compile-lib-cut-css": "node-sass projects/cut-lib/src/_cut.scss dist/cut/cut.css",
     "copy-lib-assets": "copyfiles -u 4 \"projects/cut-lib/src/assets/**/*\" dist/cut/assets",
-    "copy-lib-scss": "copyfiles -f projects/cut-lib/src/stylesheets/utilities/cut-utilities.scss dist/cut/stylesheets/utilities",
+    "copy-lib-scss": "copyfiles -u 4 \"projects/cut-lib/src/stylesheets/**/*\" dist/cut/stylesheets",
     "copy-schematics-files": "copyfiles -u 4 \"projects/cut-lib/schematics/src/**/*.json\" dist/cut/schematics",
     "deploy-docs": "ng build --prod cut-app --base-href https://cbdr.github.io/cb-ux-toolkit/ --output-path docs",
     "test": "ng test",
