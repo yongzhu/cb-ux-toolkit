@@ -10,7 +10,7 @@
         {{ secondaryCount }}
     </div>
   </div>
-  <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" mode="{{ progressBarMode }}" value="{{ progressBarValue }}"></mat-progress-bar>
+  <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" [mode]="progressBarMode" [value]="progressBarValue" [color]="barStyle"></mat-progress-bar>
   <div *ngIf="infoText" class="cut-kpi-secondary-count">
     {{ infoText }}
   </div>
