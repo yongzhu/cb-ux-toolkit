@@ -12,6 +12,14 @@ export class HeaderComponentExample implements OnInit {
 		const data = {
 			"leftNav": [
 				{
+					"title": "Homepage",
+					"altTxt": "Homepage",
+					"internalPath": "/components/header/overview",
+					"activeRegex": [
+						"/overview"
+					],
+				},
+				{
 					"title": "Insights",
 					"altTxt": "Insights",
 					"externalPath": null,

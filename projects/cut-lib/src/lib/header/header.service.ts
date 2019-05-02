@@ -60,9 +60,9 @@ export class CutHeaderService {
   }
 
   checkRegex(rules: string[]) {
-    let boolVal = true;
+		let boolVal = true;
     rules.forEach((rule: string) => {
-      boolVal = boolVal && new RegExp(rule).test(this.router.url);
+			boolVal = boolVal && new RegExp(rule).test(this.router.url);
     });
     return boolVal;
   }

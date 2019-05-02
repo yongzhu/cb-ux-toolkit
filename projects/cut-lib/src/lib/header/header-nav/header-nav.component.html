@@ -1,8 +1,8 @@
-<ul class="list-style-header-nav" *ngIf="headerObj.leftNav">
+<ul class="cut-header-nav" *ngIf="headerObj.leftNav">
   <ng-container *ngFor="let item of headerObj.leftNav">
-    <li *ngIf="!item.dropDown && !item.hidden" class="header-nav-li-test">
+    <li *ngIf="!item.dropDown && !item.hidden">
       <a *ngIf="item.internalPath" title="{{item.altTxt}}" [routerLink]=[item.internalPath] tabindex="0"
-        [class.li-dropdown-active]="showAsActive(item)">{{item.title}}</a>
+        [class.cut-dropdown-active]="showAsActive(item)">{{item.title}}</a>
       <a *ngIf="item.externalPath" title="{{item.altTxt}}" [href]="item.externalPath"
         [target]="getTargetAttribute(item.newWindow)" tabindex="0">{{item.title}}</a>
       <a *ngIf="item.action" title="{{item.altTxt}}" (click)="emitActionType(item.action)"
@@ -10,13 +10,13 @@
     </li>
     <li *ngIf="item.dropDown && !item.hidden">
       <cut-drop-box dropStyle="fixed-down-right" hoverEnable="true">
-        <cut-drop-box-anchor tabindex="0" [class.li-dropdown-active]="showAsActive(item)"><span>{{item.title}}</span><i
+        <cut-drop-box-anchor tabindex="0" [class.cut-dropdown-active]="showAsActive(item)"><span>{{item.title}}</span><i
             class="fa fa-angle-down"></i></cut-drop-box-anchor>
         <!-- <button mat-button [class.li-dropdown-active]="showAsActive(item)" #menuTrigger="matMenuTrigger" (mouseenter)="menuTrigger.openMenu()" [matMenuTriggerFor]="menu">{{item.title}}</button> -->
         <cut-drop-box-content>
           <!-- <mat-menu #menu="matMenu"> -->
-          <ul class="list-style-header-sub-nav">
-            <li *ngFor="let subItem of item.dropDown" class="headernav-drodown-item-test"
+          <ul class="cut-header-sub-nav">
+            <li *ngFor="let subItem of item.dropDown"
               [class.has-separator]="subItem.hasSeparator">
               <a *ngIf="subItem.internalPath && !subItem.hidden" [routerLink]="[subItem.internalPath]"
                 title="{{item.altTxt}}" tabindex="0" [class.active]="showAsActive(subItem)">{{subItem.title}}</a>

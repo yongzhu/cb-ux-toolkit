@@ -1,5 +1,6 @@
 @import "../../../stylesheets/cut-core";
-@import "../../../cb-utilities";
+@import "../../../stylesheets/utilities/cb-utilities";
+@import "../../../stylesheets/mixins/cut-rem-calc";
 
 .cut-header {
   background: $WHITE;
@@ -8,9 +9,11 @@
 
 .cut-header-wrapper {
   display: grid;
-  grid-template-columns: 220px auto 200px;
-  grid-gap: 20px;
-  width: 100%;
+  grid-template-columns: rem-calc(220) auto rem-calc(200);
+  grid-gap: rem-calc(20);
+	width: 100%;
+	height: rem-calc(75);
+	align-self: center;
 }
 
 .cut-header-fixed {
@@ -106,7 +109,9 @@ hr {
 }
 
 .cut-profile-main {
-  justify-self: right;
+	justify-self: right;
+	line-height: rem-calc(75);
+	height: rem-calc(75);
 }
 
 /******************/
