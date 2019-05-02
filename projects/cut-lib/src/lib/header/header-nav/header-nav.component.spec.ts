@@ -171,7 +171,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     service.release({obserevableName: "header", data: nav});
     component.ngOnInit();
     fixture.detectChanges();
-    const dropdownItems = fixture.nativeElement.querySelectorAll(".headernav-drodown-item-test a");
+    const dropdownItems = fixture.nativeElement.querySelectorAll(".cut-header-sub-nav li > a");
     expect(dropdownItems.length).toEqual(2);
   });
 
@@ -194,7 +194,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     service.release({obserevableName: "header", data: nav});
     component.ngOnInit();
     fixture.detectChanges();
-    const itemNoDropDown = fixture.nativeElement.querySelectorAll("ul.list-style-header-nav li.header-nav-li-test");
+    const itemNoDropDown = fixture.nativeElement.querySelectorAll("ul.cut-header-nav li");
     expect(itemNoDropDown.length).toEqual(2);
   })));
 
@@ -224,7 +224,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     service.release({obserevableName: "header", data: nav});
     component.ngOnInit();
     fixture.detectChanges();
-    const itemNoDropDown = fixture.nativeElement.querySelectorAll("ul.list-style-header-nav li.header-nav-li-test");
+    const itemNoDropDown = fixture.nativeElement.querySelectorAll("ul.cut-header-nav li");
     expect(itemNoDropDown.length).toEqual(2);
   })));
 
