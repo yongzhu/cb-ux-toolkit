@@ -94,11 +94,11 @@ export class HeaderComponentExample implements OnInit {
 					"altTxt": "Lists",
 					"externalPath": "https://recruitment-staging.ace.careerbuilder.com/candidates/lists"
 				},
-				{
-					"title": "Campaigns",
-					"altTxt": "Campaigns",
-					"externalPath": "https://recruitment-staging.ace.careerbuilder.com/emailcampaign/search"
-				},
+				// {
+				// 	"title": "Campaigns",
+				// 	"altTxt": "Campaigns",
+				// 	"externalPath": "https://recruitment-staging.ace.careerbuilder.com/emailcampaign/search"
+				// },
 				{
 					"title": "Analytics",
 					"altTxt": "Analytics",

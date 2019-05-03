@@ -9,11 +9,66 @@
 
 .cut-header-wrapper {
   display: grid;
-  grid-template-columns: rem-calc(220) auto rem-calc(200);
+  grid-template-columns: rem-calc(220) 1fr rem-calc(200);
+  grid-template-areas: "logo nav profile";
   grid-gap: rem-calc(20);
-	width: 100%;
-	height: rem-calc(75);
-	align-self: center;
+  width: 100%;
+  height: rem-calc(75);
+  align-self: center;
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    grid-area: logo;
+
+    .name-brand {
+      padding-right: $padding-base;
+
+      img {
+        height: 22px;
+
+        &.screen-portrait {
+          width: 23px;
+
+          @media(min-width: map-get($grid-breakpoints, lg)) {
+            display: none;
+          }
+        }
+
+        &.screen-landscape {
+          display: none;
+
+          @media(min-width: map-get($grid-breakpoints, lg)) {
+            display: block;
+            width: 209px;
+          }
+        }
+      }
+    }
+
+    .name-product {
+      color: $gray-darker;
+      padding-left: $padding-base;
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border-left: solid 1px $color-border;
+    }
+  }
+
+  .cut-header-main {
+    grid-area: nav;
+    justify-self: center;
+  }
+
+  .cut-profile-main {
+		grid-area: profile;
+    justify-self: right;
+    line-height: rem-calc(75);
+    height: rem-calc(75);
+  }
 }
 
 .cut-header-fixed {
@@ -58,60 +113,6 @@ hr {
   font-size: $font-size-h2;
   padding-right: $padding-base;
   @extend %has-hover-animation;
-}
-
-.header-logo {
-  display: flex;
-  align-items: center;
-
-  .name-brand {
-    padding-right: $padding-base;
-
-    img {
-      height: 22px;
-
-      &.screen-portrait {
-        width: 23px;
-
-        @media(min-width: map-get($grid-breakpoints, lg)) {
-          display: none;
-        }
-      }
-
-      &.screen-landscape {
-        display: none;
-
-        @media(min-width: map-get($grid-breakpoints, lg)) {
-          display: block;
-          width: 209px;
-        }
-      }
-    }
-  }
-
-  .name-product {
-    color: $gray-darker;
-    padding-left: $padding-base;
-    font-size: $font-size-base;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-left: solid 1px $color-border;
-  }
-}
-
-.cut-header-main {
-  // display: flex;
-  // flex-grow: 2;
-  // justify-content: flex-end;
-  justify-self: center;
-}
-
-.cut-profile-main {
-	justify-self: right;
-	line-height: rem-calc(75);
-	height: rem-calc(75);
 }
 
 /******************/
