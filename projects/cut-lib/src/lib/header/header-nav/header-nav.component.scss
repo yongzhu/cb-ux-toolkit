@@ -123,6 +123,7 @@
   list-style-type: none;
 
   >li {
+		line-height: rem-calc(28);
     a {
       color: $color-link;
       padding: $padding-base;
