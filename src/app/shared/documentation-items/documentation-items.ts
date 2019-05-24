@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 export interface DocItem {
   id: string;
   name: string;
   summary?: string;
   packageName?: string;
-	examples?: string[];
-	isCut?: boolean;
+  examples?: string[];
+  isCut?: boolean;
 }
 
 export interface DocCategory {
@@ -23,49 +23,58 @@ export interface DocSection {
 
 const CDK = 'cdk';
 const COMPONENTS = 'components';
-export const SECTIONS: {[key: string]: DocSection} = {
+export const SECTIONS: { [key: string]: DocSection } = {
   [COMPONENTS]: {
     name: 'Components',
     summary: 'The CB UX Toolkit "CUT" is built upon Angular Material which comprises a range of components that implement common ' +
-    'interaction patterns according to the Material Design specification.  CUT takes this amazing framework and extends it to give CB a consistent UI across all products.'
+      'interaction patterns according to the Material Design specification.  CUT takes this amazing framework and extends it to give CB a consistent UI across all products.'
   },
   [CDK]: {
     name: 'CDK',
     summary: 'The Component Dev Kit (CDK) is a set of tools that implement common interaction ' +
-    'patterns whilst being unopinionated about their presentation. It represents an abstraction ' +
-    'of the core functionalities found in the Angular Material library, without any styling ' +
-    'specific to Material Design. Think of the CDK as a blank state of well-tested functionality ' +
-    'upon which you can develop your own bespoke components.'
+      'patterns whilst being unopinionated about their presentation. It represents an abstraction ' +
+      'of the core functionalities found in the Angular Material library, without any styling ' +
+      'specific to Material Design. Think of the CDK as a blank state of well-tested functionality ' +
+      'upon which you can develop your own bespoke components.'
   },
 };
 
 
-const DOCS: {[key: string]: DocCategory[]} = {
+const DOCS: { [key: string]: DocCategory[] } = {
   [COMPONENTS]: [
-		{
+    {
       id: 'cut',
       name: 'CUT Components',
-			summary: 'Custom component addtions.',
+      summary: 'Custom component addtions.',
       items: [
-				{
+        {
           id: 'header',
           name: 'Header',
-					summary: 'Header with shared navigation items',
-					isCut: true,
+          summary: 'Header with shared navigation items',
+          isCut: true,
           examples: [
             'header',
           ]
         },
-				{
+        {
           id: 'loading-indicator',
           name: 'Loading Indicator',
-					summary: 'Circular loading animation',
-					isCut: true,
+          summary: 'Circular loading animation',
+          isCut: true,
           examples: [
             'loading-indicator',
           ]
+        },
+        {
+          id: 'search-result',
+          name: 'Search Result',
+          summary: 'Search Result Whole Module Test1',
+          isCut: true,
+          examples: [
+            'search-result',
+          ]
         }
-			]
+      ]
     },
     {
       id: 'forms',
@@ -275,18 +284,20 @@ const DOCS: {[key: string]: DocCategory[]} = {
             'tab-group-theme',
             'tab-group-async',
             'tab-nav-bar-basic',
-          ]},
+          ]
+        },
         {
           id: 'tree',
           name: 'Tree',
           summary: 'Presents hierarchical content as an expandable tree.',
           examples: [
-          'tree-dynamic',
-          'tree-flat-overview',
-          'tree-checklist',
-          'tree-nested-overview',
-          'tree-loadmore',
-        ]},
+            'tree-dynamic',
+            'tree-flat-overview',
+            'tree-checklist',
+            'tree-nested-overview',
+            'tree-loadmore',
+          ]
+        },
       ]
     },
     {
@@ -298,7 +309,8 @@ const DOCS: {[key: string]: DocCategory[]} = {
           id: 'button',
           name: 'Button',
           summary: 'An interactive button with a range of presentation options.',
-          examples: ['button-types']},
+          examples: ['button-types']
+        },
         {
           id: 'button-toggle',
           name: 'Button toggle',
@@ -427,11 +439,12 @@ const DOCS: {[key: string]: DocCategory[]} = {
             'table-sticky-columns',
             'table-sticky-footer',
             'table-sticky-header',
-        ]},
+          ]
+        },
       ]
-		}
+    }
   ],
-  [CDK] : [
+  [CDK]: [
     {
       id: 'component-composition',
       name: 'Common Behaviors',
@@ -515,7 +528,8 @@ const DOCS: {[key: string]: DocCategory[]} = {
       name: 'Components',
       summary: 'Unstyled components with useful functionality.',
       items: [
-        {id: 'stepper',
+        {
+          id: 'stepper',
           name: 'Stepper',
           summary: 'Presents content as steps through which to progress.',
           examples: [
