@@ -1,37 +1,27 @@
 .used-filter-wrapper {
   border: 1px solid #b0b0b0;
+  font-weight: 300;
   padding: 10px;
   display: flex;
-  font-weight: 300;
 }
-
 .full-text-wrapper {
   border: 1px solid #5ba4dc;
-  padding: 10px;
   display: flex;
   border-radius: 5px;
+  align-items: baseline;
 }
-
 .full-text-wrapper > div {
   padding: 10px;
 }
 .wrapper-title {
   color: #5ba4dc;
 }
-.used-filters {
-  background: #5bbedc52;
-  border-radius: 25px;
+.add-filter{
+  align-self: center;
 }
 .add-filter .material-icons {
-  font-size: 17px;
+  font-size: 22px;
   color: #5ba4dc;
   font-weight: 600;
-  margin-right: 10px
-}
-.used-filters .material-icons {
-  background: whitesmoke;
-  margin-left: 15px;
-  border-radius: 16px;
-  padding: 1px;
-  font-size: 12px;
+  cursor: pointer;
 }
