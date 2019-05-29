@@ -10,6 +10,7 @@ export * from "./lib/footer/footer.module";
 export * from "./lib/footer-standard/footer-standard.module";
 export * from "./lib/framework/framework.module";
 export * from "./lib/header/header.module";
+export * from "./lib/searchbar/searchbar.module";
 export * from "./lib/header/header.service";
 export * from "./lib/input/input.module";
 export * from "./lib/loading-indicator/loading-indicator.module";
