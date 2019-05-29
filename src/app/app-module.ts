@@ -38,7 +38,8 @@ import {
   FrameworkModule,
   ClipboardModule,
 	SelectModule,
-	CutLoadingIndicatorModule
+  CutLoadingIndicatorModule,
+  SearchbarModule
 } from "cut";
 
 @NgModule({
@@ -64,7 +65,8 @@ import {
     StackblitzButtonModule,
     SvgViewerModule,
 		ThemePickerModule,
-		CutLoadingIndicatorModule
+    CutLoadingIndicatorModule,
+    SearchbarModule
   ],
   declarations: [
 		MaterialDocsApp

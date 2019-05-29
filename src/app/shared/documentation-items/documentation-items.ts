@@ -64,6 +64,15 @@ const DOCS: {[key: string]: DocCategory[]} = {
           examples: [
             'loading-indicator',
           ]
+        },
+        {
+          id: 'cut-searchbar',
+          name: 'Searchbar',
+					summary: 'Text Search Bar',
+					isCut: true,
+          examples: [
+            'search-example',
+          ]
         }
 			]
     },
