@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { CutCandidateMap } from "../models/api-maps/candidate-map";
@@ -20,7 +19,6 @@ export class SearchbarComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   searchForm: FormGroup;
   formSubmitted = false;
-  faSearch = faSearch;
 
   mapIndex = {
     "CutCandidateTestapi1Map" : CutCandidateTestapi1Map,
