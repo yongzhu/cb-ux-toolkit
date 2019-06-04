@@ -7,4 +7,6 @@ export const environment = {
   matGaId: '', // No development id for Material
   ngGaId: 'UA-8594346-26', // Development id
   production: false,
+  test_search_api1: 'http://localhost:3333/candidates',
+  test_search_api2: 'http://localhost:3333/search'
 };

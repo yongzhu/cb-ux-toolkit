@@ -1,0 +1,104 @@
+{
+  "search": [
+    {
+      "id": 1,
+      "name": "John Thomas",
+      "company": "Apple, Inc.",
+      "title": "Senior Sales Associate",
+      "duration": "3 years, 8 months",
+      "city": "Cupertino",
+      "state": "CA",
+      "tags": [
+        "Sales Experience",
+        "10 Years of Experience",
+        "Presentation Skills",
+        "This",
+        "That",
+        "The Other Thing"
+      ],
+      "email": "jthomas@foobar.org",
+      "phone": "555-555-1212",
+      "match": 0.75
+    },
+    {
+      "id": 2,
+      "name": "Linda Greenberg",
+      "company": "Indeed.com",
+      "title": "Sales Lead",
+      "duration": "1 year, 2 months",
+      "city": "Atlanta",
+      "state": "GA",
+      "tags": [
+        "Sales Experience",
+        "10 Years of Experience",
+        "Presentation Skills",
+        "This",
+        "That",
+        "The Other Thing"
+      ],
+      "email": "linda@foobar.org",
+      "phone": "555-555-4444",
+      "match": 0.5
+    }
+  ],
+  "candidates": [
+    {
+      "id": "Q5ANR-lTP11sxF8",
+      "first_name": "John",
+      "last_name": "Thomas",
+      "employment": [
+        {
+          "label": "Apple, Inc.",
+          "job_title": "Senior Sales Associate",
+          "start_date": "2015-12-01",
+          "end_date": null,
+          "city_name": "Cupertino",
+          "state_abbv": "CA"
+        },
+        {
+          "label": "Dell Computers",
+          "job_title": "Sales Associate",
+          "start_date": "2014-03-15",
+          "end_date": "2015-11-30",
+          "city_name": "Round Rock",
+          "state_abbv": "TX"
+        }
+      ],
+      "emails": [
+        { "label": "home", "email": "jthomas@foobar.org" }
+      ],
+      "phone_numbers": [
+        { "label": "Mobile", "number": "555-555-1212"  }
+      ]
+    },
+    {
+      "id": "A79pSWbC5J9kttU",
+      "first_name": "Linda",
+      "last_name": "Greenberg",
+      "employment": [
+        {
+          "label": "Indeed.com",
+          "job_title": "Sales Lead",
+          "start_date": "2018-10-31",
+          "end_date": null,
+          "city_name": "Atlanta",
+          "state_abbv": "GA"
+        },
+        {
+          "label": "SyFy Network",
+          "job_title": "Advertising Sales Representative",
+          "start_date": "2016-07-05",
+          "end_date": "2018-10-15",
+          "city": "Atlanta",
+          "state": "GA"
+        }
+      ],
+      "emails": [
+        { "label": "home", "email": "linda@foobar.org" }
+      ],
+      "phone_numbers": [
+        { "label": "Mobile", "number": "555-555-4444"  }
+      ]
+    }
+  ]
+}

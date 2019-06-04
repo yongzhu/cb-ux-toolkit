@@ -21,6 +21,7 @@
     "copy-lib-scss": "copyfiles -u 4 \"projects/cut-lib/src/stylesheets/**/*\" dist/cut/stylesheets",
     "copy-schematics-files": "copyfiles -u 4 \"projects/cut-lib/schematics/src/**/*.json\" dist/cut/schematics",
     "deploy-docs": "ng build --prod cut-app --base-href https://cbdr.github.io/cb-ux-toolkit/ --output-path docs",
+    "fakeapi": "fakeapi/start.sh",
     "test": "ng test",
     "test-ci": "npm-run-all test-lib-ci test-app-ci",
     "test-lib": "ng test cut-lib --source-map",
