@@ -25,6 +25,7 @@ export const components = [
   SearchResultComponentExample,
   UsedFilterComponentExample,
   ResultTabComponentExample,
+  SearchbarComponentExample
 ];
 
 @NgModule({
