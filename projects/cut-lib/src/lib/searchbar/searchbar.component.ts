@@ -5,6 +5,7 @@ import { takeUntil } from "rxjs/operators";
 import { CutCandidateMap } from "../models/api-maps/candidate-map";
 import { CutCandidateTestapi1Map } from "../models/api-maps/candidate-testapi1-map";
 import { CutCandidateTestapi2Map } from "../models/api-maps/candidate-testapi2-map";
+import { CutCandidateNoLocalMap } from "../models/api-maps/candidate-nolocal-map";
 import { CutApiService } from "../utils/cut-api.service";
 
 @Component({
@@ -22,7 +23,8 @@ export class SearchbarComponent implements OnInit, OnDestroy {
 
   mapIndex = {
     "CutCandidateTestapi1Map" : CutCandidateTestapi1Map,
-    "CutCandidateTestapi2Map" : CutCandidateTestapi2Map
+    "CutCandidateTestapi2Map" : CutCandidateTestapi2Map,
+    "CutCandidateNoLocalMap" : CutCandidateNoLocalMap
   };
 
   constructor(

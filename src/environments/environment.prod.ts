@@ -1,7 +1,10 @@
 export const environment = {
-  matGaId: 'UA-8594346-24', // Production id
-  ngGaId: 'UA-8594346-15', // Production id
+  matGaId: "UA-8594346-24", // Production id
+  ngGaId: "UA-8594346-15", // Production id
   production: true,
-  test_search_api1: 'http://localhost:3333/candidates',
-  test_search_api2: 'http://localhost:3333/search'
+  search_api: {
+    test_nolocal: "https://jsonplaceholder.typicode.com/users",
+    test_api1: "http://localhost:3333/candidates",
+    test_api2: "http://localhost:3333/search"
+  }
 };
