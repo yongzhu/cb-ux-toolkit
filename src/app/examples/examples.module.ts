@@ -1,37 +1,46 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
-
-import { LoadingIndicatorComponentExample, HeaderComponentExample, SearchbarComponentExample } from './components';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { DocViewerModule } from "../shared/doc-viewer/doc-viewer-module";
+import {
+  HeaderComponentExample,
+  LoadingIndicatorComponentExample,
+  ResultTabComponentExample,
+  SearchbarComponentExample,
+  SearchResultComponentExample,
+  UsedFilterComponentExample
+} from "./components";
 
 import {
-  FrameworkModule,
   ClipboardModule,
-	SelectModule,
-	CutHeaderModule,
+  CutHeaderModule,
   CutLoadingIndicatorModule,
-  SearchbarModule
+  CutSearchResultModule,
+  SearchbarModule,
+  SelectModule
 } from "cut";
 
 export const components = [
-	LoadingIndicatorComponentExample,
+  LoadingIndicatorComponentExample,
   HeaderComponentExample,
-  SearchbarComponentExample
+  SearchResultComponentExample,
+  UsedFilterComponentExample,
+  ResultTabComponentExample,
 ];
 
 @NgModule({
-	declarations: [
-		...components
-	],
-	imports: [
-		CommonModule,
-		CutLoadingIndicatorModule,
-		CutHeaderModule,
+  declarations: [
+    ...components
+  ],
+  imports: [
+    CommonModule,
+    CutLoadingIndicatorModule,
+    CutSearchResultModule,
+    CutHeaderModule,
     DocViewerModule,
     SearchbarModule
-	],
-	entryComponents: [
-		...components
-	]
+  ],
+  entryComponents: [
+    ...components
+  ]
 })
 export class ExamplesModule { }

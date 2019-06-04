@@ -1,0 +1,20 @@
+<div class="used-filter-wrapper">
+  <div
+    *ngFor="let filter of filters"
+    class="full-text-wrapper {{filter.data.length === 0 ? 'sr-hidden' : ''}}"
+  >
+    <div class="wrapper-title">{{ filter.filterName }}</div>
+    <div class="used-filters">
+      <cut-filter-options
+        [filters]="filter.data"
+        [visible]="filter.config.visible"
+        [selectable]="filter.config.selectable"
+        [removable]="filter.config.removable"
+        [addOnBlur]="filter.config.addOnBlur"
+      ></cut-filter-options>
+    </div>
+    <div class="add-filter">
+      <mat-icon>add</mat-icon>
+    </div>
+  </div>
+</div>

@@ -30,3 +30,4 @@ export {
 
 export { Theme } from "./lib/theme/theme.class";
 export { TypeaheadOptions } from "./lib/type-ahead/typeahead-options";
+export * from "./lib/search-result";
