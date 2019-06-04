@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Filter } from '../../shared.modal';
+import { SearchResultService } from '../../search-result.service';
 
 @Component({
   selector: 'cut-result-type-filter',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultTypeFilterComponent implements OnInit {
 
-  constructor() { }
+  filters: Filter[];
+  isSelected: number;
+
+  constructor(private srService: SearchResultService) { }
 
   ngOnInit() {
+    this.filters = this.srService.getFilter('resultTypeFilter');
+    this.isSelected = this.filters[0].id;
+  }
+
+  onFilterClick = (id: number) => {
+    this.isSelected = id;
   }
 
 }

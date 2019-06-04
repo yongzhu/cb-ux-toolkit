@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchResultService } from '../../search-result.service';
+import { Filter } from '../../shared.modal';
+
 
 @Component({
   selector: 'cut-used-filter',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsedFilterComponent implements OnInit {
 
-  constructor() { }
+  filters: Filter[];
+
+  constructor(private srService: SearchResultService) { }
 
   ngOnInit() {
+    const filterData = this.srService.getFilter('usedFilters');
+    this.filters = filterData;
   }
 
 }

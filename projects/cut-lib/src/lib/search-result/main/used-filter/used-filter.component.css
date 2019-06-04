@@ -9,19 +9,24 @@
   display: flex;
   border-radius: 5px;
   align-items: baseline;
+  margin-right: 10px;
 }
 .full-text-wrapper > div {
-  padding: 10px;
+  padding: 5px;
 }
 .wrapper-title {
   color: #5ba4dc;
 }
-.add-filter{
+.full-text-wrapper .add-filter {
   align-self: center;
+  padding: 0;
 }
 .add-filter .material-icons {
   font-size: 22px;
   color: #5ba4dc;
   font-weight: 600;
   cursor: pointer;
+}
+.sr-hidden {
+  display: none;
 }

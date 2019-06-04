@@ -72,7 +72,21 @@ const DOCS: { [key: string]: DocCategory[] } = {
           isCut: true,
           examples: [
             'search-result',
+            'used-filter',
+            'result-tabs'
           ]
+        },
+        {
+          id: 'utility',
+          name: 'Utility',
+          summary: 'this id where you find most of stuff.',
+          isCut: true,
+          examples: [
+            'used-filter',
+            'result-tabs'
+          ]
+
+
         }
       ]
     },

@@ -2,7 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
 
-import { LoadingIndicatorComponentExample, HeaderComponentExample, SearchResultComponentExample } from './components';
+import {
+  LoadingIndicatorComponentExample,
+  HeaderComponentExample,
+  SearchResultComponentExample,
+  UsedFilterComponentExample,
+  ResultTabComponentExample
+} from './components';
 
 import {
   FrameworkModule,
@@ -16,7 +22,9 @@ import {
 export const components = [
   LoadingIndicatorComponentExample,
   HeaderComponentExample,
-  SearchResultComponentExample
+  SearchResultComponentExample,
+  UsedFilterComponentExample,
+  ResultTabComponentExample,
 ];
 
 @NgModule({

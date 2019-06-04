@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
-
-export interface Filter {
-  name: string;
-}
+import { Filter } from '../../../shared.modal';
 
 @Component({
   selector: 'cut-filter-options',
@@ -15,15 +12,14 @@ export interface Filter {
 })
 export class FilterOptionsComponent implements OnInit {
 
-  visible = true;
-  selectable = false;
-  removable = true;
-  addOnBlur = true;
+
+  @Input() visible = true;
+  @Input() selectable = false;
+  @Input() removable = true;
+  @Input() addOnBlur = true;
+
+  @Input() filters: Filter[];
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  filters: Filter[] = [
-    { name: 'sale' },
-    { name: 'auto' },
-  ];
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
@@ -31,7 +27,7 @@ export class FilterOptionsComponent implements OnInit {
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.filters.push({ name: value.trim() });
+      this.filters.push({ name: value.trim(), id: this.filters.length });
     }
 
     // Reset the input value

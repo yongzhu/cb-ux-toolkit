@@ -1,4 +1,4 @@
-import { LoadingIndicatorComponentExample, HeaderComponentExample, SearchResultComponentExample } from './components';
+import { LoadingIndicatorComponentExample, HeaderComponentExample, SearchResultComponentExample, UsedFilterComponentExample, ResultTabComponentExample } from './components';
 
 export const examplesManifest: any = {
   components: {
@@ -9,7 +9,19 @@ export const examplesManifest: any = {
       component: HeaderComponentExample
     },
     "search-result": {
-      component: SearchResultComponentExample
-    }
+      component: SearchResultComponentExample,
+      title: 'Search Result'
+    },
+    "used-filter": {
+      component: UsedFilterComponentExample,
+      title: 'Used Filters'
+    },
+    'result-tabs': {
+      component: ResultTabComponentExample,
+      title: 'Result Tabs'
+    },
+    /* 'buttons': {
+      component:
+    } */
   }
 };

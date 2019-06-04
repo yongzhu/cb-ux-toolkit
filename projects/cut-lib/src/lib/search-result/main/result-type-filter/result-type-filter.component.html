@@ -1,3 +1,10 @@
-<p>
-  result-type-filter works!
-</p>
+<div class="sr-filter-type">
+  <cut-button
+    *ngFor="let filter of filters"
+    class="sr-filter-items {{ isSelected === filter.id ? 'selected' : '' }}"
+    [isSelected]="isSelected === filter.id ? true : false"
+    [buttonName]="filter.name"
+    (click)="onFilterClick(filter.id)"
+  >
+  </cut-button>
+</div>
