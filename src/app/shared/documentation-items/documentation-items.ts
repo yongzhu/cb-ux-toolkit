@@ -71,7 +71,7 @@ const DOCS: { [key: string]: DocCategory[] } = {
           summary: "Text Search Bar",
           isCut: true,
           examples: [
-            "search-example",
+            "searchbar",
           ]
         },
         {

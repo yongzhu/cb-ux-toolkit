@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
@@ -16,6 +16,7 @@ import { CutApiService } from "../utils/cut-api.service";
 export class SearchbarComponent implements OnInit, OnDestroy {
   @Input("searchapi") searchapi: string;
   @Input("map") map: string;
+  @Output() resultDispatch = new EventEmitter();
 
   destroy$: Subject<boolean> = new Subject<boolean>();
   searchForm: FormGroup;
@@ -46,7 +47,7 @@ export class SearchbarComponent implements OnInit, OnDestroy {
     this.formSubmitted = true;
     this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value, this.mapIndex[this.map])
       .pipe(takeUntil(this.destroy$)).subscribe(searchResponse => {
-        console.log("Search Response", searchResponse);
+        this.resultDispatch.emit(searchResponse);
       });
   }
 

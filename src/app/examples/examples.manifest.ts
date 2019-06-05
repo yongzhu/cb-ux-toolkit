@@ -16,7 +16,8 @@ export const examplesManifest: any = {
       component: HeaderComponentExample
     },
     "searchbar": {
-      component: SearchbarComponentExample
+      component: SearchbarComponentExample,
+      title: "Search Bar"
     },
     "search-result": {
       component: SearchResultComponentExample,
