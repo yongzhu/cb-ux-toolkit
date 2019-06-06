@@ -1,0 +1,13 @@
+<div class="example-searchbar">
+  <cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="'https://jsonplaceholder.typicode.com/users'" [map]="'CutCandidateNoLocalMap'"></cut-searchbar>
+</div>
+
+<div class="example-searchbar-result" *ngIf="showResult">
+  <h3>{{count}} Results Found</h3>
+  <table>
+    <tr><th>Name</th></tr>
+    <tr *ngFor="let item of result">
+      <td>{{item.name}}</td>
+    </tr>
+  </table>
+</div>

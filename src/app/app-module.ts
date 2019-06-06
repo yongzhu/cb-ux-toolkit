@@ -39,7 +39,8 @@ import {
   ClipboardModule,
 	SelectModule,
   CutLoadingIndicatorModule,
-  CutSearchResultModule,
+  SearchbarModule,
+  CutSearchResultModule
 } from "cut";
 
 @NgModule({
@@ -64,8 +65,9 @@ import {
     NavBarModule,
     StackblitzButtonModule,
     SvgViewerModule,
-		ThemePickerModule,
+    ThemePickerModule,
     CutLoadingIndicatorModule,
+    SearchbarModule,
     CutSearchResultModule
   ],
   declarations: [

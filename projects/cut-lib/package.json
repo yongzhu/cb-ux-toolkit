@@ -9,7 +9,6 @@
     "@angular/material": "~7.3.3",
     "@types/clipboard": "^2.0.1",
     "clipboard": "~2.0.0",
-    "font-awesome": "~4.7.0",
     "jquery": "~3.3.0",
     "popper.js": "~1.14.0"
   },

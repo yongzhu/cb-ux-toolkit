@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
-
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { DocViewerModule } from "../shared/doc-viewer/doc-viewer-module";
 import {
-  LoadingIndicatorComponentExample,
   HeaderComponentExample,
+  LoadingIndicatorComponentExample,
+  SearchbarComponentExample,
   SearchResultComponentExample,
   UsedFilterComponentExample,
   ResultTabComponentExample,
@@ -13,12 +13,12 @@ import {
 } from './components';
 
 import {
-  FrameworkModule,
   ClipboardModule,
-  SelectModule,
   CutHeaderModule,
   CutLoadingIndicatorModule,
   CutSearchResultModule,
+  SearchbarModule,
+  SelectModule
 } from "cut";
 
 export const components = [
@@ -28,7 +28,8 @@ export const components = [
   UsedFilterComponentExample,
   ResultTabComponentExample,
   SRFilterTypeComponentExample,
-  SRResultListComponentExample
+  SRResultListComponentExample,
+  SearchbarComponentExample
 ];
 
 @NgModule({
@@ -40,7 +41,8 @@ export const components = [
     CutLoadingIndicatorModule,
     CutSearchResultModule,
     CutHeaderModule,
-    DocViewerModule
+    DocViewerModule,
+    SearchbarModule
   ],
   entryComponents: [
     ...components

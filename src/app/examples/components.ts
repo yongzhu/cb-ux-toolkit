@@ -5,3 +5,4 @@ export * from './search-result/used-filter/used-filter.component';
 export * from './search-result/result-tab/result-tab.component';
 export * from './search-result/filter-type/filter-type.component';
 export * from './search-result/result-list/result-list.component';
+export * from "./searchbar/searchbar.component";
