@@ -5,7 +5,8 @@ import {
   MatIconModule,
   MatChipsModule,
   MatFormFieldModule,
-  MatTabsModule
+  MatTabsModule,
+  MatSelectModule
 } from "@angular/material";
 
 import { CutSearchResultComponent } from "./main/search-result.component";
@@ -17,6 +18,7 @@ import { ResultTypeFilterComponent } from "./main/result-type-filter/result-type
 import { FilterOptionsComponent } from "./main/used-filter/filter-options/filter-options.component";
 import { SearchResultService } from "./search-result.service";
 import { ButtonComponent } from "../button/button.component";
+import { ListComponent } from "./main/result-list/list/list.component";
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { ButtonComponent } from "../button/button.component";
     MatIconModule,
     MatFormFieldModule,
     MatTabsModule,
+    MatSelectModule,
   ],
   declarations: [
     CutSearchResultComponent,
@@ -35,7 +38,8 @@ import { ButtonComponent } from "../button/button.component";
     ResultTypeFilterComponent,
     ResultFiltersComponent,
     ResultListComponent,
-    ButtonComponent
+    ButtonComponent,
+    ListComponent
   ],
   exports: [
     CutSearchResultComponent,
@@ -43,6 +47,7 @@ import { ButtonComponent } from "../button/button.component";
     ResultTabsComponent,
     ResultTypeFilterComponent,
     ButtonComponent,
+    ResultListComponent
   ],
   providers: [SearchResultService]
 })

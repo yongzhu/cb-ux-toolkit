@@ -34,6 +34,34 @@ export class SearchResultService {
       { name: 'In Progress', id: 2 },
       { name: 'My Candidates', id: 3 },
       { name: 'Resume Database', id: 4 }
+    ],
+    searchFilters: [
+      { name: 'Action', id: 1 },
+      { name: 'Relevancy', id: 2 },
+      { name: 'Fressness ', id: 3 }
+    ],
+    resultList: [
+      {
+        name: 'John Thomas',
+        designation: 'Senior Sales Associate',
+        orgnaisation: 'Apple Inc',
+        experience: {
+          year: 3,
+          month: 8,
+        },
+        location: 'Cupertino',
+        stateCode: 'CA',
+        phone: '408-903-1029',
+        email: 'john.thomas@apple.com',
+        matchtype: 'Great Match',
+        skills: [
+          'sales experience',
+          '10 year of experience',
+          'presentation skill',
+          'quick search',
+          'devlopment head'
+        ]
+      }
     ]
   };
 

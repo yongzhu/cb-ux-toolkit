@@ -73,7 +73,9 @@ const DOCS: { [key: string]: DocCategory[] } = {
           examples: [
             'search-result',
             'used-filter',
-            'result-tabs'
+            'result-tabs',
+            'sr-filter-type',
+            'sr-result-list'
           ]
         },
         {
@@ -85,8 +87,6 @@ const DOCS: { [key: string]: DocCategory[] } = {
             'used-filter',
             'result-tabs'
           ]
-
-
         }
       ]
     },

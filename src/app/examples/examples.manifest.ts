@@ -1,4 +1,12 @@
-import { LoadingIndicatorComponentExample, HeaderComponentExample, SearchResultComponentExample, UsedFilterComponentExample, ResultTabComponentExample } from './components';
+import {
+  LoadingIndicatorComponentExample,
+  HeaderComponentExample,
+  SearchResultComponentExample,
+  UsedFilterComponentExample,
+  ResultTabComponentExample,
+  SRFilterTypeComponentExample,
+  SRResultListComponentExample,
+} from './components';
 
 export const examplesManifest: any = {
   components: {
@@ -20,8 +28,13 @@ export const examplesManifest: any = {
       component: ResultTabComponentExample,
       title: 'Result Tabs'
     },
-    /* 'buttons': {
-      component:
-    } */
+    'sr-filter-type': {
+      component: SRFilterTypeComponentExample,
+      title: 'Filter Type Buttons'
+    },
+    'sr-result-list': {
+      component: SRResultListComponentExample,
+      title: 'Result List'
+    }
   }
 };

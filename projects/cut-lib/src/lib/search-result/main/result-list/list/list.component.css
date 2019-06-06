@@ -1,0 +1,94 @@
+.list-wrapper {
+  display: flex;
+  background: white;
+  box-shadow: 1px 1px 6px 1px #dedbdb;
+  padding: 15px;
+  border-radius: 5px;
+}
+.selected-list {
+  border-left: 5px solid #27a2e1;
+}
+.wrapper-area-main {
+  flex-grow: 1;
+  padding: 0 15px;
+}
+.wrapper-area-right {
+  align-self: center;
+}
+.wrapper-area-right .mat-icon {
+  font-size: 2rem;
+}
+.heading p {
+  font-size: 1.3rem;
+  margin: 0;
+}
+.name-star {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+.name-star.favorite {
+  color: #008000;
+}
+.name-star.unfavorite {
+  color: #848282;
+}
+.professional-detail {
+  margin-top: 5px;
+  color: #949494;
+}
+.professional-detail .orgnisation {
+  border-left: 1px solid #848282;
+  font-weight: 200;
+  padding: 0 10px;
+}
+.professional-detail .designation {
+  padding: 0 10px 0 0;
+}
+.address {
+  display: flex;
+  color: #848282;
+  font-weight: 300;
+}
+.address div {
+  margin-right: 35px;
+}
+.address p {
+  margin: 0;
+  display: flex;
+}
+.address div .mat-icon {
+  margin: 0;
+  font-size: 1.1rem;
+  align-items: center;
+}
+.skill-match {
+  display: flex;
+}
+.skill-match .match {
+  display: flex;
+}
+.skill-match .match .mat-icon {
+  font-size: 3.5rem;
+  margin: 0;
+  height: 100%;
+  width: auto;
+  color: #008000;
+}
+.skill-match .match p {
+  align-self: center;
+  font-weight: 200;
+  font-style: oblique;
+  margin: 0;
+  color: #b1adad;
+}
+.skill-match .skill {
+  align-self: center;
+  margin-left: 25px;
+}
+.skill-match .skill span {
+  margin: 0 10px;
+  padding: 2px 10px;
+  font-size: 0.65rem;
+  background: #e2ecf3;
+  border-radius: 15px;
+}

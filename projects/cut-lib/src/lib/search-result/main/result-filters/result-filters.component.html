@@ -1,3 +1,41 @@
-<p>
-  result-filters works!
-</p>
+<div class="sr-filters">
+    <mat-form-field appearance="none">
+        <mat-label></mat-label>
+        <mat-select
+          (selectionChange)="onChangeFlter($event)"
+          [value]="selectedValue"
+        >
+          <mat-option *ngFor="let single of filters" [value]="single.id">
+            {{ single.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+<!-- <div class="sr-filters">
+    <span>Sort by: </span>
+    <mat-form-field appearance="none">
+        <mat-label></mat-label>
+        <mat-select
+          (selectionChange)="onChangeFlter($event)"
+          [value]="selectedValue"
+        >
+          <mat-option *ngFor="let single of filters" [value]="single.id">
+            {{ single.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+<div class="sr-filters">
+    <mat-form-field appearance="none">
+        <mat-label></mat-label>
+        <mat-select
+          (selectionChange)="onChangeFlter($event)"
+          [value]="selectedValue"
+        >
+          <mat-option *ngFor="let single of filters" [value]="single.id">
+            {{ single.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div> -->
+

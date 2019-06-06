@@ -1,0 +1,77 @@
+<div
+  [ngClass]="{
+    'selected-list': isSelected,
+    'list-wrapper': true
+  }"
+>
+  <div class="wrapper-area-left">
+    <input type="checkbox" name="" id="" />
+  </div>
+  <div class="wrapper-area-main">
+    <div class="heading">
+      <p>
+        {{ listDetail.name }}
+        <mat-icon
+          [ngClass]="{
+            unfavorite: !isFavorite,
+            favorite: isFavorite,
+            'name-star': true
+          }"
+          >star</mat-icon
+        >
+      </p>
+    </div>
+    <div class="professional-detail">
+      <p>
+        <span class="designation">{{ listDetail.designation }}</span>
+        <span class="orgnisation">{{ listDetail.orgnaisation }}</span>
+        <span class="experience"
+          >(
+          {{
+            listDetail.experience.year
+              ? listDetail.experience.year + "year"
+              : ""
+          }},
+          {{
+            listDetail.experience.month
+              ? listDetail.experience.month + "months"
+              : ""
+          }}
+          )</span
+        >
+      </p>
+    </div>
+    <div class="address">
+      <div class="address-location">
+        <p>
+          <mat-icon class="address-icon">location_on</mat-icon>
+          {{ listDetail.location }}, {{ listDetail.stateCode }}
+        </p>
+      </div>
+      <div class="address-phone">
+        <p>
+          <mat-icon class="address-icon">phone</mat-icon>
+          {{ listDetail.phone }}
+        </p>
+      </div>
+      <div class="address-email">
+        <p>
+          <mat-icon class="address-icon">email</mat-icon>
+          {{ listDetail.email }}
+        </p>
+      </div>
+    </div>
+    <div class="skill-match">
+      <div class="match">
+        <mat-icon>more_horiz</mat-icon>
+        <p>Great Match!</p>
+      </div>
+      <div class="skill">
+        <span *ngFor="let single of listDetail.skills">{{ single }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper-area-right">
+    <mat-icon>more_vert</mat-icon>
+  </div>
+</div>

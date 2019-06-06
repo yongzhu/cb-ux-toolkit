@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchResultService } from '../../search-result.service';
 
 @Component({
   selector: 'cut-result-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultListComponent implements OnInit {
 
-  constructor() { }
+  resultList: any;
+
+  constructor(private srService: SearchResultService) { }
 
   ngOnInit() {
+    this.resultList = this.srService.getFilter('resultList');
   }
 
 }

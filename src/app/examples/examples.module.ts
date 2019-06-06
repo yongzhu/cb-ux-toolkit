@@ -7,7 +7,9 @@ import {
   HeaderComponentExample,
   SearchResultComponentExample,
   UsedFilterComponentExample,
-  ResultTabComponentExample
+  ResultTabComponentExample,
+  SRFilterTypeComponentExample,
+  SRResultListComponentExample
 } from './components';
 
 import {
@@ -16,7 +18,7 @@ import {
   SelectModule,
   CutHeaderModule,
   CutLoadingIndicatorModule,
-  CutSearchResultModule
+  CutSearchResultModule,
 } from "cut";
 
 export const components = [
@@ -25,6 +27,8 @@ export const components = [
   SearchResultComponentExample,
   UsedFilterComponentExample,
   ResultTabComponentExample,
+  SRFilterTypeComponentExample,
+  SRResultListComponentExample
 ];
 
 @NgModule({
