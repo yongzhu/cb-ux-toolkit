@@ -50,6 +50,12 @@ $total: 7;
 }
 
 // Setup some padding utilities
-@for $i from 1 through $total {
-	@include element-spacing($i * 5);
+@for $i from 0 through $total {
+	@if $i == 0
+	{
+		@include element-spacing($i);
+	}
+	@else {
+		@include element-spacing($i * 5);
+	}
 }
