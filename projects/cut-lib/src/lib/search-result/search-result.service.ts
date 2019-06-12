@@ -36,9 +36,43 @@ export class SearchResultService {
       { name: 'Resume Database', id: 4 }
     ],
     searchFilters: [
-      { name: 'Action', id: 1 },
-      { name: 'Relevancy', id: 2 },
-      { name: 'Fressness ', id: 3 }
+      {
+        defaultTitle: 'Actions',
+        isPrefixedUsed: false,
+        prefixVale: '',
+        options: [
+          'Action',
+          'Action1',
+          'Action2',
+          'Action3',
+          'Action4'
+        ],
+        prefixType: ':'
+      },
+      {
+        defaultTitle: '',
+        isPrefixedUsed: true,
+        prefixVale: 'Sort By',
+        options: [
+          'Option1',
+          'Option2',
+          'Option3',
+          'Option4'
+        ],
+        prefixType: 'colon'
+      },
+      {
+        defaultTitle: '',
+        isPrefixedUsed: true,
+        prefixVale: 'Freshness',
+        options: [
+          'Last Year',
+          'Option2',
+          'Option3',
+          'Option4'
+        ],
+        prefixType: ''
+      }
     ],
     resultList: [
       {
@@ -60,6 +94,24 @@ export class SearchResultService {
           'presentation skill',
           'quick search',
           'devlopment head'
+        ],
+        verticalOptions: [
+          {
+            name: 'Option1',
+            icon: 'arrow_right_alt'
+          },
+          {
+            name: 'Option2',
+            icon: 'arrow_right_alt'
+          },
+          {
+            name: 'Option3',
+            icon: 'arrow_right_alt'
+          },
+          {
+            name: 'Option4',
+            icon: 'arrow_right_alt'
+          }
         ]
       }
     ]

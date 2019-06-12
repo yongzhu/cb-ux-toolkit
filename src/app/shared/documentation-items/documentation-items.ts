@@ -84,6 +84,7 @@ const DOCS: { [key: string]: DocCategory[] } = {
             'used-filter',
             'result-tabs',
             'sr-filter-type',
+            'sr-result-filter',
             'sr-result-list'
           ]
         },

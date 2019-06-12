@@ -7,3 +7,8 @@ export interface Link {
   name: string;
   id: number;
 }
+
+export interface VerticalOptionData {
+  name: string,
+  icon: string
+ }

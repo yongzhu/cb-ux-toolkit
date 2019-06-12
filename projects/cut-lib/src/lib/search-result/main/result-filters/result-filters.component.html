@@ -1,41 +1,44 @@
-<div class="sr-filters">
-    <mat-form-field appearance="none">
-        <mat-label></mat-label>
-        <mat-select
-          (selectionChange)="onChangeFlter($event)"
-          [value]="selectedValue"
+<div class="filter-wrapper">
+  <div class="filter-item">
+    <input type="checkbox" name="" id="" />
+  </div>
+  <div *ngFor="let filter of filters; let i = index" class="filter-item">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <ng-template [ngIf]="filter.isPrefixedUsed">
+        <span class="filter-title">
+          {{
+            filter.prefixType === "colon"
+              ? filter.prefixVale + ": &nbsp;"
+              : filter.prefixVale + " ("
+          }}</span
         >
-          <mat-option *ngFor="let single of filters" [value]="single.id">
-            {{ single.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      </ng-template>
+      <!-- <span *ngIf="filter.defaultTitle; else elseValue" class="filter-title">
+        {{ filter.defaultTitle }}
+      </span>
+      <ng-template #elseValue> -->
+      <span class="filter-title" #element>{{ filter.options[0] }}</span>
+      <!-- </ng-template> -->
+      <ng-template [ngIf]="filter.isPrefixedUsed">
+        <span class="filter-title">
+          {{ filter.prefixType === "colon" ? "" : ")" }}</span
+        >
+      </ng-template>
+      <mat-icon class="filter-icon">expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        *ngFor="let option of filter.options"
+        (click)="clickHandler(option, element)"
+        mat-menu-item
+      >
+        <!-- <mat-icon>dialpad</mat-icon> -->
+        <span>{{ option }}</span>
+      </button>
+    </mat-menu>
+  </div>
 </div>
-<!-- <div class="sr-filters">
-    <span>Sort by: </span>
-    <mat-form-field appearance="none">
-        <mat-label></mat-label>
-        <mat-select
-          (selectionChange)="onChangeFlter($event)"
-          [value]="selectedValue"
-        >
-          <mat-option *ngFor="let single of filters" [value]="single.id">
-            {{ single.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-</div>
-<div class="sr-filters">
-    <mat-form-field appearance="none">
-        <mat-label></mat-label>
-        <mat-select
-          (selectionChange)="onChangeFlter($event)"
-          [value]="selectedValue"
-        >
-          <mat-option *ngFor="let single of filters" [value]="single.id">
-            {{ single.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-</div> -->
-

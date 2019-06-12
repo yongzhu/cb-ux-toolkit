@@ -6,7 +6,7 @@ import {
   MatChipsModule,
   MatFormFieldModule,
   MatTabsModule,
-  MatSelectModule
+  MatMenuModule
 } from "@angular/material";
 
 import { CutSearchResultComponent } from "./main/search-result.component";
@@ -19,6 +19,7 @@ import { FilterOptionsComponent } from "./main/used-filter/filter-options/filter
 import { SearchResultService } from "./search-result.service";
 import { ButtonComponent } from "../button/button.component";
 import { ListComponent } from "./main/result-list/list/list.component";
+import { VerticalOption } from '../vertical-option/vertical-option.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { ListComponent } from "./main/result-list/list/list.component";
     MatIconModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatSelectModule,
+    MatMenuModule
   ],
   declarations: [
     CutSearchResultComponent,
@@ -39,7 +40,8 @@ import { ListComponent } from "./main/result-list/list/list.component";
     ResultFiltersComponent,
     ResultListComponent,
     ButtonComponent,
-    ListComponent
+    ListComponent,
+    VerticalOption
   ],
   exports: [
     CutSearchResultComponent,
@@ -47,7 +49,8 @@ import { ListComponent } from "./main/result-list/list/list.component";
     ResultTabsComponent,
     ResultTypeFilterComponent,
     ButtonComponent,
-    ResultListComponent
+    ResultListComponent,
+    ResultFiltersComponent
   ],
   providers: [SearchResultService]
 })

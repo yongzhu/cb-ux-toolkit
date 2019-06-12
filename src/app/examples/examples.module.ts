@@ -9,7 +9,8 @@ import {
   UsedFilterComponentExample,
   ResultTabComponentExample,
   SRFilterTypeComponentExample,
-  SRResultListComponentExample
+  SRResultListComponentExample,
+  ResultFilterComponentExample
 } from './components';
 
 import {
@@ -29,7 +30,8 @@ export const components = [
   ResultTabComponentExample,
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
-  SearchbarComponentExample
+  SearchbarComponentExample,
+  ResultFilterComponentExample
 ];
 
 @NgModule({

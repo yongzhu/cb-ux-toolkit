@@ -67,11 +67,24 @@
         <p>Great Match!</p>
       </div>
       <div class="skill">
-        <span *ngFor="let single of listDetail.skills">{{ single }}</span>
+        <span *ngFor="let single of listDetail.skills.slice(0, 3)">{{
+          single
+        }}</span>
+        <ng-template [ngIf]="othersSkills.length > 0">
+          <cut-vertical-option
+            [options]="othersSkills"
+            [showIcon]="false"
+            [showContent]="true"
+          >
+            <span>+{{ listDetail.skills.slice(3).length }} More</span>
+          </cut-vertical-option>
+        </ng-template>
       </div>
     </div>
   </div>
   <div class="wrapper-area-right">
-    <mat-icon>more_vert</mat-icon>
+    <cut-vertical-option
+      [options]="listDetail.verticalOptions"
+    ></cut-vertical-option>
   </div>
 </div>

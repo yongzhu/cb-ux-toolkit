@@ -6,7 +6,8 @@ import {
   ResultTabComponentExample,
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
-  SearchbarComponentExample
+  SearchbarComponentExample,
+  ResultFilterComponentExample
 } from './components';
 
 export const examplesManifest: any = {
@@ -40,6 +41,10 @@ export const examplesManifest: any = {
     'sr-result-list': {
       component: SRResultListComponentExample,
       title: 'Result List'
+    },
+    'sr-result-filter': {
+      component: ResultFilterComponentExample,
+      title: 'Result Filters'
     }
   }
 };
