@@ -30,3 +30,13 @@ button {
   align-self: center;
   color: #5796c8;
 }
+@media only screen and (max-width: 650px) {
+  .filter-wrapper[_ngcontent-c24] {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .filter-item[_ngcontent-c24] {
+    flex-grow: 1;
+    border-bottom: 1px solid #ececec;
+  }
+}

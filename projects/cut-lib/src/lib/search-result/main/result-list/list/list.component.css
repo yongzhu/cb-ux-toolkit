@@ -89,3 +89,38 @@
   background: #e2ecf3;
   border-radius: 15px;
 }
+
+@media only screen and (max-width: 650px) {
+  .professional-detail p {
+    display: flex;
+    flex-direction: column;
+  }
+  .professional-detail p span {
+    margin-bottom: 5px;
+  }
+  .professional-detail p span.orgnisation {
+    border: none;
+  }
+  .professional-detail p span {
+    padding: 5px 0;
+  }
+  .address {
+    flex-direction: column;
+  }
+  .skill-match{
+    flex-direction: column;
+  }
+  .skill{
+    margin: 0;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .skill span{
+    margin: 3px 5px;
+    padding: 2px 10px;
+    font-size: .65rem;
+    background: #e2ecf3;
+    border-radius: 15px;
+  }
+}
