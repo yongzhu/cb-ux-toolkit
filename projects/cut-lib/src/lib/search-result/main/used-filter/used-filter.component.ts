@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchResultService } from '../../search-result.service';
-import { Filter } from '../../shared.modal';
+import { UsedFilterData } from '../../shared.modal';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Filter } from '../../shared.modal';
 })
 export class UsedFilterComponent implements OnInit {
 
-  filters: Filter[];
+  filters: UsedFilterData[];
 
   constructor(private srService: SearchResultService) { }
 

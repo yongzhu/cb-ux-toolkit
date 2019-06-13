@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Filter } from '../../shared.modal';
+import { Filters } from '../../shared.modal';
 import { SearchResultService } from '../../search-result.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SearchResultService } from '../../search-result.service';
 })
 export class ResultFiltersComponent implements OnInit {
 
-  filters: Filter;
+  filters: Filters;
   constructor(private srService: SearchResultService) { }
 
   ngOnInit() {

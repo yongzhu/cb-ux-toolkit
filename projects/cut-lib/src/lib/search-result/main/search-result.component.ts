@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
+import { SearchResultService } from '../search-result.service';
+import { ResultDataModal } from '../shared.modal';
 
 @Component({
   selector: 'cut-search-result',
@@ -7,9 +13,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CutSearchResultComponent implements OnInit {
 
-  constructor() { }
+  @Input() resultData: ResultDataModal;
+  @Input() showUserFilter: boolean = true;
+  @Input() showTabs: boolean = true;
+  @Input() showFilterType: boolean = true;
+  @Input() showFilters: boolean = true;
+  @Input() showList: boolean = true;
+
+  constructor(private srService: SearchResultService) { }
 
   ngOnInit() {
+    if (this.resultData) {
+      this.srService.setServiveData(this.resultData);
+    } else {
+      this.resultData = this.srService.getServiceData();
+    }
+    this.showUserFilter = this.resultData.usedFilters ? true : false;
+    this.showTabs = this.resultData.resultTabs ? true : false;
+    this.showFilterType = this.resultData.resultTypeFilter ? true : false;
+    this.showFilters = this.resultData.searchFilters ? true : false;
+    this.showList = this.resultData.resultList ? true : false;
   }
-
 }

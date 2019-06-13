@@ -1,14 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import {
-  MatIconModule,
-  MatChipsModule,
-  MatFormFieldModule,
-  MatTabsModule,
-  MatMenuModule
-} from "@angular/material";
-
 import { CutSearchResultComponent } from "./main/search-result.component";
 import { UsedFilterComponent } from "./main/used-filter/used-filter.component";
 import { ResultFiltersComponent } from "./main/result-filters/result-filters.component";
@@ -21,6 +13,13 @@ import { ButtonComponent } from "../button/button.component";
 import { ListComponent } from "./main/result-list/list/list.component";
 import { VerticalOption } from '../vertical-option/vertical-option.component';
 
+import {
+  MatIconModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatTabsModule,
+  MatMenuModule
+} from "@angular/material";
 
 @NgModule({
   imports: [

@@ -1,7 +1,9 @@
+import { ResultDataModal } from "./shared.modal";
+
 export class SearchResultService {
 
-  private resultData = {
-    usedFilters: [
+  private resultData: ResultDataModal = {
+    /* usedFilters: [
       {
         filterName: "Full Text",
         config: {
@@ -23,7 +25,7 @@ export class SearchResultService {
         data: [{ name: "sale", id: 1 }, { name: "fresh", id: 2 }]
       }
 
-    ],
+    ], */
     resultTabs: [
       { name: 'Candidates', id: 1 },
       { name: 'Requistions', id: 2 },
@@ -119,5 +121,14 @@ export class SearchResultService {
 
   getFilter = (name: string) => {
     return this.resultData[name];
-  };
+  }
+
+  setServiveData = (data: ResultDataModal) => {
+    this.resultData = data;
+  }
+
+  getServiceData = () => {
+    return this.resultData;
+  }
+
 }

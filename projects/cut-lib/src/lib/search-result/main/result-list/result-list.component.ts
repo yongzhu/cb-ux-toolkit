@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchResultService } from '../../search-result.service';
+import { ResultListModal } from '../../shared.modal';
 
 @Component({
   selector: 'cut-result-list',
@@ -8,7 +9,7 @@ import { SearchResultService } from '../../search-result.service';
 })
 export class ResultListComponent implements OnInit {
 
-  resultList: any;
+  resultList: ResultListModal;
 
   constructor(private srService: SearchResultService) { }
 
