@@ -22,7 +22,7 @@ export class CutApiService {
 
     /* This is going to need to be abstracted since with first layer
     of the API may not be an array */
-    return this.http.get<any>(searchURL + "?searchText=" + searchText, options).pipe(
+    return this.http.get<any>(searchURL + "" + searchText, options).pipe(
       map(data => data.map((item: any) => {
         return new ModelMapper(itemType).map(item);
       })),

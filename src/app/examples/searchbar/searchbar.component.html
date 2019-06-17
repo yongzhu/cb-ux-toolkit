@@ -1,5 +1,5 @@
 <div class="example-searchbar">
-  <cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="'https://jsonplaceholder.typicode.com/users'" [map]="'CutCandidateNoLocalMap'"></cut-searchbar>
+  <cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="searchApi" [map]="apiMap"></cut-searchbar>
 </div>
 
 <div class="example-searchbar-result" *ngIf="showResult">
