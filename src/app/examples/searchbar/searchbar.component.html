@@ -4,10 +4,5 @@
 
 <div class="example-searchbar-result" *ngIf="showResult">
   <h3>{{count}} Results Found</h3>
-  <table>
-    <tr><th>Name</th></tr>
-    <tr *ngFor="let item of result">
-      <td>{{item.name}}</td>
-    </tr>
-  </table>
+  <cut-search-result resultData="result"></cut-search-result>
 </div>

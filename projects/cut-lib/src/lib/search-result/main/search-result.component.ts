@@ -4,7 +4,7 @@ import {
   Input
 } from '@angular/core';
 import { SearchResultService } from '../search-result.service';
-import { ResultDataModal } from '../shared.modal';
+import { CutResultModel } from '../../models/data-structures/result-model';
 
 @Component({
   selector: 'cut-search-result',
@@ -13,7 +13,7 @@ import { ResultDataModal } from '../shared.modal';
 })
 export class CutSearchResultComponent implements OnInit {
 
-  @Input() resultData: ResultDataModal;
+  @Input() resultData: CutResultModel;
   @Input() showUserFilter: boolean = true;
   @Input() showTabs: boolean = true;
   @Input() showFilterType: boolean = true;

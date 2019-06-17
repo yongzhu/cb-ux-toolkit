@@ -15,7 +15,7 @@ export class CutCandidateTestapi2Map extends CutCandidateMap {
       public email: string;
 
     @propertyMap('phone_numbers[0].number')
-      public phone: CutPhoneModel[];
+      public phone: string;
 
     public tags: string[];
     public match: number;

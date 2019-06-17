@@ -1,12 +1,21 @@
-import { CutCompanyModel } from './company-model';
-import { CutPhoneModel } from './phone-model';
-
 export interface CutCandidateModel {
   id: string;
   name: string;
-  company: CutCompanyModel[];
+  designation: string;
+  orgnaisation: string;
+  experience: {
+    year: number;
+    month: number;
+  };
+  location: string;
+  stateCode: string;
+  phone: string;
   email: string;
-  phone: CutPhoneModel[];
-  tags: string[];
-  match?: number;
+  matchtype: string;
+  skills: string[];
+  verticalOptions: VerticalOptions[];
+}
+export interface VerticalOptions {
+  name: string;
+  icon: string;
 }
