@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { environment } from "src/environments/environment.prod";
 
 @Component({
   selector: "app-searchbar",
@@ -9,10 +10,14 @@ export class SearchbarComponentExample implements OnInit {
   public showResult = false;
   public result: any[] = [];
   public count = 0;
+  public searchApi: string;
+  public apiMap: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.searchApi = environment.search_api.test_api1;
+    this.apiMap = "CutCandidateTestapi1Map";
   }
 
   searchResult($event) {

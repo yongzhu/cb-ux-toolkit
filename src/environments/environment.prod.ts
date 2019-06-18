@@ -4,7 +4,7 @@ export const environment = {
   production: true,
   search_api: {
     test_nolocal: "https://jsonplaceholder.typicode.com/users",
-    test_api1: "http://localhost:3333/candidates",
-    test_api2: "http://localhost:3333/search"
+    test_api1: "http://localhost:3333/results?q=",
+    test_api2: "http://localhost:3333/search?q="
   }
 };

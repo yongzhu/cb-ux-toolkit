@@ -1,14 +1,13 @@
 import { propertyMap } from "../../utils/functions/propertyMap";
-import { CutCandidateModel } from "../data-structures/candidate-model";
 import { CutCompanyModel } from "../data-structures/company-model";
 import { CutPhoneModel } from "../data-structures/phone-model";
-export class CutCandidateMap implements CutCandidateModel {
+export class CutCandidateMap {
 
   public id: string;
   public name: string;
   public company: CutCompanyModel[];
   public email: string;
-  public phone: CutPhoneModel[];
+  public phone: string;
   public tags: string[];
   public match: number;
 

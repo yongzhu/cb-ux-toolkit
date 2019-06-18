@@ -13,3 +13,4 @@ export class SearchResultComponentExample implements OnInit {
   }
 
 }
+  

@@ -5,21 +5,12 @@ import { CutCandidateMap } from "./candidate-map";
 
 export class CutCandidateTestapi1Map extends CutCandidateMap {
 
-    public id: string;
-
-    @propertyMap(["first_name", "last_name"])
-      public name: string;
-
-    @propertyMap("employment[0].label")
-      public company: CutCompanyModel[];
-
-    @propertyMap("emails[0].email")
-      public email: string;
-
-    @propertyMap("phone_numbers[0].number")
-      public phone: CutPhoneModel[];
-
-    public tags: string[];
+  public name: string;
+  public usedFilters: any[];
+  public resultTabs: any[];
+  public resultTypeFilter: any[];
+  public searchFilters: any[];
+  public resultList: any[];
 
   constructor() {
     super();
