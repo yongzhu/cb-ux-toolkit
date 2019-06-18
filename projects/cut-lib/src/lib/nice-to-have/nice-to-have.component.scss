@@ -1,0 +1,41 @@
+.nice-to-have {
+  display: flex;
+  margin-top: 15px;
+}
+.graph {
+  display: flex;
+  align-items: center;
+}
+.line {
+  width: 25px;
+  background: #1d5c8b;
+  height: 1px;
+}
+.circle {
+  width: 10px;
+  border: 1px solid #1d5c8b;
+  border-radius: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.filled {
+  background: #1d5c8b;
+}
+.first-line,
+.last-line {
+  font-size: 0.7rem;
+  color: #767676;
+}
+.first-line {
+  margin-right: 10px;
+}
+.last-line {
+  margin-left: 10px;
+}
+
+@media (max-width: 400px) {
+  .nice-to-have {
+    display: flex;
+    flex-direction: column
+  }
+}

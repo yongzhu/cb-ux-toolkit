@@ -89,6 +89,15 @@ const DOCS: { [key: string]: DocCategory[] } = {
           ]
         },
         {
+          id: "search-filter",
+          name: "Search Filter",
+          summary: "Search Filtert Whole Module Test2",
+          isCut: true,
+          examples: [
+            'search-filter',
+          ]
+        },
+        {
           id: "utility",
           name: "Utility",
           summary: "this id where you find most of stuff.",

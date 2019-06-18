@@ -10,7 +10,8 @@ import {
   ResultTabComponentExample,
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
-  ResultFilterComponentExample
+  ResultFilterComponentExample,
+  SearchFilterComponentExample,
 } from './components';
 
 import {
@@ -19,7 +20,8 @@ import {
   CutLoadingIndicatorModule,
   CutSearchResultModule,
   SearchbarModule,
-  SelectModule
+  SelectModule,
+  CutSearchFilterModule,
 } from "cut";
 
 export const components = [
@@ -31,7 +33,8 @@ export const components = [
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
   SearchbarComponentExample,
-  ResultFilterComponentExample
+  ResultFilterComponentExample,
+  SearchFilterComponentExample
 ];
 
 @NgModule({
@@ -42,6 +45,7 @@ export const components = [
     CommonModule,
     CutLoadingIndicatorModule,
     CutSearchResultModule,
+    CutSearchFilterModule,
     CutHeaderModule,
     DocViewerModule,
     SearchbarModule

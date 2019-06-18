@@ -1,0 +1,23 @@
+<div class="nice-to-have">
+  <span class="first-line">Nice to have</span>
+  <div class="graph">
+    <span
+      [ngClass]="{ filled: level >= 1 }"
+      class="circle"
+      (click)="clickHandler(1)"
+    ></span>
+    <span class="line"></span>
+    <span
+      [ngClass]="{ filled: level >= 2 }"
+      class="circle"
+      (click)="clickHandler(2)"
+    ></span>
+    <span class="line"></span>
+    <span
+      [ngClass]="{ filled: level >= 3 }"
+      class="circle"
+      (click)="clickHandler(3)"
+    ></span>
+  </div>
+  <span class="last-line">Must have</span>
+</div>

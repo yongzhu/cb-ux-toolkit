@@ -9,6 +9,7 @@ import {
   SearchbarComponentExample,
   ResultFilterComponentExample
 } from './components';
+import { SearchFilterComponentExample } from './search-filter/search-filter.component';
 
 export const examplesManifest: any = {
   components: {
@@ -45,6 +46,10 @@ export const examplesManifest: any = {
     'sr-result-filter': {
       component: ResultFilterComponentExample,
       title: 'Result Filters'
+    },
+    'search-filter': {
+      component: SearchFilterComponentExample,
+      title: 'Search Filters'
     }
   }
 };
