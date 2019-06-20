@@ -1,22 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SearchResultService } from '../../search-result.service';
-import { Link } from '../../shared.modal';
-import { log } from 'util';
+
+import { Subscription } from 'rxjs';
+import { CutLinkModel } from '../../../models/data-structures/link-model';
 
 @Component({
   selector: 'cut-result-tabs',
   templateUrl: './result-tabs.component.html',
   styleUrls: ['./result-tabs.component.css']
 })
-export class ResultTabsComponent implements OnInit {
+export class ResultTabsComponent implements OnInit, OnDestroy {
 
-  links: Link[] = [];
-  activeLink: number;
+  links: CutLinkModel[] = [];
+  private dataKey: string = 'resultTabs';
+  dataSubs: Subscription;
 
-  constructor(private srDService: SearchResultService) { }
+  constructor(private srService: SearchResultService) { }
 
   ngOnInit() {
-    this.links = this.srDService.getFilter('resultTabs');
-    this.activeLink = this.links[0].id;
+    this.links = this.srService.getFilter(this.dataKey);
+    this.dataSubs = this.srService.tabChangeDetectWithData.subscribe(data => {
+      this.links = data;
+    })
+  }
+
+  ngOnDestroy() {
+    this.dataSubs.unsubscribe();
+  }
+
+  clickHandler = (id: number) => {
+    this.srService.tabChangedHandler(id, this.dataKey);
   }
 }

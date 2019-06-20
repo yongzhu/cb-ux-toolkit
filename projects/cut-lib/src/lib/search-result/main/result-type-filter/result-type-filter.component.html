@@ -1,7 +1,7 @@
 <div class="sr-filter-type">
   <cut-button
     *ngFor="let filter of filters"
-    [isSelected]="isSelected === filter.id ? true : false"
+    [isSelected]="filter.isSelected"
     [buttonName]="filter.name"
     (click)="onFilterClick(filter.id)"
   >

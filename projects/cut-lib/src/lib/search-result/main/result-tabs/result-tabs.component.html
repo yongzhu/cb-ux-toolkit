@@ -2,8 +2,8 @@
   <a
     mat-tab-link
     *ngFor="let link of links"
-    (click)="activeLink = link.id"
-    [active]="activeLink == link.id"
+    (click)="clickHandler(link.id)"
+    [active]="link.isSelected"
   >
     {{ link.name }}
   </a>

@@ -14,6 +14,9 @@ export interface CutCandidateModel {
   matchtype: string;
   skills: string[];
   verticalOptions: VerticalOptions[];
+  inProgress: boolean;
+  isFromResumeBase: boolean;
+
 }
 export interface VerticalOptions {
   name: string;
