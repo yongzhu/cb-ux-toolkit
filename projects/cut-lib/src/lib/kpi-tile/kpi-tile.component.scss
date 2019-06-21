@@ -5,38 +5,42 @@
 	text-align: left;
   .cut-kpi-title {
     color: $dark-secondary-text;
-    font-size: rem-calc(10);
+    font-size: rem-calc(12);
     font-weight: bold;
     letter-spacing: 1px;
-    line-height: rem-calc(12);
+    line-height: rem-calc(15);
     text-transform: uppercase;
-    padding-bottom: rem-calc(6);
+		grid-area: title;
+		align-self: center;
   }
 
   .cut-kpi-body {
-    display: inline-flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-areas: "maincount title";
+		grid-gap: rem-calc(10);
+		width: 100%;
 
     .cut-kpi-main-count {
+			grid-area: maincount;
       color: $dark-primary-text;
-      // font-family: Lato;
-      font-size: rem-calc(30);
+      font-size: rem-calc(50);
       font-weight: bold;
-      line-height: rem-calc(30);
-      padding-right: rem-calc(5);
+      line-height: rem-calc(50);
+			align-self: left;
     }
   }
-
+	.cut-kpi-infotext {
+		color: $dark-secondary-text;
+		font-size: rem-calc(10);
+		text-transform: capitalize;
+		font-weight: normal;
+		margin-top: rem-calc(5);
+	}
+	// Not sure we need this anymore based on latest designs, but leaving for now
   .cut-kpi-secondary-count {
     color: $dark-secondary-text;
-    // font-family: Lato;
     font-size: rem-calc(10);
     font-weight: bold;
-  }
-
-  .cut-kpi-progressbar {
-    width: rem-calc(100);
-    margin: rem-calc(3) 0;
-  }
+	}
 }

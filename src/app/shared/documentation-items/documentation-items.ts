@@ -64,6 +64,15 @@ const DOCS: {[key: string]: DocCategory[]} = {
           examples: [
             'loading-indicator',
           ]
+				},
+				{
+          id: 'kpi-tile',
+          name: 'Kpi Tile',
+					summary: 'Component that displays simple kpi stats and info with a progress bar',
+					isCut: true,
+          examples: [
+            'kpi-tile',
+          ]
         }
 			]
     },
