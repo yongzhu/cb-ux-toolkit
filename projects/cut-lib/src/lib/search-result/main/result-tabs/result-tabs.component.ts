@@ -1,34 +1,18 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SearchResultService } from '../../search-result.service';
-
-import { Subscription } from 'rxjs';
-import { CutLinkModel } from '../../../models/data-structures/link-model';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'cut-result-tabs',
-  templateUrl: './result-tabs.component.html',
-  styleUrls: ['./result-tabs.component.css']
+  selector: "cut-result-tabs",
+  templateUrl: "./result-tabs.component.html",
+  styleUrls: ["./result-tabs.component.css"]
 })
-export class ResultTabsComponent implements OnInit, OnDestroy {
+export class ResultTabsComponent {
 
-  links: CutLinkModel[] = [];
+  @Input() links: any[] = [];
   private dataKey: string = 'resultTabs';
-  dataSubs: Subscription;
 
-  constructor(private srService: SearchResultService) { }
-
-  ngOnInit() {
-    this.links = this.srService.getFilter(this.dataKey);
-    this.dataSubs = this.srService.tabChangeDetectWithData.subscribe(data => {
-      this.links = data;
-    })
-  }
-
-  ngOnDestroy() {
-    this.dataSubs.unsubscribe();
-  }
+  constructor() { }
 
   clickHandler = (id: number) => {
-    this.srService.tabChangedHandler(id, this.dataKey);
+    console.log('results tab', id);
   }
 }

@@ -11,14 +11,16 @@ export class CutCandidateTestapi1Map extends CutCandidateMap {
   @propertyMap(["first_name", "last_name"])
     public name: string;
 
-  @buildModel( { employment: { [0] } } )
+/*
+  @buildModel( 'employment', '0' )
     public company: CutCompanyModel[];
 
-  @buildModel( { emails: { [0] : { email } } } )
+  @buildModel( 'emails', '0' )
     public email: string;
+*/
 
-  @propertyMap( { phone_number: [0] } )
-    public phone: CutPhoneModel[];
+  @propertyMap( 'phone_number' )
+    public phone: string;
 
     public tags: string[];
 

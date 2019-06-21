@@ -4,7 +4,7 @@
       public name: string;
 */
 
-export function buildModel<T>(target: any, key: Object) {
+export function buildModel<T>(target: any, key: string) {
   let value;
   if (delete target[key]) {
     Object.defineProperty(target, key, {

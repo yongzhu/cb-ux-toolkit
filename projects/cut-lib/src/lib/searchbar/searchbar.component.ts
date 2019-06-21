@@ -7,7 +7,6 @@ import { CutCandidateTestapi1Map } from "../models/api-maps/candidate-testapi1-m
 import { CutCandidateTestapi2Map } from "../models/api-maps/candidate-testapi2-map";
 import { CutCandidateNoLocalMap } from "../models/api-maps/candidate-nolocal-map";
 import { CutApiService } from "../utils/cut-api.service";
-import { CutResultModel } from "../models/data-structures/result-model";
 
 @Component({
   selector: "cut-searchbar",

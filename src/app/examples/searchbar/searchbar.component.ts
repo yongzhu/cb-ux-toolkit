@@ -25,6 +25,7 @@ export class SearchbarComponentExample implements OnInit {
     if (Array.isArray($event) && $event.length > 0) {
       this.showResult = true;
       this.result = $event;
+      console.log('searchbar result', this.result);
       this.count = this.result.length;
     }
   }

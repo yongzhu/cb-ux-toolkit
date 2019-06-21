@@ -1,24 +1,11 @@
+import { CutCompanyModel } from "./company-model";
+
 export interface CutCandidateModel {
   id: string;
   name: string;
-  designation: string;
-  orgnaisation: string;
-  experience: {
-    year: number;
-    month: number;
-  };
-  location: string;
-  stateCode: string;
-  phone: string;
+  company: CutCompanyModel[];
   email: string;
-  matchtype: string;
-  skills: string[];
-  verticalOptions: VerticalOptions[];
-  inProgress: boolean;
-  isFromResumeBase: boolean;
-
-}
-export interface VerticalOptions {
-  name: string;
-  icon: string;
+  phone: string;
+  tags: string[];
+  match?: number;
 }

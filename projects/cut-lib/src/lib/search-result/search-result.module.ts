@@ -8,7 +8,6 @@ import { ResultListComponent } from "./main/result-list/result-list.component";
 import { ResultTabsComponent } from "./main/result-tabs/result-tabs.component";
 import { ResultTypeFilterComponent } from "./main/result-type-filter/result-type-filter.component";
 import { FilterOptionsComponent } from "./main/used-filter/filter-options/filter-options.component";
-import { SearchResultService } from "./search-result.service";
 import { ButtonComponent } from "../button/button.component";
 import { ListComponent } from "./main/result-list/list/list.component";
 import { VerticalOption } from '../vertical-option/vertical-option.component';
@@ -51,6 +50,6 @@ import {
     ResultListComponent,
     ResultFiltersComponent
   ],
-  providers: [SearchResultService]
+  providers: []
 })
 export class CutSearchResultModule { }

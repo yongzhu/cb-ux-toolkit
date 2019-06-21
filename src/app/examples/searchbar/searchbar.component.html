@@ -1,8 +1,8 @@
 <div class="example-searchbar">
-  <cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="searchApi" [map]="apiMap"></cut-searchbar>
+  <cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="searchApi" [map]=""></cut-searchbar>
 </div>
 
 <div class="example-searchbar-result" *ngIf="showResult">
   <h3>{{count}} Results Found</h3>
-  <cut-result-list resultList="result"></cut-result-list>
+  <cut-result-list [resultList]="result"></cut-result-list>
 </div>

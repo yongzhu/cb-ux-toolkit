@@ -1,17 +1,17 @@
-import { Component, Input } from "@angular/core";
-import { SearchResultService } from "../../search-result.service";
-import { CutCandidateModel } from "../../../models/data-structures/candidate-model";
-import { Subscription } from "rxjs";
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
   selector: "cut-result-list",
   templateUrl: "./result-list.component.html",
   styleUrls: ["./result-list.component.scss"]
 })
-export class ResultListComponent {
+export class ResultListComponent implements OnInit {
 
-  @Input() resultList: CutCandidateModel[] = [];
+  @Input() resultList: any[] = [];
 
   constructor() { }
 
+  ngOnInit(): void {
+    console.log('result list init', this.resultList);
+  }
 }
