@@ -1,46 +1,89 @@
 @import "../../stylesheets/cut-core";
 @import "../../stylesheets/mixins/cut-rem-calc";
 
+@mixin cut-kpi-title-base($fontSize, $lineHeight) {
+  color: $dark-secondary-text;
+  font-size: rem-calc($fontSize);
+  line-height: rem-calc($lineHeight);
+  font-weight: bold;
+  letter-spacing: rem-calc(1);
+  text-transform: uppercase;
+}
+
+@mixin cut-kpi-tile {
+  text-align: left;
+}
+
+@mixin cut-kpi-main-count($fontSize, $lineHeight) {
+  color: $dark-primary-text;
+  font-size: rem-calc($fontSize);
+  font-weight: bold;
+  line-height: rem-calc($lineHeight);
+}
+
+@mixin cut-kpi-secondary-count($fontSize) {
+  color: $dark-secondary-text;
+  font-size: rem-calc($fontSize);
+  font-weight: bold;
+}
+
 .cut-kpi-tile {
-	text-align: left;
+  @include cut-kpi-tile();
+
   .cut-kpi-title {
-    color: $dark-secondary-text;
-    font-size: rem-calc(12);
-    font-weight: bold;
-    letter-spacing: 1px;
-    line-height: rem-calc(15);
-    text-transform: uppercase;
-		grid-area: title;
-		align-self: center;
+    @include cut-kpi-title-base(12, 15);
+    grid-area: title;
+    align-self: center;
   }
 
   .cut-kpi-body {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-areas: "maincount title";
-		grid-gap: rem-calc(10);
-		width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "maincount title";
+    grid-gap: rem-calc(10);
+    width: 100%;
 
     .cut-kpi-main-count {
-			grid-area: maincount;
-      color: $dark-primary-text;
-      font-size: rem-calc(50);
-      font-weight: bold;
-      line-height: rem-calc(50);
-			align-self: left;
+      @include cut-kpi-main-count(50, 50);
+      grid-area: maincount;
+      align-self: left;
     }
   }
-	.cut-kpi-infotext {
-		color: $dark-secondary-text;
-		font-size: rem-calc(10);
-		text-transform: capitalize;
-		font-weight: normal;
-		margin-top: rem-calc(5);
-	}
-	// Not sure we need this anymore based on latest designs, but leaving for now
-  .cut-kpi-secondary-count {
+
+  .cut-kpi-infotext {
     color: $dark-secondary-text;
     font-size: rem-calc(10);
-    font-weight: bold;
+    text-transform: capitalize;
+    font-weight: normal;
+    margin-top: rem-calc(5);
+  }
+
+  // Not sure we need this anymore based on latest designs, but leaving for now
+  .cut-kpi-secondary-count {
+		@include cut-kpi-secondary-count(10);
 	}
+}
+
+.cut-container-kpi-tile {
+  @include cut-kpi-tile();
+
+  .cut-kpi-title {
+    @include cut-kpi-title-base(10, 12);
+    padding-bottom: rem-calc(6);
+  }
+
+  .cut-kpi-body {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .cut-kpi-main-count {
+      @include cut-kpi-main-count(30, 30);
+      padding-right: rem-calc(5);
+    }
+  }
+
+  .cut-kpi-secondary-count {
+    @include cut-kpi-secondary-count(10);
+  }
 }
