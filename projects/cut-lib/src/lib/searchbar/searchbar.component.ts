@@ -46,8 +46,7 @@ export class SearchbarComponent implements OnInit, OnDestroy {
 
   onFormSubmit() {
     this.formSubmitted = true;
-    // this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map])
-    this.api.staticTest<CutResultModel>()
+    this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map])
       .pipe(takeUntil(this.destroy$)).subscribe(searchResponse => {
         this.resultDispatch.emit(searchResponse);
       });
