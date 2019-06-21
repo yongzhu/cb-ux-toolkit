@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Filters } from '../../shared.modal';
+import { CutFiltersModel } from '../../../models/data-structures/filters-model';
 
 @Component({
   selector: 'cut-result-filters',
@@ -8,7 +8,7 @@ import { Filters } from '../../shared.modal';
 })
 export class ResultFiltersComponent {
 
-  @Input() filters: Filters;
+  @Input() filters: CutFiltersModel;
   constructor() { }
 
   clickHandler = (value: string, element: HTMLInputElement) => {

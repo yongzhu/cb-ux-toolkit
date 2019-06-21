@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CutResultModel } from "../../models/data-structures/result-model";
 import { log } from 'util';
 
 @Component({
@@ -8,7 +9,7 @@ import { log } from 'util';
 })
 export class CutSearchResultComponent {
 
-  @Input() resultData: any;
+  @Input() resultData: CutResultModel;
   @Input() showUserFilter: boolean = true;
   @Input() showTabs: boolean = true;
   @Input() showFilterType: boolean = true;
