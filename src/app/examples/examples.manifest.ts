@@ -1,4 +1,5 @@
-import { LoadingIndicatorComponentExample, HeaderComponentExample } from './components';
+import { LoadingIndicatorComponentExample, HeaderComponentExample,
+ 	KpiTileComponentExample } from './components';
 
 export const examplesManifest: any = {
 	components: {
@@ -7,6 +8,9 @@ export const examplesManifest: any = {
 		},
 		"header": {
 			component: HeaderComponentExample
+		},
+		"kpi-tile": {
+			component: KpiTileComponentExample
 		}
 	}
 };
