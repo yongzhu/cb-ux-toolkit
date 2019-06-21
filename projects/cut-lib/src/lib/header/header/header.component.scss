@@ -9,7 +9,7 @@
 
 .cut-header-wrapper {
   display: grid;
-  grid-template-columns: rem-calc(220) 1fr rem-calc(200);
+  grid-template-columns: auto 1fr auto;
   grid-template-areas: "logo nav profile";
   grid-gap: rem-calc(20);
   width: 100%;

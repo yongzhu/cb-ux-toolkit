@@ -17,7 +17,7 @@ export class CutKpiTileComponent implements OnInit {
 	@Input() secondaryCount: string;
 	@Input() infoText: string;
 	@Input() showProgressBar: boolean = true;
-
+	@Input() inContainer: boolean = false;
 	@Input()
 	set progressBarValue(value) {
 		this._barValue.next(value);
