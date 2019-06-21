@@ -18,7 +18,7 @@ export class ResultListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.resultList = this.srService.getFilter(this.dataKey);
-    this.srService.listDetectWithData.subscribe((data: CutCandidateModel[]) => {
+    this.listSub = this.srService.listDetectWithData.subscribe((data: CutCandidateModel[]) => {
       this.resultList = data;
     })
   }
