@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 
 @Component({
   selector: "cut-result-tabs",
@@ -7,12 +7,13 @@ import { Component, Input } from "@angular/core";
 })
 export class ResultTabsComponent {
 
-  @Input() links: any[] = [];
+  @Input() public links: any[] = [];
+  @Output() public links = new EventEmitter();
   private dataKey: string = 'resultTabs';
 
   constructor() { }
 
   clickHandler = (id: number) => {
-    console.log('results tab', id);
+    this.links.emit(id);
   }
 }

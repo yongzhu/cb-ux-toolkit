@@ -257,6 +257,45 @@
           "icon": "arrow_right_alt"
         }
       ]
+    },
+    {
+      "name": "Linda Greenberg",
+      "designation": "Sales Lead",
+      "orgnaisation": "Indeed.com",
+      "experience": {
+        "year": 1,
+        "month": 2
+      },
+      "location": "Atlanta",
+      "stateCode": "GA",
+      "phone": "555-555-4444",
+      "email": "linda@foobar.org",
+      "matchtype": "Good Match",
+      "skills": [
+        "sales experience",
+        "5 year of experience",
+        "presentation skill",
+        "quick search",
+        "team lead"
+      ],
+      "verticalOptions": [
+        {
+          "name": "Option1",
+          "icon": "arrow_right_alt"
+        },
+        {
+          "name": "Option2",
+          "icon": "arrow_right_alt"
+        },
+        {
+          "name": "Option3",
+          "icon": "arrow_right_alt"
+        },
+        {
+          "name": "Option4",
+          "icon": "arrow_right_alt"
+        }
+      ]
     }
   ]
 }

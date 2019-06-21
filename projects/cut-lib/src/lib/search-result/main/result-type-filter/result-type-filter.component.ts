@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 
 @Component({
   selector: "cut-result-type-filter",
@@ -7,13 +7,14 @@ import { Component, Input } from "@angular/core";
 })
 export class ResultTypeFilterComponent {
 
-  @Input() filters: any[] = [];
+  @Input() public filters: any[] = [];
+  @Output() public filters = new EventEmitter();
   private dataKey: string = 'resultTypeFilter';
 
   constructor() { }
 
   onFilterClick = (id: number) => {
-    console.log('result-type-filter', id);
+    this.filters.emit(id);
   }
 
 }
