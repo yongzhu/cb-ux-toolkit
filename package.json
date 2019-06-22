@@ -1,6 +1,6 @@
 {
   "name": "cut",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "scripts": {
     "ng": "ng",
     "start": "npm run build-themes && ng serve",
