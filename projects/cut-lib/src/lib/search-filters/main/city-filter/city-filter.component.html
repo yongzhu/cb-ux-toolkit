@@ -11,30 +11,35 @@
             <input
               type="text"
               name="postal"
-              [(ngModel)]="postalValue"
+              [value]="
+                cityFilterData.postalCode ? cityFilterData.postalCode : ''
+              "
+              (keyup)="postalchangeHandler($event.target.value)"
               id="postal"
             />
           </div>
-          <div class="dropdown-container">
-            <button mat-icon-button [matMenuTriggerFor]="menu">
-              <span class="filter-title" #element>{{ options[0] }}</span>
-              <mat-icon class="filter-icon">expand_more</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button
-                *ngFor="let option of options"
-                (click)="clickHandler(option, element)"
-                mat-menu-item
-              >
-                <span>{{ option }}</span>
+          <ng-template [ngIf]="options">
+            <div class="dropdown-container">
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <span class="filter-title" #element>{{ options[0] }}</span>
+                <mat-icon class="filter-icon">expand_more</mat-icon>
               </button>
-            </mat-menu>
-          </div>
+              <mat-menu #menu="matMenu">
+                <button
+                  *ngFor="let option of options"
+                  (click)="clickHandler(option, element)"
+                  mat-menu-item
+                >
+                  <span>{{ option }}</span>
+                </button>
+              </mat-menu>
+            </div>
+          </ng-template>
         </div>
       </div>
       <nice-to-have
         (currentLevel)="getCurrentLevel($event)"
-        [level]="1"
+        [level]="cityFilterData.niceToHave ? cityFilterData.niceToHave : 1"
       ></nice-to-have>
     </div>
   </mat-expansion-panel>

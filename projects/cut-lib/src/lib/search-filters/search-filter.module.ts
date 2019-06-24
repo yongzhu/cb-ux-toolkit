@@ -2,6 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
+import { SearchFilterService } from "./search-filter.service";
+
 import { CutSearchFilterComponent } from "./main/search-filter.component";
 import { CityFilterComponent } from './main/city-filter/city-filter.component';
 import { NiceToHaveComponent } from '../nice-to-have/nice-to-have.component';
@@ -29,6 +31,6 @@ import {
     CutSearchFilterComponent,
     CityFilterComponent
   ],
-  providers: []
+  providers: [SearchFilterService]
 })
 export class CutSearchFilterModule { }
