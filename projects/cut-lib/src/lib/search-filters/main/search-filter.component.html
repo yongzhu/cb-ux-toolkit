@@ -1,3 +1,6 @@
 <div class="search-filter-wrapper">
-  <cut-city-filter *ngIf="showCityFilter"></cut-city-filter>
+  <cut-city-filter
+    *ngIf="showCityFilter"
+    (cityFIlterHandler)="getCityFilterData($event)"
+  ></cut-city-filter>
 </div>

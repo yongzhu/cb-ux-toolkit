@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, OnDestroy } from '@angular/core';
+import { Subject, Subscription } from 'rxjs';
+import { CityFilterModel } from '../../../models/data-structures/city-filter-model';
+import { SearchFilterService } from '../../search-filter.service';
 
 @Component({
   selector: 'cut-city-filter',
@@ -6,26 +9,43 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./city-filter.component.scss']
 })
 
-export class CityFilterComponent implements OnInit {
+export class CityFilterComponent implements OnInit, OnDestroy {
 
   @Input() options: string[] = ['20miles', '25miles'];
-  currentSelectedValue: number = 1;
-  postalValue: string;
-  postalDistance: string = '';
+  @Input() defaultMustHave: number = 1;
+  @Output('cityFIlterHandler') cityFIlterHandler = new Subject<CityFilterModel>();
+  private sub: Subscription;
 
-  constructor() { }
+  cityFilterData: CityFilterModel = {
+    postalCode: '',
+    cityDropdown: '',
+    niceToHave: this.defaultMustHave,
+  }
 
-  ngOnInit() { }
+  constructor(private sfService: SearchFilterService) { }
 
+  ngOnInit() {
+    this.sub = this.cityFIlterHandler.subscribe((data: CityFilterModel) => {
+      this.sfService.cityFilterValueHandler.next(data);
+    })
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  postalchangeHandler = (data: string) => {
+    this.cityFilterData.postalCode = data;
+    this.cityFIlterHandler.next(this.cityFilterData)
+  }
   clickHandler = (value: string, element: HTMLInputElement) => {
     element.innerHTML = value;
-    this.postalDistance = value;
+    this.cityFilterData.cityDropdown = value;
+    this.cityFIlterHandler.next(this.cityFilterData)
   }
 
   getCurrentLevel = (val: number) => {
-    console.log(val);
-    console.log('postal value', this.postalValue);
-    console.log('postal distance', this.postalDistance);
-    console.log('nice to have value', this.currentSelectedValue);
+    this.cityFilterData.niceToHave = val;
+    this.cityFIlterHandler.next(this.cityFilterData)
   }
 }
