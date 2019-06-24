@@ -25,8 +25,8 @@ export class CityFilterComponent implements OnInit, OnDestroy {
   constructor(private sfService: SearchFilterService) { }
 
   ngOnInit() {
-    this.sub = this.sfService.cityFilterValueHandler.subscribe((data: CityFilterModel) => {
-      this.cityFIlterHandler.next(data);
+    this.sub = this.cityFIlterHandler.subscribe((data: CityFilterModel) => {
+      this.sfService.cityFilterValueHandler.next(data);
     })
   }
 
@@ -36,16 +36,16 @@ export class CityFilterComponent implements OnInit, OnDestroy {
 
   postalchangeHandler = (data: string) => {
     this.cityFilterData.postalCode = data;
-    this.sfService.cityFilterValueHandler.next(this.cityFilterData)
+    this.cityFIlterHandler.next(this.cityFilterData)
   }
   clickHandler = (value: string, element: HTMLInputElement) => {
     element.innerHTML = value;
     this.cityFilterData.cityDropdown = value;
-    this.sfService.cityFilterValueHandler.next(this.cityFilterData)
+    this.cityFIlterHandler.next(this.cityFilterData)
   }
 
   getCurrentLevel = (val: number) => {
     this.cityFilterData.niceToHave = val;
-    this.sfService.cityFilterValueHandler.next(this.cityFilterData)
+    this.cityFIlterHandler.next(this.cityFilterData)
   }
 }
