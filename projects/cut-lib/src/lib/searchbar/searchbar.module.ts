@@ -1,11 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { SearchbarComponent } from "./searchbar.component";
+import { CutSearchbarComponent } from "./searchbar.component";
+import { CutApiService } from "../utils/cut-api.service";
 
 @NgModule({
   imports: [ CommonModule, ReactiveFormsModule ],
-  declarations: [ SearchbarComponent ],
-  exports: [ SearchbarComponent ]
+  declarations: [ CutSearchbarComponent ],
+  exports: [ CutSearchbarComponent ],
+  providers: [ CutApiService ]
 })
-export class SearchbarModule { }
+export class CutSearchbarModule { }

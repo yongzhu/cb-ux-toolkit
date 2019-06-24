@@ -1,2 +1,2 @@
-export { SearchbarComponent } from "./searchbar.component";
-export { SearchbarModule } from "./searchbar.module";
+export { CutSearchbarComponent } from "./searchbar.component";
+export { CutSearchbarModule } from "./searchbar.module";

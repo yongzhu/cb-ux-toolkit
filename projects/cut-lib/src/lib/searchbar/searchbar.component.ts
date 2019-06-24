@@ -13,9 +13,9 @@ import { CutApiService } from "../utils/cut-api.service";
   templateUrl: "./searchbar.component.html",
   styleUrls: ["./searchbar.component.scss"]
 })
-export class SearchbarComponent implements OnInit, OnDestroy {
-  @Input("searchapi") searchapi: string;
-  @Input("map") map: string;
+export class CutSearchbarComponent implements OnInit, OnDestroy {
+  @Input() searchapi: string;
+  @Input() map: string;
   @Output() resultDispatch = new EventEmitter();
 
   destroy$: Subject<boolean> = new Subject<boolean>();
