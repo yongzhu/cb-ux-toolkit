@@ -14,7 +14,7 @@ export class CityFilterComponent implements OnInit, OnDestroy {
   @Input() options: string[] = ['20miles', '25miles'];
   @Input() defaultMustHave: number = 1;
   @Output('cityFIlterHandler') cityFIlterHandler = new Subject<CityFilterModel>();
-  privatesub: Subscription;
+  private sub: Subscription;
 
   cityFilterData: CityFilterModel = {
     postalCode: '',
