@@ -8,5 +8,5 @@ export interface CutResultModel {
   resultTabs?: CutNameIdModel[];
   resultTypeFilter?: CutNameIdModel[];
   searchFilters?: CutFiltersModel[];
-  resultList?: CutCandidateModel[];
+  resultList?: any[];
 }
