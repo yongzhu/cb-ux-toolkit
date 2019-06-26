@@ -51,7 +51,7 @@ export class CutSearchbarComponent implements OnInit, OnDestroy {
           this.resultDispatch.emit(searchResponse);
         },
         err => {
-          this.resultDispatch.emit(err);
+          this.resultDispatch.emit(new Error(err));
         }
       );
   }

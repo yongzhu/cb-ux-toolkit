@@ -23,13 +23,14 @@ export class SearchbarComponentExample implements OnInit {
   }
 
   searchResult($event) {
-    console.log('searchResult event', $event);
     if (Array.isArray($event) && $event.length > 0) {
       this.showResult = true;
+      this.showError = false;
       this.result = $event;
       this.count = this.result.length;
     } else {
       this.showError = true;
+      this.showResult = false;
       if ($event.length > 0) {
         this.resultError = $event;
       } else {
