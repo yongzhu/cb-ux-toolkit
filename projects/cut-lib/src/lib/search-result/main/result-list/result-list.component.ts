@@ -1,29 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SearchResultService } from '../../search-result.service';
-import { CutCandidateModel } from '../../../models/data-structures/candidate-model';
-import { Subscription } from 'rxjs';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'cut-result-list',
-  templateUrl: './result-list.component.html',
-  styleUrls: ['./result-list.component.css']
+  selector: "cut-result-list",
+  templateUrl: "./result-list.component.html",
+  styleUrls: ["./result-list.component.scss"]
 })
-export class ResultListComponent implements OnInit, OnDestroy {
+export class ResultListComponent implements OnInit {
 
-  resultList?: CutCandidateModel[];
-  listSub: Subscription;
-  private dataKey: string = 'resultList';
+  @Input() resultList: any[] = [];
 
-  constructor(private srService: SearchResultService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.resultList = this.srService.getFilter(this.dataKey);
-    this.listSub = this.srService.listDetectWithData.subscribe((data: CutCandidateModel[]) => {
-      this.resultList = data;
-    })
+  ngOnInit(): void {
+    console.log('result list init', this.resultList);
   }
-  ngOnDestroy() {
-    this.listSub.unsubscribe();
-  }
-
 }

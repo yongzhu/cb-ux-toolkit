@@ -19,7 +19,7 @@ import {
   CutHeaderModule,
   CutLoadingIndicatorModule,
   CutSearchResultModule,
-  SearchbarModule,
+  CutSearchbarModule,
   SelectModule,
   CutSearchFilterModule,
 } from "cut";
@@ -48,7 +48,7 @@ export const components = [
     CutSearchFilterModule,
     CutHeaderModule,
     DocViewerModule,
-    SearchbarModule
+    CutSearchbarModule
   ],
   entryComponents: [
     ...components

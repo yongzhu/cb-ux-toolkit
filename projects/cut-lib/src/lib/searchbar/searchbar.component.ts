@@ -7,16 +7,15 @@ import { CutCandidateTestapi1Map } from "../models/api-maps/candidate-testapi1-m
 import { CutCandidateTestapi2Map } from "../models/api-maps/candidate-testapi2-map";
 import { CutCandidateNoLocalMap } from "../models/api-maps/candidate-nolocal-map";
 import { CutApiService } from "../utils/cut-api.service";
-import { CutResultModel } from "../models/data-structures/result-model";
 
 @Component({
   selector: "cut-searchbar",
   templateUrl: "./searchbar.component.html",
   styleUrls: ["./searchbar.component.scss"]
 })
-export class SearchbarComponent implements OnInit, OnDestroy {
-  @Input("searchapi") searchapi: string;
-  @Input("map") map: string;
+export class CutSearchbarComponent implements OnInit, OnDestroy {
+  @Input() searchapi: string;
+  @Input() map: string;
   @Output() resultDispatch = new EventEmitter();
 
   destroy$: Subject<boolean> = new Subject<boolean>();
@@ -46,11 +45,15 @@ export class SearchbarComponent implements OnInit, OnDestroy {
 
   onFormSubmit() {
     this.formSubmitted = true;
-    // this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map])
-    this.api.staticTest<CutResultModel>()
-      .pipe(takeUntil(this.destroy$)).subscribe(searchResponse => {
-        this.resultDispatch.emit(searchResponse);
-      });
+    this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map])
+      .pipe(takeUntil(this.destroy$)).subscribe(
+        searchResponse => {
+          this.resultDispatch.emit(searchResponse);
+        },
+        err => {
+          this.resultDispatch.emit(new Error(err));
+        }
+      );
   }
 
   ngOnDestroy(): void {

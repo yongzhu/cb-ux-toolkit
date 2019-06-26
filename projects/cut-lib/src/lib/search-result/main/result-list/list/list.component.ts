@@ -1,17 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { VerticalOptionData } from '../../../shared.modal';
+import { Component, OnInit, Input } from "@angular/core";
+import { CutVerticalOptionModel } from  "../../../../models/data-structures/result-list-model";
 
 @Component({
-  selector: 'cut-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: "cut-list",
+  templateUrl: "./list.component.html",
+  styleUrls: ["./list.component.css"]
 })
 export class ListComponent implements OnInit {
 
   @Input() listDetail: any;
   @Input() isFavorite: boolean = false;
   @Input() isSelected: boolean = true;
-  othersSkills: VerticalOptionData[];
+  othersSkills: CutVerticalOptionModel[];
 
   constructor() { }
 

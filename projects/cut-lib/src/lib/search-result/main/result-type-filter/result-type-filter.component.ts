@@ -1,34 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SearchResultService } from '../../search-result.service';
-import { Subscription } from 'rxjs';
-import { CutFilterModel } from '../../../models/data-structures/filter-model';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'cut-result-type-filter',
-  templateUrl: './result-type-filter.component.html',
-  styleUrls: ['./result-type-filter.component.css']
+  selector: "cut-result-type-filter",
+  templateUrl: "./result-type-filter.component.html",
+  styleUrls: ["./result-type-filter.component.css"]
 })
-export class ResultTypeFilterComponent implements OnInit, OnDestroy {
+export class ResultTypeFilterComponent {
 
-  filters: CutFilterModel[];
+  @Input() public filters: any[] = [];
+  @Output() public filtersChange = new EventEmitter();
   private dataKey: string = 'resultTypeFilter';
-  typeSub: Subscription;
 
-  constructor(private srService: SearchResultService) { }
-
-  ngOnInit() {
-    this.filters = this.srService.getFilter(this.dataKey);
-    this.typeSub = this.srService.typeChangeDetectWithData.subscribe(data => {
-      this.filters = data;
-    })
-  }
-
-  ngOnDestroy() {
-    this.typeSub.unsubscribe();
-  }
+  constructor() { }
 
   onFilterClick = (id: number) => {
-    this.srService.typeChangedHandler(id, this.dataKey)
+    this.filtersChange.emit(id);
   }
 
 }
