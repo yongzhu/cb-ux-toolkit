@@ -38,7 +38,7 @@ export class CityFacetComponent implements OnInit {
 
   ngOnInit() { }
 
-  postalchangeHandler = (data: string) => {
+  inputChangeHandler = (data: string) => {
     this.facetData.postalCode = data;
     this.facetHandler.next(this.facetData)
   }
