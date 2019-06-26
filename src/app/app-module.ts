@@ -39,8 +39,7 @@ import {
   ClipboardModule,
   SelectModule,
   CutLoadingIndicatorModule,
-  CutSearchbarModule,
-  CutSearchResultModule,
+  CutSearchModule,
   CutSearchFilterModule,
 } from "cut";
 
@@ -68,8 +67,7 @@ import {
     SvgViewerModule,
     ThemePickerModule,
     CutLoadingIndicatorModule,
-    CutSearchbarModule,
-    CutSearchResultModule,
+    CutSearchModule,
     CutSearchFilterModule
   ],
   declarations: [

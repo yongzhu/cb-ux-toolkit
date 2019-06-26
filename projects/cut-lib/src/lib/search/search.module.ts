@@ -1,6 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { CutSearchbarComponent } from "./main/searchbar/searchbar.component";
 import { CutSearchResultComponent } from "./main/search-result.component";
 import { UsedFilterComponent } from "./main/used-filter/used-filter.component";
 import { ResultFiltersComponent } from "./main/result-filters/result-filters.component";
@@ -23,13 +25,16 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MatChipsModule,
     MatIconModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule
   ],
   declarations: [
+    CutSearchbarComponent,
     CutSearchResultComponent,
     UsedFilterComponent,
     FilterOptionsComponent,
@@ -42,6 +47,7 @@ import {
     VerticalOption
   ],
   exports: [
+    CutSearchbarComponent,
     CutSearchResultComponent,
     UsedFilterComponent,
     ResultTabsComponent,
@@ -52,4 +58,4 @@ import {
   ],
   providers: []
 })
-export class CutSearchResultModule { }
+export class CutSearchModule { }

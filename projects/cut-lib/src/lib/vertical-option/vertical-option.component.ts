@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CutVerticalOptionModel } from '../models/data-structures/result-list-model';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { CutVerticalOptionModel } from '../models/data-structures/result-list-mo
 
 export class VerticalOption implements OnInit {
 
-  @Input() options: CutVerticalOptionModel[];
+  @Input() options: any[];
   @Input() showIcon: boolean = true;
   @Input() showContent: boolean = false;
   defaultIcon: string = 'blur_on';

@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angu
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
-import { CutCandidateMap } from "../models/api-maps/candidate-map";
-import { CutCandidateTestapi1Map } from "../models/api-maps/candidate-testapi1-map";
-import { CutCandidateTestapi2Map } from "../models/api-maps/candidate-testapi2-map";
-import { CutCandidateNoLocalMap } from "../models/api-maps/candidate-nolocal-map";
-import { CutApiService } from "../utils/cut-api.service";
+import { CutCandidateMap } from "../../../models/api-maps/candidate-map";
+import { CutCandidateTestapi1Map } from "../../../models/api-maps/candidate-testapi1-map";
+import { CutCandidateTestapi2Map } from "../../../models/api-maps/candidate-testapi2-map";
+import { CutCandidateNoLocalMap } from "../../../models/api-maps/candidate-nolocal-map";
+import { CutApiService } from "../../../utils/cut-api.service";
 
 @Component({
   selector: "cut-searchbar",
@@ -16,7 +16,7 @@ import { CutApiService } from "../utils/cut-api.service";
 export class CutSearchbarComponent implements OnInit, OnDestroy {
   @Input() searchapi: string;
   @Input() map: string;
-  @Output() resultDispatch = new EventEmitter();
+  @Output() resultDispatch = new EventEmitter(); 
 
   destroy$: Subject<boolean> = new Subject<boolean>();
   searchForm: FormGroup;
