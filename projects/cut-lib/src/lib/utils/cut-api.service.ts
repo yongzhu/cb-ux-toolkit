@@ -34,7 +34,8 @@ export class CutApiService {
       return this.http.get<any>(queryString, options).pipe(
         map(data => {
           return data;
-        })
+        }),
+        catchError((e) => this.handleError(e))
       );
     }
   }

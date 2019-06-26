@@ -8,6 +8,8 @@ import { environment } from "src/environments/environment.prod";
 })
 export class SearchbarComponentExample implements OnInit {
   public showResult = false;
+  public showError = false;
+  public resultError = "";
   public result: any[] = [];
   public count = 0;
   public searchApi: string;
@@ -21,12 +23,18 @@ export class SearchbarComponentExample implements OnInit {
   }
 
   searchResult($event) {
-    console.log("searchResult Response", $event);
+    console.log('searchResult event', $event);
     if (Array.isArray($event) && $event.length > 0) {
       this.showResult = true;
       this.result = $event;
-      console.log('searchbar result', this.result);
       this.count = this.result.length;
+    } else {
+      this.showError = true;
+      if ($event.length > 0) {
+        this.resultError = $event;
+      } else {
+        this.resultError = "Something bad happened. Try again later."
+      }
     }
   }
 

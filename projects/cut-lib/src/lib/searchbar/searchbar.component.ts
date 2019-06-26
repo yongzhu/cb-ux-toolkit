@@ -46,9 +46,14 @@ export class CutSearchbarComponent implements OnInit, OnDestroy {
   onFormSubmit() {
     this.formSubmitted = true;
     this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map])
-      .pipe(takeUntil(this.destroy$)).subscribe(searchResponse => {
-        this.resultDispatch.emit(searchResponse);
-      });
+      .pipe(takeUntil(this.destroy$)).subscribe(
+        searchResponse => {
+          this.resultDispatch.emit(searchResponse);
+        },
+        err => {
+          this.resultDispatch.emit(err);
+        }
+      );
   }
 
   ngOnDestroy(): void {
