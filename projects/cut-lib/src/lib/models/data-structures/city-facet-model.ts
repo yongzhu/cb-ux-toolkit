@@ -1,4 +1,4 @@
-export interface CityFilterModel {
+export interface CityFacetModel {
   postalCode: string;
   cityDropdown: string;
   niceToHave: number;

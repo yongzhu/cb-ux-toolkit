@@ -4,8 +4,9 @@ import { FormsModule } from "@angular/forms";
 
 import { SearchFilterService } from "./search-filter.service";
 
-import { CutSearchFilterComponent } from "./main/search-filter.component";
-import { CityFilterComponent } from './main/city-filter/city-filter.component';
+import { CutSearchFacetsComponent } from "./main/search-facets.component";
+import { CityFacetComponent } from './main/city-facet/city-facet.component';
+
 import { NiceToHaveComponent } from '../nice-to-have/nice-to-have.component';
 
 import {
@@ -23,13 +24,13 @@ import {
     MatMenuModule,
   ],
   declarations: [
-    CutSearchFilterComponent,
-    CityFilterComponent,
-    NiceToHaveComponent
+    CutSearchFacetsComponent,
+    CityFacetComponent,
+    NiceToHaveComponent,
   ],
   exports: [
-    CutSearchFilterComponent,
-    CityFilterComponent
+    CutSearchFacetsComponent,
+    CityFacetComponent,
   ],
   providers: [SearchFilterService]
 })

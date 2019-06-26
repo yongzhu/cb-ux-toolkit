@@ -1,7 +1,7 @@
 <mat-accordion class="city-filter-wrapper">
-  <mat-expansion-panel>
+  <mat-expansion-panel expanded="true">
     <mat-expansion-panel-header>
-      <mat-panel-title>City</mat-panel-title>
+      <mat-panel-title>{{ title }}</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="city-filter-content">
       <div class="filter-area">
@@ -11,9 +11,7 @@
             <input
               type="text"
               name="postal"
-              [value]="
-                cityFilterData.postalCode ? cityFilterData.postalCode : ''
-              "
+              [value]="facetData.postalCode ? facetData.postalCode : ''"
               (keyup)="postalchangeHandler($event.target.value)"
               id="postal"
             />
@@ -21,16 +19,24 @@
           <ng-template [ngIf]="options">
             <div class="dropdown-container">
               <button mat-icon-button [matMenuTriggerFor]="menu">
-                <span class="filter-title" #element>{{ options[0] }}</span>
+                <span class="filter-title" #element>{{
+                  options[0].displayName
+                }}</span>
                 <mat-icon class="filter-icon">expand_more</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
                 <button
                   *ngFor="let option of options"
-                  (click)="clickHandler(option, element)"
+                  (click)="
+                    clickHandler(
+                      option.displayName,
+                      option.displayValue,
+                      element
+                    )
+                  "
                   mat-menu-item
                 >
-                  <span>{{ option }}</span>
+                  <span>{{ option.displayName }}</span>
                 </button>
               </mat-menu>
             </div>
@@ -39,7 +45,7 @@
       </div>
       <nice-to-have
         (currentLevel)="getCurrentLevel($event)"
-        [level]="cityFilterData.niceToHave ? cityFilterData.niceToHave : 1"
+        [level]="facetData.niceToHave ? facetData.niceToHave : 1"
       ></nice-to-have>
     </div>
   </mat-expansion-panel>

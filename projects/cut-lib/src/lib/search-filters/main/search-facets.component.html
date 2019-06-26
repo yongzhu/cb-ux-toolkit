@@ -1,0 +1,6 @@
+<div class="search-filter-wrapper">
+  <cut-city-facet
+    *ngIf="showCityFacet"
+    (facetHandler)="getCityfacetData($event)"
+  ></cut-city-facet>
+</div>

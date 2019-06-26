@@ -5,6 +5,10 @@
   color: #767676;
   margin: 5px 0;
 }
+.input-container {
+  flex-basis: auto;
+  flex-grow: 2;
+}
 .input-container input {
   padding: 4px 5px;
   border-radius: 3px;
@@ -12,6 +16,7 @@
   border: 1px solid #767676;
   font-size: 0.8rem;
   color: #767676;
+  width: 95%;
 }
 .dropdown-container {
   border: 1px solid #767676;
