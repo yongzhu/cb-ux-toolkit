@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { VerticalOptionData } from '../search-result/shared.modal';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { VerticalOptionData } from '../search-result/shared.modal';
 
 export class VerticalOption implements OnInit {
 
-  @Input() options: VerticalOptionData[];
+  @Input() options: any[];
   @Input() showIcon: boolean = true;
   @Input() showContent: boolean = false;
   defaultIcon: string = 'blur_on';

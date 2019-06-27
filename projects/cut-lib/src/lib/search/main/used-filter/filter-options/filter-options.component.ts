@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
-import { Filter } from '../../../shared.modal';
+import { CutNameIdModel } from '../../../../models/data-structures/name-id-model';
 
 @Component({
   selector: 'cut-filter-options',
@@ -12,13 +12,12 @@ import { Filter } from '../../../shared.modal';
 })
 export class FilterOptionsComponent implements OnInit {
 
-
   @Input() visible = true;
   @Input() selectable = false;
   @Input() removable = true;
   @Input() addOnBlur = true;
 
-  @Input() filters: Filter[];
+  @Input() filters: CutNameIdModel[];
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
   add(event: MatChipInputEvent): void {
@@ -36,7 +35,7 @@ export class FilterOptionsComponent implements OnInit {
     }
   }
 
-  remove(filter: Filter): void {
+  remove(filter: CutNameIdModel): void {
     const index = this.filters.indexOf(filter);
 
     if (index >= 0) {

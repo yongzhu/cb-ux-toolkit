@@ -1,13 +1,14 @@
-import { CutFilterModel } from "./filter-model";
+import { CutNameIdModel } from "./name-id-model";
 
+export interface CutUsedFilterConfigModel {
+  visible?: boolean;
+  selectable: boolean;
+  removable: boolean;
+  addOnBlur?: boolean;
+}
 
 export interface CutUsedFilterModel {
   filterName: string;
-  config: {
-    visible?: boolean;
-    selectable: boolean;
-    removable: boolean;
-    addOnBlur?: boolean;
-  };
-  data: CutFilterModel[];
+  config: CutUsedFilterConfigModel;
+  data: CutNameIdModel[]
 }

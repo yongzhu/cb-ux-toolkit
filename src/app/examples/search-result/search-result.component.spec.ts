@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-
-import {
-  CutSearchResultModule
-} from "cut";
+import { CutSearchModule } from "cut";
 
 import { SearchResultComponentExample } from './search-result.component';
 
@@ -13,7 +10,7 @@ describe('SearchresultComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CutSearchResultModule, RouterTestingModule],
+      imports: [CutSearchModule, RouterTestingModule],
       declarations: [SearchResultComponentExample]
     })
       .compileComponents();

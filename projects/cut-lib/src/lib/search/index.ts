@@ -1,2 +1,2 @@
 export { CutSearchResultComponent } from "./main/search-result.component";
-export { CutSearchResultModule } from "./search-result.module";
+export { CutSearchModule } from "./search.module";
