@@ -4,36 +4,36 @@ import { Observable } from "rxjs";
 import { CutHeaderService } from "../header.service";
 
 @Component({
-  selector: "cut-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+	selector: "cut-header",
+	templateUrl: "./header.component.html",
+	styleUrls: ["./header.component.scss"]
 })
 export class CutHeaderComponent implements OnInit {
-  @Output() sidenavButtonClick = new EventEmitter<null>();
+	@Output() sidenavButtonClick = new EventEmitter<null>();
 
 	@Input() isFixed = false;
-	
-  headerObj: any;
-  validHeaderObj$: Observable<boolean>;
 
-  constructor(private headerService: CutHeaderService) { }
+	headerObj: any;
+	validHeaderObj$: Observable<boolean>;
 
-  ngOnInit(): void {
-    this.validHeaderObj$ = this.headerService.validHeaderSourceObservable;
-    this.headerService.headerSource.subscribe(headerObj => this.headerObj = { ...headerObj });
-  }
+	constructor(private headerService: CutHeaderService) { }
 
-  trigger() {
-    this.sidenavButtonClick.emit();
-  }
+	ngOnInit(): void {
+		this.validHeaderObj$ = this.headerService.validHeaderSourceObservable;
+		this.headerService.headerSource.subscribe(headerObj => this.headerObj = { ...headerObj });
+	}
 
-  emitActionType(action: string, element?: string, payload?: any) {
-    let subItem;
-    if (!element) {
-      subItem = "";
-    } else {
-      subItem = ":" + element;
-    }
-    this.headerService.emitActionType(action, "header" + subItem, payload);
-  }
+	trigger() {
+		this.sidenavButtonClick.emit();
+	}
+
+	emitActionType(action: string, element?: string, payload?: any) {
+		let subItem;
+		if (!element) {
+			subItem = "";
+		} else {
+			subItem = ":" + element;
+		}
+		this.headerService.emitActionType(action, "header" + subItem, payload);
+	}
 }
