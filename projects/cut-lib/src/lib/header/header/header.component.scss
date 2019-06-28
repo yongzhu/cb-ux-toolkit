@@ -60,12 +60,15 @@
 
   .cut-header-main {
     grid-area: nav;
-    justify-self: center;
+    justify-self: left;
   }
 
   .cut-profile-main {
 		grid-area: profile;
-    justify-self: right;
+		justify-self: right;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: rem-calc(20);
     line-height: rem-calc(75);
     height: rem-calc(75);
   }

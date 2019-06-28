@@ -1,4 +1,5 @@
 @import "../../stylesheets/variables/cut-theme-variables";
+@import "../../stylesheets/mixins/cut-rem-calc";
 
 .drop-panel-wrapper {
   cursor: default;
@@ -29,7 +30,6 @@
   }
 
   .arrow {
-    padding-bottom: 10px;
     cursor: pointer;
   }
 
