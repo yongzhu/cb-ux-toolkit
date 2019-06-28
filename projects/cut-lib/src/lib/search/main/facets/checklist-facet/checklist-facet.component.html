@@ -1,0 +1,35 @@
+<mat-accordion class="city-filter-wrapper">
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ title }}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="city-filter-content">
+      <div class="filter-area">
+        <div class="field-container">
+          <div
+            *ngFor="let option of options"
+            class="list-item-wrapper"
+            (click)="clickHandler(option.displayName, option.displayValue)"
+          >
+            <i
+              *ngIf="option.isSelected; else else_check"
+              class="material-icons list-icons"
+            >
+              check_box
+            </i>
+            <ng-template #else_check>
+              <i class="material-icons list-icons">
+                check_box_outline_blank
+              </i>
+            </ng-template>
+            <p class="label-list">{{ option.displayName }}</p>
+          </div>
+        </div>
+      </div>
+      <nice-to-have
+        (currentLevel)="getCurrentLevel($event)"
+        [level]="facetData.niceToHave ? facetData.niceToHave : 1"
+      ></nice-to-have>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,26 @@
+<mat-accordion class="city-filter-wrapper">
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ title }}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="city-filter-content">
+      <div class="filter-area">
+        <div class="field-container">
+          <div class="input-container">
+            <input
+              type="text"
+              name="postal"
+              [value]="facetData.inputValue ? facetData.inputValue : ''"
+              (keyup)="inputChangeHandler($event.target.value)"
+              id="postal"
+            />
+          </div>
+        </div>
+      </div>
+      <nice-to-have
+        (currentLevel)="getCurrentLevel($event)"
+        [level]="facetData.niceToHave ? facetData.niceToHave : 1"
+      ></nice-to-have>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

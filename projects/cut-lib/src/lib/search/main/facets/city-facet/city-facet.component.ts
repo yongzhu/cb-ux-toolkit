@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { CityFacetModel } from '../../../models/data-structures/city-facet-model';
-import { DropDownModel } from '../../../models/data-structures/drop-down-model';
+import { CityFacetModel } from '../../../../models/data-structures/city-facet-model';
+import { DropDownModel } from '../../../../models/data-structures/drop-down-model';
 
 @Component({
   selector: 'cut-city-facet',

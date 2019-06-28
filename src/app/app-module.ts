@@ -40,7 +40,6 @@ import {
   SelectModule,
   CutLoadingIndicatorModule,
   CutSearchModule,
-  CutSearchFilterModule,
 } from "cut";
 
 @NgModule({
@@ -68,7 +67,6 @@ import {
     ThemePickerModule,
     CutLoadingIndicatorModule,
     CutSearchModule,
-    CutSearchFilterModule
   ],
   declarations: [
     MaterialDocsApp

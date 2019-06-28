@@ -20,7 +20,6 @@ import {
   CutLoadingIndicatorModule,
   CutSearchModule,
   SelectModule,
-  CutSearchFilterModule,
 } from "cut";
 
 export const components = [
@@ -44,7 +43,6 @@ export const components = [
     CommonModule,
     CutLoadingIndicatorModule,
     CutSearchModule,
-    CutSearchFilterModule,
     CutHeaderModule,
     DocViewerModule
   ],

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CutResultModel } from "../../models/data-structures/result-model";
-import { log } from 'util';
 
 @Component({
   selector: 'cut-search-result',

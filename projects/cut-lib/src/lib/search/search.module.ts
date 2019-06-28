@@ -2,6 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { CutFacetsModule } from "./main/facets/facets.module";
+
 import { CutSearchbarComponent } from "./main/searchbar/searchbar.component";
 import { CutSearchResultComponent } from "./main/search-result.component";
 import { UsedFilterComponent } from "./main/used-filter/used-filter.component";
@@ -31,7 +33,8 @@ import {
     MatFormFieldModule,
     MatTabsModule,
     MatMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CutFacetsModule
   ],
   declarations: [
     CutSearchbarComponent,
@@ -54,7 +57,8 @@ import {
     ResultTypeFilterComponent,
     ButtonComponent,
     ResultListComponent,
-    ResultFiltersComponent
+    ResultFiltersComponent,
+    CutFacetsModule,
   ],
   providers: []
 })

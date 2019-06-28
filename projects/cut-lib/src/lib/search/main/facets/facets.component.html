@@ -1,0 +1,18 @@
+<div class="search-filter-wrapper">
+  <cut-city-facet
+    *ngIf="showCityFacet"
+    (facetHandler)="getCityfacetData($event)"
+  ></cut-city-facet>
+  <cut-role-facet
+    *ngIf="showRoleFacet"
+    (facetHandler)="getRolefacetData($event)"
+  ></cut-role-facet>
+  <cut-skills-facet
+    *ngIf="showSkillFacet"
+    (facetHandler)="getSkillfacetData($event)"
+  ></cut-skills-facet>
+  <cut-checklist-facet
+    *ngIf="showChecklistFacet"
+    (facetHandler)="getChecklistfacetData($event)"
+  ></cut-checklist-facet>
+</div>
