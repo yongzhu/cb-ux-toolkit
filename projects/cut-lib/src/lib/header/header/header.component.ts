@@ -12,6 +12,7 @@ export class CutHeaderComponent implements OnInit {
 	@Output() sidenavButtonClick = new EventEmitter<null>();
 
 	@Input() isFixed = false;
+	@Input() isFlattened = false;
 
 	headerObj: any;
 	validHeaderObj$: Observable<boolean>;

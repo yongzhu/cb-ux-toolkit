@@ -7,6 +7,10 @@
   font-size: 1rem;
 }
 
+.cut-header-flat {
+  border-bottom: solid rem-calc(1) $gray-secondary-light;
+}
+
 .cut-header-wrapper {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -64,8 +68,8 @@
   }
 
   .cut-profile-main {
-		grid-area: profile;
-		justify-self: right;
+    grid-area: profile;
+    justify-self: right;
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: rem-calc(20);

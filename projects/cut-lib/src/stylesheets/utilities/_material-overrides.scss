@@ -50,14 +50,62 @@
 
   .mat-progress-bar-buffer {
     background: $light-secondary-text !important;
-	}
-	.mat-progress-bar-element {
-		border-radius: rem-calc(6) !important;
-	}
-	.mat-progress-bar-fill {
-		border-radius: rem-calc(6) !important;
-		&::after {
-			border-radius: rem-calc(6) !important;
-		}
-	}
+  }
+
+  .mat-progress-bar-element {
+    border-radius: rem-calc(6) !important;
+  }
+
+  .mat-progress-bar-fill {
+    border-radius: rem-calc(6) !important;
+
+    &::after {
+      border-radius: rem-calc(6) !important;
+    }
+  }
+}
+
+@mixin mat-button-base ($btn-type) {
+  background-color: transparent !important;
+	color: #ffffff !important;
+	
+  @if $btn-type==primary {
+    background: linear-gradient(90deg, #009B74 0%, #85CE3F 100%);
+  }
+
+  @else if $btn-type==accent {
+    background: linear-gradient(90deg, #287AB9 0%, #0097D1 100%);
+  }
+
+  @else if $btn-type==warn {
+    background: linear-gradient(90deg, #D04945 0%, #F16865 100%);
+  }
+}
+
+/* BUTTON OVERRIDES */
+.mat-raised-button {
+  &.mat-primary {
+    @include mat-button-base(primary);
+  }
+
+  &.mat-accent {
+    @include mat-button-base(accent)
+  }
+
+  &.mat-warn {
+    @include mat-button-base(warn)
+  }
+}
+.mat-flat-button {
+  &.mat-primary {
+    @include mat-button-base(primary);
+  }
+
+  &.mat-accent {
+    @include mat-button-base(accent)
+  }
+
+  &.mat-warn {
+    @include mat-button-base(warn)
+  }
 }

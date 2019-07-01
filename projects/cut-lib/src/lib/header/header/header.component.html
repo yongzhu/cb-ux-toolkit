@@ -1,4 +1,4 @@
-<mat-toolbar class="cut-header mat-elevation-z6" [class.cut-header-fixed]="isFixed">
+<mat-toolbar [className]="!isFlattened ? 'cut-header mat-elevation-z6' : 'cut-header cut-header-flat'" [class.cut-header-fixed]="isFixed">
   <!-- <section> -->
   <div class="cut-header-wrapper">
     <span class="trigger-menu fa fa-bars hidden-lg-up" *ngIf="validHeaderObj$ | async" tabindex="0"
