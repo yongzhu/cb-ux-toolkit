@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { CutVerticalOptionModel } from  "../../../../models/data-structures/result-list-model";
+import { CutVerticalOptionModel, CutResultListModel } from  "../../../../../models/data-structures/result-list-model";
 
 @Component({
   selector: "cut-list",
@@ -8,7 +8,7 @@ import { CutVerticalOptionModel } from  "../../../../models/data-structures/resu
 })
 export class ListComponent implements OnInit {
 
-  @Input() listDetail: any;
+  @Input() listDetail: CutResultListModel;
   @Input() isFavorite: boolean = false;
   @Input() isSelected: boolean = true;
   othersSkills: CutVerticalOptionModel[];
@@ -16,10 +16,12 @@ export class ListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.othersSkills = this.convertArrayToVerticalOption(this.listDetail.skills.slice(3));
+    if(this.listDetail.skills){
+      this.othersSkills = this.convertArrayToVerticalOption(this.listDetail.skills.slice(3));
+    }
   }
 
-  convertArrayToVerticalOption = (data: []) => {
+  convertArrayToVerticalOption = (data: string[]) => {
     return data.map(single => {
       return {
         name: single,

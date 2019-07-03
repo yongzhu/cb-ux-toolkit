@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { CutResultModel } from "../../models/data-structures/result-model";
 
 @Component({
   selector: 'cut-search-result',
-  templateUrl: './search-result.component.html',
-  styleUrls: ['./search-result.component.scss']
+  templateUrl: './result.component.html',
+  styleUrls: ['./result.component.scss']
 })
 export class CutSearchResultComponent {
 

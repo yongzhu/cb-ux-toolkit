@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { CutNameIdModel } from "../../../models/data-structures/name-id-model";
+import { CutNameIdModel } from "../../../../models/data-structures/name-id-model";
 
 const dummyData = [
   { name: 'Candidates', id: 1, isSelected: true },

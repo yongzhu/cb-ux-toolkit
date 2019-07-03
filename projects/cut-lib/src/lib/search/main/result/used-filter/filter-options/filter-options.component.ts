@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
-import { CutNameIdModel } from '../../../../models/data-structures/name-id-model';
+import { CutNameIdModel } from '../../../../../models/data-structures/name-id-model';
 
 @Component({
   selector: 'cut-filter-options',

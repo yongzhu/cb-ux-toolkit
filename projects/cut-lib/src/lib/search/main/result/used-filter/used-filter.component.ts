@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CutUsedFilterModel } from '../../../models/data-structures/used-filter-model';
+import { CutUsedFilterModel } from '../../../../models/data-structures/used-filter-model';
 
 const dummyData = [
   {

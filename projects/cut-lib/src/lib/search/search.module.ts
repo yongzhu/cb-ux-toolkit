@@ -5,15 +5,15 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CutFacetsModule } from "./main/facets/facets.module";
 
 import { CutSearchbarComponent } from "./main/searchbar/searchbar.component";
-import { CutSearchResultComponent } from "./main/search-result.component";
-import { UsedFilterComponent } from "./main/used-filter/used-filter.component";
-import { ResultFiltersComponent } from "./main/result-filters/result-filters.component";
-import { ResultListComponent } from "./main/result-list/result-list.component";
-import { ResultTabsComponent } from "./main/result-tabs/result-tabs.component";
-import { ResultTypeFilterComponent } from "./main/result-type-filter/result-type-filter.component";
-import { FilterOptionsComponent } from "./main/used-filter/filter-options/filter-options.component";
+import { CutSearchResultComponent } from "./main/result/result.component";
+import { UsedFilterComponent } from "./main/result/used-filter/used-filter.component";
+import { ResultFiltersComponent } from "./main/result/result-filters/result-filters.component";
+import { ResultListComponent } from "./main/result/result-list/result-list.component";
+import { ResultTabsComponent } from "./main/result/result-tabs/result-tabs.component";
+import { ResultTypeFilterComponent } from "./main/result/result-type-filter/result-type-filter.component";
+import { FilterOptionsComponent } from "./main/result/used-filter/filter-options/filter-options.component";
 import { ButtonComponent } from "../button/button.component";
-import { ListComponent } from "./main/result-list/list/list.component";
+import { ListComponent } from "./main/result/result-list/list/list.component";
 import { VerticalOption } from '../vertical-option/vertical-option.component';
 
 import {

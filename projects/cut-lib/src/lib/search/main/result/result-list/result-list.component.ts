@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { CutResultListModel } from "../../../../models/data-structures/result-list-model";
 
 @Component({
   selector: "cut-result-list",
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class ResultListComponent implements OnInit {
 
-  @Input() resultList: any[] = [];
+  @Input() resultList: CutResultListModel[];
 
   constructor() { }
 
