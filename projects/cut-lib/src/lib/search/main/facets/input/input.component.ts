@@ -4,15 +4,16 @@ import { Subject } from 'rxjs';
 import { SingleValueModel } from '../../../../models/data-structures/single-value-model';
 
 @Component({
-  selector: 'cut-skills-facet',
-  templateUrl: './skills-facet.component.html',
-  styleUrls: ['./skills-facet.component.scss']
+  selector: 'cut-input-facet',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.scss']
 })
 
-export class SkillsFacetComponent implements OnInit {
+export class InputFacetComponent implements OnInit {
 
-  @Input() defaultMustHave: number = 1;
-  @Input() title: string = 'IT Skills';
+  @Input() defaultMustHave: number;
+  @Input() facetTitle: string;
+  @Input() autoCompeleteList: string[];
 
   @Output('facetHandler') facetHandler = new Subject<SingleValueModel>();
 

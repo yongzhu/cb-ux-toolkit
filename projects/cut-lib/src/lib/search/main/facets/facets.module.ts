@@ -1,43 +1,47 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { CutFacetsComponent } from "./facets.component";
 
-import { CityFacetComponent } from './city-facet/city-facet.component';
-import { RoleFacetComponent } from './role-facet/role-facet.component';
-import { SkillsFacetComponent } from "./skills-facet/skills-facet.component";
+import { InputDropdownFacetComponent } from './input-dropdown/input-dropdown.component';
+import { InputFacetComponent } from './input/input.component';
 import { ChecklistFacetComponent } from "./checklist-facet/checklist-facet.component";
 
 import { NiceToHaveComponent } from '../../../nice-to-have/nice-to-have.component';
+import { CutAutoCompleteComponent } from "../../../auto-complete/auto-complete.component";
 
 import {
   MatIconModule,
   MatExpansionModule,
-  MatMenuModule
+  MatMenuModule,
+  MatAutocompleteModule,
+  MatInputModule
 } from "@angular/material";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatExpansionModule,
     MatMenuModule,
+    MatAutocompleteModule,
+    MatInputModule,
   ],
   declarations: [
     CutFacetsComponent,
-    CityFacetComponent,
+    InputDropdownFacetComponent,
     NiceToHaveComponent,
-    RoleFacetComponent,
-    SkillsFacetComponent,
+    InputFacetComponent,
     ChecklistFacetComponent,
+    CutAutoCompleteComponent,
   ],
   exports: [
     CutFacetsComponent,
-    CityFacetComponent,
-    RoleFacetComponent,
-    SkillsFacetComponent,
+    InputDropdownFacetComponent,
+    InputFacetComponent,
     ChecklistFacetComponent,
   ],
   providers: []

@@ -1,13 +1,13 @@
 <mat-accordion class="city-filter-wrapper">
   <mat-expansion-panel expanded="true">
     <mat-expansion-panel-header>
-      <mat-panel-title>{{ title }}</mat-panel-title>
+      <mat-panel-title class="facet-title">{{ facetTitle }}</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="city-filter-content">
       <div class="filter-area">
         <div class="field-container">
           <div
-            *ngFor="let option of options"
+            *ngFor="let option of optionsList"
             class="list-item-wrapper"
             (click)="clickHandler(option.displayName, option.displayValue)"
           >

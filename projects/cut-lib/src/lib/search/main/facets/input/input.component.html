@@ -1,20 +1,16 @@
 <mat-accordion class="city-filter-wrapper">
   <mat-expansion-panel expanded="true">
     <mat-expansion-panel-header>
-      <mat-panel-title>{{ title }}</mat-panel-title>
+      <mat-panel-title class="facet-title">{{ facetTitle }}</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="city-filter-content">
       <div class="filter-area">
-        <!-- <p class="label">Postal/Zip Code or City</p> -->
         <div class="field-container">
           <div class="input-container">
-            <input
-              type="text"
-              name="postal"
-              [value]="facetData.inputValue ? facetData.inputValue : ''"
-              (keyup)="inputChangeHandler($event.target.value)"
-              id="postal"
-            />
+            <cut-auto-complete
+              [options]="autoCompeleteList"
+              (inputValve)="inputChangeHandler($event)"
+            ></cut-auto-complete>
           </div>
         </div>
       </div>

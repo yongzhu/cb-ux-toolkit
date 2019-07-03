@@ -1,34 +1,27 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { CityFacetModel } from '../../../../models/data-structures/city-facet-model';
+import { InputDropDownFacetModal } from '../../../../models/data-structures/Input-dropdown-facet-model';
 import { DropDownModel } from '../../../../models/data-structures/drop-down-model';
 
 @Component({
-  selector: 'cut-city-facet',
-  templateUrl: './city-facet.component.html',
-  styleUrls: ['./city-facet.component.scss']
+  selector: 'cut-input-dropdown-facet',
+  templateUrl: './input-dropdown.component.html',
+  styleUrls: ['./input-dropdown.component.scss']
 })
 
-export class CityFacetComponent implements OnInit {
+export class InputDropdownFacetComponent implements OnInit {
 
   //For demo purpose - default value.
-  @Input() options: DropDownModel[] = [
-    {
-      displayName: '20 Miles',
-      displayValue: '20miles'
-    },
-    {
-      displayName: '25 Miles',
-      displayValue: '25miles'
-    }
-  ];
-  @Input() defaultMustHave: number = 1;
-  @Input() title: string = 'City';
+  @Input() dropDownOptions: DropDownModel[];
+  @Input() defaultMustHave: number;
+  @Input() facetTitle: string;
+  @Input() inputTitle: string;
+  @Input() autoCompeleteList: string[];
 
-  @Output('facetHandler') facetHandler = new Subject<CityFacetModel>();
+  @Output('facetHandler') facetHandler = new Subject<InputDropDownFacetModal>();
 
-  facetData: CityFacetModel = {
+  facetData: InputDropDownFacetModal = {
     postalCode: '',
     cityDropdown: '',
     niceToHave: this.defaultMustHave,

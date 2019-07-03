@@ -8,7 +8,7 @@ import { CutNameIdModel } from '../../../../models/data-structures/name-id-model
 @Component({
   selector: 'cut-filter-options',
   templateUrl: './filter-options.component.html',
-  styleUrls: ['./filter-options.component.css']
+  styleUrls: ['./filter-options.component.scss']
 })
 export class FilterOptionsComponent implements OnInit {
 

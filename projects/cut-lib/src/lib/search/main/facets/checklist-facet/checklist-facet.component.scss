@@ -1,15 +1,21 @@
+@import '../../../../../stylesheets//cut-core.scss';
+
 .list-item-wrapper {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
+.facet-title{
+  color: $color-primary-dark;
+}
 .filter-title {
-  font-size: 0.8rem;
+  font-size: $font-size-small;
 }
 .list-icons {
-  font-size: 0.9rem;
+$list-icon-size: 15;
+  font-size: rem-calc($list-icon-size);
   color: #1d5c8b;
 }
 .label-list{
-  margin: 5px 5px 5px 15px;
+  margin: rem-calc($list-margin);
 }

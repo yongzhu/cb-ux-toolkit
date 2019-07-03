@@ -12,27 +12,9 @@ import { ArrayValueModel } from '../../../../models/data-structures/array-value-
 
 export class ChecklistFacetComponent implements OnInit {
 
-  //For demo purpose - default value.
-  @Input() options: CheckListModel[] = [
-    {
-      displayName: 'Less then year',
-      displayValue: 'less1',
-      isSelected: true,
-    },
-    {
-      displayName: '1 or 2 Year',
-      displayValue: '1to2',
-      isSelected: true,
-    },
-    {
-      displayName: '3 or 5 Year',
-      displayValue: '3to5',
-      isSelected: true,
-    }
-  ];
-
+  @Input() optionsList: CheckListModel[];
   @Input() defaultMustHave: number = 1;
-  @Input() title: string = 'Experience';
+  @Input() facetTitle: string;
 
   @Output('facetHandler') facetHandler = new Subject<ArrayValueModel>();
 
@@ -44,11 +26,14 @@ export class ChecklistFacetComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.options.forEach(single => {
-      if (single.isSelected) {
-        this.facetData.inputValue.push(single.displayValue)
-      }
-    })
+    if (this.optionsList && this.optionsList.length > 0) {
+      this.optionsList.forEach(single => {
+        if (single.isSelected) {
+          this.facetData.inputValue.push(single.displayValue)
+        }
+      })
+    }
+
   }
 
   clickHandler = (name: string, value: string) => {
@@ -57,7 +42,7 @@ export class ChecklistFacetComponent implements OnInit {
     } else {
       this.facetData.inputValue.splice(this.facetData.inputValue.indexOf(value), 1)
     }
-    this.options = this.options.map(single => {
+    this.optionsList = this.optionsList.map(single => {
       if (single.displayValue === value) {
         return {
           ...single,

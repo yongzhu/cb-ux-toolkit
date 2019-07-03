@@ -1,32 +1,29 @@
-<mat-accordion class="city-filter-wrapper">
+<mat-accordion class="facet-filter-wrapper">
   <mat-expansion-panel expanded="true">
     <mat-expansion-panel-header>
-      <mat-panel-title>{{ title }}</mat-panel-title>
+      <mat-panel-title class="facet-title">{{ facetTitle }}</mat-panel-title>
     </mat-expansion-panel-header>
-    <div class="city-filter-content">
+    <div class="facet-filter-content">
       <div class="filter-area">
-        <p class="label">Postal/Zip Code or City</p>
+        <p class="label">{{ inputTitle }}</p>
         <div class="field-container">
           <div class="input-container">
-            <input
-              type="text"
-              name="postal"
-              [value]="facetData.postalCode ? facetData.postalCode : ''"
-              (keyup)="inputChangeHandler($event.target.value)"
-              id="postal"
-            />
+            <cut-auto-complete
+              [options]="autoCompeleteList"
+              (inputValve)="inputChangeHandler($event)"
+            ></cut-auto-complete>
           </div>
-          <ng-template [ngIf]="options">
+          <ng-template [ngIf]="dropDownOptions">
             <div class="dropdown-container">
               <button mat-icon-button [matMenuTriggerFor]="menu">
                 <span class="filter-title" #element>{{
-                  options[0].displayName
+                  dropDownOptions[0].displayName
                 }}</span>
                 <mat-icon class="filter-icon">expand_more</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
                 <button
-                  *ngFor="let option of options"
+                  *ngFor="let option of dropDownOptions"
                   (click)="
                     clickHandler(
                       option.displayName,
