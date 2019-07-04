@@ -20,8 +20,8 @@ import {
   CutLoadingIndicatorModule,
   CutSearchModule,
   SelectModule,
-  CutSearchFilterModule,
 } from "cut";
+import { HttpClientModule } from "@angular/common/http";
 
 export const components = [
   LoadingIndicatorComponentExample,
@@ -44,9 +44,9 @@ export const components = [
     CommonModule,
     CutLoadingIndicatorModule,
     CutSearchModule,
-    CutSearchFilterModule,
     CutHeaderModule,
-    DocViewerModule
+    DocViewerModule,
+    HttpClientModule,
   ],
   entryComponents: [
     ...components

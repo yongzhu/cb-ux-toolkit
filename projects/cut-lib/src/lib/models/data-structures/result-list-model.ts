@@ -9,6 +9,7 @@ export interface CutExperienceModel {
 }
 
 export interface CutResultListModel {
+  id: string;
   name: string;
   designation: string;
   orgnaisation: string;
@@ -20,4 +21,6 @@ export interface CutResultListModel {
   matchtype: string;
   skills: string[];
   verticalOptions: CutVerticalOptionModel[];
+  inProgress: boolean;
+  isFromResumeBase: boolean;
 }

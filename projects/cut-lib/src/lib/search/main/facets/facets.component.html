@@ -1,0 +1,30 @@
+<div class="search-filter-wrapper">
+  <ng-template [ngIf]="facetData.inputDropDownValues">
+    <cut-input-dropdown-facet
+      (facetHandler)="getInputDropDownFacetData($event)"
+      *ngIf="facetData.inputDropDownValues.showFacet"
+      [autoCompeleteList]="facetData.inputDropDownValues.autoCompeleteList"
+      [facetTitle]="facetData.inputDropDownValues.facetTitle"
+      [dropDownOptions]="facetData.inputDropDownValues.dropDownOptions"
+      [defaultMustHave]="facetData.inputDropDownValues.defaultMustHave"
+      [inputTitle]="facetData.inputDropDownValues.inputTitle"
+    ></cut-input-dropdown-facet>
+  </ng-template>
+  <ng-template [ngIf]="facetData.inputValues">
+    <cut-input-facet
+      (facetHandler)="getInputFacetData($event)"
+      *ngIf="facetData.inputValues.showFacet"
+      [autoCompeleteList]="facetData.inputValues.autoCompeleteList"
+      [facetTitle]="facetData.inputValues.facetTitle"
+      [defaultMustHave]="facetData.inputValues.defaultMustHave"
+    ></cut-input-facet>
+  </ng-template>
+  <ng-template [ngIf]="facetData.checkListValues">
+    <cut-checklist-facet
+      (facetHandler)="getChecklistfacetData($event)"
+      *ngIf="facetData.checkListValues.showFacet"
+      [optionsList]="facetData.checkListValues.optionsList"
+      [facetTitle]="facetData.checkListValues.facetTitle"
+    ></cut-checklist-facet>
+  </ng-template>
+</div>

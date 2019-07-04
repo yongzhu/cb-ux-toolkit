@@ -1,0 +1,49 @@
+<mat-accordion class="facet-filter-wrapper">
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="facet-title">{{ facetTitle }}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="facet-filter-content">
+      <div class="filter-area">
+        <p class="label">{{ inputTitle }}</p>
+        <div class="field-container">
+          <div class="input-container">
+            <cut-auto-complete
+              [options]="autoCompeleteList"
+              (inputValve)="inputChangeHandler($event)"
+            ></cut-auto-complete>
+          </div>
+          <ng-template [ngIf]="dropDownOptions">
+            <div class="dropdown-container">
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <span class="filter-title" #element>{{
+                  dropDownOptions[0].displayName
+                }}</span>
+                <mat-icon class="filter-icon">expand_more</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button
+                  *ngFor="let option of dropDownOptions"
+                  (click)="
+                    clickHandler(
+                      option.displayName,
+                      option.displayValue,
+                      element
+                    )
+                  "
+                  mat-menu-item
+                >
+                  <span>{{ option.displayName }}</span>
+                </button>
+              </mat-menu>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <nice-to-have
+        (currentLevel)="getCurrentLevel($event)"
+        [level]="facetData.niceToHave ? facetData.niceToHave : 1"
+      ></nice-to-have>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

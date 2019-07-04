@@ -1,0 +1,25 @@
+@import "../../stylesheets/cut-core.scss";
+
+.auto-complete {
+  .mat-form-field {
+    display: block;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding: 0;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0;
+    border: none;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+  }
+  input.mat-input-element {
+    padding: rem-calc($input-padding $input-padding);
+    border-radius: rem-calc($input-border-radius);
+    border: 1px solid $gray-darker;
+    font-size: $font-size-small;
+    color: $gray-darker;
+    box-sizing: border-box;
+  }
+}
