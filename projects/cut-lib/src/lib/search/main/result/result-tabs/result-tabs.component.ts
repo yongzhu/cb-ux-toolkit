@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 import { CutNameIdModel } from "../../../../models/data-structures/name-id-model";
+import { Subject } from "rxjs";
 
 const dummyData = [
   { name: 'Candidates', id: 1, isSelected: true },
@@ -14,8 +15,8 @@ const dummyData = [
 })
 export class ResultTabsComponent {
 
-  @Input() public links: CutNameIdModel[] = dummyData;
-  @Output() public linksChange = new EventEmitter();
+  @Input() public tabs: CutNameIdModel[];
+  @Output() public tabChangeHandler = new Subject<number>();
 
   constructor() { }
 
@@ -34,7 +35,6 @@ export class ResultTabsComponent {
         isSelected: false,
       };
     }) */
-    console.log(id);
-    this.linksChange.emit(id);
+    this.tabChangeHandler.next(id);
   }
 }

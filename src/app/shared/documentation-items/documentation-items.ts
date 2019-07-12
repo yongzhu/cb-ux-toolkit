@@ -81,11 +81,11 @@ const DOCS: { [key: string]: DocCategory[] } = {
           isCut: true,
           examples: [
             'search-result',
-            'used-filter',
+            /* 'used-filter',
             'result-tabs',
             'sr-filter-type',
             'sr-result-filter',
-            'sr-result-list'
+            'sr-result-list' */
           ]
         },
         {

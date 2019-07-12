@@ -2,7 +2,7 @@
   <div class="filter-item">
     <input type="checkbox" name="" id="" />
   </div>
-  <div *ngFor="let filter of filters; let i = index" class="filter-item">
+  <div *ngFor="let filter of actionFilters; let i = index" class="filter-item">
     <button
       mat-icon-button
       [matMenuTriggerFor]="menu"

@@ -15,29 +15,67 @@ export class CutApiService {
     private http: HttpClient
   ) { }
 
-  public searchText<T>(searchURL: string, searchText: string, itemType: any): Observable<T> {
-    const options = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    };
-    const queryString = searchURL + "" + searchText;
-
-    if (itemType) {
-      return this.http.get<any>(queryString, options).pipe(
-        map(data => data.map((item: any) => {
-          return new ModelMapper(itemType).map(item);
-        })),
-        catchError((e) => this.handleError(e))
-      );
+  public searchText<T>(searchURL: string, searchText: string, itemType: any, apiData: any): Observable<T> {
+    if (apiData) {
+      const postBody = {
+        ...apiData.body,
+        customBody: {
+          ...apiData.body.customBody,
+          path: apiData.body.customBody.path.replace("searchquery", searchText),
+        }
+      }
+      if (itemType) {
+        return this.http.post<any>(apiData.url, postBody)
+          .pipe(
+            map(data => {
+              if (data.resultItems) {
+                const result = data.resultItems.map((item: any) => {
+                  return new ModelMapper(itemType).map(item);
+                })
+                return {
+                  ...data,
+                  resultItems: result,
+                };
+              } else {
+                return data;
+              }
+            }),
+            catchError((e) => this.handleError(e))
+          );
+      } else {
+        return this.http.post<any>(apiData.url, postBody)
+          .pipe(
+            map(data => {
+              return data;
+            }),
+            catchError((e) => this.handleError(e))
+          );
+      }
     } else {
-      return this.http.get<any>(queryString, options).pipe(
-        map(data => {
-          return data;
-        }),
-        catchError((e) => this.handleError(e))
-      );
+      const options = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+        })
+      };
+      const queryString = searchURL + "" + searchText;
+
+      if (itemType) {
+        return this.http.get<any>(queryString, options).pipe(
+          map(data => data.map((item: any) => {
+            return new ModelMapper(itemType).map(item);
+          })),
+          catchError((e) => this.handleError(e))
+        );
+      } else {
+        return this.http.get<any>(queryString, options).pipe(
+          map(data => {
+            return data;
+          }),
+          catchError((e) => this.handleError(e))
+        );
+      }
     }
+
   }
 
   /*

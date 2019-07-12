@@ -22,6 +22,7 @@ import {
   SelectModule,
 } from "cut";
 import { HttpClientModule } from "@angular/common/http";
+import { ExampleService } from "./example.service";
 
 export const components = [
   LoadingIndicatorComponentExample,
@@ -47,6 +48,9 @@ export const components = [
     CutHeaderModule,
     DocViewerModule,
     HttpClientModule,
+  ],
+  providers:[
+    ExampleService,
   ],
   entryComponents: [
     ...components

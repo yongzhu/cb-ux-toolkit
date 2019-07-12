@@ -14,12 +14,18 @@ export class SearchbarComponentExample implements OnInit {
   public count = 0;
   public searchApi: string;
   public apiMap: string;
+  public apiData: any;
+  public map: string;
 
   constructor() { }
 
   ngOnInit() {
     this.searchApi = environment.search_api.test_api1;
     this.apiMap = "CutCandidateTestapi1Map";
+    this.apiData = {
+      ...environment.searchApiData
+    }
+    this.map = environment.map;
   }
 
   searchResult($event) {

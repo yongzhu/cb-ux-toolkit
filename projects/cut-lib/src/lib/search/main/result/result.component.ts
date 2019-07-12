@@ -1,18 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cut-search-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class CutSearchResultComponent {
+export class CutSearchResultComponent implements OnInit {
 
-  @Input() showUserFilter: boolean = true;
-  @Input() showTabs: boolean = true;
-  @Input() showFilterType: boolean = true;
-  @Input() showList: boolean = true;
-  @Input() showFilters: boolean = true;
+  @Input() resultData: any;
 
   constructor() { }
+  ngOnInit() { }
+
+  tabChangeHandler = (id: number) => {
+    console.log(id);
+  }
+
+  filtersChangeHandler = (id: number) => {
+    console.log(id);
+  }
 
 }

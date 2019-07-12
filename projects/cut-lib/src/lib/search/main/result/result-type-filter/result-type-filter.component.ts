@@ -1,13 +1,6 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 import { CutNameIdModel } from "../../../../models/data-structures/name-id-model";
-import { single } from "rxjs/operators";
-
-const dummyData = [
-  { name: 'All', id: 1, isSelected: true },
-  { name: 'In Progress', id: 2, isSelected: false },
-  { name: 'My Candidates', id: 3, isSelected: false },
-  { name: 'Resume Database', id: 4, isSelected: false }
-];
+import { Subject } from "rxjs";
 
 @Component({
   selector: "cut-result-type-filter",
@@ -16,8 +9,8 @@ const dummyData = [
 })
 export class ResultTypeFilterComponent {
 
-  @Input() public filters: CutNameIdModel[] = dummyData;
-  @Output() public filtersChange = new EventEmitter();
+  @Input() public filtersType: CutNameIdModel[];
+  @Output() public filtersChangeHandler = new Subject<number>();
 
   constructor() { }
 
@@ -36,9 +29,7 @@ export class ResultTypeFilterComponent {
         isSelected: false,
       };
     }) */
-
-    console.log(id);
-    this.filtersChange.emit(id);
+    this.filtersChangeHandler.next(id);
   }
 
 }
