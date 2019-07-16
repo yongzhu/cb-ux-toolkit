@@ -1,5 +1,6 @@
 @import '../variables/cut-theme-variables';
 @import '../mixins/cut-rem-calc';
+@import '../mixins/cut-gradients';
 
 .mat-elevation-z15 {
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.16),
@@ -62,50 +63,56 @@
     &::after {
       border-radius: rem-calc(6) !important;
     }
-  }
+	}
 }
-
-@mixin mat-button-base ($btn-type) {
-  background-color: transparent !important;
-	color: #ffffff !important;
-	
-  @if $btn-type==primary {
-    background: linear-gradient(90deg, #009B74 0%, #85CE3F 100%);
-  }
-
-  @else if $btn-type==accent {
-    background: linear-gradient(90deg, #287AB9 0%, #0097D1 100%);
-  }
-
-  @else if $btn-type==warn {
-    background: linear-gradient(90deg, #D04945 0%, #F16865 100%);
-  }
+// Not sure if we need to override progress bar everywhere or not,
+// so wrapping in a utitlity class for now
+.cut-primary-gradient {
+	.mat-progress-bar-fill {
+		&::after {
+			@include cut-gradient(primary);
+		}
+	}
+}
+.cut-accent-gradient {
+	.mat-progress-bar-fill {
+		&::after {
+			@include cut-gradient(accent);
+		}
+	}
+}
+.cut-warn-gradient {
+	.mat-progress-bar-fill {
+		&::after {
+			@include cut-gradient(warn);
+		}
+	}
 }
 
 /* BUTTON OVERRIDES */
 .mat-raised-button {
   &.mat-primary {
-    @include mat-button-base(primary);
+    @include cut-gradient(primary);
   }
 
   &.mat-accent {
-    @include mat-button-base(accent)
+    @include cut-gradient(accent)
   }
 
   &.mat-warn {
-    @include mat-button-base(warn)
+    @include cut-gradient(warn)
   }
 }
 .mat-flat-button {
   &.mat-primary {
-    @include mat-button-base(primary);
+    @include cut-gradient(primary);
   }
 
   &.mat-accent {
-    @include mat-button-base(accent)
+    @include cut-gradient(accent)
   }
 
   &.mat-warn {
-    @include mat-button-base(warn)
+    @include cut-gradient(warn)
   }
 }
