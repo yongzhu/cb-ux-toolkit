@@ -9,6 +9,10 @@ export class ModelMapper<T> {
 
   map(source) {
 
+    /* console.log('source: ', source );
+    console.log('_propertyMapping: ', this._propertyMapping);
+    console.log('_target: ', this._target); */
+
     Object.keys(this._target).forEach((key) => {
       const mappedKey = this._propertyMapping[key];
       const concat: string[] = [];
