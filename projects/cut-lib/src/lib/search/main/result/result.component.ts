@@ -1,18 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { CutResultModel } from '../../../models/data-structures/result-model';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'cut-search-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class CutSearchResultComponent {
+export class CutSearchResultComponent implements OnInit {
 
-  @Input() showUserFilter: boolean = true;
-  @Input() showTabs: boolean = true;
-  @Input() showFilterType: boolean = true;
-  @Input() showList: boolean = true;
-  @Input() showFilters: boolean = true;
-
+  @Input() resultData: CutResultModel;
+  @Output() detectChanges = new Subject();
   constructor() { }
+  ngOnInit() { }
+
+  tabChangeHandler = (id: number) => {
+    this.detectChanges.next({ changeType: "tab-change", id: id })
+  }
+
+  filtersChangeHandler = (id: number) => {
+    this.detectChanges.next({ changeType: "type-change", id: id })
+  }
 
 }

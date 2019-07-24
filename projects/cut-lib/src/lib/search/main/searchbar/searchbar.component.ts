@@ -16,16 +16,17 @@ import { CutApiService } from "../../../utils/cut-api.service";
 export class CutSearchbarComponent implements OnInit, OnDestroy {
   @Input() searchapi: string;
   @Input() map: string;
-  @Output() resultDispatch = new EventEmitter(); 
+  @Input() apiData: any;
+  @Output() resultDispatch = new EventEmitter();
 
   destroy$: Subject<boolean> = new Subject<boolean>();
   searchForm: FormGroup;
   formSubmitted = false;
 
   mapIndex = {
-    "CutCandidateTestapi1Map" : CutCandidateTestapi1Map,
-    "CutCandidateTestapi2Map" : CutCandidateTestapi2Map,
-    "CutCandidateNoLocalMap" : CutCandidateNoLocalMap
+    "CutCandidateTestapi1Map": CutCandidateTestapi1Map,
+    "CutCandidateTestapi2Map": CutCandidateTestapi2Map,
+    "CutCandidateNoLocalMap": CutCandidateNoLocalMap
   };
 
   constructor(
@@ -39,15 +40,16 @@ export class CutSearchbarComponent implements OnInit, OnDestroy {
 
   createSearchForm() {
     this.searchForm = this.formBuilder.group({
-      searchText: ["", Validators.required ]
-   });
+      searchText: ["", Validators.required]
+    });
   }
 
   onFormSubmit() {
     this.formSubmitted = true;
-    this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map])
+    this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map], this.apiData)
       .pipe(takeUntil(this.destroy$)).subscribe(
         searchResponse => {
+          //console.log(searchResponse);
           this.resultDispatch.emit(searchResponse);
         },
         err => {

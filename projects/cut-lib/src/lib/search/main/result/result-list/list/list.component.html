@@ -25,7 +25,7 @@
       <p>
         <span class="designation">{{ listDetail.designation }}</span>
         <span class="orgnisation">{{ listDetail.orgnaisation }}</span>
-        <span class="experience"
+        <span *ngIf="listDetail.experience" class="experience"
           >(
           {{
             listDetail.experience.year
@@ -48,7 +48,7 @@
           {{ listDetail.location }}, {{ listDetail.stateCode }}
         </p>
       </div>
-      <div class="address-phone">
+      <div *ngIf="listDetail.phone" class="address-phone">
         <p>
           <mat-icon class="address-icon">phone</mat-icon>
           {{ listDetail.phone }}
@@ -68,7 +68,7 @@
       </div>
       <div class="skill">
         <span *ngFor="let single of listDetail.skills.slice(0, 3)">{{
-          single
+          stripTags(single)
         }}</span>
         <ng-template [ngIf]="othersSkills.length > 0">
           <cut-vertical-option

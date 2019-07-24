@@ -1,10 +1,10 @@
 <nav mat-tab-nav-bar>
   <a
     mat-tab-link
-    *ngFor="let link of links"
-    (click)="clickHandler(link.id)"
-    [active]="link.isSelected"
+    *ngFor="let tab of tabs"
+    (click)="clickHandler(tab.id)"
+    [active]="activeLink == tab.id"
   >
-    {{ link.name }}
+    {{ tab.name }}
   </a>
 </nav>

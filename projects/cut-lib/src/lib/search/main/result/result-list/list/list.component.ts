@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { CutVerticalOptionModel, CutResultListModel } from  "../../../../../models/data-structures/result-list-model";
+import { CutVerticalOptionModel, CutResultListModel } from "../../../../../models/data-structures/result-list-model";
 
 @Component({
   selector: "cut-list",
   templateUrl: "./list.component.html",
-  styleUrls: ["./list.component.css"]
+  styleUrls: ["./list.component.scss"]
 })
 export class ListComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(this.listDetail.skills){
+    if (this.listDetail.skills) {
       this.othersSkills = this.convertArrayToVerticalOption(this.listDetail.skills.slice(3));
     }
   }
@@ -28,6 +28,10 @@ export class ListComponent implements OnInit {
         icon: ''
       }
     })
+  }
+
+  stripTags = (string: string) => {
+    return string.replace(/(<([^>]+)>)/ig, "")
   }
 
 }

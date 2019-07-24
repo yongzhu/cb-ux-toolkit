@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment.prod";
+import { ExampleService } from "../example.service";
 
 @Component({
   selector: "app-searchbar",
@@ -14,25 +15,32 @@ export class SearchbarComponentExample implements OnInit {
   public count = 0;
   public searchApi: string;
   public apiMap: string;
+  public apiData: any;
+  public map: string;
 
-  constructor() { }
+  constructor(private exampleSr: ExampleService) { }
 
   ngOnInit() {
     this.searchApi = environment.search_api.test_api1;
     this.apiMap = "CutCandidateTestapi1Map";
+    this.apiData = {
+      ...environment.searchApiData
+    }
+    this.map = environment.map;
   }
 
-  searchResult($event) {
-    if (Array.isArray($event) && $event.length > 0) {
+  searchResult(eventData: any) {
+    if (Array.isArray(eventData) && eventData.length > 0) {
       this.showResult = true;
       this.showError = false;
-      this.result = $event;
+      this.result = eventData;
       this.count = this.result.length;
+      this.exampleSr.searchDataHandler(eventData)
     } else {
       this.showError = true;
       this.showResult = false;
-      if ($event.length > 0) {
-        this.resultError = $event;
+      if (eventData.length > 0) {
+        this.resultError = eventData;
       } else {
         this.resultError = "Something bad happened. Try again later."
       }

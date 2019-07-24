@@ -3,7 +3,7 @@
   "version": "1.2.8",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build-themes && ng serve",
+    "start": "npm run build-themes && ng serve --proxy-config proxy.conf.json",
     "build": "npm-run-all build-lib build-app",
     "build-watch": "ng build --prod cut-lib --watch",
     "build-app": "ng build --prod cut-app",

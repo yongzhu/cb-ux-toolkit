@@ -12,7 +12,7 @@ export class ResultListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log('result list init', this.resultList);
+  ngOnInit() {
+    //console.log('result list init', this.resultList);
   }
 }

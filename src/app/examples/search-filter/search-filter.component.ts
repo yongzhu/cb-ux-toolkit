@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { ExampleService } from "../example.service";
+import { HttpEventType } from "@angular/common/http";
 
 
 @Component({
@@ -58,28 +59,20 @@ export class SearchFilterComponentExample implements OnInit {
     }
   }
 
+  apiData: any;
+  constructor(private exService: ExampleService) { }
+
   getChangedEvent = (data: any) => {
     console.log(data);
   }
 
-  constructor(private http: HttpClient) { }
-
   ngOnInit() {
-    /* this.http
-      .get('https://ats-tk-search-produs.cb1cl.com/api/candidatesearch?customer_system=cbinternalbeta&query=sql&offset=0',
-        {
-          headers: new HttpHeaders({
-            'Authorization': 'Basic Y2ItdGstc2VhcmNoOkErc0FkY2V6b0l0cHlLRHNQRHkrT09ybE1XRS8=',
-            'Content-Type': 'application/json',
-            'Origin':'http://localhost:4300',
-            'Access-Control-Allow-Origin': 'http://localhost:4300',
-            'Access-Control-Allow-Credentials': 'true'
-          }),
-          withCredentials: true,
-        }
-      )
-      .subscribe(data => {
-        console.log(data);
-      }) */
+    /* this.exService.getSearchData().subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+    }) */
+
+
   }
 }
