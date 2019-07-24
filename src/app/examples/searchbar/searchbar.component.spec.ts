@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CutSearchModule } from "cut";
 
 import { SearchbarComponentExample } from './searchbar.component';
+import { ExampleService } from '../example.service';
 
 describe('CutSearchbardModule', () => {
   let component: SearchbarComponentExample;
@@ -13,7 +14,8 @@ describe('CutSearchbardModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
 			imports: [RouterTestingModule, HttpClientModule, CutSearchModule],
-      declarations: [ SearchbarComponentExample ]
+      declarations: [ SearchbarComponentExample ],
+      providers:[ExampleService]
     })
     .compileComponents();
   }));
