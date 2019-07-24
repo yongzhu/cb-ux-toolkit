@@ -33,6 +33,7 @@
 .professional-detail {
   margin-top: 5px;
   color: #949494;
+  font-size: 0.95rem;
 }
 .professional-detail .orgnisation {
   border-left: 1px solid #848282;
@@ -43,12 +44,11 @@
   padding: 0 10px 0 0;
 }
 .address {
-  display: flex;
+  display: grid;
   color: #848282;
   font-weight: 300;
-}
-.address div {
-  margin-right: 35px;
+  font-size: 0.85rem;
+  grid-template-columns: auto auto auto;
 }
 .address p {
   margin: 0;
@@ -78,6 +78,7 @@
   font-style: oblique;
   margin: 0;
   color: #b1adad;
+  font-size: 0.95rem;
 }
 .skill-match .skill {
   align-self: center;

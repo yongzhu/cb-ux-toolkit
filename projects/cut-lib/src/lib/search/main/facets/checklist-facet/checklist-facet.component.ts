@@ -15,13 +15,11 @@ export class ChecklistFacetComponent implements OnInit {
   @Input() optionsList: CheckListModel[];
   @Input() defaultMustHave: number = 1;
   @Input() facetTitle: string;
+  @Input() fieldToWorkWith: string;
 
   @Output('facetHandler') facetHandler = new Subject<ArrayValueModel>();
 
-  facetData: ArrayValueModel = {
-    inputValue: [],
-    niceToHave: this.defaultMustHave,
-  }
+  facetData: ArrayValueModel;
 
   constructor() { }
 
@@ -33,7 +31,11 @@ export class ChecklistFacetComponent implements OnInit {
         }
       })
     }
-
+    this.facetData = {
+      inputValue: [],
+      niceToHave: this.defaultMustHave,
+      fieldToWorkWith: this.fieldToWorkWith,
+    }
   }
 
   clickHandler = (name: string, value: string) => {

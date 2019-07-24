@@ -12,6 +12,9 @@
 .input-container {
   flex-basis: auto;
   flex-grow: 2;
+  .mat-form-field-infix{
+    width: auto;
+  }
 }
 .dropdown-container {
   border: 1px solid $gray-darker;
@@ -31,6 +34,9 @@ button {
 .filter-title {
   font-size: $font-size-small;
   align-self: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .filter-icon {
   font-size: rem-calc($icon-size);

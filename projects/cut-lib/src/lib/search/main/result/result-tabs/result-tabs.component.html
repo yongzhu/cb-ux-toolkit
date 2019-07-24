@@ -3,7 +3,7 @@
     mat-tab-link
     *ngFor="let tab of tabs"
     (click)="clickHandler(tab.id)"
-    [active]="tab.isSelected"
+    [active]="activeLink == tab.id"
   >
     {{ tab.name }}
   </a>

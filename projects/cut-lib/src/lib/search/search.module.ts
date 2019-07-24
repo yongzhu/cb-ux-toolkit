@@ -15,6 +15,7 @@ import { FilterOptionsComponent } from "./main/result/used-filter/filter-options
 import { ButtonComponent } from "../button/button.component";
 import { ListComponent } from "./main/result/result-list/list/list.component";
 import { VerticalOption } from '../vertical-option/vertical-option.component';
+import { CutApiService } from "../utils/cut-api.service";
 
 import {
   MatIconModule,
@@ -60,6 +61,6 @@ import {
     ResultFiltersComponent,
     CutFacetsModule,
   ],
-  providers: []
+  providers: [CutApiService]
 })
 export class CutSearchModule { }

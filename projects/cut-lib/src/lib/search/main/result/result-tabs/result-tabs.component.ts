@@ -1,40 +1,31 @@
-import { Component, Input, Output } from "@angular/core";
+import { Component, Input, Output, OnChanges } from "@angular/core";
 import { CutNameIdModel } from "../../../../models/data-structures/name-id-model";
 import { Subject } from "rxjs";
-
-const dummyData = [
-  { name: 'Candidates', id: 1, isSelected: true },
-  { name: 'Requistions', id: 2, isSelected: false },
-  { name: 'Reports', id: 3, isSelected: false }
-]
+import { InputFormExample } from "@angular/material-examples/input-form/input-form-example";
 
 @Component({
   selector: "cut-result-tabs",
   templateUrl: "./result-tabs.component.html",
   styleUrls: ["./result-tabs.component.scss"]
 })
-export class ResultTabsComponent {
+export class ResultTabsComponent implements OnChanges {
 
   @Input() public tabs: CutNameIdModel[];
   @Output() public tabChangeHandler = new Subject<number>();
 
+  activeLink: number | string;
+
+
   constructor() { }
 
-  clickHandler = (id: number) => {
+  ngOnChanges() {
+    if (!this.activeLink) {
+      this.activeLink = this.tabs[0].id;
+    }
+  }
 
-    //for demo purpose. - selected value will be changed on the basis of input value.
-    /* this.links = this.links.map(single => {
-      if (id === single.id) {
-        return {
-          ...single,
-          isSelected: !single.isSelected,
-        }
-      }
-      return {
-        ...single,
-        isSelected: false,
-      };
-    }) */
+  clickHandler = (id: number) => {
+    this.activeLink = id;
     this.tabChangeHandler.next(id);
   }
 }

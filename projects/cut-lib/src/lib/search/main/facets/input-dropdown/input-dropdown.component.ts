@@ -18,18 +18,22 @@ export class InputDropdownFacetComponent implements OnInit {
   @Input() facetTitle: string;
   @Input() inputTitle: string;
   @Input() autoCompeleteList: string[];
+  @Input() fieldToWorkWith: string;
 
   @Output('facetHandler') facetHandler = new Subject<InputDropDownFacetModal>();
 
-  facetData: InputDropDownFacetModal = {
-    postalCode: '',
-    cityDropdown: '',
-    niceToHave: this.defaultMustHave,
-  }
+  facetData: InputDropDownFacetModal;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.facetData = {
+      postalCode: '',
+      cityDropdown: '',
+      niceToHave: this.defaultMustHave,
+      fieldToWorkWith: this.fieldToWorkWith,
+    }
+  }
 
   inputChangeHandler = (data: string) => {
     this.facetData.postalCode = data;

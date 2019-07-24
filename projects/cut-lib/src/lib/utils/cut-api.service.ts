@@ -24,7 +24,16 @@ export class CutApiService {
           path: apiData.body.customBody.path.replace("searchquery", searchText),
         }
       }
-      if (itemType) {
+
+      return this.http.post<any>(apiData.url, postBody)
+        .pipe(
+          map(data => {
+            return data;
+          }),
+          catchError((e) => this.handleError(e))
+        );
+
+      /* if (itemType) {
         return this.http.post<any>(apiData.url, postBody)
           .pipe(
             map(data => {
@@ -50,7 +59,7 @@ export class CutApiService {
             }),
             catchError((e) => this.handleError(e))
           );
-      }
+      } */
     } else {
       const options = {
         headers: new HttpHeaders({
@@ -100,8 +109,8 @@ export class CutApiService {
       "Something bad happened; please try again later.");
   }
 
-  public staticTest<T>(): Observable<CutResultModel> {
-    const result: CutResultModel = {
+  /* public staticTest<T>(): Observable<CutResultModel> {
+    const result = {
       usedFilters: [
         {
           filterName: "Full Text",
@@ -435,6 +444,6 @@ export class CutApiService {
       observer.next(result);
       observer.complete();
     });
-  }
+  } */
 
 }

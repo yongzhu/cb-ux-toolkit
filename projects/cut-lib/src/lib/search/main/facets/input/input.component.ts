@@ -14,17 +14,21 @@ export class InputFacetComponent implements OnInit {
   @Input() defaultMustHave: number;
   @Input() facetTitle: string;
   @Input() autoCompeleteList: string[];
+  @Input() fieldToWorkWith: string;
 
   @Output('facetHandler') facetHandler = new Subject<SingleValueModel>();
 
-  facetData: SingleValueModel = {
-    inputValue: '',
-    niceToHave: this.defaultMustHave,
-  }
+  facetData: SingleValueModel;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.facetData = {
+      inputValue: '',
+      niceToHave: this.defaultMustHave,
+      fieldToWorkWith: this.fieldToWorkWith
+    }
+  }
 
   inputChangeHandler = (data: string) => {
     this.facetData.inputValue = data;
