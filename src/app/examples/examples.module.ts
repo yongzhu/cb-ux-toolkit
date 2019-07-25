@@ -12,6 +12,7 @@ import {
   SRResultListComponentExample,
   ResultFilterComponentExample,
   SearchFilterComponentExample,
+  KpiTileComponentExample,
 } from './components';
 
 import {
@@ -20,6 +21,7 @@ import {
   CutLoadingIndicatorModule,
   CutSearchModule,
   SelectModule,
+  CutKpiTileModule,
 } from "cut";
 import { HttpClientModule } from "@angular/common/http";
 import { ExampleService } from "./example.service";
@@ -34,7 +36,8 @@ export const components = [
   SRResultListComponentExample,
   SearchbarComponentExample,
   ResultFilterComponentExample,
-  SearchFilterComponentExample
+  SearchFilterComponentExample,
+  KpiTileComponentExample
 ];
 
 @NgModule({

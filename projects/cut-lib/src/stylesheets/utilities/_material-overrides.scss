@@ -1,5 +1,6 @@
 @import '../variables/cut-theme-variables';
 @import '../mixins/cut-rem-calc';
+@import '../mixins/cut-gradients';
 
 .mat-elevation-z15 {
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.16),
@@ -38,6 +39,80 @@
     height: rem-calc(5) !important;
   }
 }
-.mat-toolbar-row, .mat-toolbar-single-row {
-	height: auto;
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: auto;
+}
+
+.mat-progress-bar {
+  border-radius: rem-calc(6) !important;
+  height: rem-calc(6) !important;
+
+  .mat-progress-bar-buffer {
+    background: $light-secondary-text !important;
+  }
+
+  .mat-progress-bar-element {
+    border-radius: rem-calc(6) !important;
+  }
+
+  .mat-progress-bar-fill {
+    border-radius: rem-calc(6) !important;
+
+    &::after {
+      border-radius: rem-calc(6) !important;
+    }
+	}
+}
+// Not sure if we need to override progress bar everywhere or not,
+// so wrapping in a utitlity class for now
+.cut-primary-gradient {
+	.mat-progress-bar-fill {
+		&::after {
+			@include cut-gradient(primary);
+		}
+	}
+}
+.cut-accent-gradient {
+	.mat-progress-bar-fill {
+		&::after {
+			@include cut-gradient(accent);
+		}
+	}
+}
+.cut-warn-gradient {
+	.mat-progress-bar-fill {
+		&::after {
+			@include cut-gradient(warn);
+		}
+	}
+}
+
+/* BUTTON OVERRIDES */
+.mat-raised-button {
+  &.mat-primary {
+    @include cut-gradient(primary);
+  }
+
+  &.mat-accent {
+    @include cut-gradient(accent)
+  }
+
+  &.mat-warn {
+    @include cut-gradient(warn)
+  }
+}
+.mat-flat-button {
+  &.mat-primary {
+    @include cut-gradient(primary);
+  }
+
+  &.mat-accent {
+    @include cut-gradient(accent)
+  }
+
+  &.mat-warn {
+    @include cut-gradient(warn)
+  }
 }

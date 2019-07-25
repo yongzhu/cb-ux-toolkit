@@ -1,16 +1,35 @@
-<div class="cut-kpi-tile" >
-  <div class="cut-kpi-title" *ngIf="title">
+<div *ngIf="!inContainer" class="cut-kpi-tile">
+  <div class="cut-kpi-body">
+    <div class="cut-kpi-main-count">
+      {{ mainCount }}
+    </div>
+    <div class="cut-kpi-title" *ngIf="title">
       {{ title }}
+      <div *ngIf="infoText" class="cut-kpi-infotext">
+        {{ infoText }}
+      </div>
+    </div>
+  </div>
+  <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
+    {{ secondaryCount }}
+  </div>
+  <mat-progress-bar *ngIf="showProgressBar" class="cut-progressbar" [mode]="progressBarMode" [value]="progressBarValue"
+    [color]="barStyle"></mat-progress-bar>
+</div>
+<div *ngIf="inContainer" class="cut-container-kpi-tile">
+  <div class="cut-kpi-title" *ngIf="title">
+    {{ title }}
   </div>
   <div class="cut-kpi-body">
     <div class="cut-kpi-main-count">
-        {{ mainCount }}
+      {{ mainCount }}
     </div>
     <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
-        {{ secondaryCount }}
+      {{ secondaryCount }}
     </div>
   </div>
-  <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" [mode]="progressBarMode" [value]="progressBarValue" [color]="barStyle"></mat-progress-bar>
+  <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" [mode]="progressBarMode"
+    [value]="progressBarValue" [color]="barStyle"></mat-progress-bar>
   <div *ngIf="infoText" class="cut-kpi-secondary-count">
     {{ infoText }}
   </div>

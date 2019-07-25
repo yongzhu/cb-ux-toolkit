@@ -1,5 +1,6 @@
 @import "../../../stylesheets/cut-core";
 @import "../../../stylesheets/utilities/cb-utilities";
+@import "../../../stylesheets/mixins/cut-rem-calc";
 
 cut-drop-box-anchor {
   @media(max-width: map-get($grid-breakpoints, lg)) {
@@ -19,6 +20,9 @@ cut-drop-box-anchor {
   }
 }
 
+.wrapper-app-switcher {
+	margin-top: rem-calc(4);
+}
 
 .list-style-header-sub-nav {
   margin: 0px;

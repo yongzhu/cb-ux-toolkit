@@ -7,7 +7,8 @@ import {
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
   SearchbarComponentExample,
-  ResultFilterComponentExample
+  ResultFilterComponentExample,
+  KpiTileComponentExample
 } from './components';
 import { SearchFilterComponentExample } from './search-filter/search-filter.component';
 
@@ -50,6 +51,9 @@ export const examplesManifest: any = {
     'search-filter': {
       component: SearchFilterComponentExample,
       title: 'Search Filters'
-    }
+    },
+    "kpi-tile": {
+			component: KpiTileComponentExample
+		}
   }
 };
