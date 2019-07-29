@@ -1,4 +1,6 @@
-// All cb brand specific variables to be defined here.
+$dark-primary-text: #182642;
+$light-secondary-text: #E9E9E9;
+$dark-secondary-text: #5D677A;
 
 /*TODO:  Highly recommend following a global and abstract naming convention for variables*/
 /*
@@ -9,17 +11,24 @@
 //-COLORS----------------------
 
 //-Brand Colors----------------
-$color-primary-light: #90a4ae;
+$color-primary-light: #90A4AE;
 $color-primary: #182642;
 $color-primary-dark: #1c202a;
 
-$color-secondary-light: #66c3ac;
-$color-secondary: #009b74;
-$color-secondary-dark: #007457;
+$color-secondary-light: #85CE3F;
+$color-secondary: #009B74;
+$color-secondary-dark: #008563;
 
-$color-tertiary-light: #7eafd5;
-$color-tertiary: #287ab9;
-$color-tertiary-dark: #1e5c8b;
+$color-tertiary-light: #0097D1;
+$color-tertiary: #287AB9;
+$color-tertiary-dark: #1E5C8B;
+
+
+$accent-eta: #F16865;
+$accent-eta-dark: #D04945;
+//-COLORS----------------------
+// I THINK EVERYTHING BELOW HERE CAN GO AWAY
+//-Brand Colors----------------
 
 //-Accent Colors---------------
 $accent-alpha-lighter: #d1c4e9;
@@ -40,29 +49,27 @@ $accent-gamma: #50c5cd;
 $accent-gamma-dark: #0195a3;
 $accent-gamma-darker: #006064;
 
-$accent-delta-lighter: #c5e1a5;
-$accent-delta-light: #a9dc78;
-$accent-delta: #85ce3f;
-$accent-delta-dark: #66a52a;
-$accent-delta-darker: #1f812d;
+$accent-delta-lighter: #C5E1A5;
+$accent-delta-light: #A9DC78;
+$accent-delta: #85CE3F;
+$accent-delta-dark: #66A52A;
+$accent-delta-darker: #1F812D;
 
-$accent-epsilon-lighter: #fff59d;
-$accent-epsilon-light: #ffd732;
-$accent-epsilon: #fdb816;
-$accent-epsilon-dark: #cb7c00;
-$accent-epsilon-darker: #a06200;
+$accent-epsilon-lighter: #FFF59D;
+$accent-epsilon-light: #FFD732;
+$accent-epsilon: #FDB816;
+$accent-epsilon-dark: #CB7C00;
+$accent-epsilon-darker: #A06200;
 
-$accent-zeta-lighter: #ffcc80;
-$accent-zeta-light: #ff9c4c;
-$accent-zeta: #ff7200;
-$accent-zeta-dark: #d04900;
-$accent-zeta-darker: #a04002;
+$accent-zeta-lighter: #FFCC80;
+$accent-zeta-light: #FF9C4C;
+$accent-zeta: #FF7200;
+$accent-zeta-dark: #D04900;
+$accent-zeta-darker: #A04002;
 
-$accent-eta-lighter: #ffcdd2;
-$accent-eta-light: #ef9a9a;
-$accent-eta: #f16865;
-$accent-eta-dark: #d32f2f;
-$accent-eta-darker: #a41c18;
+$accent-eta-lighter: #FFCDD2;
+$accent-eta-light: #EF9A9A;
+$accent-eta-darker: #A41C18;
 
 //-Gray----------------
 $gray-lightest: #f1f1f1;
@@ -72,6 +79,8 @@ $gray: #d2d2d2;
 $gray-dark: #aaaaaa;
 $gray-darker: #767676;
 $gray-darkest: #4a4a4a;
+
+$gray-secondary-light: #E9E9E9;
 
 //-Constants---------------
 $WHITE: #ffffff;

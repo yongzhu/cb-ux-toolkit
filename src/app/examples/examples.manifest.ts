@@ -8,7 +8,8 @@ import {
   SRResultListComponentExample,
   SearchbarComponentExample,
   ResultFilterComponentExample,
-  SearchFacetComponentExample
+  SearchFacetComponentExample,
+  KpiTileComponentExample,
 } from './components';
 
 export const examplesManifest: any = {
@@ -50,6 +51,9 @@ export const examplesManifest: any = {
     'search-facet': {
       component: SearchFacetComponentExample,
       title: 'Search facet'
-    }
+    },
+    "kpi-tile": {
+			component: KpiTileComponentExample
+		}
   }
 };

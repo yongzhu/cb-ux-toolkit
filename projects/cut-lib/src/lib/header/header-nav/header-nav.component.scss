@@ -63,7 +63,8 @@
   padding: 0px;
   list-style-type: none;
   vertical-align: top;
-
+	display: grid;
+	grid-auto-flow: column;
   > li {
 		float: left;
 		line-height: rem-calc(60);

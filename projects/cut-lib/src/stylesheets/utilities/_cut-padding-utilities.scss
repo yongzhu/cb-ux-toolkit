@@ -22,24 +22,24 @@ $total: 7;
 		padding-bottom: #{$width}px;
 	}
 	.m-r-#{$width} {
-		padding-right: #{$width}px;
+		margin-right: #{$width}px;
 	}
 	.m-l-#{$width} {
-		padding-left: #{$width}px;
+		margin-left: #{$width}px;
 	}
 	.m-t-#{$width} {
-		padding-top: #{$width}px;
+		margin-top: #{$width}px;
 	}
 	.m-b-#{$width} {
-		padding-bottom: #{$width}px;
+		margin-bottom: #{$width}px;
 	}
 	.m-x-#{$width} {
-		padding-left: #{$width}px;
-		padding-right: #{$width}px;
+		margin-left: #{$width}px;
+		margin-right: #{$width}px;
 	}
 	.m-y-#{$width} {
-		padding-top: #{$width}px;
-		padding-bottom: #{$width}px;
+		margin-top: #{$width}px;
+		margin-bottom: #{$width}px;
 	}
 	.p-#{$width} {
 		padding: #{$width}px;
@@ -50,6 +50,11 @@ $total: 7;
 }
 
 // Setup some padding utilities
-@for $i from 1 through $total {
-	@include element-spacing($i * 5);
+@for $i from 0 through $total {
+	@if $i == 0 {
+		@include element-spacing($i);
+	}
+	@else {
+		@include element-spacing($i * 5);
+	}
 }

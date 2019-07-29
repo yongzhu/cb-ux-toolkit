@@ -106,6 +106,15 @@ const DOCS: { [key: string]: DocCategory[] } = {
             "used-filter",
             "result-tabs"
           ]
+				},
+				{
+          id: 'kpi-tile',
+          name: 'Kpi Tile',
+					summary: 'Component that displays simple kpi stats and info with a progress bar',
+					isCut: true,
+          examples: [
+            'kpi-tile',
+          ]
         }
       ]
     },
