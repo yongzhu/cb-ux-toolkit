@@ -51,6 +51,7 @@ export const components = [
     CutHeaderModule,
     DocViewerModule,
     HttpClientModule,
+    CutKpiTileModule
   ],
   providers:[
     ExampleService,
