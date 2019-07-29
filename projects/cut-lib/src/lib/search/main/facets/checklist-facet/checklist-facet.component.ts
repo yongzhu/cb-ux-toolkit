@@ -25,16 +25,16 @@ export class ChecklistFacetComponent implements OnInit {
 
   ngOnInit() {
     if (this.optionsList && this.optionsList.length > 0) {
+      this.facetData = {
+        inputValue: [],
+        niceToHave: this.defaultMustHave,
+        fieldToWorkWith: this.fieldToWorkWith,
+      }
       this.optionsList.forEach(single => {
         if (single.isSelected) {
           this.facetData.inputValue.push(single.displayValue)
         }
       })
-    }
-    this.facetData = {
-      inputValue: [],
-      niceToHave: this.defaultMustHave,
-      fieldToWorkWith: this.fieldToWorkWith,
     }
   }
 

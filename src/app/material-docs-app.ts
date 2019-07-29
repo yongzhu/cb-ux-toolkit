@@ -13,6 +13,8 @@ import {GaService} from './shared/ga/ga';
 export class MaterialDocsApp {
 
   constructor(router: Router, ga: GaService) {
+    console.log('hello  reached');
+
     let previousRoute = router.routerState.snapshot.url;
 
     router.events

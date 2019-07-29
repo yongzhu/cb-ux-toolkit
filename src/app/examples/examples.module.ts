@@ -11,7 +11,7 @@ import {
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
   ResultFilterComponentExample,
-  SearchFilterComponentExample,
+  SearchFacetComponentExample,
   KpiTileComponentExample,
 } from './components';
 
@@ -36,7 +36,7 @@ export const components = [
   SRResultListComponentExample,
   SearchbarComponentExample,
   ResultFilterComponentExample,
-  SearchFilterComponentExample,
+  SearchFacetComponentExample,
   KpiTileComponentExample
 ];
 
@@ -51,6 +51,7 @@ export const components = [
     CutHeaderModule,
     DocViewerModule,
     HttpClientModule,
+    CutKpiTileModule
   ],
   providers:[
     ExampleService,

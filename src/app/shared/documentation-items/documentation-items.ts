@@ -89,12 +89,12 @@ const DOCS: { [key: string]: DocCategory[] } = {
           ]
         },
         {
-          id: "search-filter",
-          name: "Search Filter",
+          id: "search-facet",
+          name: "Search Facet",
           summary: "Search Filtert Whole Module Test2",
           isCut: true,
           examples: [
-            'search-filter',
+            'search-facet',
           ]
         },
         {

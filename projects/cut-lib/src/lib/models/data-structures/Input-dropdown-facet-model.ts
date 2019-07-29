@@ -1,6 +1,6 @@
 export interface InputDropDownFacetModal {
-  postalCode: string;
-  cityDropdown: string;
+  inputValue: string;
+  dropdownValue: string;
   niceToHave: number;
   fieldToWorkWith: string;
 }

@@ -4,15 +4,15 @@ import { HttpEventType } from "@angular/common/http";
 
 
 @Component({
-  selector: 'app-search-filter',
-  templateUrl: 'search-filter.component.html',
-  styleUrls: ['search-filter.component.scss'],
+  selector: 'app-search-facet',
+  templateUrl: 'search-facet.component.html',
+  styleUrls: ['search-facet.component.scss'],
 })
-export class SearchFilterComponentExample implements OnInit {
+export class SearchFacetComponentExample implements OnInit {
 
   //dummyDate sample for facets
-  facetData: any = {
-    inputDropDownValues: {
+  facetData: any = [
+    {
       showFacet: true,
       autoCompeleteList: ['NewYork', 'Delhi', 'Noida'],
       facetTitle: "City",
@@ -27,15 +27,19 @@ export class SearchFilterComponentExample implements OnInit {
           displayValue: '25miles'
         }
       ],
-      defaultMustHave: 1
+      defaultMustHave: 1,
+      type: 'inputDropDownValues',
+      fieldToWorkWith: 'experienceyears2',
     },
-    inputValues: {
+    {
       showFacet: true,
       autoCompeleteList: [],
       facetTitle: "Titles/Roles",
-      defaultMustHave: 1
+      defaultMustHave: 1,
+      type: 'inputValues',
+      fieldToWorkWith: 'experienceyears1',
     },
-    checkListValues: {
+    {
       optionsList: [
         {
           displayName: 'Less then year',
@@ -55,9 +59,11 @@ export class SearchFilterComponentExample implements OnInit {
       ],
       showFacet: true,
       facetTitle: "Experience",
-      defaultMustHave: 2
+      defaultMustHave: 2,
+      type: 'checkListValues',
+      fieldToWorkWith: 'experienceyears',
     }
-  }
+  ]
 
   apiData: any;
   constructor(private exService: ExampleService) { }
@@ -67,12 +73,6 @@ export class SearchFilterComponentExample implements OnInit {
   }
 
   ngOnInit() {
-    /* this.exService.getSearchData().subscribe(data => {
-      console.log(data);
-    }, error => {
-      console.log(error);
-    }) */
-
 
   }
 }
