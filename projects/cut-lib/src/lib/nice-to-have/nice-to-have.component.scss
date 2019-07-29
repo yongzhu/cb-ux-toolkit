@@ -1,0 +1,49 @@
+@import '../../stylesheets/cut-core';
+
+.nice-to-have {
+  display: flex;
+  margin-top: rem-calc($top-margin);
+}
+.graph {
+  display: flex;
+  align-items: center;
+}
+.line {
+  width: rem-calc($line-width);;
+  background: $color-tertiary-dark;
+  height: 1px;
+}
+.circle {
+  border: 1px solid $color-tertiary-dark;
+  border-radius: rem-calc($border-radies);
+  width: rem-calc($circle-sides);
+  height: rem-calc($circle-sides);
+  cursor: pointer;
+}
+.filled {
+  background: $color-tertiary-dark;
+}
+.first-line,
+.last-line {
+  font-size: $font-size-small;
+  color: $gray-darker;
+}
+.first-line {
+  margin-right: rem-calc($draw-sides);
+}
+.last-line {
+  margin-left: rem-calc($draw-sides);
+}
+
+@media (max-width: 700px) {
+  .nice-to-have {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 400px) {
+  .nice-to-have {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,24 @@
+<section class="result-container">
+  <cut-used-filter
+    *ngIf="resultData.filters.showComponent"
+    [filters]="resultData.filters.data"
+  ></cut-used-filter>
+  <cut-result-tabs
+    *ngIf="resultData.tabs.showComponent"
+    [tabs]="resultData.tabs.data"
+    (tabChangeHandler)="tabChangeHandler($event)"
+  ></cut-result-tabs>
+  <cut-result-type-filter
+    *ngIf="resultData.filtersType.showComponent"
+    [filtersType]="resultData.filtersType.data"
+    (filtersChangeHandler)="filtersChangeHandler($event)"
+  ></cut-result-type-filter>
+  <cut-result-filters
+    *ngIf="resultData.actionFilters.showComponent"
+    [actionFilters]="resultData.actionFilters.data"
+  ></cut-result-filters>
+  <cut-result-list
+    *ngIf="resultData.resultList.showComponent"
+    [resultList]="resultData.resultList.data"
+  ></cut-result-list>
+</section>

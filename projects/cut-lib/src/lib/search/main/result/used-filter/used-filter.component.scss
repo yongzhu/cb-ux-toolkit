@@ -1,0 +1,40 @@
+.used-filter-wrapper {
+  border: 1px solid #b0b0b0;
+  font-weight: 300;
+  padding: 10px;
+  display: flex;
+}
+.full-text-wrapper {
+  border: 1px solid #5ba4dc;
+  display: flex;
+  border-radius: 5px;
+  align-items: baseline;
+  margin-right: 10px;
+}
+.full-text-wrapper > div {
+  padding: 5px;
+}
+.wrapper-title {
+  color: #5ba4dc;
+}
+.full-text-wrapper .add-filter {
+  align-self: center;
+  padding: 0;
+}
+.add-filter .material-icons {
+  font-size: 22px;
+  color: #5ba4dc;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sr-hidden {
+  display: none;
+}
+@media only screen and (max-width: 1000px) {
+  .used-filter-wrapper {
+    flex-direction: column;
+  }
+  .full-text-wrapper {
+    margin: 5px 10px;
+  }
+}

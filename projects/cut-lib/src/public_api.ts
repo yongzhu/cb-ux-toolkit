@@ -13,6 +13,7 @@ export * from "./lib/header/header.module";
 export * from "./lib/header/header.service";
 export * from "./lib/input/input.module";
 export * from "./lib/loading-indicator/loading-indicator.module";
+export * from "./lib/search/search.module";
 export * from "./lib/select/select.module";
 export * from "./lib/type-ahead/typeahead.module";
 export * from "./lib/header/header.model";

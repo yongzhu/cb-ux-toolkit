@@ -1,0 +1,10 @@
+<form [formGroup]="searchForm" (ngSubmit)="onFormSubmit()" class="cut-searchbar"><ul>
+    <li class="cut-searchbar-textfield">
+      <input type="text" formControlName="searchText">
+    </li>
+    <li class="cut-searchbar-btn">
+      <button type="submit" [disabled]="searchForm.invalid">
+        Search
+      </button>
+    </li>
+</ul></form>

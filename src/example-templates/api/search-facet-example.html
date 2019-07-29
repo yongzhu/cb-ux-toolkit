@@ -1,0 +1,225 @@
+<div class="docs-api">
+    <p class="docs-api-module-import">
+      <code>
+        import { CutSearchModule } from 'cut';
+      </code>
+    </p>
+    <div class="docs-markdown">
+      <h3 id="directives" class="docs-header-link docs-api-h3 docs-api-class-name">
+        Main/Root level Component
+      </h3>
+      <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">Directive</h4>
+      <p class="docs-api-directive-selectors">
+          <span class="docs-api-class-selector-label">Selector:</span>
+          <span class="docs-api-class-selector-name">cut-search-facets</span>
+          </p>
+      <p>This will give you full component, contains all facets, listed below. all are driven/controlled by the data provided as an input.</p>
+      <p>
+        <code>&lt;cut-search-facets&gt;</code> is used for whole facet module
+      </p>
+      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">cut-search-facets</span> [<span class="hljs-attr">facetData</span>]=<span class="hljs-string">"facetData"</span> (<span class="hljs-attr">facetEventHandler</span>)=<span class="hljs-string">"getChangedEvent($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">cut-search-facets</span>&gt;</span></code></pre>
+      <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">Properties</h4>
+
+      <table class="docs-api-properties-table">
+        <tbody>
+          <tr class="docs-api-properties-header-row">
+            <th class="docs-api-properties-th">Name</th>
+            <th class="docs-api-properties-th">Description</th>
+          </tr>
+          <tr class="docs-api-properties-row">
+            <td class="docs-api-properties-name-cell">
+              <div class="docs-api-input-marker">@Input(<class="docs-api-input-alias"></span>)
+              </div>
+              <p class="docs-api-property-name">
+                <pre><code>facetData: (
+  InputDropDownModal |
+  InputModal |
+  CheckListDataModal
+  )[]</code></pre>
+              </p>
+            </td>
+            <td class="docs-api-property-description"><p>Collection of multiple object. each object is used to define the facet component with respect to their data model</p></td>
+          </tr>
+          <tr class="docs-api-properties-row">
+              <td class="docs-api-properties-name-cell">
+                <div class="docs-api-input-marker">@Output(<class="docs-api-input-alias"></span>)
+                </div>
+                <p class="docs-api-property-name">
+                  <pre><code>facetEventHandler: EventEmitter&lt;
+  InputDropDownFacetModal |
+  SingleValueModel |
+  ArrayValueModel
+  )[]&gt;</code></pre>
+                </p>
+              </td>
+              <td class="docs-api-property-description"><p>Collection of multiple object. each object is defined by the specific model of different facet component output.</p></td>
+            </tr>
+        </tbody></table>
+      <h3 id="events" class="docs-header-link docs-api-h3">Events</h3>
+        <p>The <code>getChangedEvent</code> output event is emitted when the values changes.</p>
+    </div>
+    <div>
+        <h3 id="directives" class="docs-header-link docs-api-h3 docs-api-class-name">
+            Data Models-(Interface)
+          </h3>
+        <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">InputDropDownModal - same will work as an input for individual component.</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">showFacet: boolean</td>
+                <td class="docs-api-property-description">Whether the component is displayed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">autoCompeleteList: string[]</td>
+                  <td class="docs-api-property-description">List to populate the auto suggestion.</td>
+                </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">facetTitle: string</td>
+                  <td class="docs-api-property-description">Facet title.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">inputTitle: string</td>
+                  <td class="docs-api-property-description">Title for the input field.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">dropDownOptions: DropDownModel[]</td>
+                  <td class="docs-api-property-description">Privide the adta for dropdown.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">defaultMustHave: number</td>
+                  <td class="docs-api-property-description">Values : Enum - 1,2,3, used as the default value.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">type: string</td>
+                  <td class="docs-api-property-description">Values : 'inputDropDownValues' must be provided. </td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">fieldToWorkWith: string</td>
+                  <td class="docs-api-property-description">To identify the output emited by the component..</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">CheckListDataModal - same will work as an input for individual component.</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">showFacet: boolean</td>
+                <td class="docs-api-property-description">Whether the component is displayed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">facetTitle: string</td>
+                  <td class="docs-api-property-description">Facet title.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">optionsList: CheckListModel[];</td>
+                  <td class="docs-api-property-description">Provide the data for list items.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">defaultMustHave: number</td>
+                  <td class="docs-api-property-description">Values : Enum - 1,2,3, used as the default value.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">type: string</td>
+                  <td class="docs-api-property-description">Values : 'inputDropDownValues' must be provided. </td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">fieldToWorkWith: string</td>
+                  <td class="docs-api-property-description">To identify the output emited by the component..</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">InputModal - same will work as an input for individual component.</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">showFacet: boolean</td>
+                <td class="docs-api-property-description">Whether the component is displayed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">autoCompeleteList: string[]</td>
+                  <td class="docs-api-property-description">List to populate the auto suggestion.</td>
+                </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">facetTitle: string</td>
+                  <td class="docs-api-property-description">Facet title.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">defaultMustHave: number</td>
+                  <td class="docs-api-property-description">Values : Enum - 1,2,3, used as the default value.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">type: string</td>
+                  <td class="docs-api-property-description">Values : 'inputDropDownValues' must be provided. </td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">fieldToWorkWith: string</td>
+                  <td class="docs-api-property-description">To identify the output emited by the component..</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">DropDownModel</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">displayName: string</td>
+                <td class="docs-api-property-description">Values to be displayed.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">displayValue: string</td>
+                  <td class="docs-api-property-description">value to be used.</td>
+                </tr>
+                <tr class="docs-api-properties-row">
+                    <td class="docs-api-properties-name-cell">isSelected: boolean</td>
+                    <td class="docs-api-property-description">If the value is been selected on not.</td>
+                  </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">DropDownModel</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">displayName: string</td>
+                <td class="docs-api-property-description">Values to be displayed</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">displayValue: string</td>
+                  <td class="docs-api-property-description">value to be used.</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="docs-markdown">
+      <h3 id="directives" class="docs-header-link docs-api-h3">
+        Individual Components
+      </h3>
+      <div class="docs-markdown">
+        <p>Individual component which are wrapped inside the facet component..</p>
+        <p>These will gives you freedom of implementing/adding you own functionality.</p>
+        <p>
+          <code>&lt;cut-input-facet&gt;</code></br>
+          <code>&lt;cut-input-dropdown-facet&gt;</code></br>
+          <code>&lt;cut-checklist-facet&gt;</code></br>
+        </p>
+      </div>
+    </div>
+  </div>

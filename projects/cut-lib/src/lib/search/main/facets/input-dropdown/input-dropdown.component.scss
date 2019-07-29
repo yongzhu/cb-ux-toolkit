@@ -1,0 +1,46 @@
+@import '../../../../../stylesheets/cut-core.scss';
+
+.field-container {
+  display: flex;
+}
+.filter-area p {
+  color: $gray-darker;
+}
+.facet-title{
+  color: $color-primary-dark;
+}
+.input-container {
+  flex-basis: auto;
+  flex-grow: 2;
+  .mat-form-field-infix{
+    width: auto;
+  }
+}
+.dropdown-container {
+  border: 1px solid $gray-darker;
+  border-radius: rem-calc($input-border-radius);
+  margin-left: rem-calc($dropdown-margin-left);
+  font-size: $font-size-small;
+  color: $gray-darker;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+  color: inherit;
+}
+.filter-title {
+  font-size: $font-size-small;
+  align-self: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.filter-icon {
+  font-size: rem-calc($icon-size);
+  height: 100%;
+  align-self: center;
+  color: $color-tertiary;
+}

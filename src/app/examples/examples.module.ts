@@ -1,37 +1,63 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
-
-import { LoadingIndicatorComponentExample, HeaderComponentExample, KpiTileComponentExample } from './components';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { DocViewerModule } from "../shared/doc-viewer/doc-viewer-module";
+import {
+  HeaderComponentExample,
+  LoadingIndicatorComponentExample,
+  SearchbarComponentExample,
+  SearchResultComponentExample,
+  UsedFilterComponentExample,
+  ResultTabComponentExample,
+  SRFilterTypeComponentExample,
+  SRResultListComponentExample,
+  ResultFilterComponentExample,
+  SearchFacetComponentExample,
+  KpiTileComponentExample,
+} from './components';
 
 import {
-  FrameworkModule,
   ClipboardModule,
-	SelectModule,
-	CutHeaderModule,
-	CutLoadingIndicatorModule,
-	CutKpiTileModule
+  CutHeaderModule,
+  CutLoadingIndicatorModule,
+  CutSearchModule,
+  SelectModule,
+  CutKpiTileModule,
 } from "cut";
+import { HttpClientModule } from "@angular/common/http";
+import { ExampleService } from "./example.service";
 
 export const components = [
-	LoadingIndicatorComponentExample,
-	HeaderComponentExample,
-	KpiTileComponentExample
+  LoadingIndicatorComponentExample,
+  HeaderComponentExample,
+  SearchResultComponentExample,
+  UsedFilterComponentExample,
+  ResultTabComponentExample,
+  SRFilterTypeComponentExample,
+  SRResultListComponentExample,
+  SearchbarComponentExample,
+  ResultFilterComponentExample,
+  SearchFacetComponentExample,
+  KpiTileComponentExample
 ];
 
 @NgModule({
-	declarations: [
-		...components
-	],
-	imports: [
-		CommonModule,
-		CutLoadingIndicatorModule,
-		CutKpiTileModule,
-		CutHeaderModule,
-		DocViewerModule
-	],
-	entryComponents: [
-		...components
-	]
+  declarations: [
+    ...components
+  ],
+  imports: [
+    CommonModule,
+    CutLoadingIndicatorModule,
+    CutSearchModule,
+    CutHeaderModule,
+    DocViewerModule,
+    HttpClientModule,
+    CutKpiTileModule
+  ],
+  providers:[
+    ExampleService,
+  ],
+  entryComponents: [
+    ...components
+  ]
 })
 export class ExamplesModule { }

@@ -1,0 +1,36 @@
+<div class="search-filter-wrapper">
+  <ng-template ngFor let-faect [ngForOf]="facetData">
+    <ng-template [ngIf]="faect.type === 'inputDropDownValues'">
+      <cut-input-dropdown-facet
+        (facetHandler)="facetHandler($event)"
+        *ngIf="faect.showFacet"
+        [autoCompeleteList]="faect.autoCompeleteList"
+        [facetTitle]="faect.facetTitle"
+        [dropDownOptions]="faect.dropDownOptions"
+        [defaultMustHave]="faect.defaultMustHave"
+        [inputTitle]="faect.inputTitle"
+        [fieldToWorkWith]="faect.fieldToWorkWith"
+      ></cut-input-dropdown-facet>
+    </ng-template>
+    <ng-template [ngIf]="faect.type === 'inputValues'">
+      <cut-input-facet
+        (facetHandler)="facetHandler($event)"
+        *ngIf="faect.showFacet"
+        [autoCompeleteList]="faect.autoCompeleteList"
+        [facetTitle]="faect.facetTitle"
+        [defaultMustHave]="faect.defaultMustHave"
+        [fieldToWorkWith]="faect.fieldToWorkWith"
+      ></cut-input-facet>
+    </ng-template>
+    <ng-template [ngIf]="faect.type === 'checkListValues'">
+      <cut-checklist-facet
+        (facetHandler)="facetHandler($event)"
+        *ngIf="faect.showFacet"
+        [optionsList]="faect.optionsList"
+        [facetTitle]="faect.facetTitle"
+        [defaultMustHave]="faect.defaultMustHave"
+        [fieldToWorkWith]="faect.fieldToWorkWith"
+      ></cut-checklist-facet>
+    </ng-template>
+  </ng-template>
+</div>

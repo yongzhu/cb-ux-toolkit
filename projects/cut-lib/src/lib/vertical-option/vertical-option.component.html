@@ -1,0 +1,15 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  aria-label="Example icon-button with a menu"
+>
+  <mat-icon *ngIf="showIcon">more_vert</mat-icon>
+  <ng-content *ngIf="showContent"></ng-content>
+</button>
+<mat-menu #menu="matMenu">
+  <button *ngFor="let option of options" mat-menu-item>
+    <mat-icon>{{ option.icon ? option.icon : defaultIcon }}</mat-icon>
+    <span>{{ option.name }}</span>
+  </button>
+  <!--  <button mat-menu-item disabled> -->
+</mat-menu>

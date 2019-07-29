@@ -1,0 +1,14 @@
+<div class="example-searchbar">
+  <cut-searchbar
+    (resultDispatch)="searchResult($event)"
+    [apiData]="apiData"
+    [searchapi]="searchApi"
+    [map]="'CutCandidateTestapi2Map'"
+  ></cut-searchbar>
+</div>
+
+<h3 *ngIf="showError" class="error">{{ resultError }}</h3>
+<div class="example-searchbar-result" *ngIf="showResult">
+  <h3>{{ count }} Results Found</h3>
+  <!-- <cut-result-list [resultList]="result"></cut-result-list> -->
+</div>
