@@ -1,8 +1,5 @@
 import { DropDownModel } from "./drop-down-model";
 import { CheckListModel } from "./check-list-model";
-import { InputDropDownFacetModal } from "./Input-dropdown-facet-model";
-import { SingleValueModel } from "./single-value-model";
-import { ArrayValueModel } from "./array-value-model";
 
 export interface InputDropDownModal {
   showFacet: boolean;

@@ -11,7 +11,7 @@ import {
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
   ResultFilterComponentExample,
-  SearchFilterComponentExample,
+  SearchFacetComponentExample,
 } from './components';
 
 import {
@@ -34,7 +34,7 @@ export const components = [
   SRResultListComponentExample,
   SearchbarComponentExample,
   ResultFilterComponentExample,
-  SearchFilterComponentExample
+  SearchFacetComponentExample
 ];
 
 @NgModule({

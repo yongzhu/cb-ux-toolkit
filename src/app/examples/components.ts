@@ -7,4 +7,4 @@ export * from './search-result/filter-type/filter-type.component';
 export * from './search-result/result-list/result-list.component';
 export * from "./searchbar/searchbar.component";
 export * from "./search-result/result-filter/result-filter.component";
-export * from './search-filter/search-filter.component';
+export * from './search-facet/search-facet.component';

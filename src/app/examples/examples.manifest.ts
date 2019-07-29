@@ -7,9 +7,9 @@ import {
   SRFilterTypeComponentExample,
   SRResultListComponentExample,
   SearchbarComponentExample,
-  ResultFilterComponentExample
+  ResultFilterComponentExample,
+  SearchFacetComponentExample
 } from './components';
-import { SearchFilterComponentExample } from './search-filter/search-filter.component';
 
 export const examplesManifest: any = {
   components: {
@@ -47,9 +47,9 @@ export const examplesManifest: any = {
       component: ResultFilterComponentExample,
       title: 'Result Filters'
     },
-    'search-filter': {
-      component: SearchFilterComponentExample,
-      title: 'Search Filters'
+    'search-facet': {
+      component: SearchFacetComponentExample,
+      title: 'Search facet'
     }
   }
 };

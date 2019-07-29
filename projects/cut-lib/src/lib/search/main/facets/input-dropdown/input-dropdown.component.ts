@@ -28,21 +28,21 @@ export class InputDropdownFacetComponent implements OnInit {
 
   ngOnInit() {
     this.facetData = {
-      postalCode: '',
-      cityDropdown: '',
+      inputValue: '',
+      dropdownValue: '',
       niceToHave: this.defaultMustHave,
       fieldToWorkWith: this.fieldToWorkWith,
     }
   }
 
   inputChangeHandler = (data: string) => {
-    this.facetData.postalCode = data;
+    this.facetData.inputValue = data;
     this.facetHandler.next(this.facetData)
   }
 
   clickHandler = (name: string, value: string, element: HTMLInputElement) => {
     element.innerHTML = name;
-    this.facetData.cityDropdown = value;
+    this.facetData.dropdownValue = value;
     this.facetHandler.next(this.facetData)
   }
 
