@@ -37,7 +37,7 @@ export class CutApiService {
       {
         headers: new HttpHeaders({
           "Content-Type": "application/json",
-          //...apiData.config,
+          ...apiData.config,
         })
       } :
       {
