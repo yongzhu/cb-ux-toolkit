@@ -9,16 +9,15 @@ export const environment = {
   },
   map: 'CutCandidateTestapi2Map',
   searchApiData: {
-    body: {
-      customHeader: {
-        "Content-Type": "application/json",
-        "Authorization": 'Basic Y2ItdGstc2VhcmNoOkErc0FkY2V6b0l0cHlLRHNQRHkrT09ybE1XRS8='
-      },
-      customBody: {
-        host: 'ats-tk-search-produs.cb1cl.com',
-        path: '/api/candidatesearch?query=searchquery&offset=0&customer_system=cbinternalbeta',
-      }
+    config: {
+      "Content-Type": "application/json",
+      "Authorization": 'Basic Y2ItdGstc2VhcmNoOkErc0FkY2V6b0l0cHlLRHNQRHkrT09ybE1XRS8='
     },
-    url: '/api/test',
-  }
+    params: {
+      offset: 0,
+      customer_system: 'cbinternalbeta',
+    },
+    //search_api_endpint: 'https://ats-tk-search-produs.cb1cl.com/api/candidatesearch'
+  },
+  search_api_endpint: 'mysearchapi/test/'
 };
