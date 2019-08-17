@@ -1,6 +1,7 @@
 <div *ngIf="headerObj.userProfile">
   <button mat-button class="cut-profile-button" [matMenuTriggerFor]="menu">
-    {{headerObj.userProfile.user.first_name}}&nbsp;<mat-icon class="fa fa-angle-down">arrow_drop_down</mat-icon>
+    {{headerObj.userProfile.user.first_name}}
+    <mat-icon class="header-arrow-btn">keyboard_arrow_down</mat-icon>
   </button>
   <mat-menu #menu="matMenu" class="cut-header-sub-nav">
     <!-- <ul class="list-style-header-sub-nav"> -->
@@ -12,13 +13,13 @@
     <div mat-menu-item class="cut-menu-item" *ngFor="let item of headerObj.userProfile.options">
       <!-- <li [class.has-separator]="item.hasSeparator" *ngFor="let item of headerObj.userProfile.options"> -->
       <a *ngIf="item.internalPath && !item.hidden" [class.SignOut]="item.title === 'Sign Out'"
-        [routerLink]="[item.internalPath]" [class.active]="showAsActive(item)" title="{{item.altTxt}}"
-        tabindex="0">{{item.title}}</a>
+         [routerLink]="[item.internalPath]" [class.active]="showAsActive(item)" title="{{item.altTxt}}"
+         tabindex="0">{{item.title}}</a>
       <a *ngIf="item.externalPath && !item.hidden" [class.SignOut]="item.title === 'Sign Out'"
-        [href]="item.externalPath" [target]="getTargetAttribute(item.newWindow)" title="{{item.altTxt}}"
-        tabindex="0">{{item.title}}</a>
+         [href]="item.externalPath" [target]="getTargetAttribute(item.newWindow)" title="{{item.altTxt}}"
+         tabindex="0">{{item.title}}</a>
       <a *ngIf="item.action && !item.hidden && item.title !== 'Background'" [class.SignOut]="item.title === 'Sign Out'"
-        (click)="emitActionType(item.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
+         (click)="emitActionType(item.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
       <!-- <div class="themeSelector" *ngIf="item.title === 'Background'">
           <h5 class="titleText">Background Color</h5>
           <h5>Choose your background color from the options below.</h5>

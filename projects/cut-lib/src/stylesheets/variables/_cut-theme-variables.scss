@@ -20,7 +20,7 @@ $color-secondary: #009B74;
 $color-secondary-dark: #008563;
 
 $color-tertiary-light: #0097D1;
-$color-tertiary: #287AB9;
+$color-tertiary: #2777B4;
 $color-tertiary-dark: #1E5C8B;
 
 
@@ -106,7 +106,10 @@ $color-link-active: $color-tertiary-dark;
 $color-link-visited: $accent-alpha-dark;
 
 //-FONTS---------------------------------------------
-$font-family-base: Lato, Helvetica, Arial, sans-serif;
+$font-family-base: Lato,
+Helvetica,
+Arial,
+sans-serif;
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
@@ -180,6 +183,3 @@ $dropdown-margin-left: 15;
 //checklist size
 $list-margin: 5 5 5 15;
 $list-icon-size: 15;
-
-
-

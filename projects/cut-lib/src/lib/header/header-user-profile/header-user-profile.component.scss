@@ -7,8 +7,9 @@
 
 .cut-profile-button {
   min-height: 43px;
-	font-size: 1rem;
-	padding: 0 0;
+  font-size: 1rem;
+  padding: 0 0;
+  color: $dark-secondary-text;
 }
 
 cut-drop-box /deep/ {
@@ -37,7 +38,7 @@ cut-drop-box /deep/ {
 
   cut-drop-box-anchor {
     padding: 0 $padding-base;
-    color: $color-primary;
+    color: $dark-secondary-text;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -175,4 +176,8 @@ cut-drop-box /deep/ {
     color: $color-body;
     font-weight: 400;
   }
+}
+
+.header-arrow-btn {
+  color: $color-tertiary !important;
 }
