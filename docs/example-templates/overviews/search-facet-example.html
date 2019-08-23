@@ -1,0 +1,37 @@
+<div class="docs-api">
+    <p class="docs-api-module-import">
+      <code>
+        import { CutSearchModule } from 'cut';
+      </code>
+    </p>
+    <div class="docs-markdown">
+      <h3 id="directives" class="docs-header-link docs-api-h3">
+        Main/Root level Component
+      </h3>
+      <p>This will give you full component, contains all facets, listed below. all are driven/controlled by the data provided as an input. details of data modal are given the api section.</p>
+      <p>
+        <code>&lt;cut-search-facets&gt;</code> is used for whole facet module
+      </p>
+      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">cut-search-facets</span> [<span class="hljs-attr">facetData</span>]=<span class="hljs-string">"facetData"</span> (<span class="hljs-attr">facetEventHandler</span>)=<span class="hljs-string">"getChangedEvent($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">cut-search-facets</span>&gt;</span></code></pre>
+      <h3 id="events" class="docs-header-link docs-api-h3">Events</h3>
+        <p>The <code>getChangedEvent</code> output event is emitted when the values changes.</p>
+    </div>
+    <div class="docs-markdown">
+      <h3 id="directives" class="docs-header-link docs-api-h3">
+        Individual Components
+      </h3>
+      <div class="docs-markdown">
+        <p>Individual component which are wrapped inside the facet component..</p>
+        <p>These will gives you freedom of implementing/adding you own functionality.</p>
+        <p>
+          <code>&lt;cut-input-facet&gt;</code></br>
+          <code>&lt;cut-input-dropdown-facet&gt;</code></br>
+          <code>&lt;cut-checklist-facet&gt;</code></br>
+        </p>
+      <p>check API section for detail use.</p>
+      </div>
+      <div>
+        <h4>Reffer the API section for more use-case and details...</h>
+      </div>
+    </div>
+  </div>
