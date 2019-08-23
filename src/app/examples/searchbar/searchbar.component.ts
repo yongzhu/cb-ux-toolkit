@@ -21,7 +21,7 @@ export class SearchbarComponentExample implements OnInit {
   constructor(private exampleSr: ExampleService) { }
 
   ngOnInit() {
-    this.searchApi = environment.search_api.test_api1;
+    this.searchApi = environment.search_api_endpint;
     this.apiMap = "CutCandidateTestapi1Map";
     this.apiData = {
       ...environment.searchApiData

@@ -8,5 +8,20 @@
   templateUrl: <span class="hljs-string">'./searchbar.component.html'</span>,
   styleUrls: [<span class="hljs-string">'searchbar.component.scss'</span>],
 })
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CutSearchbarExample {}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CutSearchbarExample {
+<span class="hljs-comment">/**
+* this is just an example.
+*/</span>
+
+  apiData = {
+    config: {
+      "Content-Type": "application/json",
+      "Authorization": 'Basic Y2ItdGstc2VhcmNoOkErc0FkY2V6b0l0cHlLRHNQRHkrT09ybE1XRS8='
+    },
+    params: {
+      offset: 0,
+      customer_system: 'cbinternalbeta',
+    },
+  }
+}
 

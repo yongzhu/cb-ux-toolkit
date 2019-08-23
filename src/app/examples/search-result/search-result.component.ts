@@ -353,6 +353,10 @@ export class SearchResultComponentExample implements OnInit {
 
   constructor() { }
 
+  detectChanges(data: any) {
+    console.log(data);
+  }
+
   ngOnInit() { }
 
 }
