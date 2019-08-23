@@ -246,6 +246,7 @@ export class HeaderComponentExample implements OnInit {
 					"last_name": "Tester3",
 					"id": "U815D35WGQZS41Y2KJG",
 					"sub": "U815D35WGQZS41Y2KJG",
+					"current_account_name": "Demo Account",
 					"phone_number": "719-659-6885",
 					"status": "Active",
 					"user_type": "EmployerCompany",

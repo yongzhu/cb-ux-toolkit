@@ -28,59 +28,10 @@ cut-drop-box-anchor {
   }
 }
 
-.wrapper-app-switcher {
-  margin-top: rem-calc(6);
+.cut-app-switcher-button {
+  padding: 0 0;
 }
 
-.list-style-header-sub-nav {
-  margin: 0px;
-  padding: 0px;
-  list-style-type: none;
-
-  >li {
-    a {
-      color: $color-link;
-      padding: $padding-base;
-      text-decoration: none;
-      display: block;
-      cursor: pointer;
-
-      &:hover {
-        background: $accent-beta-light;
-        color: $WHITE;
-      }
-
-      &:focus {
-        outline: 0;
-        background: $accent-beta-light;
-        color: $WHITE;
-      }
-
-      &:active,
-      &.active {
-        background: $accent-beta-darker;
-        color: $WHITE;
-      }
-    }
-
-    &:last-child {
-      border-radius: 0 0 $border-radius-base $border-radius-base;
-
-      a {
-        border-radius: 0 0 $border-radius-base $border-radius-base;
-      }
-    }
-
-    &.active {
-      background: $accent-beta-darker;
-
-      a {
-        color: $WHITE;
-      }
-    }
-
-    &.has-separator {
-      border-bottom: solid 1px $color-border;
-    }
-  }
+.mat-button {
+  min-width: rem-calc(15);
 }

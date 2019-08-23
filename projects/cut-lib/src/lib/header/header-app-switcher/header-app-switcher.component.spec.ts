@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from "@angular/core/testing";
-import { MatIconModule } from "@angular/material";
+import { MatIconModule, MatMenuModule } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
@@ -13,7 +13,7 @@ describe("HeaderAppSwitcherComponent", () => {
 
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, DropBoxModule, RouterModule, RouterTestingModule, MatIconModule],
+      imports: [CommonModule, DropBoxModule, RouterModule, RouterTestingModule, MatIconModule, MatMenuModule],
       declarations: [CutHeaderAppSwitcherComponent],
       providers: [CutHeaderService]
     })
@@ -93,15 +93,6 @@ describe("HeaderAppSwitcherComponent", () => {
     const bentoImg = fixture.nativeElement.querySelector(".app-switcher-icon");
     expect(bentoImg).toBeTruthy();
   });
-
-  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
-    {
-      spyOn(serv, "emitActionType");
-      component.emitActionType("");
-      tick(350);
-      expect(serv.emitActionType).toHaveBeenCalled();
-    }
-  })));
 
   it("should call routeToExternalPath", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     {
