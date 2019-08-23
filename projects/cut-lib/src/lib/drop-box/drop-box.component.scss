@@ -4,6 +4,7 @@
 .drop-panel-wrapper {
   cursor: default;
   display: none;
+
   .drop-panel {
     background: $WHITE;
     padding: $padding-base;
@@ -19,6 +20,7 @@
   &.fluid-down {
     .drop-panel-wrapper {
       position: relative;
+
       .drop-panel {
         top: 5px;
         right: 0;
@@ -49,43 +51,10 @@
     left: -$padding-base;
   }
 
-  .dropbox-arrow {
-    margin-left: 5px;
-  }
-
   &.open-on-hover:hover,
   &.open {
     .drop-panel-wrapper {
       display: block;
-    }
-
-    .arrow {
-      &:after, &:before {
-        bottom: 100%;
-        right: $padding-base;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        pointer-events: none;
-      }
-
-      &:after {
-        border-color: rgba(255, 255, 255, 0);
-        border-bottom-color: #fff;
-        border-width: $padding-base/2;
-        margin-left: -$padding-base;
-      }
-
-      &:before {
-        border-color: rgba(238, 238, 238, 0);
-        border-bottom-color: #eee;
-        border-width: $padding-base/2;
-        margin-left: -$padding-base;
-      }
     }
   }
 }

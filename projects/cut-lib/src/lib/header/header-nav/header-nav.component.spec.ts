@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import {
   async, ComponentFixture, fakeAsync, inject, TestBed, tick
 } from "@angular/core/testing";
+import { MatIconModule } from "@angular/material";
 import { RouterTestingModule } from "@angular/router/testing";
 import { BehaviorSubject, Subject } from "rxjs";
 import { DropBoxModule } from "../../drop-box/drop-box.module";
@@ -63,7 +64,7 @@ describe("Header. Component. HeaderNavComponent", () => {
   let service: HSMock;
   beforeEach(async(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, DropBoxModule,
+      imports: [CommonModule, DropBoxModule, MatIconModule,
         RouterTestingModule.withRoutes([
         ])],
       declarations: [CutHeaderNavComponent, CutNavDropdownComponent],
@@ -80,7 +81,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     fixture = TestBed.createComponent(CutHeaderNavComponent);
     component = fixture.componentInstance;
     service = TestBed.get(CutHeaderService);
-    service.release({obserevableName: "header", data: {leftNav: []}});
+    service.release({ obserevableName: "header", data: { leftNav: [] } });
     fixture.detectChanges();
   });
 
@@ -108,7 +109,7 @@ describe("Header. Component. HeaderNavComponent", () => {
     };
 
     service.saveHeaderData(nav);
-    service.release({obserevableName: "header", data: nav});
+    service.release({ obserevableName: "header", data: nav });
 
     component.ngOnInit();
     fixture.detectChanges();
@@ -168,7 +169,7 @@ describe("Header. Component. HeaderNavComponent", () => {
       ]
     };
     service.saveHeaderData(nav);
-    service.release({obserevableName: "header", data: nav});
+    service.release({ obserevableName: "header", data: nav });
     component.ngOnInit();
     fixture.detectChanges();
     const dropdownItems = fixture.nativeElement.querySelectorAll(".cut-header-sub-nav li > a");
@@ -191,7 +192,7 @@ describe("Header. Component. HeaderNavComponent", () => {
       ]
     };
     service.saveHeaderData(nav);
-    service.release({obserevableName: "header", data: nav});
+    service.release({ obserevableName: "header", data: nav });
     component.ngOnInit();
     fixture.detectChanges();
     const itemNoDropDown = fixture.nativeElement.querySelectorAll("ul.cut-header-nav li");
@@ -221,7 +222,7 @@ describe("Header. Component. HeaderNavComponent", () => {
       ]
     };
     service.saveHeaderData(nav);
-    service.release({obserevableName: "header", data: nav});
+    service.release({ obserevableName: "header", data: nav });
     component.ngOnInit();
     fixture.detectChanges();
     const itemNoDropDown = fixture.nativeElement.querySelectorAll("ul.cut-header-nav li");

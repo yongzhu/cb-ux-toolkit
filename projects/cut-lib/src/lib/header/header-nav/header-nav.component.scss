@@ -29,13 +29,17 @@
     cut-drop-box-anchor {
       padding: ($padding-base / 2) $padding-base;
       cursor: pointer;
-      color: $color-primary;
+      // color: $dark-secondary-text !important;
       display: flex;
       align-items: center;
 
+      .header-arrow-btn {
+        color: $color-tertiary !important;
+      }
+
       &:hover {
-				background: $gray-lightest;
-				border-bottom: $gray-lightest
+        background: $gray-lightest;
+        border-bottom: $gray-lightest
       }
 
       &:focus {
@@ -63,22 +67,25 @@
   padding: 0px;
   list-style-type: none;
   vertical-align: top;
-	display: grid;
-	grid-auto-flow: column;
-  > li {
-		float: left;
-		line-height: rem-calc(60);
+  display: grid;
+  grid-auto-flow: column;
+
+  >li {
+    float: left;
+    line-height: rem-calc(60);
+    color: $dark-secondary-text;
+
     a {
       align-items: center;
       padding: $padding-base / 2 $padding-base;
       text-decoration: none;
       display: flex;
       cursor: pointer;
-      color: $color-primary;
+      color: $dark-secondary-text;
 
       &:hover {
         background: $gray-lightest;
-				border-bottom: $gray-lightest
+        border-bottom: $gray-lightest
       }
 
       &:focus {
@@ -90,13 +97,15 @@
         background: $gray-lightest;
       }
 
+      &.cut-dropdown-active {
+        font-weight: bold;
+        color: $dark-primary-text;
+        box-shadow: inset 0 rem-calc(-5) $cut-accent;
+      }
+
       .fa {
         margin-left: auto;
       }
-    }
-
-    &.active {
-      box-shadow: inset 0 rem-calc(-5) $cut-accent;
     }
   }
 
@@ -124,9 +133,11 @@
   list-style-type: none;
 
   >li {
-		line-height: rem-calc(28);
+    line-height: rem-calc(28);
+    color: $dark-secondary-text;
+
     a {
-      color: $color-link;
+      color: $dark-secondary-text;
       padding: $padding-base;
       text-decoration: none;
       display: block;
@@ -163,8 +174,4 @@
       border-bottom: solid 1px $color-border;
     }
   }
-}
-
-.cut-dropdown-active {
-  box-shadow: inset 0 rem-calc(-5) $cut-accent;
 }

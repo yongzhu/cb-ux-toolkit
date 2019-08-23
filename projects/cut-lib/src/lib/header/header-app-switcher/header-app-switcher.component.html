@@ -2,12 +2,13 @@
   <cut-drop-box dropStyle="fixed-down-left" [open]="open">
     <cut-drop-box-anchor tabindex="0">
       <!-- <span class="hidden-lg-up">{{headerObj.product.title}}</span> -->
-      <img id="appSwitcher-bento" [attr.src]="headerObj.appSwitcherIcon ? headerObj.appSwitcherIcon.src : 'assets/images/icon-nine-dots.svg'" alt="Icon product switcher">
+      <mat-icon class="app-switcher-icon">apps</mat-icon>
     </cut-drop-box-anchor>
     <cut-drop-box-content *ngIf="headerObj.appSwitcher">
       <ul class="list-style-header-sub-nav">
         <li *ngFor="let item of headerObj.appSwitcher" class="has-separator">
-          <a *ngIf="!item.hidden" [class.active]="item.isActive" title="{{item.altTxt}}" (click)="emitActionType('SWITCH_APP_ACTION', item.title, item)" tabindex="0">{{item.title}}</a>
+          <a *ngIf="!item.hidden" [class.active]="item.isActive" title="{{item.altTxt}}"
+             (click)="emitActionType('SWITCH_APP_ACTION', item.title, item)" tabindex="0">{{item.title}}</a>
         </li>
       </ul>
     </cut-drop-box-content>
