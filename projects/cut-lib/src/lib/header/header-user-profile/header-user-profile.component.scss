@@ -107,6 +107,7 @@ cut-drop-box /deep/ {
   &:first-child {
     padding: $padding-base;
     border-bottom: solid 1px $color-border;
+    line-height: rem-calc(13);
 
     h4 {
       margin-bottom: $padding-base/2;
@@ -115,6 +116,7 @@ cut-drop-box /deep/ {
     .ellipsis-truncate {
       color: $color-body;
       @extend %has-truncate;
+      margin-bottom: rem-calc(5);
     }
   }
 

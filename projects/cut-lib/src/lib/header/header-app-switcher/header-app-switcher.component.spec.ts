@@ -94,15 +94,6 @@ describe("HeaderAppSwitcherComponent", () => {
     expect(bentoImg).toBeTruthy();
   });
 
-  it("should call emitActionType", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
-    {
-      spyOn(serv, "emitActionType");
-      component.emitActionType("");
-      tick(350);
-      expect(serv.emitActionType).toHaveBeenCalled();
-    }
-  })));
-
   it("should call routeToExternalPath", fakeAsync(inject([CutHeaderService], (serv: CutHeaderService) => {
     {
       spyOn(serv, "routeToExternalPath");

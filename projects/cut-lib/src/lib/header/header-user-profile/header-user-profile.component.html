@@ -6,20 +6,20 @@
   <mat-menu #menu="matMenu" class="cut-header-sub-nav">
     <!-- <ul class="list-style-header-sub-nav"> -->
     <div mat-menu-item class="cut-menu-item">
-      <h4>{{headerObj.userProfile.user.first_name}} {{headerObj.userProfile.user.last_name}}</h4>
-      <span class="ellipsis-truncate">{{headerObj.userProfile.user.email}}</span>
-      <span class="ellipsis-truncate">{{headerObj.userProfile.user.accountName}}</span>
+      <strong>{{headerObj.userProfile.user.first_name}} {{headerObj.userProfile.user.last_name}}</strong>
+      <span class="ellipsis-truncate m-t-10">{{headerObj.userProfile.user.email}}</span>
+      <span class="ellipsis-truncate">{{headerObj.userProfile.user.current_account_name}}</span>
     </div>
     <div mat-menu-item class="cut-menu-item" *ngFor="let item of headerObj.userProfile.options">
       <!-- <li [class.has-separator]="item.hasSeparator" *ngFor="let item of headerObj.userProfile.options"> -->
       <a *ngIf="item.internalPath && !item.hidden" [class.SignOut]="item.title === 'Sign Out'"
-         [routerLink]="[item.internalPath]" [class.active]="showAsActive(item)" title="{{item.altTxt}}"
-         tabindex="0">{{item.title}}</a>
+        [routerLink]="[item.internalPath]" [class.active]="showAsActive(item)" title="{{item.altTxt}}"
+        tabindex="0">{{item.title}}</a>
       <a *ngIf="item.externalPath && !item.hidden" [class.SignOut]="item.title === 'Sign Out'"
-         [href]="item.externalPath" [target]="getTargetAttribute(item.newWindow)" title="{{item.altTxt}}"
-         tabindex="0">{{item.title}}</a>
+        [href]="item.externalPath" [target]="getTargetAttribute(item.newWindow)" title="{{item.altTxt}}"
+        tabindex="0">{{item.title}}</a>
       <a *ngIf="item.action && !item.hidden && item.title !== 'Background'" [class.SignOut]="item.title === 'Sign Out'"
-         (click)="emitActionType(item.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
+        (click)="emitActionType(item.action, item.title)" title="{{item.altTxt}}" tabindex="0">{{item.title}}</a>
       <!-- <div class="themeSelector" *ngIf="item.title === 'Background'">
           <h5 class="titleText">Background Color</h5>
           <h5>Choose your background color from the options below.</h5>
