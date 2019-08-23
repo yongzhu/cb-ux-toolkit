@@ -9,7 +9,7 @@ import { CutHeaderService } from "../header.service";
 export class CutHeaderAppSwitcherComponent implements OnInit {
 
   headerObj: any;
-  open = {isOpen: false};
+  open = { isOpen: false };
 
   constructor(private headerService: CutHeaderService) {
   }
@@ -20,19 +20,8 @@ export class CutHeaderAppSwitcherComponent implements OnInit {
     });
   }
 
-  routeToExternalPath(path: string) {
-    this.headerService.routeToExternalPath(path);
-  }
-
-  emitActionType(action: string, element?: string, item?: any) {
-    let subItem;
-    if (!element) {
-      subItem = "";
-    } else {
-      subItem = ":" + element;
-    }
-    this.open.isOpen = false;
-    this.headerService.emitActionType(action, "appSwitcher" + subItem, item);
+  routeToExternalPath(item) {
+    this.headerService.routeToExternalPath(item);
   }
 
   showAppSwitcher() {

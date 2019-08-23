@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { map, catchError, tap } from "rxjs/operators";
 import { ModelMapper } from "./functions/ModelMapper";
@@ -16,7 +16,7 @@ export class CutApiService {
   ) { }
 
   public searchText<T>(searchURL: string, searchText: string, itemType: any, apiData: any): Observable<T> {
-    if (apiData) {
+    /* if (apiData) {
       const postBody = {
         ...apiData.body,
         customBody: {
@@ -32,58 +32,45 @@ export class CutApiService {
           }),
           catchError((e) => this.handleError(e))
         );
-
-      /* if (itemType) {
-        return this.http.post<any>(apiData.url, postBody)
-          .pipe(
-            map(data => {
-              if (data.resultItems) {
-                const result = data.resultItems.map((item: any) => {
-                  return new ModelMapper(itemType).map(item);
-                })
-                return {
-                  ...data,
-                  resultItems: result,
-                };
-              } else {
-                return data;
-              }
-            }),
-            catchError((e) => this.handleError(e))
-          );
-      } else {
-        return this.http.post<any>(apiData.url, postBody)
-          .pipe(
-            map(data => {
-              return data;
-            }),
-            catchError((e) => this.handleError(e))
-          );
-      } */
-    } else {
-      const options = {
+    } else { */
+    const options = apiData.config ?
+      {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          ...apiData.config,
+        })
+      } :
+      {
         headers: new HttpHeaders({
           "Content-Type": "application/json",
         })
       };
-      const queryString = searchURL + "" + searchText;
+    //const queryString = searchURL + "" + searchText;
 
-      if (itemType) {
-        return this.http.get<any>(queryString, options).pipe(
-          map(data => data.map((item: any) => {
-            return new ModelMapper(itemType).map(item);
-          })),
-          catchError((e) => this.handleError(e))
-        );
-      } else {
-        return this.http.get<any>(queryString, options).pipe(
-          map(data => {
-            return data;
-          }),
-          catchError((e) => this.handleError(e))
-        );
-      }
-    }
+    let params = new HttpParams();
+    params = params.set('query', searchText);
+    params = params.set('offset', apiData.params.offset);
+    params = params.set('customer_system', apiData.params.customer_system);
+
+    let finalURL = searchURL + params.toString();
+console.log(options);
+
+    /* if (itemType) {
+      return this.http.get<any>(queryString, options).pipe(
+        map(data => data.map((item: any) => {
+          return new ModelMapper(itemType).map(item);
+        })),
+        catchError((e) => this.handleError(e))
+      );
+    } else { */
+    return this.http.get<any>(finalURL, options).pipe(
+      map(data => {
+        return data;
+      }),
+      catchError((e) => this.handleError(e))
+    );
+    //}
+    //}
 
   }
 

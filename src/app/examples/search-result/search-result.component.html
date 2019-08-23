@@ -1,3 +1,6 @@
 <div class="example-search-result">
-  <cut-search-result [resultData]="resultData"></cut-search-result>
+  <cut-search-result
+    [resultData]="resultData"
+    (detectChanges)="detectChanges($event)"
+  ></cut-search-result>
 </div>

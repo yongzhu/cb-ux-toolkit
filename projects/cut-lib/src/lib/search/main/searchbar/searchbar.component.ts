@@ -49,7 +49,6 @@ export class CutSearchbarComponent implements OnInit, OnDestroy {
     this.api.searchText<CutCandidateMap[]>(this.searchapi, this.searchForm.value.searchText, this.mapIndex[this.map], this.apiData)
       .pipe(takeUntil(this.destroy$)).subscribe(
         searchResponse => {
-          //console.log(searchResponse);
           this.resultDispatch.emit(searchResponse);
         },
         err => {

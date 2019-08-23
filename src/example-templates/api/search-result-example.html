@@ -1,49 +1,244 @@
 <div class="docs-api">
-  <h2>
-    API reference for Cut Search Component
-  </h2>
-  <p class="docs-api-module-import">
-    <code>
-      import { CutSearchModule } from 'cut';
-    </code>
-  </p>
-  <div class="docs-markdown">
-    <h3 id="directives" class="docs-header-link docs-api-h3">
-      Main/Root level Component
-    </h3>
-    <p>
-      <code>&lt;cut-search-result&gt;</code> is used for whole result module
+    <p class="docs-api-module-import">
+      <code>
+        import { CutSearchModule } from 'cut';
+      </code>
     </p>
-  </div>
-  <div class="docs-markdown">
-    <h3 id="directives" class="docs-header-link docs-api-h3">
-      Individual Components
-    </h3>
     <div class="docs-markdown">
+      <h3 id="directives" class="docs-header-link docs-api-h3 docs-api-class-name">
+        Main/Root level Component
+      </h3>
+      <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">Directive</h4>
+      <p class="docs-api-directive-selectors">
+          <span class="docs-api-class-selector-label">Selector:</span>
+          <span class="docs-api-class-selector-name">cut-search-result</span>
+          </p>
+      <p>This will give you full component, contains all facets, listed below. all are driven/controlled by the data provided as an input.</p>
       <p>
-        <code>&lt;cut-used-filter&gt;</code> is used to get the used filter for
-        search result module.
+        <code>&lt;cut-search-result&gt;</code> is used for whole facet module
       </p>
-      <p>
-        <code>&lt;cut-result-tabs&gt;</code> is used to get the used filter for
-        search result module.
-      </p>
-      <p>
-        <code>&lt;cut-result-type-filter&gt;</code> is used to get the used
-        filter for search result module.
-      </p>
-      <p>
-        <code>&lt;cut-result-filters&gt;</code> is used to filter the search
-        result.
-      </p>
-      <p>
-        <code>&lt;cut-result-list&gt;</code> is used to rander the result list.
-      </p>
+      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">cut-search-result</span> [<span class="hljs-attr">resultData</span>]=<span class="hljs-string">"resultData"</span> (<span class="hljs-attr">detectChanges</span>)=<span class="hljs-string">"detectChanges($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">cut-search-result</span>&gt;</span></code></pre>
+      <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">Properties</h4>
+
+      <table class="docs-api-properties-table">
+        <tbody>
+          <tr class="docs-api-properties-header-row">
+            <th class="docs-api-properties-th">Name</th>
+            <th class="docs-api-properties-th">Description</th>
+          </tr>
+          <tr class="docs-api-properties-row">
+            <td class="docs-api-properties-name-cell">
+              <div class="docs-api-input-marker">@Input(<class="docs-api-input-alias"></span>)
+              </div>
+              <p class="docs-api-property-name">
+                <pre><code>facetData: CutResultModel</code></pre>
+              </p>
+            </td>
+            <td class="docs-api-property-description"><p>Collection of multiple object. each object is used to defines a component with respect to their data model</p></td>
+          </tr>
+          <tr class="docs-api-properties-row">
+              <td class="docs-api-properties-name-cell">
+                <div class="docs-api-input-marker">@Output(<class="docs-api-input-alias"></span>)
+                </div>
+                <p class="docs-api-property-name">
+                  <pre><code>detectChanges: EventEmitter&lt;{
+changeType: "'tab-change'/'type-change'",
+id: id
+}&gt;</code></pre></p>
+              </td>
+              <td class="docs-api-property-description"><p>this may be changed as in future update, please checkout the output before use.</p></td>
+            </tr>
+        </tbody></table>
+      <h3 id="events" class="docs-header-link docs-api-h3">Events</h3>
+        <p>The <code>detectChanges</code> output event is emitted when the values changes.</p>
+    </div>
+    <div>
+        <h3 id="directives" class="docs-header-link docs-api-h3 docs-api-class-name">
+            Data Models-(Interface)
+          </h3>
+        <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">CutResultModel</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">filters: {
+                    data: CutUsedFilterModel[];
+                    showComponent: boolean;
+                  }</td>
+                <td class="docs-api-property-description">Data for the component and Whether the component is displayed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">tabs: {
+                      data: CutNameIdModel[];
+                      showComponent: boolean;
+                    }</td>
+                  <td class="docs-api-property-description">Data for the component and Whether the component is displayed or not.</td>
+                </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">filtersType: {
+                      data: CutNameIdModel[];
+                      showComponent: boolean;
+                    }</td>
+                  <td class="docs-api-property-description">Data for the component and Whether the component is displayed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">actionFilters: {
+                      data: CutFiltersModel[];
+                      showComponent: boolean;
+                    }</td>
+                  <td class="docs-api-property-description">Data for the component and Whether the component is displayed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">resultList: {
+                      data: CutResultListModel[];
+                      showComponent: boolean;
+                    }</td>
+                  <td class="docs-api-property-description">Render the result list.<br>Data for the component and Whether the component is displayed or not.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">CutNameIdModel - same will work as an input for individual component.</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">id: umber|string</td>
+                <td class="docs-api-property-description">Unique ID</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">name: string</td>
+                  <td class="docs-api-property-description">Name to be didplayed.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">isSelected: boolean</td>
+                  <td class="docs-api-property-description">This is mendate for component-filtersType.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">CutResultListModel - same will work as an input for individual component.</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">id: string</td>
+                <td class="docs-api-property-description">Unique identification.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">name: string</td>
+                  <td class="docs-api-property-description">Name</td>
+                </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">designation: string</td>
+                  <td class="docs-api-property-description">Designation title.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">orgnaisation: string</td>
+                  <td class="docs-api-property-description">Orgnaisation</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">experience: CutExperienceModel</td>
+                  <td class="docs-api-property-description">experience of candidate.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">location: string</td>
+                  <td class="docs-api-property-description">Address of candidate.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">stateCode: string</td>
+                  <td class="docs-api-property-description">State Code.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">phone: string;</td>
+                  <td class="docs-api-property-description">Phone Number.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">email: string</td>
+                  <td class="docs-api-property-description">Email address</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">matchtype: string</td>
+                  <td class="docs-api-property-description">Query match type - with respect to the query search.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">skills: string[]</td>
+                  <td class="docs-api-property-description">Lkist of candidate sKills</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">verticalOptions: CutVerticalOptionModel[]</td>
+                  <td class="docs-api-property-description">Future use.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">inProgress: boolean</td>
+                  <td class="docs-api-property-description">flag - Used for if profile is in processed or not.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">isFromResumeBase: boolean</td>
+                  <td class="docs-api-property-description">fleg - Used for if resume is been added or not.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">CutExperienceModel</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">displayName: string</td>
+                <td class="docs-api-property-description">Values to be displayed.</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">displayValue: string</td>
+                  <td class="docs-api-property-description">value to be used.</td>
+                </tr>
+                <tr class="docs-api-properties-row">
+                    <td class="docs-api-properties-name-cell">isSelected: boolean</td>
+                    <td class="docs-api-property-description">If the value is been selected on not.</td>
+                  </tr>
+            </tbody>
+          </table>
+          <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">DropDownModel</h4>
+        <table class="docs-api-properties-table">
+            <tbody>
+              <tr class="docs-api-properties-header-row">
+                <th class="docs-api-properties-th">Key/Type</th>
+                <th class="docs-api-properties-th">Description</th>
+              </tr>
+              <tr class="docs-api-properties-row">
+                <td class="docs-api-properties-name-cell">year: number</td>
+                <td class="docs-api-property-description">No of years</td>
+              </tr>
+              <tr class="docs-api-properties-row">
+                  <td class="docs-api-properties-name-cell">month: number</td>
+                  <td class="docs-api-property-description">No of months - with years.</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="docs-markdown">
+      <h3 id="directives" class="docs-header-link docs-api-h3">
+        Individual Components
+      </h3>
+      <div class="docs-markdown">
+        <p>Individual component which are wrapped inside the result component..</p>
+        <p>These will gives you freedom of implementing/adding you own functionality.</p>
+        <p>
+            <code>&lt;cut-used-filter&gt;</code></br>
+            <code>&lt;cut-result-tabs&gt;</code></br>
+            <code>&lt;cut-result-type-filter&gt;</code></br>
+            <code>&lt;cut-result-filters&gt;</code></br>
+            <code>&lt;cut-result-list&gt;</code></br>
+        </p>
+      </div>
     </div>
   </div>
-  <div class="docs-markdown">
-    <h3 id="directives" class="docs-header-link docs-api-h3">
-      Directives - Main/Root level Component
-    </h3>
-  </div>
-</div>

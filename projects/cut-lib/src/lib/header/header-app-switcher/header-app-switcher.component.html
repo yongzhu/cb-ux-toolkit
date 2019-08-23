@@ -1,16 +1,11 @@
-<div class="wrapper-app-switcher" *ngIf="showAppSwitcher()">
-  <cut-drop-box dropStyle="fixed-down-left" [open]="open">
-    <cut-drop-box-anchor tabindex="0">
-      <!-- <span class="hidden-lg-up">{{headerObj.product.title}}</span> -->
-      <mat-icon class="app-switcher-icon">apps</mat-icon>
-    </cut-drop-box-anchor>
-    <cut-drop-box-content *ngIf="headerObj.appSwitcher">
-      <ul class="list-style-header-sub-nav">
-        <li *ngFor="let item of headerObj.appSwitcher" class="has-separator">
-          <a *ngIf="!item.hidden" [class.active]="item.isActive" title="{{item.altTxt}}"
-             (click)="emitActionType('SWITCH_APP_ACTION', item.title, item)" tabindex="0">{{item.title}}</a>
-        </li>
-      </ul>
-    </cut-drop-box-content>
-  </cut-drop-box>
+<div *ngIf="showAppSwitcher()">
+  <button mat-button class="cut-app-switcher-button" [matMenuTriggerFor]="menu">
+    <mat-icon class="app-switcher-icon">apps</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" class="cut-header-sub-nav">
+    <div mat-menu-item class="cut-menu-item" *ngFor="let item of headerObj.appSwitcher">
+      <a *ngIf="item.externalPath && !item.hidden" [class.active]="item.isActive" title="{{item.altTxt}}"
+        (click)="routeToExternalPath(item)" tabindex="0">{{item.title}}</a>
+    </div>
+  </mat-menu>
 </div>
