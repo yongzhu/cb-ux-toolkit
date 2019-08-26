@@ -1,8 +1,10 @@
 <div *ngIf="showAppSwitcher()">
-  <button mat-button class="cut-app-switcher-button" [matMenuTriggerFor]="menu">
-    <mat-icon class="app-switcher-icon">apps</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu" class="cut-header-sub-nav">
+  <div [class.cut-dropdown-active]="menuSwitcher.menuOpen">
+    <button mat-button class="cut-app-switcher-button" [matMenuTriggerFor]="menu" #menuSwitcher="matMenuTrigger">
+      <mat-icon class="app-switcher-icon">apps</mat-icon>
+    </button>
+  </div>
+  <mat-menu #menu="matMenu" class="m-t-20">
     <div mat-menu-item class="cut-menu-item" *ngFor="let item of headerObj.appSwitcher">
       <a *ngIf="item.externalPath && !item.hidden" [class.active]="item.isActive" title="{{item.altTxt}}"
         (click)="routeToExternalPath(item)" tabindex="0">{{item.title}}</a>

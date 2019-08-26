@@ -143,6 +143,10 @@ export interface HeaderDataInterface {
     title: string;
     externalPath: string;
   };
+  logo: {
+    src: string;
+    mobileSrc: string;
+  };
   product: {
     title: string;
     altTxt: string;
