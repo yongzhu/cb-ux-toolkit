@@ -507,75 +507,75 @@ export const userOptions: CBSearchMenuItemInterface[] = [
 
 export const CBFooterItemsProd: IFooterItem = {
   CopyRights: "© 2018 CareerBuilder, LLC. All rights reserved.",
-    FooterNav: [
+  FooterNav: [
+    {
+      AltTxt: "About Us",
+      DomainName: "https://hiring.careerbuilder.com",
+      Dropdown: [],
+      ExternalPath: "https://hiring.careerbuilder.com/company/overview",
+      HasSeparator: false,
+      IsNegative: false,
+      MenuType: "0",
+      NewWindow: true,
+      RelativePath: "/company/overview",
+      Title: "About Us"
+    },
+    {
+      AltTxt: "Privacy & Fraud",
+      DomainName: "https://hiring.careerbuilder.com",
+      Dropdown: [],
+      ExternalPath: "https://hiring.careerbuilder.com/company/security-and-privacy",
+      HasSeparator: false,
+      IsNegative: false,
+      MenuType: "0",
+      NewWindow: true,
+      RelativePath: "/company/security-and-privacy",
+      Title: "Privacy & Fraud"
+    },
+    {
+      AltTxt: "Terms & Conditions",
+      DomainName: "https://employer.careerbuilder.com",
+      Dropdown: [],
+      ExternalPath: "https://employer.careerbuilder.com/jobseeker/info/hhterms.aspx",
+      HasSeparator: false,
+      IsNegative: false,
+      MenuType: "0",
+      NewWindow: true,
+      RelativePath: "/jobseeker/info/hhterms.aspx",
+      Title: "Terms & Conditions"
+    },
+    {
+      AltTxt: "Buy Products",
+      DomainName: "https://hiring.careerbuilder.com",
+      Dropdown: [],
+      ExternalPath: "https://hiring.careerbuilder.com",
+      HasSeparator: false,
+      IsNegative: false,
+      MenuType: "0",
+      NewWindow: true,
+      RelativePath: "/company/security-and-privacy",
+      Title: "Buy Products"
+    }
+  ],
+  GtmFooterEventName: "EmployerFooter",
+  SalesContactInfo: {
+    Links: [
       {
-        AltTxt: "About Us",
-        DomainName: "https://hiring.careerbuilder.com",
-        Dropdown: [],
-        ExternalPath: "https://hiring.careerbuilder.com/company/overview",
-        HasSeparator: false,
-        IsNegative: false,
-        MenuType: "0",
-        NewWindow: true,
-        RelativePath: "/company/overview",
-        Title: "About Us"
-      },
-      {
-        AltTxt: "Privacy & Fraud",
-        DomainName: "https://hiring.careerbuilder.com",
-        Dropdown: [],
-        ExternalPath: "https://hiring.careerbuilder.com/company/security-and-privacy",
-        HasSeparator: false,
-        IsNegative: false,
-        MenuType: "0",
-        NewWindow: true,
-        RelativePath: "/company/security-and-privacy",
-        Title: "Privacy & Fraud"
-      },
-      {
-        AltTxt: "Terms & Conditions",
-        DomainName: "https://employer.careerbuilder.com",
-        Dropdown: [],
-        ExternalPath: "https://employer.careerbuilder.com/jobseeker/info/hhterms.aspx",
-        HasSeparator: false,
-        IsNegative: false,
-        MenuType: "0",
-        NewWindow: true,
-        RelativePath: "/jobseeker/info/hhterms.aspx",
-        Title: "Terms & Conditions"
-      },
-      {
-        AltTxt: "Buy Products",
-        DomainName: "https://hiring.careerbuilder.com",
-        Dropdown: [],
-        ExternalPath: "https://hiring.careerbuilder.com",
-        HasSeparator: false,
-        IsNegative: false,
-        MenuType: "0",
-        NewWindow: true,
-        RelativePath: "/company/security-and-privacy",
-        Title: "Buy Products"
+        Link: "tel:877-345-5256",
+        Name: "(877) 345-5256"
       }
     ],
-    GtmFooterEventName: "EmployerFooter",
-    SalesContactInfo: {
-      Links: [
-        {
-          Link: "tel:877-345-5256",
-          Name: "(877) 345-5256"
-        }
-      ],
-      Name: "Sales: "
-    },
-    SupportContactInfo: {
-      Links: [
-        {
-          Link: "tel:(800) 891-8880",
-          Name: "(800) 891-8880"
-        }
-      ],
-      Name: "Support: "
-    }
+    Name: "Sales: "
+  },
+  SupportContactInfo: {
+    Links: [
+      {
+        Link: "tel:(800) 891-8880",
+        Name: "(800) 891-8880"
+      }
+    ],
+    Name: "Support: "
+  }
 };
 
 export const HEADER_DATA: HeaderDataInterface = {
@@ -584,6 +584,10 @@ export const HEADER_DATA: HeaderDataInterface = {
   logoPath: {
     title: "logoPath",
     externalPath: accountRoutesProd["MyCb"] // for new header items api set this to ''
+  },
+  logo: {
+    src: "",
+    mobileSrc: ""
   },
   product: {
     title: "Talent Discovery",

@@ -1,9 +1,9 @@
-<div *ngIf="headerObj.userProfile">
-  <button mat-button class="cut-profile-button" [matMenuTriggerFor]="menu">
+<div *ngIf="headerObj.userProfile" [class.cut-dropdown-active]="userProfile.menuOpen">
+  <button mat-button class="cut-profile-button" [matMenuTriggerFor]="menu" #userProfile="matMenuTrigger">
     {{headerObj.userProfile.user.first_name}}
     <mat-icon class="header-arrow-btn">keyboard_arrow_down</mat-icon>
   </button>
-  <mat-menu #menu="matMenu" class="cut-header-sub-nav">
+  <mat-menu #menu="matMenu" class="m-t-20">
     <!-- <ul class="list-style-header-sub-nav"> -->
     <div mat-menu-item class="cut-menu-item">
       <strong>{{headerObj.userProfile.user.first_name}} {{headerObj.userProfile.user.last_name}}</strong>

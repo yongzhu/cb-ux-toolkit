@@ -35,9 +35,3 @@ cut-drop-box-anchor {
 .mat-button {
   min-width: rem-calc(15);
 }
-
-.cut-dropdown-active {
-  font-weight: bold;
-  color: $dark-primary-text;
-  box-shadow: inset 0 rem-calc(-5) $cut-accent;
-}
