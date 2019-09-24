@@ -12,7 +12,7 @@
       Main/Root level Component
     </h3>
     <p>
-      <code>&lt;cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="api_url" [map]="map_key"&gt;&lt;/cut-searchbar&gt;</code> creates an input and search button.
+      <code>&lt;cut-searchbar (resultDispatch)="searchResult($event)" [searchapi]="api_url" [apiData]="apiData"&gt;&lt;/cut-searchbar&gt;</code> creates an input and search button.
     </p>
   </div>
   <div class="docs-markdown">
@@ -21,16 +21,15 @@
     </h3>
     <div class="docs-markdown">
       <p>
-        <code>(resultDispatch)"</code> is the output from the api search result. 
-        Returns the remapped result from the API. <i>searchResult</i> would be a function you 
+        <code>(resultDispatch)"</code> is the output from the api search result.
+        Returns the remapped result from the API. <i>searchResult</i> would be a function you
         create to react to the API response from each search.
       </p>
       <p>
         <code>[searchapi]</code> is the url to call with the search string which will respond with the matching records.
       </p>
       <p>
-        <code>[map]</code> is a string key which corresponds to a map object which is called by the ModelMapper utility function that processes the API response to populate the correct fields in the internal model which will be used by the result view.
-      </p>
+        <code>[apiData]</code> is an object with keys: params and config - param contains all the parameters for query string(they will be appended to the url.) and config contains your custon header configuration.</p>
     </div>
   </div>
 </div>

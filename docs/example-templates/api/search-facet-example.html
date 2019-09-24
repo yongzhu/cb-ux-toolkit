@@ -17,7 +17,7 @@
       <p>
         <code>&lt;cut-search-facets&gt;</code> is used for whole facet module
       </p>
-      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">cut-search-facets</span> [<span class="hljs-attr">facetData</span>]=<span class="hljs-string">"facetData"</span> (<span class="hljs-attr">facetEventHandler</span>)=<span class="hljs-string">"getChangedEvent($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">cut-search-facets</span>&gt;</span></code></pre>
+      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">cut-search-facets</span> [<span class="hljs-attr">facetData</span>]=<span class="hljs-string">"facetData"</span> (<span class="hljs-attr">facetEventHandler</span>)=<span class="hljs-string">"facetEventHandler($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">cut-search-facets</span>&gt;</span></code></pre>
       <h4 id="cutsearchfacet" class="docs-api-h5 docs-api-method-header">Properties</h4>
 
       <table class="docs-api-properties-table">
@@ -56,7 +56,7 @@
             </tr>
         </tbody></table>
       <h3 id="events" class="docs-header-link docs-api-h3">Events</h3>
-        <p>The <code>getChangedEvent</code> output event is emitted when the values changes.</p>
+        <p>The <code>facetEventHandler</code> output event is emitted when the values changes.</p>
     </div>
     <div>
         <h3 id="directives" class="docs-header-link docs-api-h3 docs-api-class-name">
