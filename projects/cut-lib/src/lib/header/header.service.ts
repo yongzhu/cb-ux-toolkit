@@ -8,7 +8,7 @@ import { HeaderDataInterface } from "./header.model";
 import { HEADER_DATA } from "./header.model.mock";
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root'
 })
 export class CutHeaderService {
 
@@ -55,14 +55,14 @@ export class CutHeaderService {
     if (item.activeRegex) {
       return this.checkRegex(item.activeRegex);
     } else {
-      return this.router.url.startsWith(item.internalPath);
+      return this.router.url === item.internalPath;
     }
   }
 
   checkRegex(rules: string[]) {
-		let boolVal = true;
+    let boolVal = true;
     rules.forEach((rule: string) => {
-			boolVal = boolVal && new RegExp(rule).test(this.router.url);
+      boolVal = boolVal && new RegExp(rule).test(this.router.url);
     });
     return boolVal;
   }
