@@ -12,9 +12,11 @@
 }
 
 .cut-header-wrapper {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: rem-calc(250) rem-calc(20) 1fr rem-calc(20) rem-calc(151);
   grid-template-columns: auto 1fr auto;
-  grid-template-areas: "logo nav profile";
+  grid-template-areas: "logo nav profile"auto 1fr auto;
   grid-gap: rem-calc(20);
   width: 100%;
   height: rem-calc(75);
@@ -24,6 +26,8 @@
     display: flex;
     align-items: center;
     grid-area: logo;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
 
     .name-brand {
       padding-right: $padding-base;
@@ -64,17 +68,34 @@
 
   .cut-header-main {
     grid-area: nav;
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
     justify-self: left;
   }
 
   .cut-profile-main {
     grid-area: profile;
     justify-self: right;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-column: 5;
+    -ms-grid-row: 1;
+    -ms-grid-columns: rem-calc(25) rem-calc(20) auto;
     grid-template-columns: auto auto;
+    grid-template: "a b"auto auto;
     grid-gap: rem-calc(20);
     line-height: rem-calc(75);
     height: rem-calc(75);
+
+    .item-1 {
+      -ms-grid-column: 1;
+      -ms-grid-row: 1;
+    }
+
+    .item-2 {
+      -ms-grid-column: 3;
+      -ms-grid-row: 1;
+    }
   }
 }
 
