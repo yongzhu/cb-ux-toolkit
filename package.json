@@ -1,6 +1,6 @@
 {
   "name": "cut",
-  "version": "1.2.22",
+  "version": "1.2.23",
   "scripts": {
     "ng": "ng",
     "start": "npm run build-themes && ng serve --proxy-config proxy.conf.json",
