@@ -16,7 +16,7 @@
   display: grid;
   -ms-grid-columns: rem-calc(250) rem-calc(20) 1fr rem-calc(20) rem-calc(151);
   grid-template-columns: auto 1fr auto;
-  grid-template-areas: "logo nav profile"auto 1fr auto;
+  grid-template-areas: "logo nav profile";
   grid-gap: rem-calc(20);
   width: 100%;
   height: rem-calc(75);
