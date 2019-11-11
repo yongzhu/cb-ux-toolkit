@@ -5,6 +5,7 @@
     </div>
     <div class="cut-kpi-title" *ngIf="title">
       {{ title }}
+      <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
       <div *ngIf="infoText" class="cut-kpi-infotext">
         {{ infoText }}
       </div>
