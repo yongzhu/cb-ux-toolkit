@@ -13,6 +13,22 @@
 @mixin cut-kpi-tile {
   text-align: left;
 }
+@mixin cut-kpi-indicator {
+  position: relative;
+
+    &:after {
+      background: $accent-eta;
+      display: block;
+      content: '';
+      width: rem-calc(8);
+      height: rem-calc(8);
+      border-radius: 5px;
+      position: absolute;
+      top: -4px;
+      right: -11px;
+      border: solid 1px $WHITE;
+    }
+  }
 
 @mixin cut-kpi-main-count($fontSize, $lineHeight) {
   color: $dark-primary-text;
@@ -61,7 +77,10 @@
   // Not sure we need this anymore based on latest designs, but leaving for now
   .cut-kpi-secondary-count {
 		@include cut-kpi-secondary-count(10);
-	}
+  }
+  .cut-kpi-indicator {
+    @include cut-kpi-indicator();
+  }
 }
 
 .cut-container-kpi-tile {
@@ -87,19 +106,6 @@
     @include cut-kpi-secondary-count(10);
   }
   .cut-kpi-indicator {
-    position: relative;
-
-    &:after {
-        background: $accent-eta;
-        display: block;
-        content: '';
-        width: rem-calc(8);
-        height: rem-calc(8);
-        border-radius: 5px;
-        position: absolute;
-        top: -4px;
-        right: -11px;
-        border: solid 1px $WHITE;
-    }
+    @include cut-kpi-indicator();
   }
 }
