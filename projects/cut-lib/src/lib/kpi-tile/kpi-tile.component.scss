@@ -86,4 +86,20 @@
   .cut-kpi-secondary-count {
     @include cut-kpi-secondary-count(10);
   }
+  .cut-kpi-indicator {
+    position: relative;
+
+    &:after {
+        background: $accent-eta;
+        display: block;
+        content: '';
+        width: rem-calc(8);
+        height: rem-calc(8);
+        border-radius: 5px;
+        position: absolute;
+        top: -4px;
+        right: -11px;
+        border: solid 1px $WHITE;
+    }
+  }
 }
