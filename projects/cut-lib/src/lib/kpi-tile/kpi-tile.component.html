@@ -1,7 +1,7 @@
 <div *ngIf="!inContainer" class="cut-kpi-tile">
   <div class="cut-kpi-body">
     <div class="cut-kpi-main-count">
-      {{ mainCount | number }}
+      {{ mainCount }}
     </div>
     <div class="cut-kpi-title" *ngIf="title">
       {{ title }}
@@ -24,7 +24,7 @@
   </div>
   <div class="cut-kpi-body">
     <div class="cut-kpi-main-count">
-      {{ mainCount | number}}
+      {{ mainCount }}
     </div>
     <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
       {{ secondaryCount }}
