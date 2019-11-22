@@ -13,7 +13,7 @@ export class CutKpiTileComponent implements OnInit {
   barStyle: string;
 
   @Input() title: string;
-  @Input() mainCount = "0";
+  @Input() mainCount = 0;
   @Input() secondaryCount: string;
   @Input() infoText: string;
   @Input() showProgressBar = true;
