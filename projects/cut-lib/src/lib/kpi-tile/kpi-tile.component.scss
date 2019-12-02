@@ -43,6 +43,28 @@
   font-weight: bold;
 }
 
+@mixin cut-kpi-data-unavailable-msg($fontSize, $lineHeight) {
+  color: $dark-primary-text;
+  font-size: rem-calc($fontSize);
+  font-weight: bold;
+  line-height: rem-calc($lineHeight);
+}
+
+@mixin cut-kpi-error-msg($fontSize, $lineHeight) {
+  color: $accent-eta-darker;
+  font-size: rem-calc($fontSize);
+  font-weight: bold;
+  line-height: rem-calc($lineHeight);
+}
+
+.cut-kpi-data-unavailable-msg {
+  @include cut-kpi-data-unavailable-msg(14, 14);
+}
+
+.cut-kpi-error-msg {
+  @include cut-kpi-error-msg(14, 14);
+}
+
 .cut-kpi-tile {
   @include cut-kpi-tile();
 
@@ -99,7 +121,7 @@
     .cut-kpi-main-count {
       @include cut-kpi-main-count(30, 30);
       padding-right: rem-calc(5);
-    }
+    } 
   }
 
   .cut-kpi-secondary-count {

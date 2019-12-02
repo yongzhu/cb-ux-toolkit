@@ -23,11 +23,17 @@
     <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
   </div>
   <div class="cut-kpi-body">
-    <div class="cut-kpi-main-count">
+    <div class="cut-kpi-main-count" *ngIf="!isDataUnavailable && !isError">
       {{ mainCount }}
     </div>
     <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
       {{ secondaryCount }}
+    </div>
+    <div class="cut-kpi-data-unavailable-msg" *ngIf="isDataUnavailable">
+      <span>Data unavailable for the selected date range....</span>
+    </div>
+    <div class="cut-kpi-error-msg" *ngIf="isError">
+      <span>Sorry, there was an error retrieving this data.</span>
     </div>
   </div>
   <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" [mode]="progressBarMode"
