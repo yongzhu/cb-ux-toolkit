@@ -21,6 +21,8 @@ export class CutKpiTileComponent implements OnInit {
   @Input() showIndicator = false;
   @Input() isError = false;
   @Input() isDataUnavailable = false;
+  @Input() errorMsg = "Sorry, there was an error retrieving this data.";
+  @Input() noDataUnavailableMsg = "Data unavailable for the selected date range....";
   @Input()
   set progressBarValue(value) {
     this._barValue.next(value);
