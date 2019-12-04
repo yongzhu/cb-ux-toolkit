@@ -25,8 +25,6 @@ export class CutKpiTileComponent implements OnInit {
   @Input() showProgressBar = true;
   @Input() inContainer = false;
   @Input() showIndicator = false;
-  @Input() isError = false;
-  @Input() isDataUnavailable = false;
   @Input() message = "";
   @Input() messageType :MessageType = MessageType.INFO;
   @Input()
