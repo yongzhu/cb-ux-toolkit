@@ -23,11 +23,14 @@
     <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
   </div>
   <div class="cut-kpi-body">
-    <div class="cut-kpi-main-count">
+    <div class="cut-kpi-main-count" *ngIf="!message && !messageType">
       {{ mainCount }}
     </div>
     <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
       {{ secondaryCount }}
+    </div>
+    <div [ngClass]="setClass()" *ngIf="message && messageType">
+      <span>{{message}}</span>
     </div>
   </div>
   <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" [mode]="progressBarMode"
