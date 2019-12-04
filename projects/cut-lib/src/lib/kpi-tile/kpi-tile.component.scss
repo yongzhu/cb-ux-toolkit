@@ -43,26 +43,29 @@
   font-weight: bold;
 }
 
-@mixin cut-kpi-data-unavailable-msg($fontSize, $lineHeight) {
-  color: $dark-primary-text;
+@mixin cut-kpi-msg($fontSize, $lineHeight, $msgType) {
+  @if $msgType == 'error' {
+    color: $accent-eta-darker;
+  } @else if $msgType == 'warn' {
+    color: $accent-epsilon-light;
+  } @else {
+    color: $dark-primary-text;
+  }
   font-size: rem-calc($fontSize);
   font-weight: bold;
   line-height: rem-calc($lineHeight);
-}
-
-@mixin cut-kpi-error-msg($fontSize, $lineHeight) {
-  color: $accent-eta-darker;
-  font-size: rem-calc($fontSize);
-  font-weight: bold;
-  line-height: rem-calc($lineHeight);
-}
-
-.cut-kpi-data-unavailable-msg {
-  @include cut-kpi-data-unavailable-msg(14, 14);
 }
 
 .cut-kpi-error-msg {
-  @include cut-kpi-error-msg(14, 14);
+  @include cut-kpi-msg(14, 14, 'error');
+}
+
+.cut-kpi-warn-msg {
+  @include cut-kpi-msg(14, 14, 'warn');
+}
+
+.cut-kpi-data-unavailable-msg {
+  @include cut-kpi-msg(14, 14, 'info');
 }
 
 .cut-kpi-tile {

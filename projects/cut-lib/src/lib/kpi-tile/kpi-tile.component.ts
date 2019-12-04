@@ -21,8 +21,8 @@ export class CutKpiTileComponent implements OnInit {
   @Input() showIndicator = false;
   @Input() isError = false;
   @Input() isDataUnavailable = false;
-  @Input() errorMsg = "Sorry, there was an error retrieving this data.";
-  @Input() noDataUnavailableMsg = "Data unavailable for the selected date range....";
+  @Input() message = "";
+  @Input() messageType = "";
   @Input()
   set progressBarValue(value) {
     this._barValue.next(value);
@@ -58,6 +58,16 @@ export class CutKpiTileComponent implements OnInit {
       this.barStyle = "accent";
     } else {
       this.barStyle = "primary";
+    }
+  }
+
+  setClass(){
+    if(this.messageType === 'error'){
+      return 'cut-kpi-error-msg';
+    } else if(this.messageType === 'info'){
+      return 'cut-kpi-data-unavailable-msg';
+    } else if(this.messageType === 'warn'){
+      return 'cut-kpi-warn-msg';
     }
   }
 }
