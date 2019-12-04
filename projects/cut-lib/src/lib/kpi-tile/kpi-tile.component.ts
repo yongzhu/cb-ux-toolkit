@@ -2,6 +2,12 @@ import { Component, Input, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { takeWhile } from "rxjs/operators";
 
+enum MessageType {
+  ERROR = 'error',
+  WARN = 'warn',
+  INFO = 'info'
+ };
+
 @Component({
   selector: 'cut-kpi-tile',
   templateUrl: "./kpi-tile.component.html",
@@ -22,7 +28,7 @@ export class CutKpiTileComponent implements OnInit {
   @Input() isError = false;
   @Input() isDataUnavailable = false;
   @Input() message = "";
-  @Input() messageType = "";
+  @Input() messageType :MessageType = MessageType.INFO;
   @Input()
   set progressBarValue(value) {
     this._barValue.next(value);
@@ -62,12 +68,12 @@ export class CutKpiTileComponent implements OnInit {
   }
 
   setClass(){
-    if(this.messageType === 'error'){
+    if(this.messageType === MessageType.ERROR){
       return 'cut-kpi-error-msg';
-    } else if(this.messageType === 'info'){
-      return 'cut-kpi-data-unavailable-msg';
-    } else if(this.messageType === 'warn'){
+    }  else if(this.messageType === MessageType.WARN){
       return 'cut-kpi-warn-msg';
+    }else if(this.messageType === MessageType.INFO){
+      return 'cut-kpi-info-msg';
     }
   }
 }
