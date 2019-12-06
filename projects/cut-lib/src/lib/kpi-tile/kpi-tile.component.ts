@@ -3,13 +3,13 @@ import { BehaviorSubject } from "rxjs";
 import { takeWhile } from "rxjs/operators";
 
 enum MessageType {
-  ERROR = "error",
-  WARN = "warn",
-  INFO = "info"
+  ERROR = 'error',
+  WARN = 'warn',
+  INFO = 'info'
 }
 
 @Component({
-  selector: "cut-kpi-tile",
+  selector: 'cut-kpi-tile',
   templateUrl: "./kpi-tile.component.html",
   styleUrls: ["./kpi-tile.component.scss"]
 })
