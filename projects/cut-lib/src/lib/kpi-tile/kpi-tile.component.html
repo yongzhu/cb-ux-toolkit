@@ -23,13 +23,13 @@
     <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
   </div>
   <div class="cut-kpi-body">
-    <div class="cut-kpi-main-count" *ngIf="!message && !messageType">
+    <div class="cut-kpi-main-count" *ngIf="!message">
       {{ mainCount }}
     </div>
     <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
       {{ secondaryCount }}
     </div>
-    <div [ngClass]="setClass()" *ngIf="message && messageType">
+    <div [ngClass]="setClass()" *ngIf="message">
       <span>{{message}}</span>
     </div>
   </div>
