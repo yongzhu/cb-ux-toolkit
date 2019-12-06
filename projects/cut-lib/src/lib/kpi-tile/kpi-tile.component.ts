@@ -6,7 +6,7 @@ enum MessageType {
   ERROR = 'error',
   WARN = 'warn',
   INFO = 'info'
- };
+}
 
 @Component({
   selector: 'cut-kpi-tile',
@@ -25,8 +25,8 @@ export class CutKpiTileComponent implements OnInit {
   @Input() showProgressBar = true;
   @Input() inContainer = false;
   @Input() showIndicator = false;
-  @Input() message = "";
-  @Input() messageType :MessageType = MessageType.INFO;
+  @Input() message: string;
+  @Input() messageType: MessageType = MessageType.INFO;
   @Input()
   set progressBarValue(value) {
     this._barValue.next(value);
@@ -65,13 +65,15 @@ export class CutKpiTileComponent implements OnInit {
     }
   }
 
-  setClass(){
-    if(this.messageType === MessageType.ERROR){
-      return 'cut-kpi-error-msg';
-    }  else if(this.messageType === MessageType.WARN){
-      return 'cut-kpi-warn-msg';
-    }else if(this.messageType === MessageType.INFO){
-      return 'cut-kpi-info-msg';
+  /**
+   * Set the message class based on the type of the message.
+   */
+  setClass() {
+    if (this.messageType === MessageType.ERROR) {
+      return "cut-kpi-error-msg";
+    } else if (this.messageType === MessageType.WARN) {
+      return "cut-kpi-warn-msg";
     }
+    return "cut-kpi-info-msg"; // return info style by default.
   }
 }
