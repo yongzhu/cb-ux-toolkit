@@ -16,8 +16,8 @@
 
 .mat-card {
   border-radius: 5px;
-  padding: 20px;
-  border: solid 1px #e9e9e9;
+  padding      : 20px;
+  border       : solid 1px #e9e9e9;
 }
 
 .mat-toolbar {
@@ -47,7 +47,7 @@
 
 .mat-progress-bar {
   border-radius: rem-calc(6) !important;
-  height: rem-calc(6) !important;
+  height       : rem-calc(6) !important;
 
   .mat-progress-bar-buffer {
     background: $light-secondary-text !important;
@@ -63,30 +63,33 @@
     &::after {
       border-radius: rem-calc(6) !important;
     }
-	}
+  }
 }
+
 // Not sure if we need to override progress bar everywhere or not,
 // so wrapping in a utitlity class for now
 .cut-primary-gradient {
-	.mat-progress-bar-fill {
-		&::after {
-			@include cut-gradient(primary);
-		}
-	}
+  .mat-progress-bar-fill {
+    &::after {
+      @include cut-gradient(primary);
+    }
+  }
 }
+
 .cut-accent-gradient {
-	.mat-progress-bar-fill {
-		&::after {
-			@include cut-gradient(accent);
-		}
-	}
+  .mat-progress-bar-fill {
+    &::after {
+      @include cut-gradient(accent);
+    }
+  }
 }
+
 .cut-warn-gradient {
-	.mat-progress-bar-fill {
-		&::after {
-			@include cut-gradient(warn);
-		}
-	}
+  .mat-progress-bar-fill {
+    &::after {
+      @include cut-gradient(warn);
+    }
+  }
 }
 
 /* BUTTON OVERRIDES */
@@ -103,6 +106,7 @@
     @include cut-gradient(warn)
   }
 }
+
 .mat-flat-button {
   &.mat-primary {
     @include cut-gradient(primary);
@@ -114,5 +118,18 @@
 
   &.mat-warn {
     @include cut-gradient(warn)
+  }
+}
+
+// Slide Toggle Overrides
+.mat-slide-toggle {
+  &.mat-primary.mat-checked {
+    .mat-slide-toggle-thumb {
+      @include cut-toggle-gradient(primary);
+    }
+
+    .mat-slide-toggle-bar {
+      background-color: rgba(2, 156, 115, 0.54);
+    }
   }
 }

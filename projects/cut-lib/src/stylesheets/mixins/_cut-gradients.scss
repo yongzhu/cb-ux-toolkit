@@ -2,8 +2,8 @@
 
 @mixin cut-gradient ($type) {
   background-color: transparent !important;
-	color: #ffffff !important;
-	
+  color           : #ffffff !important;
+
   @if $type==primary {
     background: linear-gradient(90deg, $color-secondary 0%, $color-secondary-light 100%);
   }
@@ -14,9 +14,16 @@
 
   @else if $type==warn {
     background: linear-gradient(90deg, $accent-eta-dark 0%, $accent-eta 100%);
-	}
-	
-	@else if $type==dark {
-		background: linear-gradient(90deg, $color-secondary-dark 0%, $color-secondary-light 100%);
-	}
+  }
+
+  @else if $type==dark {
+    background: linear-gradient(90deg, $color-secondary-dark 0%, $color-secondary-light 100%);
+  }
+}
+
+@mixin cut-toggle-gradient($type) {
+
+  @if $type==primary {
+    background-color: $color-secondary-dark;
+  }
 }
