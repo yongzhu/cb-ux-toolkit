@@ -125,7 +125,7 @@
 .mat-slide-toggle {
   &.mat-primary.mat-checked {
     .mat-slide-toggle-thumb {
-      @include cut-toggle-gradient(primary);
+      @include cut-toggle-color(primary);
     }
 
     .mat-slide-toggle-bar {

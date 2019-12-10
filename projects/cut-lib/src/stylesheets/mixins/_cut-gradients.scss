@@ -21,7 +21,7 @@
   }
 }
 
-@mixin cut-toggle-gradient($type) {
+@mixin cut-toggle-color($type) {
 
   @if $type==primary {
     background-color: $color-secondary-dark;
