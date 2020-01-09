@@ -1,3 +1,5 @@
+> ***@deprecated - This library is been deprecated. Now you should be using the new one. [Click Here](https://github.com/cbdr/cut "Cut")***
+
 # CareerBuilder UX Toolkit - (CUT)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5. Please refer to the post [The Angular Library Series - Creating a Library in Angular 6](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5) to better understand this project's structure.
