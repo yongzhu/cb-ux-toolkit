@@ -11,6 +11,19 @@
   }
 }
 
+.link-to-cut {
+  .wrapper {
+    display: flex;
+    background: linear-gradient(90deg, rgb(209, 44, 39), rgb(241, 104, 101));
+    padding: 1rem;
+    justify-content: center;
+    a{
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
 .flex-spacer {
   flex-grow: 1;
 }
