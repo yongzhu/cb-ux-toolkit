@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ViewEncapsulation, OnChanges } from '@angular/core';
+import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 
 @Component({
@@ -7,16 +7,12 @@ import { MatMenuTrigger } from '@angular/material';
   styleUrls: ["./popup-tooltip.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
-export class CutPopupTooltipComponent implements OnChanges {
+export class CutPopupTooltipComponent {
   @Input() popupText: string;
   @Input() closeOnMouseLeave: boolean = false;
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   constructor() { }
-
-  ngOnChanges(): void {
-    console.log(`${CutPopupTooltipComponent.name}::OnChanges: ${this.popupText}`);
-  }
 
   openMenu(): void {
     this.trigger.openMenu();

@@ -14,7 +14,7 @@ enum MessageType {
   styleUrls: ["./kpi-tile.component.scss"]
 })
 
-export class CutKpiTileComponent implements OnInit, OnChanges {
+export class CutKpiTileComponent implements OnInit {
   private _barValue = new BehaviorSubject<number>(null);
   barStyle: string;
 
@@ -56,10 +56,6 @@ export class CutKpiTileComponent implements OnInit, OnChanges {
           this.setBarColor(val);
         }
       });
-  }
-
-  ngOnChanges(): void {
-    console.log('PopupText:', this.popupText);
   }
 
   private setBarColor(val: number) {
