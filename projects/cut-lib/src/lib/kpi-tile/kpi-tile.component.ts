@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { takeWhile } from "rxjs/operators";
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
 
 enum MessageType {
   ERROR = 'error',
@@ -14,7 +14,7 @@ enum MessageType {
   styleUrls: ["./kpi-tile.component.scss"]
 })
 
-export class CutKpiTileComponent implements OnInit {
+export class CutKpiTileComponent implements OnInit, OnChanges {
   private _barValue = new BehaviorSubject<number>(null);
   barStyle: string;
 
@@ -27,6 +27,10 @@ export class CutKpiTileComponent implements OnInit {
   @Input() showIndicator = false;
   @Input() message: string;
   @Input() messageType: MessageType = MessageType.INFO;
+
+  @Input() popupText: string;
+  @Input() popupCloseOnMouseLeave: boolean = false;
+
   @Input()
   set progressBarValue(value) {
     this._barValue.next(value);
@@ -52,6 +56,10 @@ export class CutKpiTileComponent implements OnInit {
           this.setBarColor(val);
         }
       });
+  }
+
+  ngOnChanges(): void {
+    console.log('PopupText:', this.popupText);
   }
 
   private setBarColor(val: number) {
