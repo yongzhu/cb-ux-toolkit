@@ -6,7 +6,7 @@
     <div class="cut-kpi-title" *ngIf="title">
       {{ title }}
       <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
-      <cut-popup-tooltip [popupText]="popupText" [closeOnMouseLeave]="popupCloseOnMouseLeave"></cut-popup-tooltip>
+      <cut-popup-tooltip [popupInfo]="popupInfo"></cut-popup-tooltip>
       <div *ngIf="infoText" class="cut-kpi-infotext">
         {{ infoText }}
       </div>
@@ -22,7 +22,7 @@
   <div class="cut-kpi-title" *ngIf="title">
     {{ title }}
     <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
-    <cut-popup-tooltip [popupText]="popupText" [closeOnMouseLeave]="popupCloseOnMouseLeave"></cut-popup-tooltip>
+    <cut-popup-tooltip  [popupInfo]="popupInfo"></cut-popup-tooltip>
   </div>
   <div class="cut-kpi-body">
     <div class="cut-kpi-main-count" *ngIf="!message">

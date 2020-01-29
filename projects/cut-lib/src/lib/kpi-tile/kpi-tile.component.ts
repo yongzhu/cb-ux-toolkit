@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
+import { PopupTooltip } from './../popup-tooltip/popup-tooltip.model';
+
 enum MessageType {
   ERROR = 'error',
   WARN = 'warn',
@@ -28,8 +30,7 @@ export class CutKpiTileComponent implements OnInit {
   @Input() message: string;
   @Input() messageType: MessageType = MessageType.INFO;
 
-  @Input() popupText: string;
-  @Input() popupCloseOnMouseLeave: boolean = false;
+  @Input() popupInfo: PopupTooltip;
 
   @Input()
   set progressBarValue(value) {

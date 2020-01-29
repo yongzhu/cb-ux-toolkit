@@ -1,6 +1,8 @@
 import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 
+import { PopupTooltip } from './popup-tooltip.model';
+
 @Component({
   selector: 'cut-popup-tooltip',
   templateUrl: "./popup-tooltip.component.html",
@@ -8,8 +10,7 @@ import { MatMenuTrigger } from '@angular/material';
   encapsulation: ViewEncapsulation.None
 })
 export class CutPopupTooltipComponent {
-  @Input() popupText: string;
-  @Input() closeOnMouseLeave: boolean = false;
+  @Input() popupInfo: PopupTooltip;
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   constructor() { }
@@ -19,7 +20,7 @@ export class CutPopupTooltipComponent {
   }
 
   closeMenu(): void {
-    if (this.closeOnMouseLeave) {
+    if (this.popupInfo && this.popupInfo.closeOnMouseLeave) {
       this.trigger.closeMenu();
     }
   }
