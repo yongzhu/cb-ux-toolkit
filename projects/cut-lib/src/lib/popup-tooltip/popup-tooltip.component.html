@@ -3,7 +3,7 @@
         info
     </mat-icon>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" backdropClass="cut-popup-toolkit-base">
-        <mat-card (mouseleave)="closeMenu()">
+        <mat-card class="kpitile" (mouseleave)="closeMenu()">
             <mat-card-content>
                 <p class="cut-popup-tooltip-text" [innerHTML]="popupInfo.text"></p>
             </mat-card-content>

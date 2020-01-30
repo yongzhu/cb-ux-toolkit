@@ -2,13 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
-import { PopupTooltip } from './../popup-tooltip/popup-tooltip.model';
-
-enum MessageType {
-  ERROR = 'error',
-  WARN = 'warn',
-  INFO = 'info'
-}
+import { KpiTileData } from './kpi-tile.model';
 
 @Component({
   selector: 'cut-kpi-tile',
@@ -20,17 +14,7 @@ export class CutKpiTileComponent implements OnInit {
   private _barValue = new BehaviorSubject<number>(null);
   barStyle: string;
 
-  @Input() title: string;
-  @Input() mainCount = "0";
-  @Input() secondaryCount: string;
-  @Input() infoText: string;
-  @Input() showProgressBar = true;
-  @Input() inContainer = false;
-  @Input() showIndicator = false;
-  @Input() message: string;
-  @Input() messageType: MessageType = MessageType.INFO;
-
-  @Input() popupInfo: PopupTooltip;
+  @Input() data: KpiTileData;
 
   @Input()
   set progressBarValue(value) {
@@ -41,11 +25,7 @@ export class CutKpiTileComponent implements OnInit {
     return this._barValue.getValue();
   }
 
-  @Input() progressBarMode = "determinate";
-  @Input() progressBarStyle = "primary";
-
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
     this._barValue
@@ -74,9 +54,9 @@ export class CutKpiTileComponent implements OnInit {
    * Set the message class based on the type of the message.
    */
   setClass() {
-    if (this.messageType === MessageType.ERROR) {
+    if (this.data.messageType === 'error') {
       return "cut-kpi-error-msg";
-    } else if (this.messageType === MessageType.WARN) {
+    } else if (this.data.messageType === 'warn') {
       return "cut-kpi-warn-msg";
     }
     return "cut-kpi-info-msg"; // return info style by default.

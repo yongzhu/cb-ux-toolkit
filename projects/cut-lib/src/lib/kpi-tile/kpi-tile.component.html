@@ -1,43 +1,43 @@
-<div *ngIf="!inContainer" class="cut-kpi-tile">
+<div *ngIf="!data.inContainer" class="cut-kpi-tile">
   <div class="cut-kpi-body">
     <div class="cut-kpi-main-count">
-      {{ mainCount }}
+      {{ data.mainCount }}
     </div>
-    <div class="cut-kpi-title" *ngIf="title">
-      {{ title }}
-      <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
-      <cut-popup-tooltip [popupInfo]="popupInfo"></cut-popup-tooltip>
-      <div *ngIf="infoText" class="cut-kpi-infotext">
-        {{ infoText }}
+    <div class="cut-kpi-title" *ngIf="data.title">
+      {{ data.title }}
+      <span [ngClass]="{'cut-kpi-indicator': data.showIndicator}"></span>
+      <cut-popup-tooltip [popupInfo]="data.popupInfo"></cut-popup-tooltip>
+      <div *ngIf="data.infoText" class="cut-kpi-infotext">
+        {{ data.infoText }}
       </div>
     </div>
   </div>
-  <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
-    {{ secondaryCount }}
+  <div class="cut-kpi-secondary-count" *ngIf="data.secondaryCount">
+    {{ data.secondaryCount }}
   </div>
-  <mat-progress-bar *ngIf="showProgressBar" class="cut-progressbar" [mode]="progressBarMode" [value]="progressBarValue"
-    [color]="barStyle"></mat-progress-bar>
+  <mat-progress-bar *ngIf="data.showProgressBar" class="cut-progressbar" [mode]="data.progressBarMode"
+    [value]="progressBarValue" [color]="barStyle"></mat-progress-bar>
 </div>
-<div *ngIf="inContainer" class="cut-container-kpi-tile">
-  <div class="cut-kpi-title" *ngIf="title">
-    {{ title }}
-    <span [ngClass]="{'cut-kpi-indicator': showIndicator}"></span>
-    <cut-popup-tooltip  [popupInfo]="popupInfo"></cut-popup-tooltip>
+<div *ngIf="data.inContainer" class="cut-container-kpi-tile">
+  <div class="cut-kpi-title" *ngIf="data.title">
+    {{ data.title }}
+    <span [ngClass]="{'cut-kpi-indicator': data.showIndicator}"></span>
+    <cut-popup-tooltip [popupInfo]="data.popupInfo"></cut-popup-tooltip>
   </div>
   <div class="cut-kpi-body">
-    <div class="cut-kpi-main-count" *ngIf="!message">
-      {{ mainCount }}
+    <div class="cut-kpi-main-count" *ngIf="!data.message">
+      {{ data.mainCount }}
     </div>
-    <div class="cut-kpi-secondary-count" *ngIf="secondaryCount">
-      {{ secondaryCount }}
+    <div class="cut-kpi-secondary-count" *ngIf="data.secondaryCount">
+      {{ data.secondaryCount }}
     </div>
-    <div [ngClass]="setClass()" *ngIf="message">
-      <span>{{message}}</span>
+    <div [ngClass]="setClass()" *ngIf="data.message">
+      <span>{{ data.message }}</span>
     </div>
   </div>
-  <mat-progress-bar *ngIf="showProgressBar" class="cut-kpi-progressbar" [mode]="progressBarMode"
+  <mat-progress-bar *ngIf="data.showProgressBar" class="cut-kpi-progressbar" [mode]="data.progressBarMode"
     [value]="progressBarValue" [color]="barStyle"></mat-progress-bar>
-  <div *ngIf="infoText" class="cut-kpi-secondary-count">
-    {{ infoText }}
+  <div *ngIf="data.infoText" class="cut-kpi-secondary-count">
+    {{ data.infoText }}
   </div>
 </div>
