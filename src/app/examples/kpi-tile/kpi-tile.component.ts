@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { KpiTileData, MessageType } from 'projects/cut-lib/src/lib/kpi-tile/kpi-tile.model';
+import { KpiTileData } from 'projects/cut-lib/src/lib/kpi-tile/kpi-tile.model';
 
 @Component({
   selector: 'app-kpi-tile',
