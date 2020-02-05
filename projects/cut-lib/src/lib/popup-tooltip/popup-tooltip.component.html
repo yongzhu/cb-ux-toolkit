@@ -1,6 +1,6 @@
 <ng-template [ngIf]="popupInfo && popupInfo.text.length > 0">
-    <mat-icon class="icon-display" #trigger="matMenuTrigger" [matMenuTriggerFor]="menu" (mouseenter)="openMenu()">
-        info
+    <mat-icon class="icon-display" #trigger="matMenuTrigger" [matMenuTriggerFor]="menu" (mouseenter)="trigger.openMenu()">
+        {{popupInfo.icon}}
     </mat-icon>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" backdropClass="cut-popup-toolkit-base">
         <mat-card class="kpitile" (mouseleave)="closeMenu()">

@@ -9,7 +9,7 @@
   border-radius: 0;
   padding: 0.75rem;
   border: 0;
-  border-left: 0.1875rem solid #0097d1;
+  border-left: 0.1875rem solid $color-tertiary-light;
 }
 
 .mat-menu-panel {
@@ -24,12 +24,12 @@
 
 .cut-popup-tooltip-text {
   font-size: 0.75rem;
-  color: #182642;
+  color: $color-primary;
 }
 
 .icon-display {
   cursor: pointer;
   transform: scale(0.8);
   vertical-align: middle;
-  color: #2777B4;
+  color: $color-tertiary;
 }

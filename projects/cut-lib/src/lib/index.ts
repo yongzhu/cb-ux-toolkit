@@ -3,3 +3,7 @@ export * from "./footer";
 export * from "./footer-standard";
 export * from "./framework";
 export * from "./header";
+export * from './kpi-tile/kpi-tile.model';
+export * from './kpi-tile/kpi-tile.component';
+export * from './popup-tooltip/popup-tooltip.model';
+export * from './popup-tooltip/popup-tooltip.component';

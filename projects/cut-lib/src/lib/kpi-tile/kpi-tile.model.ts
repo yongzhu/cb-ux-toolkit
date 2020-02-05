@@ -1,6 +1,9 @@
-export interface PopupTooltip {
-    text: string;
-    closeOnMouseLeave: boolean;
+import { PopupTooltip } from './../popup-tooltip/popup-tooltip.model';
+
+export const enum MessageType {
+    ERROR = 'error',
+    WARN = 'warn',
+    INFO = 'info'
 }
 
 export interface KpiTileData {
@@ -11,7 +14,7 @@ export interface KpiTileData {
     inContainer?: boolean;
     showIndicator?: boolean;
     message?: string;
-    messageType?: 'error' | 'warn' | 'info';
+    messageType?: MessageType;
     popupInfo?: PopupTooltip;
     link?: string;
     click?: string;

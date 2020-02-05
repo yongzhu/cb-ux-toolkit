@@ -14,11 +14,7 @@ export class CutPopupTooltipComponent {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   constructor() { }
-
-  openMenu(): void {
-    this.trigger.openMenu();
-  }
-
+  
   closeMenu(): void {
     if (this.popupInfo && this.popupInfo.closeOnMouseLeave) {
       this.trigger.closeMenu();
