@@ -1,0 +1,35 @@
+@import "../../stylesheets/cut-core";
+@import "../../stylesheets/mixins/cut-rem-calc";
+
+.mat-icon {
+  padding-left: 0.75rem;
+}
+
+.mat-card.kpitile {
+  border-radius: 0;
+  padding: 0.75rem;
+  border: 0;
+  border-left: 0.1875rem solid $color-tertiary-light;
+}
+
+.mat-menu-panel {
+  margin-left: 2.25rem;
+  margin-top: -1.75rem;
+}
+
+.mat-menu-content:not(:empty) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.cut-popup-tooltip-text {
+  font-size: 0.75rem;
+  color: $color-primary;
+}
+
+.icon-display {
+  cursor: pointer;
+  transform: scale(0.8);
+  vertical-align: middle;
+  color: $color-tertiary;
+}

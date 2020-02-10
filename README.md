@@ -127,3 +127,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1. [Creating a Library with the Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5)
 2. [Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121)
 3. [Publishing](https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275)
+
+### Linking to Modules
+
+1. Run following command
+```shell
+npm run build-lib-watch
+```
+
+2. In another window, go into dist/cut folder and run
+```shell
+npm link
+```
+
+3. Go to module you want to link in: Sample (Homepage) Inside cbdash-ui/client run
+```shell
+npm link cut
+```

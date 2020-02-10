@@ -1,20 +1,22 @@
 <div class="example-container">
-  <cut-kpi-tile title="Test Title" mainCount="30" progressBarValue="15" showIndicator="true" infoText="Test info text">
+  <cut-kpi-tile [data]="sample7">
   </cut-kpi-tile>
   <br /><br /><br />
-  <cut-kpi-tile title="Test Title" mainCount="30" progressBarValue="15" showIndicator="true" infoText="Test info text"
-    inContainer="true">
+  <cut-kpi-tile [data]="sample6">
   </cut-kpi-tile>
   <br /><br /><br />
-  <cut-kpi-tile title="Test Title" mainCount="" infoText="Test info text" inContainer="true" showProgressBar="false" 
-                message="This is no data available msg." messageType='info'>  
+  <cut-kpi-tile [data]="sample5" progressBarValue="15">
   </cut-kpi-tile>
   <br /><br /><br />
-  <cut-kpi-tile title="Test Title" mainCount="" infoText="Test info text" inContainer="true" showProgressBar='false' 
-               message="This is error msg." messageType='error'>  
+  <cut-kpi-tile [data]="sample4" progressBarValue="15">
   </cut-kpi-tile>
   <br /><br /><br />
-  <cut-kpi-tile title="Test Title" mainCount="" infoText="Test info text" inContainer="true" showProgressBar="false" 
-                message="This is warn msg." messageType='warn'>  
+  <cut-kpi-tile [data]="sample3">
+  </cut-kpi-tile>
+  <br /><br /><br />
+  <cut-kpi-tile [data]="sample2">  
+  </cut-kpi-tile>
+  <br /><br /><br />
+  <cut-kpi-tile [data]="sample1">  
   </cut-kpi-tile>
 </div>
