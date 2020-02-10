@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
-import { KpiTileData } from './kpi-tile.model';
+import { KpiTileData, MessageType } from './kpi-tile.model';
 
 @Component({
   selector: 'cut-kpi-tile',
@@ -54,9 +54,9 @@ export class CutKpiTileComponent implements OnInit {
    * Set the message class based on the type of the message.
    */
   setClass() {
-    if (this.data.messageType === 'error') {
+    if (this.data.messageType === MessageType.ERROR) {
       return "cut-kpi-error-msg";
-    } else if (this.data.messageType === 'warn') {
+    } else if (this.data.messageType === MessageType.WARN) {
       return "cut-kpi-warn-msg";
     }
     return "cut-kpi-info-msg"; // return info style by default.
