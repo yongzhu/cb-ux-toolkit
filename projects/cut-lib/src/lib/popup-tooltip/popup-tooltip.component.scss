@@ -1,10 +1,6 @@
 @import "../../stylesheets/cut-core";
 @import "../../stylesheets/mixins/cut-rem-calc";
 
-.mat-icon {
-  padding-left: 0.75rem;
-}
-
 .mat-card.kpitile {
   border-radius: 0;
   padding: 0.75rem;
@@ -32,4 +28,5 @@
   transform: scale(0.8);
   vertical-align: middle;
   color: $color-tertiary;
+  padding-left: 0.75rem;
 }
