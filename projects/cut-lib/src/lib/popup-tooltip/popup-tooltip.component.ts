@@ -16,7 +16,7 @@ export class CutPopupTooltipComponent {
   constructor() { }
   
   closeMenu(): void {
-    if (this.popupInfo && this.popupInfo.closeOnMouseLeave) {
+    if (this.popupInfo) {
       this.trigger.closeMenu();
     }
   }

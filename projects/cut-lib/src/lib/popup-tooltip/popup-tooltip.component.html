@@ -1,10 +1,14 @@
 <div class="tooltipPopup" *ngIf="popupInfo && popupInfo.text.length > 0">
-    <button mat-icon-button color="primary" class="icon-display" #trigger="matMenuTrigger" [matMenuTriggerFor]="menu" (mouseenter)="trigger.openMenu()">
+    <button mat-icon-button color="primary" class="icon-display" #trigger="matMenuTrigger" [matMenuTriggerFor]="menu"
+        (mouseenter)="trigger.openMenu()">
         <mat-icon>{{popupInfo.icon}}</mat-icon>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" backdropClass="cut-popup-toolkit-base" class="tooltipPopupMenu">
-        <mat-card class="kpitile flat mat-elevation-z0" (mouseleave)="closeMenu()">
+        <mat-card class="kpitile flat mat-elevation-z0">
             <mat-card-content>
+                <button mat-icon-button class="close-icon" (click)="closeMenu()">
+                    <mat-icon>close</mat-icon>
+                </button>
                 <p class="cut-popup-tooltip-text" [innerHTML]="popupInfo.text"></p>
             </mat-card-content>
         </mat-card>

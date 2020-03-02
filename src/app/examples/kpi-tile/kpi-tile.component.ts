@@ -56,7 +56,6 @@ export class KpiTileComponentExample {
     mainCount: 45,
     infoText: 'Test info text',
     popupInfo: {
-      closeOnMouseLeave: false,
       text: 'This is just a test',
       icon: 'info'
     }
@@ -68,7 +67,6 @@ export class KpiTileComponentExample {
     infoText: 'Test info text',
     inContainer: true,
     popupInfo: {
-      closeOnMouseLeave: false,
       text: 'This is just a test',
       icon: 'warning'
     }

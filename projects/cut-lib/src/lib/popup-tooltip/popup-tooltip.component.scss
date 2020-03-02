@@ -20,4 +20,19 @@
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
+
+  .close-icon {
+    color: $gray-darker;
+    float: right;
+    margin-top: -2.1875rem;
+    text-align: right;
+
+    .mat-icon {
+      font-size: 1.1875rem;
+    }
+  }
+
+  .cut-popup-tooltip-text {
+    font-size: 0.75rem;
+  }
 }
